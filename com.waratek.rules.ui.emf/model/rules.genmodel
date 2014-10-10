@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2014 Waratek Ltd." modelDirectory="/com.waratek.rules.ui.emf/src"
+    modelPluginID="com.waratek.rules.ui.emf" modelName="Rules" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" language=""
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../../com.waratek.rules.ui.model/model/rules.ecore</foreignModel>
+  <genPackages prefix="Rules" basePackage="com.waratek" disposableProviderFactory="true"
+      fileExtensions="rdf" ecorePackage="rules.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//FileParameter">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//FileParameter/read"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//FileParameter/write"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//FileParameter/exec"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//NetworkParameter">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NetworkParameter/bind"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NetworkParameter/connect"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NetworkParameter/serverbind"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NetworkParameter/accept"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Action">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/allow"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/deny"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/suspend"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/shutdown"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/destroy"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/blacklist"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/greylist"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/whitelist"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Log">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/off"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/info"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/warn"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/error"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/debug"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/trace"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Scope">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Scope/jvc"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Scope/global"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Database">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Database/oracle"/>
+    </genEnums>
+    <genClasses ecoreClass="rules.ecore#//RuleDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rules.ecore#//RuleDocument/rules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/scope"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rules.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Rule/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Rule/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Rule/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Rule/log"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//File">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//File/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//File/fileParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//Network">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Network/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Network/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Network/networkParameter"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rules.ecore#//Reflection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/packageName"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//ReflectPackage"/>
+    <genClasses ecoreClass="rules.ecore#//ReflectClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectClass/className"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//ReflectConstructor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectConstructor/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectConstructor/constructorSignature"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//ReflectMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectMethod/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectMethod/methodSignature"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//ReflectField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectField/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectField/fieldName"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//ThrowableClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ThrowableClass/className"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//ClassLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ClassLink/descriptorName"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//Native">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Native/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Native/checksum"/>
+    </genClasses>
+    <genClasses ecoreClass="rules.ecore#//SQLInjection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//SQLInjection/database"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

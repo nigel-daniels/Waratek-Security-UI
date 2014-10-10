@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Security Rules Help
+Bundle-SymbolicName: com.waratek.rules.ui.help;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Waratek Ltd.
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.apache.jasper.glassfish;bundle-version="2.2.2",
+ javax.el;bundle-version="2.2.0",
+ javax.servlet.jsp;bundle-version="2.2.0",
+ org.eclipse.help.webapp;bundle-version="3.6.200",
+ org.eclipse.equinox.jsp.jasper;bundle-version="1.0.400",
+ org.eclipse.equinox.jsp.jasper.registry;bundle-version="1.0.300"

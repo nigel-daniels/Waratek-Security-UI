@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<workflow>
+	<property name="test" value="com.waratek.rules.ui.xpand/src/Test.rdf" />
+	<property name="src-gen" value="src-gen" />
+
+	<!-- set up EMF for standalone execution -->
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
+		<platformUri value="../"/>
+		<registerEcoreFile value="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore" /> 
+	</bean>
+
+	<!-- instantiate metamodel -->
+	<bean id="mm_emf" class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel" />
+
+	<!-- load model and store it in slot 'model' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${test}" />
+		<modelSlot value="rules" />
+	</component>
+
+    <!-- Clear output directory -->
+	<component class="org.eclipse.emf.mwe.utils.DirectoryCleaner">
+			<directory value="${src-gen}"/>
+	</component>
+	
+	<!--  generate code -->
+	<component class="org.eclipse.xpand2.Generator">
+		<metaModel idRef="mm_emf"/>
+		<expand
+			value="template::RDFTemplate::main FOR rules" />
+		<outlet path="${src-gen}" />
+		<resourceManager class ="org.eclipse.xtend.expression.ResourceManagerDefaultImpl">
+			<fileEncoding value="UTF-8"/>
+		</resourceManager>
+	</component>
+</workflow>
