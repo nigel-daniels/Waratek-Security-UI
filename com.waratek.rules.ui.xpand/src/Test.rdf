@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules:RuleDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rules="http://www.waratek.com/rules/1.0" name="My1">
-  <rules xsi:type="rules:File" action="Allow" log="Off" path="/etc/"/>
+  <rules xsi:type="rules:File" id="" action="Allow" log="Off" path="/etc/"/>
   <rules xsi:type="rules:File" path="/etc/" fileParameter="Write"/>
   <rules xsi:type="rules:File" path="/usr/local" fileParameter="Execute"/>
   <rules xsi:type="rules:Network" id="01" host="www.example.com" networkParameter="Bind"/>
