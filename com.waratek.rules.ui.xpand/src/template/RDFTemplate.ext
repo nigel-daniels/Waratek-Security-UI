@@ -55,7 +55,7 @@ networkParamName(String networkParam):
  	}
  ;
  
- /*
+/*
  * This extension converts database enums
  */
 databaseName(String database):
@@ -64,3 +64,37 @@ databaseName(String database):
  		default 			: "oracle"
  	}
  ;
+ 
+/*
+ * This extension tidys the id up
+ */
+idOutput(String id):
+	switch (id) {
+		case null 	: "No ID provided"
+		case ""		: "No ID provided"
+		default		: id
+	}
+;
+
+/*
+ * This extension tidys the comment up
+ */ 
+commentOutput(String comment):
+	switch (comment) {
+		case null 	: "No comment provided"
+		case ""		: "No comment provided"
+		default		: comment
+	}
+;
+
+
+/*
+ * This extension ensures correct checksum output
+ */ 
+checksumOutput(String checksum):
+	switch (checksum) {
+		case null 	: checksum
+		case ""		: checksum
+		default		: ";" + checksum
+	}
+;
