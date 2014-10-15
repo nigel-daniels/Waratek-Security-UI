@@ -15,67 +15,67 @@ VERSION 1.0
 
 «REM»This writes out any comments we find«ENDREM»
 «DEFINE rule FOR File-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 file:«fileParamName(this.fileParameter.toString())»:«this.path»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR Network-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 network:«networkParamName(this.networkParameter.toString())»:«this.host»:«IF this.port != 0»«this.port»«ENDIF»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ReflectPackage-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 reflect:class:«this.packageName».*:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ReflectClass-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 reflect:class:«this.packageName».«this.className»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ReflectConstructor-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 reflect:class:«this.packageName».«this.className»:constructor:«this.constructorSignature»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ReflectMethod-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 reflect:class:«this.packageName».«this.className»:method:«this.methodSignature»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ReflectField-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 reflect:class:«this.packageName».«this.className»:field:«this.fieldName»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ThrowableClass-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 throwable:throw:«this.className»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR ClassLink-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 classlink:class:«this.descriptorName»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR Native-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 native:library:«this.path»«IF this.checksum == null || this.checksum == ""»«ELSE»;«this.checksum»«ENDIF»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
 «DEFINE rule FOR SQLInjection-»
-# «IF this.id == null || this.id == ""»nn«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
+# «IF this.id == null || this.id == ""»No ID provided«ELSE»«this.id»«ENDIF» - «IF this.comment == null || this.comment == ""»No comment provided.«ELSE»«this.comment»«ENDIF»
 sql:database:«databaseName(this.database.toString())»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
