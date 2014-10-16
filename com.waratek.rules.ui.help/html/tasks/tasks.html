@@ -1,0 +1,1016 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
+<title>Using the Security Editor</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Using the Security Editor</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a id="introduction"></a>
+The Waratek Security Rules Editor is a tool aimed at helping to generate error free security rules.  With the editor you can work on a Rules Description File (*.rdf) and create custom rules for your own application environment.  Once you are happy that the rules described by the RDF file are the ones you want you can generate a *.rules file ready for deployment with Waratek Locker or the Waratek Secure VM for Java.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_an_rdf">Creating an RDF</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a id="create"></a>
+In order to create an RDF file you first need to create an a project in which the file can be stored, this allows you to keep related RDF files and other items together in the same location.  For example the project you create may hold all of the RDF files used with a particular JVM or set of business services that form an application.</p></div>
+<div class="sect2">
+<h3 id="_creating_a_project">Creating a Project</h3>
+<div class="paragraph"><p>To create a basic project follow these steps.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Right click in the <em>Navigator</em> or <em>Explorer</em> view and select <em>New</em> then <em>Project&#8230;</em>.
+</p>
+</li>
+<li>
+<p>
+In the <em>New Project</em> dialog click the twisty next to the <em>General</em> category and select <em>Project</em>, then click <em>Next &gt;</em>.
+</p>
+</li>
+<li>
+<p>
+In the following page provide a <em>Project name</em>, for example <em>my.jvm-1.security</em>, at this point you can click <em>Finish</em>.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_creating_an_rdf_file">Creating an RDF File</h3>
+<div class="paragraph"><p>Having created a project in which to store your RDF file follow the steps below to create an RDF file.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Right click your new project and select <em>New</em> then <em>Other&#8230;</em>.
+</p>
+</li>
+<li>
+<p>
+In the <em>New</em> dialog click the twisty next to <em>Waratek</em> and select <em>Rules Definition File</em>, then click <em>Next &gt;</em>
+</p>
+</li>
+<li>
+<p>
+In the next page provide a <em>File name:</em>, for example <em>jvc-1.rdf</em>.  If you forgot to select your project before starting this process you can select the appropriate project in the selection list above. Now click <em>Finish</em>.
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>This will create and open the requested file in the RDF editor.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p><strong>Note</strong><br />
+If it is not already open you will need to open the properties view at this point. To do this right click on the <em>Rules Document</em> within the editor and select <em>Show Properties View</em>.</p></div>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editing_the_document">Editing the Document</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a id="document"></a>
+The top or root level element of the RDF document is the <em>Rule Document</em> itself.  This represents that file that will be generated and deployed to enforce the rules you have described.  This has two properties associated with it.</p></div>
+<div class="sect2">
+<h3 id="_name">Name</h3>
+<div class="paragraph"><p>This defaults to be the same name as the RDF document and is simply something to help you recall the purpose of the file.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_scope">Scope</h3>
+<div class="paragraph"><p>This depends on where you intend on deploying the file.  If set to <em>JVC</em> the file generated will be named <em>jvc.rules</em> and must be deployed in a Java Virtual Container (JVC) directory.  If this is set to <em>Global</em> the file generated will be named <em>global.rules</em> and must be deployed to a JVM directory.  The default is <em>JVC</em>.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_and_editing_rules">Adding and Editing Rules</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a id="rules"></a>
+The rules you can select are all of the rule types that Waratek Locker and the Waratek Secure VM for Java supports.  The rules types available are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+File
+</p>
+</li>
+<li>
+<p>
+Network
+</p>
+</li>
+<li>
+<p>
+Reflect Package
+</p>
+</li>
+<li>
+<p>
+Reflect Class
+</p>
+</li>
+<li>
+<p>
+Reflect Constructor
+</p>
+</li>
+<li>
+<p>
+Reflect Method
+</p>
+</li>
+<li>
+<p>
+Reflect Field
+</p>
+</li>
+<li>
+<p>
+Throwable Class
+</p>
+</li>
+<li>
+<p>
+Class Link
+</p>
+</li>
+<li>
+<p>
+Native
+</p>
+</li>
+<li>
+<p>
+SQL Injection
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>To add a rule simply right click the document and select <em>New Child &gt;</em> then chose the rule you want to add.  If a rule is right clicked the option will be <em>New Sibling &gt;</em>.  This can also be achieved from the <em>Rules Editor</em> menu.
+All of the rules have some shared properties, these are described below.</p></div>
+<div class="sect2">
+<h3 id="_id">Id</h3>
+<div class="paragraph"><p>This is a free text field you may use to help identify the rule, typically numbers are used.  This field is optional has no meaning in the resulting *.rules file. The id values are included in the *.rules file as part of a comment associated with the rule, if no id is given then the comment reads <em>No ID provided</em>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_comment">Comment</h3>
+<div class="paragraph"><p>This is a free text field you may use to help describe the rule.  This field is optional has no meaning in the resulting *.rules file. The comment values are included in the *.rules file as part of a comment associated with the rule, if no comment is given then the comment reads <em>No comment provided</em>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_action">Action</h3>
+<div class="paragraph"><p>This is the action that will be taken in response to the rule being triggered.  The actions available are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Allow - The attempted action the rule described will go ahead.
+</p>
+</li>
+<li>
+<p>
+Deny - The attempted action the rule described will be blocked.
+</p>
+</li>
+<li>
+<p>
+Suspend - Running threads are halted.
+</p>
+</li>
+<li>
+<p>
+Shutdown - A graceful halt happens.
+</p>
+</li>
+<li>
+<p>
+Destroy - An immediate halt happens.
+</p>
+</li>
+<li>
+<p>
+Blacklist - Applies to Native rules only, see reference.
+</p>
+</li>
+<li>
+<p>
+Greylist - Applies to Native rules only, see reference.
+</p>
+</li>
+<li>
+<p>
+Whitelist - Applies to Native rules only, see reference.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>A full description of how these mitigating actions are handled by the rules engine can be found in the reference. The default is Deny.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_log">Log</h3>
+<div class="paragraph"><p>This is what will be recorded within the log file as a result of the rule being triggered. These allow you to select the severity associated with the output of a rule being triggered. The log levels available are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Off - logging is suppressed.
+</p>
+</li>
+<li>
+<p>
+Info
+</p>
+</li>
+<li>
+<p>
+Warning
+</p>
+</li>
+<li>
+<p>
+Error
+</p>
+</li>
+<li>
+<p>
+Debug
+</p>
+</li>
+<li>
+<p>
+Trace
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>A full description of how logging is handled by the rules engine can be found in the reference. The default is Warning.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_rule_specific_properties">Rule Specific Properties</h3>
+<div class="paragraph"><p>Each of the rules also has their own specific properties used to define the rules behaviour.  Refer to the reference section to learn more about how each individual rule is described.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generating_the_rules">Generating the Rules</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><a id="generate"></a>
+Once you are happy the ruled description is complete save the <strong>.rdf file.  A \</strong> infront of the file name will indicate the file has been edited after the last save took place.  To generate the *.rules file take the following steps:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Right click on the editor and select <em>Generate Rules File</em>.
+</p>
+</li>
+<li>
+<p>
+If you forgot to save the file you will be asked if you would like to save the file and then generate.
+</p>
+</li>
+<li>
+<p>
+In the <em>Select Output Directory</em> choose the location you want the file to be output to and click <em>Open</em>.  Note that this will overwrite any existing *.rules files in that location.
+</p>
+</li>
+<li>
+<p>
+A <em>Rules Generated</em> dialog will let you know the genration has completed successfully or if there were any problems.
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>Now that you have generated the rules file you may need to copy it to the appropriate location for deployment and issue the appropriate reload command to the rules engine.  Refer to the reference on how to deploy the rules themselves.</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2014-10-16 12:38:00 PDT
+</div>
+</div>
+</body>
+</html>

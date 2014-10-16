@@ -1,0 +1,124 @@
+Using the Security Editor
+=========================
+
+Introduction
+------------
+anchor:introduction[]
+The Waratek Security Rules Editor is a tool aimed at helping to generate error free security rules.  With the editor you can work on a Rules Description File (*.rdf) and create custom rules for your own application environment.  Once you are happy that the rules described by the RDF file are the ones you want you can generate a *.rules file ready for deployment with Waratek Locker or the Waratek Secure VM for Java.
+
+
+Creating an RDF
+---------------
+anchor:create[]
+In order to create an RDF file you first need to create an a project in which the file can be stored, this allows you to keep related RDF files and other items together in the same location.  For example the project you create may hold all of the RDF files used with a particular JVM or set of business services that form an application.
+
+Creating a Project
+~~~~~~~~~~~~~~~~~~
+To create a basic project follow these steps.
+
+. Right click in the 'Navigator' or 'Explorer' view and select 'New' then 'Project...'.
+. In the 'New Project' dialog click the twisty next to the 'General' category and select 'Project', then click 'Next >'.
+. In the following page provide a 'Project name', for example 'my.jvm-1.security', at this point you can click 'Finish'.
+
+Creating an RDF File
+~~~~~~~~~~~~~~~~~~~~
+Having created a project in which to store your RDF file follow the steps below to create an RDF file.
+
+. Right click your new project and select 'New' then 'Other...'.
+. In the 'New' dialog click the twisty next to 'Waratek' and select 'Rules Definition File', then click 'Next >'
+. In the next page provide a 'File name:', for example 'jvc-1.rdf'.  If you forgot to select your project before starting this process you can select the appropriate project in the selection list above. Now click 'Finish'.
+
+This will create and open the requested file in the RDF editor.
+
+****
+*Note* +
+If it is not already open you will need to open the properties view at this point. To do this right click on the 'Rules Document' within the editor and select 'Show Properties View'.
+****
+
+
+Editing the Document
+--------------------
+anchor:document[]
+The top or root level element of the RDF document is the 'Rule Document' itself.  This represents that file that will be generated and deployed to enforce the rules you have described.  This has two properties associated with it.
+
+Name
+~~~~
+This defaults to be the same name as the RDF document and is simply something to help you recall the purpose of the file.
+
+Scope
+~~~~~
+This depends on where you intend on deploying the file.  If set to 'JVC' the file generated will be named 'jvc.rules' and must be deployed in a Java Virtual Container (JVC) directory.  If this is set to 'Global' the file generated will be named 'global.rules' and must be deployed to a JVM directory.  The default is 'JVC'.
+
+
+Adding and Editing Rules
+------------------------
+anchor:rules[]
+The rules you can select are all of the rule types that Waratek Locker and the Waratek Secure VM for Java supports.  The rules types available are:
+
+* File
+* Network
+* Reflect Package
+* Reflect Class
+* Reflect Constructor
+* Reflect Method
+* Reflect Field
+* Throwable Class
+* Class Link
+* Native
+* SQL Injection
+
+To add a rule simply right click the document and select 'New Child >' then chose the rule you want to add.  If a rule is right clicked the option will be 'New Sibling >'.  This can also be achieved from the 'Rules Editor' menu.
+All of the rules have some shared properties, these are described below.
+
+Id
+~~
+This is a free text field you may use to help identify the rule, typically numbers are used.  This field is optional has no meaning in the resulting *.rules file. The id values are included in the *.rules file as part of a comment associated with the rule, if no id is given then the comment reads 'No ID provided'.
+
+Comment
+~~~~~~~
+This is a free text field you may use to help describe the rule.  This field is optional has no meaning in the resulting *.rules file. The comment values are included in the *.rules file as part of a comment associated with the rule, if no comment is given then the comment reads 'No comment provided'.
+
+Action
+~~~~~~
+This is the action that will be taken in response to the rule being triggered.  The actions available are:
+
+* Allow - The attempted action the rule described will go ahead.
+* Deny - The attempted action the rule described will be blocked.
+* Suspend - Running threads are halted. 
+* Shutdown - A graceful halt happens.
+* Destroy - An immediate halt happens.
+* Blacklist - Applies to Native rules only, see reference.
+* Greylist - Applies to Native rules only, see reference.
+* Whitelist - Applies to Native rules only, see reference.
+
+A full description of how these mitigating actions are handled by the rules engine can be found in the reference. The default is Deny.
+
+Log
+~~~
+This is what will be recorded within the log file as a result of the rule being triggered. These allow you to select the severity associated with the output of a rule being triggered. The log levels available are:
+
+* Off - logging is suppressed.
+* Info 
+* Warning 
+* Error
+* Debug
+* Trace
+
+A full description of how logging is handled by the rules engine can be found in the reference. The default is Warning.
+
+Rule Specific Properties
+~~~~~~~~~~~~~~~~~~~~~~~~
+Each of the rules also has their own specific properties used to define the rules behaviour.  Refer to the reference section to learn more about how each individual rule is described.
+
+
+Generating the Rules
+--------------------
+anchor:generate[]
+Once you are happy the ruled description is complete save the *.rdf file.  A \* infront of the file name will indicate the file has been edited after the last save took place.  To generate the *.rules file take the following steps:
+
+. Right click on the editor and select 'Generate Rules File'.
+. If you forgot to save the file you will be asked if you would like to save the file and then generate.
+. In the 'Select Output Directory' choose the location you want the file to be output to and click 'Open'.  Note that this will overwrite any existing *.rules files in that location.
+. A 'Rules Generated' dialog will let you know the genration has completed successfully or if there were any problems.
+
+Now that you have generated the rules file you may need to copy it to the appropriate location for deployment and issue the appropriate reload command to the rules engine.  Refer to the reference on how to deploy the rules themselves.

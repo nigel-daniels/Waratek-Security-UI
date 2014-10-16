@@ -2,6 +2,8 @@
 <?NLS TYPE="org.eclipse.help.toc"?>
 
 <toc label="Getting Started" link_to="toc.xml#gettingstarted"> 
-	<topic label="Main Topic"  href="html/gettingstarted/maintopic.html"> 
-	</topic>
+	<topic label="Introduction" href="html/gettingstarted/gettingstarted.html"/>
+	<topic label="Installing" href="html/gettingstarted/gettingstarted.html#install"/>
+	<topic label="Adding the Repository" href="html/gettingstarted/gettingstarted.html#repository"/>
+	<topic label="Uninstalling" href="html/gettingstarted/gettingstarted.html#uninstall"/>
 </toc>
