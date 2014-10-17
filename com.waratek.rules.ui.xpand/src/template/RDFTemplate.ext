@@ -98,3 +98,11 @@ checksumOutput(String checksum):
 		default		: ";" + checksum
 	}
 ;
+
+packageNameOutput(String packageName):
+	if (packageName.endsWith("*")) then 
+		packageName
+	else 
+		packageName + ".*"
+; 
+	

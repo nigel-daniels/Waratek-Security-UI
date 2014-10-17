@@ -28,7 +28,7 @@ network:«networkParamName(this.networkParameter.toString())»:«this.host»:«I
 
 «DEFINE rule FOR ReflectPackage-»
 # «idOutput(this.id)» - «commentOutput(this.comment)»
-reflect:class:«this.packageName».*:«actionName(this.action.toString())»:«logName(this.log.toString())»
+reflect:class:«packageNameOutput(packageName)»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 
