@@ -161,41 +161,44 @@ public class RulesActionBarContributor
 				dialog.setMessage(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateRules_dialog_message"));
 				String outputPath = dialog.open();
 				
-				// Now set the Xpand output path
-	 			Output output = new OutputImpl();
-	 			output.addOutlet(new Outlet(outputPath));
-	 			
-	 			// Get the output context and set the encoding
-	 			XpandExecutionContextImpl executionContext = new XpandExecutionContextImpl(output, null);
-	 			executionContext.getResourceManager().setFileEncoding("UTF-8");
-	 			
-			    // Add the EMF metamodel to the context
-			    EmfMetaModel EMFMetaModel = new EmfMetaModel();
-			    EMFMetaModel.setMetaModelPackage(RulesPackage.class.getName());
-			    executionContext.registerMetaModel(EMFMetaModel);
-			    
-			    try {
-			    	// Get the current file being worked on
-			    	FileEditorInput input = (FileEditorInput)activeEditorPart.getEditorInput();
-			    	URI fileURI = URI.createPlatformResourceURI(input.getFile().getFullPath().toString(), true);
-			    	
-			    	// Now get the content from the resource
-			    	ResourceSet resourceSet = new ResourceSetImpl();
-			    	Resource resource = resourceSet.getResource(fileURI, true);
-			    	Object RulesContent = resource.getContents().get(0);
-			    	
-			    	// Now create the Xpand facade and perform the transform
-			    	Object[] params = null;
-			    	
-			    	XpandFacade xpandFacade = XpandFacade.create(executionContext);
-			    	xpandFacade.evaluate("template::RDFTemplate::main", RulesContent, params);
-			    	
-			    	MessageDialog.openInformation(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_message"), (Object)null) + outputPath);
-			    }
-			    catch (Exception e) {
-			    	MessageDialog.openError(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_message"), (Object)null) + e.getLocalizedMessage());
-			    	System.err.println(e);
-			    }
+				if (outputPath != null)
+					{
+					// Now set the Xpand output path
+		 			Output output = new OutputImpl();
+		 			output.addOutlet(new Outlet(outputPath));
+		 			
+		 			// Get the output context and set the encoding
+		 			XpandExecutionContextImpl executionContext = new XpandExecutionContextImpl(output, null);
+		 			executionContext.getResourceManager().setFileEncoding("UTF-8");
+		 			
+				    // Add the EMF metamodel to the context
+				    EmfMetaModel EMFMetaModel = new EmfMetaModel();
+				    EMFMetaModel.setMetaModelPackage(RulesPackage.class.getName());
+				    executionContext.registerMetaModel(EMFMetaModel);
+				    
+				    try {
+				    	// Get the current file being worked on
+				    	FileEditorInput input = (FileEditorInput)activeEditorPart.getEditorInput();
+				    	URI fileURI = URI.createPlatformResourceURI(input.getFile().getFullPath().toString(), true);
+				    	
+				    	// Now get the content from the resource
+				    	ResourceSet resourceSet = new ResourceSetImpl();
+				    	Resource resource = resourceSet.getResource(fileURI, true);
+				    	Object RulesContent = resource.getContents().get(0);
+				    	
+				    	// Now create the Xpand facade and perform the transform
+				    	Object[] params = null;
+				    	
+				    	XpandFacade xpandFacade = XpandFacade.create(executionContext);
+				    	xpandFacade.evaluate("template::RDFTemplate::main", RulesContent, params);
+				    	
+				    	MessageDialog.openInformation(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_message"), (Object)null) + outputPath);
+				    }
+				    catch (Exception e) {
+				    	MessageDialog.openError(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_message"), (Object)null) + e.getLocalizedMessage());
+				    	System.err.println(e);
+				    }
+				}
 			}
 		};
 	/**
