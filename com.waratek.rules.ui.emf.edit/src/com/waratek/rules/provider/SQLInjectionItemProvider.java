@@ -122,8 +122,8 @@ public class SQLInjectionItemProvider
 				{label.append(" - " + sqlInjection.getComment());}
 
 		return label == null || label.length() == 0 ?
-			getString("_UI_ThrowableClass_type") :
-			getString("_UI_ThrowableClass_type") + " " + label;
+			getString("_UI_SQLInjection_type") :
+			getString("_UI_SQLInjection_type") + " " + label;
 	}
 
 	/**
