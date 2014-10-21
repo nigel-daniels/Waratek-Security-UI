@@ -94,9 +94,8 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 			if (isAccessible(RulesViewsRepository.Network.Properties.host))
 				basePart.setHost(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, network.getHost()));
 			
-			if (isAccessible(RulesViewsRepository.Network.Properties.port)) {
-				basePart.setPort(EEFConverterUtil.convertToString(EcorePackage.Literals.EINT, network.getPort()));
-			}
+			if (isAccessible(RulesViewsRepository.Network.Properties.port))
+				basePart.setPort(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, network.getPort()));
 			
 			if (isAccessible(RulesViewsRepository.Network.Properties.networkParameter)) {
 				basePart.initNetworkParameter(EEFUtils.choiceOfValues(network, RulesPackage.eINSTANCE.getNetwork_NetworkParameter()), network.getNetworkParameter());
@@ -178,7 +177,7 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 			network.setHost((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (RulesViewsRepository.Network.Properties.port == event.getAffectedEditor()) {
-			network.setPort((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
+			network.setPort((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (RulesViewsRepository.Network.Properties.networkParameter == event.getAffectedEditor()) {
 			network.setNetworkParameter((NetworkParameter)event.getNewValue());
@@ -222,7 +221,7 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 			}
 			if (RulesPackage.eINSTANCE.getNetwork_Port().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.Network.Properties.port)) {
 				if (msg.getNewValue() != null) {
-					basePart.setPort(EcoreUtil.convertToString(EcorePackage.Literals.EINT, msg.getNewValue()));
+					basePart.setPort(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setPort("");
 				}
@@ -321,8 +320,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 		return ret;
 	}
 
-
-	
 
 	
 

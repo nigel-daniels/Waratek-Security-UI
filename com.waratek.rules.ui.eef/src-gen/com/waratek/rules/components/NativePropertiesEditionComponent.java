@@ -300,6 +300,4 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 
 	
 
-	
-
 }

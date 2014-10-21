@@ -274,6 +274,4 @@ public class ReflectPackagePropertiesEditionComponent extends SinglePartProperti
 
 	
 
-	
-
 }

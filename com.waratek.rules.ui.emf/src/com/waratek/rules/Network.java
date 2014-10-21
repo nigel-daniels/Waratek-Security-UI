@@ -65,12 +65,12 @@ public interface Network extends Rule {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
-	 * @see #setPort(int)
+	 * @see #setPort(String)
 	 * @see com.waratek.rules.RulesPackage#getNetwork_Port()
 	 * @model
 	 * @generated
 	 */
-	int getPort();
+	String getPort();
 
 	/**
 	 * Sets the value of the '{@link com.waratek.rules.Network#getPort <em>Port</em>}' attribute.
@@ -80,7 +80,7 @@ public interface Network extends Rule {
 	 * @see #getPort()
 	 * @generated
 	 */
-	void setPort(int value);
+	void setPort(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Network Parameter</b></em>' attribute.

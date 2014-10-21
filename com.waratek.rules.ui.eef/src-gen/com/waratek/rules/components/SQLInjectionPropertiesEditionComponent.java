@@ -271,6 +271,4 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 
 	
 
-	
-
 }

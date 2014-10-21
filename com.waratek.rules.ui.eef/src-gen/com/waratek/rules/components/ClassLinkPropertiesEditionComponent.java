@@ -274,6 +274,4 @@ public class ClassLinkPropertiesEditionComponent extends SinglePartPropertiesEdi
 
 	
 
-	
-
 }

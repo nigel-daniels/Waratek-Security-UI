@@ -274,6 +274,4 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 
 	
 
-	
-
 }

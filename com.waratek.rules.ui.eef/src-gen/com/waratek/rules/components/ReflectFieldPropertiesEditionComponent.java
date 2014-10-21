@@ -326,6 +326,4 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 
 	
 
-	
-
 }

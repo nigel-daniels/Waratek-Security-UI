@@ -297,6 +297,4 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 
 	
 
-	
-
 }

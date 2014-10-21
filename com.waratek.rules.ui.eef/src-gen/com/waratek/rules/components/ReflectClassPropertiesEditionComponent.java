@@ -300,6 +300,4 @@ public class ReflectClassPropertiesEditionComponent extends SinglePartProperties
 
 	
 
-	
-
 }

@@ -64,7 +64,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PORT_EDEFAULT = 0;
+	protected static final String PORT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -74,7 +74,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 * @generated
 	 * @ordered
 	 */
-	protected int port = PORT_EDEFAULT;
+	protected String port = PORT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNetworkParameter() <em>Network Parameter</em>}' attribute.
@@ -141,7 +141,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getPort() {
+	public String getPort() {
 		return port;
 	}
 
@@ -150,8 +150,8 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPort(int newPort) {
-		int oldPort = port;
+	public void setPort(String newPort) {
+		String oldPort = port;
 		port = newPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.NETWORK__PORT, oldPort, port));
@@ -208,7 +208,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 				setHost((String)newValue);
 				return;
 			case RulesPackage.NETWORK__PORT:
-				setPort((Integer)newValue);
+				setPort((String)newValue);
 				return;
 			case RulesPackage.NETWORK__NETWORK_PARAMETER:
 				setNetworkParameter((NetworkParameter)newValue);
@@ -249,7 +249,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 			case RulesPackage.NETWORK__HOST:
 				return HOST_EDEFAULT == null ? host != null : !HOST_EDEFAULT.equals(host);
 			case RulesPackage.NETWORK__PORT:
-				return port != PORT_EDEFAULT;
+				return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
 			case RulesPackage.NETWORK__NETWORK_PARAMETER:
 				return networkParameter != NETWORK_PARAMETER_EDEFAULT;
 		}
