@@ -22,7 +22,7 @@ file:«fileParamName(this.fileParameter.toString())»:«this.path»:«actionName
 
 «DEFINE rule FOR Network-»
 # «idOutput(this.id)» - «commentOutput(this.comment)»
-network:«networkParamName(this.networkParameter.toString())»:«this.host»:«IF this.port != 0»«this.port»«ENDIF»:«actionName(this.action.toString())»:«logName(this.log.toString())»
+network:«networkParamName(this.networkParameter.toString())»:«this.host»:«formatPort(this.port.toString())»:«actionName(this.action.toString())»:«logName(this.log.toString())»
 
 «ENDDEFINE»
 

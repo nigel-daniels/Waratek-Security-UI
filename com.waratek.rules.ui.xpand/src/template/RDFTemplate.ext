@@ -105,4 +105,7 @@ packageNameOutput(String packageName):
 	else 
 		packageName + ".*"
 ; 
-	
+
+String formatPort(String port):
+	JAVA template.RDFUtils.formatPort(java.lang.String)
+;

@@ -5,8 +5,9 @@
   <rules xsi:type="rules:File" path="/usr/local" fileParameter="Execute"/>
   <rules xsi:type="rules:Network" id="01" host="www.example.com" networkParameter="Bind"/>
   <rules xsi:type="rules:Network" id="02" action="Suspend" host="www.example.com" port="8080"/>
-  <rules xsi:type="rules:Network" id="03" action="Shutdown" host="www.example.com" port="8080" networkParameter="ServerBind"/>
-  <rules xsi:type="rules:Network" id="04" action="Destroy" host="www.example.com" port="8080" networkParameter="Accept"/>
+  <rules xsi:type="rules:Network" id="02" action="Suspend" host="www.example.com" port=""/>
+  <rules xsi:type="rules:Network" id="03" action="Shutdown" host="www.example.com" port="a" networkParameter="ServerBind"/>
+  <rules xsi:type="rules:Network" id="04" action="Destroy" host="www.example.com" port="*" networkParameter="Accept"/>
   <rules xsi:type="rules:ReflectPackage" id="05" log="Off" packageName="com.foo.example"/>
   <rules xsi:type="rules:ReflectClass" id="06" log="Info" packageName="com.foo.example" className="Test"/>
   <rules xsi:type="rules:ReflectConstructor" id="07" packageName="www.example.com" className="Test" constructorSignature="Test(S)V"/>

@@ -17,11 +17,14 @@ network:bind:www.example.com::deny:warn
 # 02 - No comment provided
 network:connect:www.example.com:8080:suspend:warn
 
+# 02 - No comment provided
+network:connect:www.example.com::suspend:warn
+
 # 03 - No comment provided
-network:serverbind:www.example.com:8080:shutdown:warn
+network:serverbind:www.example.com::shutdown:warn
 
 # 04 - No comment provided
-network:accept:www.example.com:8080:destroy:warn
+network:accept:www.example.com:*:destroy:warn
 
 # 05 - No comment provided
 reflect:class:com.foo.example.*:deny:off
