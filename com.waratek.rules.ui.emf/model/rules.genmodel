@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2014 Waratek Ltd." modelDirectory="/com.waratek.rules.ui.emf/src"
     modelPluginID="com.waratek.rules.ui.emf" modelName="Rules" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" language=""
-    operationReflection="true" importOrganizing="true">
+    operationReflection="true" runtimePlatform="RCP" importOrganizing="true">
   <foreignModel>../../com.waratek.rules.ui.model/model/rules.ecore</foreignModel>
   <genPackages prefix="Rules" basePackage="com.waratek" disposableProviderFactory="true"
       fileExtensions="rdf" ecorePackage="rules.ecore#/">
