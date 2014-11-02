@@ -6,6 +6,8 @@ package com.waratek.rules.presentation;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.ui.action.WorkbenchWindowActionDelegate;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -36,9 +38,12 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.FileEditorInput;
@@ -66,6 +71,27 @@ public class RulesActionBarContributor
 	 * @generated
 	 */
 	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+
+	/**
+	 * Action to create objects from the Rules model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class NewAction extends WorkbenchWindowActionDelegate {
+		/**
+		 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public void run(IAction action) {
+			RulesModelWizard wizard = new RulesModelWizard();
+			wizard.init(getWindow().getWorkbench(), StructuredSelection.EMPTY);
+			WizardDialog wizardDialog = new WizardDialog(getWindow().getShell(), wizard);
+			wizardDialog.open();
+		}
+	}
 
 	/**
 	 * This keeps track of the active editor.
@@ -178,21 +204,37 @@ public class RulesActionBarContributor
 				    
 				    try {
 				    	// Get the current file being worked on
-				    	FileEditorInput input = (FileEditorInput)activeEditorPart.getEditorInput();
-				    	URI fileURI = URI.createPlatformResourceURI(input.getFile().getFullPath().toString(), true);
+				    	IEditorInput input = activeEditorPart.getEditorInput();
+				    	ResourceSet resourceSet = new ResourceSetImpl();
+				    	Resource resource = null;
+				 
+				    	// MOD updated to handle both plugin and RCP environments
+				    	if (input instanceof FileEditorInput)
+				    		{
+				    		URI fileURI = URI.createPlatformResourceURI(((FileEditorInput)input).getPath().toString(), true);
+				    		resource = resourceSet.createResource(fileURI);
+				    		}
+				    	else if (input instanceof URIEditorInput)
+				    		{
+				    		resource = resourceSet.createResource(((URIEditorInput) input).getURI());
+				    		resource.load(null);
+				    		}
 				    	
 				    	// Now get the content from the resource
-				    	ResourceSet resourceSet = new ResourceSetImpl();
-				    	Resource resource = resourceSet.getResource(fileURI, true);
-				    	Object RulesContent = resource.getContents().get(0);
-				    	
-				    	// Now create the Xpand facade and perform the transform
-				    	Object[] params = null;
-				    	
-				    	XpandFacade xpandFacade = XpandFacade.create(executionContext);
-				    	xpandFacade.evaluate("template::RDFTemplate::main", RulesContent, params);
-				    	
-				    	MessageDialog.openInformation(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_message"), (Object)null) + outputPath);
+				    	if (resource != null)
+					    	{
+					    	Object RulesContent = resource.getContents().get(0);
+					    	
+					    	// Now create the Xpand facade and perform the transform
+					    	Object[] params = null;
+					    	
+					    	XpandFacade xpandFacade = XpandFacade.create(executionContext);
+					    	xpandFacade.evaluate("template::RDFTemplate::main", RulesContent, params);
+					    	
+					    	MessageDialog.openInformation(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_message"), (Object)null) + outputPath);
+					    	}
+				    	else
+				    		{MessageDialog.openError(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_message"), (Object)null) + " The resource could not be loaded.");}
 				    }
 				    catch (Exception e) {
 				    	MessageDialog.openError(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_message"), (Object)null) + e.getLocalizedMessage());
@@ -489,7 +531,7 @@ public class RulesActionBarContributor
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated  NOT
 	 */
 	@Override
 	protected void addGlobalActions(IMenuManager menuManager) {

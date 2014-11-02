@@ -7,22 +7,90 @@
 
 <plugin>
 
-   <extension point="org.eclipse.ui.newWizards">
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="RulesEditorAdvisorApplication">
       <!-- @generated rules -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="com.waratek.rules.presentation.RulesModelWizardID"
-            name="%_UI_RulesModelWizard_label"
-            class="com.waratek.rules.presentation.RulesModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/RulesModelFile.gif">
-         <description>%_UI_RulesModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
+      <application>
+         <run class="com.waratek.rules.presentation.RulesEditorAdvisor$Application"/>
+      </application>
    </extension>
 
+
+   <extension point="org.eclipse.ui.perspectives">
+      <!-- @generated rules -->
+      <perspective
+            name="%_UI_Perspective_label"
+            class="com.waratek.rules.presentation.RulesEditorAdvisor$Perspective"
+            id="com.waratek.rules.presentation.RulesEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- @generated rules -->
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.waratek.rules.presentation.RulesEditorAdvisorOpenURICommand"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.waratek.rules.presentation.RulesEditorAdvisorOpenCommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- @generated rules -->
+      <key
+            commandId="com.waratek.rules.presentation.RulesEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="com.waratek.rules.presentation.RulesEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated rules -->
+      <actionSet
+            label="%_UI_RulesEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="RulesEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="com.waratek.rules.presentation.RulesEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="com.waratek.rules.presentation.RulesEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="com.waratek.rules.presentation.RulesEditorAdvisorOpenURICommand"
+               class="com.waratek.rules.presentation.RulesEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="com.waratek.rules.presentation.RulesEditorAdvisorOpenURIAction"/>
+         <action
+               label="%_UI_Menu_Open_label"
+               definitionId="com.waratek.rules.presentation.RulesEditorAdvisorOpenCommand"
+               class="com.waratek.rules.presentation.RulesEditorAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="com.waratek.rules.presentation.RulesEditorAdvisorOpenAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated rules -->
+      <actionSet
+            label="%_UI_RulesModelWizard_ActionSet_label"
+            visible="true"
+            id="com.waratek.rules.presentation.RulesActionBarContributorActionSet">
+         <action
+               label="%_UI_RulesModelWizard_label"
+               class="com.waratek.rules.presentation.RulesActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="com.waratek.rules.presentation.RulesActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
    <extension point="org.eclipse.ui.editors">
       <!-- @generated rules -->
       <editor
@@ -33,6 +101,47 @@
             class="com.waratek.rules.presentation.RulesEditor"
             contributorClass="com.waratek.rules.presentation.RulesActionBarContributor">
       </editor>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.waratek.rules.ui.emf.editor.RulesEditorAdvisorApplication"
+            description="%productDescription"
+            name="Rules Builder">
+         <property
+               name="appName"
+               value="Rules Builder">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/icon_16.gif,icons/icon_32.gif,icons/icon_48.gif,icons/icon_64.gif,icons/icon_128.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/icon_128.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="The Waratek Rules Builder is used to create custom rules for the Waratek Secure VM for Java.">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="FFFFFF">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
    </extension>
 
 </plugin>
