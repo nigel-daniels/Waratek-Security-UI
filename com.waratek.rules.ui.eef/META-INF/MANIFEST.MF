@@ -5,7 +5,7 @@ Bundle-SymbolicName: com.waratek.rules.ui.eef;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: com.waratek.rules.ui.emf;bundle-version="1.0.0",
  org.eclipse.core.runtime;bundle-version="3.9.100",
  org.eclipse.emf.eef.runtime;bundle-version="1.2.0"
