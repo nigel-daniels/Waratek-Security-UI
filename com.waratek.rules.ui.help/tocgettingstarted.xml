@@ -2,8 +2,11 @@
 <?NLS TYPE="org.eclipse.help.toc"?>
 
 <toc label="Getting Started" link_to="toc.xml#gettingstarted"> 
-	<topic label="Introduction" href="html/gettingstarted/gettingstarted.html"/>
-	<topic label="Installing" href="html/gettingstarted/gettingstarted.html#install"/>
-	<topic label="Adding the Repository" href="html/gettingstarted/gettingstarted.html#repository"/>
-	<topic label="Uninstalling" href="html/gettingstarted/gettingstarted.html#uninstall"/>
+	<topic href="html/gettingstarted/gettingstarted.html" label="Introduction">
+ </topic>
+ <topic href="html/gettingstarted/gettingstarted.html#desktop" label="Installing the destop application">
+ </topic>
+	<topic label="Installing the Eclipse feature" href="html/gettingstarted/gettingstarted.html#install"/>
+	<topic label="Adding the feature repository" href="html/gettingstarted/gettingstarted.html#repository"/>
+	<topic label="Uninstalling the Eclipse feature" href="html/gettingstarted/gettingstarted.html#uninstall"/>
 </toc>

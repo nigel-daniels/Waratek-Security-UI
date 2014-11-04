@@ -2,11 +2,13 @@ Waratek Security Rules Editor
 =============================
 
 anchor:overview[]
-The Waratek Locker and Waratek Application Security for Java can both use customized rules to help protect your business services.  However manually customizing rules requires that the entire rule file is correct so that the rules engine can read the entire set.  To make the creation of the rules simpler and safer Waratek has created a rules authoring editor that runs in the popular Eclipse environment.
+The Waratek Locker and Waratek AppSec for Java can both use customized rules to help protect your business services.  However manually customizing rules requires that the entire rule file is correct so that the rules engine can read the entire set.  To make the creation of the rules simpler and safer Waratek has created a rules authoring editor that runs on your desktop or in the popular Eclipse environment.
 
-This rules editor is free for anyone to use and has is supported in the current Eclipse Lunar (R and SR1) releases and the previous Eclipse Kepler (SR2).  These can be downloaded from the https://www.eclipse.org[Eclipse] website and are currently required to run the editor.
+This rules editor is free for anyone to use and has is supported on Windows, Mac OS X and Linux, the plugins run in the current Eclipse Lunar (R and SR1) releases and the previous Eclipse Kepler (SR2).  These can be downloaded from the https://www.eclipse.org[Eclipse] website.
 
-To run the Waratek Security Rules Editor first install you selected Eclipse platform.  Having done this you can use the built in Eclipse Install and update mechanism; this installed the authoring environment and ensures any missing dependencies are automatically installed on your behalf.  This authoring environment relies on:
+To run the Waratek Security Rules Editor simply download the version for your preferred Operating system.
+
+To run the Waratek Security Rules Editor in Eclipse first install your selected Eclipse platform.  Having done this you can use the built in Eclipse Install and update mechanism; this installes the editing environment and ensures any missing dependencies are automatically installed on your behalf.  This environment relies on:
 
 * Eclipse Modeling Framework (EMF) SDK V 2.9.2
 * Eclipse Extended Editor Framework (EEF) runtime V 1.2.0
@@ -17,9 +19,39 @@ ____
 The Waratek Security Rules Editor is released under the  https://www.eclipse.org/legal/epl-v10.html[Eclipse Public License V1.0].  If you are interested in viewing and/or downloading the source code this can be found on GitHub  https://github.com/nigel-daniels/Waratek-Security-UI[here].
 ____
 
+Desktop Version
+---------------
 
 Installation Steps
-------------------
+~~~~~~~~~~~~~~~~~~
+anchor:desktop[]
+If you have an older version of the editor installed either archive or delete the older version of the editor by compressing or deleting the existing Waratek directory.
+
+To install the standalone desktop version of the editor download the version of the tool appropriate for your operating system.  The download is in a zipped format, unpack the zip file and copy the resulting 'Waratek' folder to your OSs preferred application location.  Some recommended configurations are:
+
+Windows
+^^^^^^^
+. Move the 'Waratek' folder into 'C:\Program Files'.
+. Start the application by double clicking the 'SecurityRulesEditor.exe' file.
+. You may configure a short cut to this file to make launching easier.
+ 
+Mac OS X
+^^^^^^^^
+. Move the 'Waratek' folder into your 'Applications' folder.
+. Start the application by double clicking the 'SecurityRulesEditor' file.
+. The application will show up in 'Launchpad' and can be dragged onto the dock.
+
+Linux
+^^^^^
+. Move the 'Waratek' folder to your preferred location.
+. Start the application by double clicking the 'SecurityRulesEditor' file.
+. A link to the application can be added to your preferred windows manager launcher and the 'icon.xpm' associated with it to identify the link.
+
+Eclipse Version
+---------------
+
+Installation Steps
+~~~~~~~~~~~~~~~~~~
 anchor:install[]
 If you already have an older version of the tool installed, first refer to uninstalling the tooling below.
 
@@ -43,7 +75,7 @@ During the process you may be asked if it is ok to allow eclipse to accept incom
 
 
 Setting up the Repository
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 anchor:repository[]
 The Eclipse install process uses on line repositories to download new capabilities into the Eclipse platform.  The sites contain all of the information and resources the install needs to complete the installation process. To add the Waratek update site follow the steps below:
 
@@ -57,7 +89,7 @@ The Eclipse install process uses on line repositories to download new capabiliti
 	
 
 Uninstalling the Tooling
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 anchor:uninstall[]
 Future releases and updates to the Waratek Security Editor for the Security Rules Version 1.0 will be made as an update via the install and update mechanism. However major version changes may be installed along side or in place of previous versions.  If you would prefer to uninstall a previous version of the editor follow the steps below:
 

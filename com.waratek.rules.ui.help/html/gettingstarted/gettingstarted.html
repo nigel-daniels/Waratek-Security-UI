@@ -739,9 +739,10 @@ asciidoc.install();
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph"><p><a id="overview"></a>
-The Waratek Locker and Waratek Application Security for Java can both use customized rules to help protect your business services.  However manually customizing rules requires that the entire rule file is correct so that the rules engine can read the entire set.  To make the creation of the rules simpler and safer Waratek has created a rules authoring editor that runs in the popular Eclipse environment.</p></div>
-<div class="paragraph"><p>This rules editor is free for anyone to use and has is supported in the current Eclipse Lunar (R and SR1) releases and the previous Eclipse Kepler (SR2).  These can be downloaded from the <a href="https://www.eclipse.org">Eclipse</a> website and are currently required to run the editor.</p></div>
-<div class="paragraph"><p>To run the Waratek Security Rules Editor first install you selected Eclipse platform.  Having done this you can use the built in Eclipse Install and update mechanism; this installed the authoring environment and ensures any missing dependencies are automatically installed on your behalf.  This authoring environment relies on:</p></div>
+The Waratek Locker and Waratek AppSec for Java can both use customized rules to help protect your business services.  However manually customizing rules requires that the entire rule file is correct so that the rules engine can read the entire set.  To make the creation of the rules simpler and safer Waratek has created a rules authoring editor that runs on your desktop or in the popular Eclipse environment.</p></div>
+<div class="paragraph"><p>This rules editor is free for anyone to use and has is supported on Windows, Mac OS X and Linux, the plugins run in the current Eclipse Lunar (R and SR1) releases and the previous Eclipse Kepler (SR2).  These can be downloaded from the <a href="https://www.eclipse.org">Eclipse</a> website.</p></div>
+<div class="paragraph"><p>To run the Waratek Security Rules Editor simply download the version for your preferred Operating system.</p></div>
+<div class="paragraph"><p>To run the Waratek Security Rules Editor in Eclipse first install your selected Eclipse platform.  Having done this you can use the built in Eclipse Install and update mechanism; this installes the editing environment and ensures any missing dependencies are automatically installed on your behalf.  This environment relies on:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -769,8 +770,81 @@ The Waratek Security Rules Editor is released under the  <a href="https://www.ec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installation_steps">Installation Steps</h2>
+<h2 id="_desktop_version">Desktop Version</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_installation_steps">Installation Steps</h3>
+<div class="paragraph"><p><a id="desktop"></a>
+If you have an older version of the editor installed either archive or delete the older version of the editor by compressing or deleting the existing Waratek directory.</p></div>
+<div class="paragraph"><p>To install the standalone desktop version of the editor download the version of the tool appropriate for your operating system.  The download is in a zipped format, unpack the zip file and copy the resulting <em>Waratek</em> folder to your OSs preferred application location.  Some recommended configurations are:</p></div>
+<div class="sect3">
+<h4 id="_windows">Windows</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Move the <em>Waratek</em> folder into <em>C:\Program Files</em>.
+</p>
+</li>
+<li>
+<p>
+Start the application by double clicking the <em>SecurityRulesEditor.exe</em> file.
+</p>
+</li>
+<li>
+<p>
+You may configure a short cut to this file to make launching easier.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_mac_os_x">Mac OS X</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Move the <em>Waratek</em> folder into your <em>Applications</em> folder.
+</p>
+</li>
+<li>
+<p>
+Start the application by double clicking the <em>SecurityRulesEditor</em> file.
+</p>
+</li>
+<li>
+<p>
+The application will show up in <em>Launchpad</em> and can be dragged onto the dock.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_linux">Linux</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Move the <em>Waratek</em> folder to your preferred location.
+</p>
+</li>
+<li>
+<p>
+Start the application by double clicking the <em>SecurityRulesEditor</em> file.
+</p>
+</li>
+<li>
+<p>
+A link to the application can be added to your preferred windows manager launcher and the <em>icon.xpm</em> associated with it to identify the link.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_eclipse_version">Eclipse Version</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_installation_steps_2">Installation Steps</h3>
 <div class="paragraph"><p><a id="install"></a>
 If you already have an older version of the tool installed, first refer to uninstalling the tooling below.</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -828,10 +902,8 @@ During the process you may be presented with a Security Warning that you are ins
 During the process you may be asked if it is ok to allow eclipse to accept incoming connections, this is due to the Eclipse help system using the Jetty web server to serve the help pages. Select Ok if you see this dialog unless you are ok to work without the helps system.</p></div>
 </div></div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_setting_up_the_repository">Setting up the Repository</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_setting_up_the_repository">Setting up the Repository</h3>
 <div class="paragraph"><p><a id="repository"></a>
 The Eclipse install process uses on line repositories to download new capabilities into the Eclipse platform.  The sites contain all of the information and resources the install needs to complete the installation process. To add the Waratek update site follow the steps below:</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -866,10 +938,8 @@ cellspacing="0" cellpadding="4">
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_uninstalling_the_tooling">Uninstalling the Tooling</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_uninstalling_the_tooling">Uninstalling the Tooling</h3>
 <div class="paragraph"><p><a id="uninstall"></a>
 Future releases and updates to the Waratek Security Editor for the Security Rules Version 1.0 will be made as an update via the install and update mechanism. However major version changes may be installed along side or in place of previous versions.  If you would prefer to uninstall a previous version of the editor follow the steps below:</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -902,10 +972,11 @@ Once the uninstall has completed you will be asked to restart Eclipse. It is rec
 </div>
 </div>
 </div>
+</div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-10-16 12:41:22 PDT
+Last updated 2014-11-04 10:27:08 PST
 </div>
 </div>
 </body>
