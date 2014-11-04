@@ -196,6 +196,13 @@ public final class RulesEditorAdvisor extends WorkbenchAdvisor {
 		}
 		
 		/**
+		 * MOD Added this to suppress the search menu
+		 */
+		@Override
+		public void postWindowOpen() {
+			PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().hideActionSet( "org.eclipse.search.searchActionSet");
+		}
+		/**
 		 * @see org.eclipse.ui.application.WorkbenchWindowAdvisor#createActionBarAdvisor(org.eclipse.ui.application.IActionBarConfigurer)
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
