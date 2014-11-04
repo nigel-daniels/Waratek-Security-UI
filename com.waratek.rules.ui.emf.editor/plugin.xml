@@ -108,10 +108,10 @@
       <product
             application="com.waratek.rules.ui.emf.editor.RulesEditorAdvisorApplication"
             description="%productDescription"
-            name="Rules Builder">
+            name="Security Rules Editor">
          <property
                name="appName"
-               value="Rules Builder">
+               value="Security Rules Editor">
          </property>
          <property
                name="windowImages"
@@ -123,7 +123,7 @@
          </property>
          <property
                name="aboutText"
-               value="The Waratek Rules Builder is used to create custom rules for the Waratek Secure VM for Java.">
+               value="The Waratek Security Rules Editor is used to create custom rules for Waratek AppSec for Java and Waratek Locker.">
          </property>
          <property
                name="startupForegroundColor"
