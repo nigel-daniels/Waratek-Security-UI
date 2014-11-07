@@ -7,6 +7,8 @@
       <image path="/com.waratek.rules.ui.emf.editor/icons/icon_128.gif"/>
       <text>
          The Waratek Security Rules Editor is used to create custom rules for Waratek AppSec for Java and Waratek Locker.
+
+Waratek, Waratek AppSecurity for Java, Waratek Locker and Waratek Security Rules Editor are Trademarks of Waratek and may not be used without written permission.
       </text>
    </aboutInfo>
 
