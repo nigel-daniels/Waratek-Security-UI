@@ -5,9 +5,7 @@ package com.waratek.rules.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import org.eclipse.emf.common.ui.URIEditorInput;
-import org.eclipse.emf.common.ui.action.WorkbenchWindowActionDelegate;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -38,9 +36,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
@@ -53,7 +49,6 @@ import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xpand2.output.Output;
 import org.eclipse.xpand2.output.OutputImpl;
 import org.eclipse.xtend.typesystem.emf.EmfMetaModel;
-
 import com.waratek.rules.RulesPackage;
 
 /**
@@ -70,28 +65,7 @@ public class RulesActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
-
-	/**
-	 * Action to create objects from the Rules model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class NewAction extends WorkbenchWindowActionDelegate {
-		/**
-		 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public void run(IAction action) {
-			RulesModelWizard wizard = new RulesModelWizard();
-			wizard.init(getWindow().getWorkbench(), StructuredSelection.EMPTY);
-			WizardDialog wizardDialog = new WizardDialog(getWindow().getShell(), wizard);
-			wizardDialog.open();
-		}
-	}
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This keeps track of the active editor.

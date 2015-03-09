@@ -6,7 +6,6 @@ package com.waratek.rules.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -18,7 +17,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import com.waratek.rules.RulesPackage;
 import com.waratek.rules.SQLInjection;
 
@@ -41,7 +39,7 @@ public class SQLInjectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -113,13 +111,8 @@ public class SQLInjectionItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		SQLInjection sqlInjection = (SQLInjection)object;
-		
-		label.append(sqlInjection.getId() + " - ");
+
 		label.append(sqlInjection.getDatabase().toString() + ":" + sqlInjection.getAction().toString() + ":" + sqlInjection.getLog().toString());
-		
-		if (sqlInjection.getComment() != null)
-			if (!sqlInjection.getComment().isEmpty())
-				{label.append(" - " + sqlInjection.getComment());}
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_SQLInjection_type") :

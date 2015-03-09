@@ -32,7 +32,7 @@ public class ReflectConstructorImpl extends ReflectionImpl implements ReflectCon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.

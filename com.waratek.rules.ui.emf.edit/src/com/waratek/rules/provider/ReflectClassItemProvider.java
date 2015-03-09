@@ -41,7 +41,7 @@ public class ReflectClassItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -113,13 +113,8 @@ public class ReflectClassItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		ReflectClass reflectClass = (ReflectClass)object;
-		
-		label.append(reflectClass.getId() + " - ");
+
 		label.append(reflectClass.getPackageName() + ":" + reflectClass.getClassName() + ":" + reflectClass.getAction().toString() + ":" + reflectClass.getLog().toString());
-		
-		if (reflectClass.getComment() != null)
-			if (!reflectClass.getComment().isEmpty())
-				{label.append(" - " + reflectClass.getComment());}
 		
 		return label == null || label.length() == 0 ?
 			getString("_UI_ReflectClass_type") :

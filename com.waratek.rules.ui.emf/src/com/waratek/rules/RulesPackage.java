@@ -31,7 +31,7 @@ public interface RulesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright 2014 Waratek Ltd.";
+	String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The package name.
@@ -47,7 +47,7 @@ public interface RulesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.waratek.com/rules/1.0";
+	String eNS_URI = "http://www.waratek.com/rules/1.1";
 
 	/**
 	 * The package namespace name.
@@ -76,13 +76,13 @@ public interface RulesPackage extends EPackage {
 	int RULE_DOCUMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_DOCUMENT__NAME = 0;
+	int RULE_DOCUMENT__VERSION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -94,13 +94,13 @@ public interface RulesPackage extends EPackage {
 	int RULE_DOCUMENT__RULES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Scope</b></em>' attribute.
+	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_DOCUMENT__SCOPE = 2;
+	int RULE_DOCUMENT__COMMENTS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Rule Document</em>' class.
@@ -131,31 +131,13 @@ public interface RulesPackage extends EPackage {
 	int RULE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__COMMENT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__ACTION = 2;
+	int RULE__ACTION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Log</b></em>' attribute.
@@ -164,7 +146,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__LOG = 3;
+	int RULE__LOG = 1;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -173,7 +155,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_FEATURE_COUNT = 4;
+	int RULE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Rule</em>' class.
@@ -193,24 +175,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int FILE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__COMMENT = RULE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -275,24 +239,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int NETWORK = 3;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK__COMMENT = RULE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -368,24 +314,6 @@ public interface RulesPackage extends EPackage {
 	int REFLECTION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECTION__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECTION__COMMENT = RULE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,24 +369,6 @@ public interface RulesPackage extends EPackage {
 	int REFLECT_PACKAGE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE__ID = REFLECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE__COMMENT = REFLECTION__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -512,24 +422,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int REFLECT_CLASS = 6;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS__ID = REFLECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS__COMMENT = REFLECTION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -594,24 +486,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int REFLECT_CONSTRUCTOR = 7;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__ID = REFLECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__COMMENT = REFLECTION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -687,24 +561,6 @@ public interface RulesPackage extends EPackage {
 	int REFLECT_METHOD = 8;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__ID = REFLECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__COMMENT = REFLECTION__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -776,24 +632,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int REFLECT_FIELD = 9;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__ID = REFLECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__COMMENT = REFLECTION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -869,24 +707,6 @@ public interface RulesPackage extends EPackage {
 	int THROWABLE_CLASS = 10;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THROWABLE_CLASS__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THROWABLE_CLASS__COMMENT = RULE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -942,24 +762,6 @@ public interface RulesPackage extends EPackage {
 	int CLASS_LINK = 11;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_LINK__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_LINK__COMMENT = RULE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1013,24 +815,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int NATIVE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NATIVE__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NATIVE__COMMENT = RULE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -1097,24 +881,6 @@ public interface RulesPackage extends EPackage {
 	int SQL_INJECTION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SQL_INJECTION__ID = RULE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SQL_INJECTION__COMMENT = RULE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1160,6 +926,43 @@ public interface RulesPackage extends EPackage {
 	int SQL_INJECTION_OPERATION_COUNT = RULE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link com.waratek.rules.impl.CommentImpl <em>Comment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.impl.CommentImpl
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getComment()
+	 * @generated
+	 */
+	int COMMENT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.waratek.rules.FileParameter <em>File Parameter</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1167,7 +970,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getFileParameter()
 	 * @generated
 	 */
-	int FILE_PARAMETER = 14;
+	int FILE_PARAMETER = 15;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.NetworkParameter <em>Network Parameter</em>}' enum.
@@ -1177,7 +980,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getNetworkParameter()
 	 * @generated
 	 */
-	int NETWORK_PARAMETER = 15;
+	int NETWORK_PARAMETER = 16;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Action <em>Action</em>}' enum.
@@ -1187,7 +990,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 16;
+	int ACTION = 17;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Log <em>Log</em>}' enum.
@@ -1197,17 +1000,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getLog()
 	 * @generated
 	 */
-	int LOG = 17;
-
-	/**
-	 * The meta object id for the '{@link com.waratek.rules.Scope <em>Scope</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.Scope
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getScope()
-	 * @generated
-	 */
-	int SCOPE = 18;
+	int LOG = 18;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Database <em>Database</em>}' enum.
@@ -1221,6 +1014,17 @@ public interface RulesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link com.waratek.rules.Version <em>Version</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.Version
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getVersion()
+	 * @generated
+	 */
+	int VERSION = 20;
+
+
+	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.RuleDocument <em>Rule Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1231,15 +1035,15 @@ public interface RulesPackage extends EPackage {
 	EClass getRuleDocument();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.RuleDocument#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.RuleDocument#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see com.waratek.rules.RuleDocument#getName()
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see com.waratek.rules.RuleDocument#getVersion()
 	 * @see #getRuleDocument()
 	 * @generated
 	 */
-	EAttribute getRuleDocument_Name();
+	EAttribute getRuleDocument_Version();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link com.waratek.rules.RuleDocument#getRules <em>Rules</em>}'.
@@ -1253,15 +1057,15 @@ public interface RulesPackage extends EPackage {
 	EReference getRuleDocument_Rules();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.RuleDocument#getScope <em>Scope</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.waratek.rules.RuleDocument#getComments <em>Comments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scope</em>'.
-	 * @see com.waratek.rules.RuleDocument#getScope()
+	 * @return the meta object for the containment reference list '<em>Comments</em>'.
+	 * @see com.waratek.rules.RuleDocument#getComments()
 	 * @see #getRuleDocument()
 	 * @generated
 	 */
-	EAttribute getRuleDocument_Scope();
+	EReference getRuleDocument_Comments();
 
 	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.Rule <em>Rule</em>}'.
@@ -1272,28 +1076,6 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.Rule#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see com.waratek.rules.Rule#getId()
-	 * @see #getRule()
-	 * @generated
-	 */
-	EAttribute getRule_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.Rule#getComment <em>Comment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Comment</em>'.
-	 * @see com.waratek.rules.Rule#getComment()
-	 * @see #getRule()
-	 * @generated
-	 */
-	EAttribute getRule_Comment();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.waratek.rules.Rule#getAction <em>Action</em>}'.
@@ -1636,6 +1418,27 @@ public interface RulesPackage extends EPackage {
 	EAttribute getSQLInjection_Database();
 
 	/**
+	 * Returns the meta object for class '{@link com.waratek.rules.Comment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Comment</em>'.
+	 * @see com.waratek.rules.Comment
+	 * @generated
+	 */
+	EClass getComment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.Comment#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see com.waratek.rules.Comment#getComment()
+	 * @see #getComment()
+	 * @generated
+	 */
+	EAttribute getComment_Comment();
+
+	/**
 	 * Returns the meta object for enum '{@link com.waratek.rules.FileParameter <em>File Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1676,16 +1479,6 @@ public interface RulesPackage extends EPackage {
 	EEnum getLog();
 
 	/**
-	 * Returns the meta object for enum '{@link com.waratek.rules.Scope <em>Scope</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Scope</em>'.
-	 * @see com.waratek.rules.Scope
-	 * @generated
-	 */
-	EEnum getScope();
-
-	/**
 	 * Returns the meta object for enum '{@link com.waratek.rules.Database <em>Database</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1694,6 +1487,16 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDatabase();
+
+	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.Version <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Version</em>'.
+	 * @see com.waratek.rules.Version
+	 * @generated
+	 */
+	EEnum getVersion();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1729,12 +1532,12 @@ public interface RulesPackage extends EPackage {
 		EClass RULE_DOCUMENT = eINSTANCE.getRuleDocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RULE_DOCUMENT__NAME = eINSTANCE.getRuleDocument_Name();
+		EAttribute RULE_DOCUMENT__VERSION = eINSTANCE.getRuleDocument_Version();
 
 		/**
 		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
@@ -1745,12 +1548,12 @@ public interface RulesPackage extends EPackage {
 		EReference RULE_DOCUMENT__RULES = eINSTANCE.getRuleDocument_Rules();
 
 		/**
-		 * The meta object literal for the '<em><b>Scope</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Comments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RULE_DOCUMENT__SCOPE = eINSTANCE.getRuleDocument_Scope();
+		EReference RULE_DOCUMENT__COMMENTS = eINSTANCE.getRuleDocument_Comments();
 
 		/**
 		 * The meta object literal for the '{@link com.waratek.rules.impl.RuleImpl <em>Rule</em>}' class.
@@ -1761,22 +1564,6 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RULE = eINSTANCE.getRule();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RULE__ID = eINSTANCE.getRule_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RULE__COMMENT = eINSTANCE.getRule_Comment();
 
 		/**
 		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
@@ -2059,6 +1846,24 @@ public interface RulesPackage extends EPackage {
 		EAttribute SQL_INJECTION__DATABASE = eINSTANCE.getSQLInjection_Database();
 
 		/**
+		 * The meta object literal for the '{@link com.waratek.rules.impl.CommentImpl <em>Comment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.impl.CommentImpl
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getComment()
+		 * @generated
+		 */
+		EClass COMMENT = eINSTANCE.getComment();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMENT__COMMENT = eINSTANCE.getComment_Comment();
+
+		/**
 		 * The meta object literal for the '{@link com.waratek.rules.FileParameter <em>File Parameter</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2099,16 +1904,6 @@ public interface RulesPackage extends EPackage {
 		EEnum LOG = eINSTANCE.getLog();
 
 		/**
-		 * The meta object literal for the '{@link com.waratek.rules.Scope <em>Scope</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.Scope
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getScope()
-		 * @generated
-		 */
-		EEnum SCOPE = eINSTANCE.getScope();
-
-		/**
 		 * The meta object literal for the '{@link com.waratek.rules.Database <em>Database</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2117,6 +1912,16 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DATABASE = eINSTANCE.getDatabase();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.Version <em>Version</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.Version
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getVersion()
+		 * @generated
+		 */
+		EEnum VERSION = eINSTANCE.getVersion();
 
 	}
 

@@ -8,7 +8,7 @@ import com.waratek.rules.util.RulesAdapterFactory;
 import org.eclipse.emf.common.notify.Adapter;
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class RulesEEFAdapterFactory extends RulesAdapterFactory {
@@ -108,6 +108,14 @@ public class RulesEEFAdapterFactory extends RulesAdapterFactory {
 	 */
 	public Adapter createSQLInjectionAdapter() {
 		return new SQLInjectionPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see com.waratek.rules.util.RulesAdapterFactory#createCommentAdapter()
+	 * 
+	 */
+	public Adapter createCommentAdapter() {
+		return new CommentPropertiesEditionProvider();
 	}
 
 }

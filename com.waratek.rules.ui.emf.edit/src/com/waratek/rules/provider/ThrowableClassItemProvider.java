@@ -41,7 +41,7 @@ public class ThrowableClassItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -113,13 +113,8 @@ public class ThrowableClassItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		ThrowableClass throwableClass = (ThrowableClass)object;
-		
-		label.append(throwableClass.getId() + " - ");
+
 		label.append(throwableClass.getClassName() + ":" + throwableClass.getAction().toString() + ":" + throwableClass.getLog().toString());
-		
-		if (throwableClass.getComment() != null)
-			if (!throwableClass.getComment().isEmpty())
-				{label.append(" - " + throwableClass.getComment());}
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_ThrowableClass_type") :

@@ -41,7 +41,7 @@ public class ReflectMethodItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -136,13 +136,8 @@ public class ReflectMethodItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		ReflectMethod reflectMethod = (ReflectMethod)object;
-		
-		label.append(reflectMethod.getId() + " - ");
+
 		label.append(reflectMethod.getPackageName() + ":" + reflectMethod.getClassName() + ":" + reflectMethod.getMethodSignature() + ":" + reflectMethod.getAction().toString() + ":" + reflectMethod.getLog().toString());
-		
-		if (reflectMethod.getComment() != null)
-			if (!reflectMethod.getComment().isEmpty())
-				{label.append(" - " + reflectMethod.getComment());}
 		
 		return label == null || label.length() == 0 ?
 			getString("_UI_ReflectMethod_type") :

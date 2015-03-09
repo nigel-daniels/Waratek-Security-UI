@@ -64,13 +64,11 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class ReflectPackagePropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, ReflectPackagePropertiesEditionPart {
 
-	protected Text id;
-	protected Text comment;
 	protected EMFComboViewer action;
 	protected EMFComboViewer log;
 	protected Text packageName;
@@ -119,8 +117,6 @@ public class ReflectPackagePropertiesEditionPartForm extends SectionPropertiesEd
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
 		CompositionSequence reflectPackageStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = reflectPackageStep.addStep(RulesViewsRepository.ReflectPackage.Properties.class);
-		propertiesStep.addStep(RulesViewsRepository.ReflectPackage.Properties.id);
-		propertiesStep.addStep(RulesViewsRepository.ReflectPackage.Properties.comment);
 		propertiesStep.addStep(RulesViewsRepository.ReflectPackage.Properties.action);
 		propertiesStep.addStep(RulesViewsRepository.ReflectPackage.Properties.log);
 		propertiesStep.addStep(RulesViewsRepository.ReflectPackage.Properties.packageName);
@@ -132,12 +128,6 @@ public class ReflectPackagePropertiesEditionPartForm extends SectionPropertiesEd
 			public Composite addToPart(Composite parent, Object key) {
 				if (key == RulesViewsRepository.ReflectPackage.Properties.class) {
 					return createPropertiesGroup(widgetFactory, parent);
-				}
-				if (key == RulesViewsRepository.ReflectPackage.Properties.id) {
-					return createIdText(widgetFactory, parent);
-				}
-				if (key == RulesViewsRepository.ReflectPackage.Properties.comment) {
-					return createCommentText(widgetFactory, parent);
 				}
 				if (key == RulesViewsRepository.ReflectPackage.Properties.action) {
 					return createActionEMFComboViewer(widgetFactory, parent);
@@ -168,142 +158,6 @@ public class ReflectPackagePropertiesEditionPartForm extends SectionPropertiesEd
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		propertiesSection.setClient(propertiesGroup);
 		return propertiesGroup;
-	}
-
-	
-	protected Composite createIdText(FormToolkit widgetFactory, Composite parent) {
-		createDescription(parent, RulesViewsRepository.ReflectPackage.Properties.id, RulesMessages.ReflectPackagePropertiesEditionPart_IdLabel);
-		id = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		id.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
-		GridData idData = new GridData(GridData.FILL_HORIZONTAL);
-		id.setLayoutData(idData);
-		id.addFocusListener(new FocusAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
-							ReflectPackagePropertiesEditionPartForm.this,
-							RulesViewsRepository.ReflectPackage.Properties.id,
-							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
-					propertiesEditionComponent
-							.firePropertiesChanged(new PropertiesEditionEvent(
-									ReflectPackagePropertiesEditionPartForm.this,
-									RulesViewsRepository.ReflectPackage.Properties.id,
-									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
-									null, id.getText()));
-				}
-			}
-
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
-			 */
-			@Override
-			public void focusGained(FocusEvent e) {
-				if (propertiesEditionComponent != null) {
-					propertiesEditionComponent
-							.firePropertiesChanged(new PropertiesEditionEvent(
-									ReflectPackagePropertiesEditionPartForm.this,
-									null,
-									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
-									null, null));
-				}
-			}
-		});
-		id.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReflectPackagePropertiesEditionPartForm.this, RulesViewsRepository.ReflectPackage.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
-				}
-			}
-		});
-		EditingUtils.setID(id, RulesViewsRepository.ReflectPackage.Properties.id);
-		EditingUtils.setEEFtype(id, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.ReflectPackage.Properties.id, RulesViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		// Start of user code for createIdText
-
-		// End of user code
-		return parent;
-	}
-
-	
-	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
-		createDescription(parent, RulesViewsRepository.ReflectPackage.Properties.comment, RulesMessages.ReflectPackagePropertiesEditionPart_CommentLabel);
-		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
-		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
-		comment.setLayoutData(commentData);
-		comment.addFocusListener(new FocusAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
-							ReflectPackagePropertiesEditionPartForm.this,
-							RulesViewsRepository.ReflectPackage.Properties.comment,
-							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-					propertiesEditionComponent
-							.firePropertiesChanged(new PropertiesEditionEvent(
-									ReflectPackagePropertiesEditionPartForm.this,
-									RulesViewsRepository.ReflectPackage.Properties.comment,
-									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
-									null, comment.getText()));
-				}
-			}
-
-			/**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
-			 */
-			@Override
-			public void focusGained(FocusEvent e) {
-				if (propertiesEditionComponent != null) {
-					propertiesEditionComponent
-							.firePropertiesChanged(new PropertiesEditionEvent(
-									ReflectPackagePropertiesEditionPartForm.this,
-									null,
-									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
-									null, null));
-				}
-			}
-		});
-		comment.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReflectPackagePropertiesEditionPartForm.this, RulesViewsRepository.ReflectPackage.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-				}
-			}
-		});
-		EditingUtils.setID(comment, RulesViewsRepository.ReflectPackage.Properties.comment);
-		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.ReflectPackage.Properties.comment, RulesViewsRepository.FORM_KIND), null); //$NON-NLS-1$
-		// Start of user code for createCommentText
-
-		// End of user code
-		return parent;
 	}
 
 	
@@ -445,70 +299,6 @@ public class ReflectPackagePropertiesEditionPartForm extends SectionPropertiesEd
 		// Start of user code for tab synchronization
 		
 		// End of user code
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ReflectPackagePropertiesEditionPart#getId()
-	 * 
-	 */
-	public String getId() {
-		return id.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ReflectPackagePropertiesEditionPart#setId(String newValue)
-	 * 
-	 */
-	public void setId(String newValue) {
-		if (newValue != null) {
-			id.setText(newValue);
-		} else {
-			id.setText(""); //$NON-NLS-1$
-		}
-		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.ReflectPackage.Properties.id);
-		if (eefElementEditorReadOnlyState && id.isEnabled()) {
-			id.setEnabled(false);
-			id.setToolTipText(RulesMessages.ReflectPackage_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !id.isEnabled()) {
-			id.setEnabled(true);
-		}	
-		
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ReflectPackagePropertiesEditionPart#getComment()
-	 * 
-	 */
-	public String getComment() {
-		return comment.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ReflectPackagePropertiesEditionPart#setComment(String newValue)
-	 * 
-	 */
-	public void setComment(String newValue) {
-		if (newValue != null) {
-			comment.setText(newValue);
-		} else {
-			comment.setText(""); //$NON-NLS-1$
-		}
-		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.ReflectPackage.Properties.comment);
-		if (eefElementEditorReadOnlyState && comment.isEnabled()) {
-			comment.setEnabled(false);
-			comment.setToolTipText(RulesMessages.ReflectPackage_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !comment.isEnabled()) {
-			comment.setEnabled(true);
-		}	
-		
 	}
 
 	/**

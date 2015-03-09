@@ -6,7 +6,7 @@ package com.waratek.rules.providers;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class RulesMessages extends NLS {
@@ -48,6 +48,9 @@ public class RulesMessages extends NLS {
 
 	
 	public static String SQLInjectionPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String CommentPropertiesEditionPart_PropertiesGroupLabel;
 
 
 	
@@ -122,18 +125,15 @@ public class RulesMessages extends NLS {
 	
 	public static String SQLInjection_Part_Title;
 
+	
+	public static String Comment_ReadOnly;
 
 	
-	public static String RuleDocumentPropertiesEditionPart_NameLabel;
+	public static String Comment_Part_Title;
+
 
 	
-	public static String RuleDocumentPropertiesEditionPart_ScopeLabel;
-
-	
-	public static String FilePropertiesEditionPart_IdLabel;
-
-	
-	public static String FilePropertiesEditionPart_CommentLabel;
+	public static String RuleDocumentPropertiesEditionPart_VersionLabel;
 
 	
 	public static String FilePropertiesEditionPart_ActionLabel;
@@ -146,12 +146,6 @@ public class RulesMessages extends NLS {
 
 	
 	public static String FilePropertiesEditionPart_FileParameterLabel;
-
-	
-	public static String NetworkPropertiesEditionPart_IdLabel;
-
-	
-	public static String NetworkPropertiesEditionPart_CommentLabel;
 
 	
 	public static String NetworkPropertiesEditionPart_ActionLabel;
@@ -169,12 +163,6 @@ public class RulesMessages extends NLS {
 	public static String NetworkPropertiesEditionPart_NetworkParameterLabel;
 
 	
-	public static String ReflectPackagePropertiesEditionPart_IdLabel;
-
-	
-	public static String ReflectPackagePropertiesEditionPart_CommentLabel;
-
-	
 	public static String ReflectPackagePropertiesEditionPart_ActionLabel;
 
 	
@@ -182,12 +170,6 @@ public class RulesMessages extends NLS {
 
 	
 	public static String ReflectPackagePropertiesEditionPart_PackageNameLabel;
-
-	
-	public static String ReflectClassPropertiesEditionPart_IdLabel;
-
-	
-	public static String ReflectClassPropertiesEditionPart_CommentLabel;
 
 	
 	public static String ReflectClassPropertiesEditionPart_ActionLabel;
@@ -200,12 +182,6 @@ public class RulesMessages extends NLS {
 
 	
 	public static String ReflectClassPropertiesEditionPart_ClassNameLabel;
-
-	
-	public static String ReflectConstructorPropertiesEditionPart_IdLabel;
-
-	
-	public static String ReflectConstructorPropertiesEditionPart_CommentLabel;
 
 	
 	public static String ReflectConstructorPropertiesEditionPart_ActionLabel;
@@ -223,12 +199,6 @@ public class RulesMessages extends NLS {
 	public static String ReflectConstructorPropertiesEditionPart_ConstructorSignatureLabel;
 
 	
-	public static String ReflectMethodPropertiesEditionPart_IdLabel;
-
-	
-	public static String ReflectMethodPropertiesEditionPart_CommentLabel;
-
-	
 	public static String ReflectMethodPropertiesEditionPart_ActionLabel;
 
 	
@@ -242,12 +212,6 @@ public class RulesMessages extends NLS {
 
 	
 	public static String ReflectMethodPropertiesEditionPart_MethodSignatureLabel;
-
-	
-	public static String ReflectFieldPropertiesEditionPart_IdLabel;
-
-	
-	public static String ReflectFieldPropertiesEditionPart_CommentLabel;
 
 	
 	public static String ReflectFieldPropertiesEditionPart_ActionLabel;
@@ -265,12 +229,6 @@ public class RulesMessages extends NLS {
 	public static String ReflectFieldPropertiesEditionPart_FieldNameLabel;
 
 	
-	public static String ThrowableClassPropertiesEditionPart_IdLabel;
-
-	
-	public static String ThrowableClassPropertiesEditionPart_CommentLabel;
-
-	
 	public static String ThrowableClassPropertiesEditionPart_ActionLabel;
 
 	
@@ -280,12 +238,6 @@ public class RulesMessages extends NLS {
 	public static String ThrowableClassPropertiesEditionPart_ClassNameLabel;
 
 	
-	public static String ClassLinkPropertiesEditionPart_IdLabel;
-
-	
-	public static String ClassLinkPropertiesEditionPart_CommentLabel;
-
-	
 	public static String ClassLinkPropertiesEditionPart_ActionLabel;
 
 	
@@ -293,12 +245,6 @@ public class RulesMessages extends NLS {
 
 	
 	public static String ClassLinkPropertiesEditionPart_DescriptorNameLabel;
-
-	
-	public static String Native_PropertiesEditionPart_IdLabel;
-
-	
-	public static String Native_PropertiesEditionPart_CommentLabel;
 
 	
 	public static String Native_PropertiesEditionPart_ActionLabel;
@@ -313,12 +259,6 @@ public class RulesMessages extends NLS {
 	public static String Native_PropertiesEditionPart_ChecksumLabel;
 
 	
-	public static String SQLInjectionPropertiesEditionPart_IdLabel;
-
-	
-	public static String SQLInjectionPropertiesEditionPart_CommentLabel;
-
-	
 	public static String SQLInjectionPropertiesEditionPart_ActionLabel;
 
 	
@@ -326,6 +266,9 @@ public class RulesMessages extends NLS {
 
 	
 	public static String SQLInjectionPropertiesEditionPart_DatabaseLabel;
+
+	
+	public static String CommentPropertiesEditionPart_CommentLabel;
 
 
 	

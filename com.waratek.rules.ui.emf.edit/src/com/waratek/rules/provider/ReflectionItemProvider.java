@@ -42,7 +42,7 @@ public class ReflectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -100,7 +100,7 @@ public class ReflectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Reflection)object).getId();
+		String label = ((Reflection)object).getPackageName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Reflection_type") :
 			getString("_UI_Reflection_type") + " " + label;

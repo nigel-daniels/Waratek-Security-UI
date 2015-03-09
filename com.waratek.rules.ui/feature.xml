@@ -2,7 +2,7 @@
 <feature
       id="com.waratek.rules.ui"
       label="Security Rules Editor"
-      version="1.0.0"
+      version="1.1.0"
       provider-name="Waratek Ltd.">
 
    <description>
@@ -101,42 +101,42 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="com.waratek.rules.ui.emf"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.1.0"
          unpack="false"/>
 
    <plugin
          id="com.waratek.rules.ui.emf.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.1.0"
          unpack="false"/>
 
    <plugin
          id="com.waratek.rules.ui.emf.editor"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.1.0"
          unpack="false"/>
 
    <plugin
          id="com.waratek.rules.ui.eef"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.1.0"
          unpack="false"/>
 
    <plugin
          id="com.waratek.rules.ui.xpand"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.1.0"
          unpack="false"/>
 
    <plugin
          id="com.waratek.rules.ui.help"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.1.0"
          unpack="false"/>
 
 </feature>

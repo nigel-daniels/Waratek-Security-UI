@@ -10,38 +10,10 @@ import org.eclipse.emf.common.util.Enumerator;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public interface ReflectConstructorPropertiesEditionPart {
-
-	/**
-	 * @return the id
-	 * 
-	 */
-	public String getId();
-
-	/**
-	 * Defines a new id
-	 * @param newValue the new id to set
-	 * 
-	 */
-	public void setId(String newValue);
-
-
-	/**
-	 * @return the comment
-	 * 
-	 */
-	public String getComment();
-
-	/**
-	 * Defines a new comment
-	 * @param newValue the new comment to set
-	 * 
-	 */
-	public void setComment(String newValue);
-
 
 	/**
 	 * @return the action

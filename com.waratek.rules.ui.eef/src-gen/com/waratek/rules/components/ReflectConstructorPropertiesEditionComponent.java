@@ -42,7 +42,7 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class ReflectConstructorPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
@@ -78,12 +78,6 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 			final ReflectConstructor reflectConstructor = (ReflectConstructor)elt;
 			final ReflectConstructorPropertiesEditionPart basePart = (ReflectConstructorPropertiesEditionPart)editingPart;
 			// init values
-			if (isAccessible(RulesViewsRepository.ReflectConstructor.Properties.id))
-				basePart.setId(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, reflectConstructor.getId()));
-			
-			if (isAccessible(RulesViewsRepository.ReflectConstructor.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, reflectConstructor.getComment()));
-			
 			if (isAccessible(RulesViewsRepository.ReflectConstructor.Properties.action)) {
 				basePart.initAction(EEFUtils.choiceOfValues(reflectConstructor, RulesPackage.eINSTANCE.getRule_Action()), reflectConstructor.getAction());
 			}
@@ -105,8 +99,6 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 			
 			
 			
-			
-			
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -122,19 +114,11 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 
 
 
-
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == RulesViewsRepository.ReflectConstructor.Properties.id) {
-			return RulesPackage.eINSTANCE.getRule_Id();
-		}
-		if (editorKey == RulesViewsRepository.ReflectConstructor.Properties.comment) {
-			return RulesPackage.eINSTANCE.getRule_Comment();
-		}
 		if (editorKey == RulesViewsRepository.ReflectConstructor.Properties.action) {
 			return RulesPackage.eINSTANCE.getRule_Action();
 		}
@@ -160,12 +144,6 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ReflectConstructor reflectConstructor = (ReflectConstructor)semanticObject;
-		if (RulesViewsRepository.ReflectConstructor.Properties.id == event.getAffectedEditor()) {
-			reflectConstructor.setId((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
-		if (RulesViewsRepository.ReflectConstructor.Properties.comment == event.getAffectedEditor()) {
-			reflectConstructor.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
 		if (RulesViewsRepository.ReflectConstructor.Properties.action == event.getAffectedEditor()) {
 			reflectConstructor.setAction((Action)event.getNewValue());
 		}
@@ -191,20 +169,6 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			ReflectConstructorPropertiesEditionPart basePart = (ReflectConstructorPropertiesEditionPart)editingPart;
-			if (RulesPackage.eINSTANCE.getRule_Id().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.ReflectConstructor.Properties.id)) {
-				if (msg.getNewValue() != null) {
-					basePart.setId(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setId("");
-				}
-			}
-			if (RulesPackage.eINSTANCE.getRule_Comment().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.ReflectConstructor.Properties.comment)) {
-				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setComment("");
-				}
-			}
 			if (RulesPackage.eINSTANCE.getRule_Action().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.ReflectConstructor.Properties.action))
 				basePart.setAction((Action)msg.getNewValue());
 			
@@ -244,8 +208,6 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRule_Id(),
-			RulesPackage.eINSTANCE.getRule_Comment(),
 			RulesPackage.eINSTANCE.getRule_Action(),
 			RulesPackage.eINSTANCE.getRule_Log(),
 			RulesPackage.eINSTANCE.getReflection_PackageName(),
@@ -265,20 +227,6 @@ public class ReflectConstructorPropertiesEditionComponent extends SinglePartProp
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
 			try {
-				if (RulesViewsRepository.ReflectConstructor.Properties.id == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), newValue);
-				}
-				if (RulesViewsRepository.ReflectConstructor.Properties.comment == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), newValue);
-				}
 				if (RulesViewsRepository.ReflectConstructor.Properties.action == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {

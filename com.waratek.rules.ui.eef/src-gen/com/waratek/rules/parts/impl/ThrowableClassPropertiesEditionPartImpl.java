@@ -58,13 +58,11 @@ import org.eclipse.swt.widgets.Text;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class ThrowableClassPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ThrowableClassPropertiesEditionPart {
 
-	protected Text id;
-	protected Text comment;
 	protected EMFComboViewer action;
 	protected EMFComboViewer log;
 	protected Text className;
@@ -106,8 +104,6 @@ public class ThrowableClassPropertiesEditionPartImpl extends CompositeProperties
 	public void createControls(Composite view) { 
 		CompositionSequence throwableClassStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = throwableClassStep.addStep(RulesViewsRepository.ThrowableClass.Properties.class);
-		propertiesStep.addStep(RulesViewsRepository.ThrowableClass.Properties.id);
-		propertiesStep.addStep(RulesViewsRepository.ThrowableClass.Properties.comment);
 		propertiesStep.addStep(RulesViewsRepository.ThrowableClass.Properties.action);
 		propertiesStep.addStep(RulesViewsRepository.ThrowableClass.Properties.log);
 		propertiesStep.addStep(RulesViewsRepository.ThrowableClass.Properties.className);
@@ -119,12 +115,6 @@ public class ThrowableClassPropertiesEditionPartImpl extends CompositeProperties
 			public Composite addToPart(Composite parent, Object key) {
 				if (key == RulesViewsRepository.ThrowableClass.Properties.class) {
 					return createPropertiesGroup(parent);
-				}
-				if (key == RulesViewsRepository.ThrowableClass.Properties.id) {
-					return createIdText(parent);
-				}
-				if (key == RulesViewsRepository.ThrowableClass.Properties.comment) {
-					return createCommentText(parent);
 				}
 				if (key == RulesViewsRepository.ThrowableClass.Properties.action) {
 					return createActionEMFComboViewer(parent);
@@ -154,104 +144,6 @@ public class ThrowableClassPropertiesEditionPartImpl extends CompositeProperties
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		return propertiesGroup;
-	}
-
-	
-	protected Composite createIdText(Composite parent) {
-		createDescription(parent, RulesViewsRepository.ThrowableClass.Properties.id, RulesMessages.ThrowableClassPropertiesEditionPart_IdLabel);
-		id = SWTUtils.createScrollableText(parent, SWT.BORDER);
-		GridData idData = new GridData(GridData.FILL_HORIZONTAL);
-		id.setLayoutData(idData);
-		id.addFocusListener(new FocusAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ThrowableClassPropertiesEditionPartImpl.this, RulesViewsRepository.ThrowableClass.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
-			}
-
-		});
-		id.addKeyListener(new KeyAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ThrowableClassPropertiesEditionPartImpl.this, RulesViewsRepository.ThrowableClass.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
-				}
-			}
-
-		});
-		EditingUtils.setID(id, RulesViewsRepository.ThrowableClass.Properties.id);
-		EditingUtils.setEEFtype(id, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.ThrowableClass.Properties.id, RulesViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		// Start of user code for createIdText
-
-		// End of user code
-		return parent;
-	}
-
-	
-	protected Composite createCommentText(Composite parent) {
-		createDescription(parent, RulesViewsRepository.ThrowableClass.Properties.comment, RulesMessages.ThrowableClassPropertiesEditionPart_CommentLabel);
-		comment = SWTUtils.createScrollableText(parent, SWT.BORDER);
-		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
-		comment.setLayoutData(commentData);
-		comment.addFocusListener(new FocusAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ThrowableClassPropertiesEditionPartImpl.this, RulesViewsRepository.ThrowableClass.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-			}
-
-		});
-		comment.addKeyListener(new KeyAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ThrowableClassPropertiesEditionPartImpl.this, RulesViewsRepository.ThrowableClass.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
-				}
-			}
-
-		});
-		EditingUtils.setID(comment, RulesViewsRepository.ThrowableClass.Properties.comment);
-		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.ThrowableClass.Properties.comment, RulesViewsRepository.SWT_KIND), null); //$NON-NLS-1$
-		// Start of user code for createCommentText
-
-		// End of user code
-		return parent;
 	}
 
 	
@@ -374,70 +266,6 @@ public class ThrowableClassPropertiesEditionPartImpl extends CompositeProperties
 		// Start of user code for tab synchronization
 		
 		// End of user code
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ThrowableClassPropertiesEditionPart#getId()
-	 * 
-	 */
-	public String getId() {
-		return id.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ThrowableClassPropertiesEditionPart#setId(String newValue)
-	 * 
-	 */
-	public void setId(String newValue) {
-		if (newValue != null) {
-			id.setText(newValue);
-		} else {
-			id.setText(""); //$NON-NLS-1$
-		}
-		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.ThrowableClass.Properties.id);
-		if (eefElementEditorReadOnlyState && id.isEnabled()) {
-			id.setEnabled(false);
-			id.setToolTipText(RulesMessages.ThrowableClass_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !id.isEnabled()) {
-			id.setEnabled(true);
-		}	
-		
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ThrowableClassPropertiesEditionPart#getComment()
-	 * 
-	 */
-	public String getComment() {
-		return comment.getText();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.ThrowableClassPropertiesEditionPart#setComment(String newValue)
-	 * 
-	 */
-	public void setComment(String newValue) {
-		if (newValue != null) {
-			comment.setText(newValue);
-		} else {
-			comment.setText(""); //$NON-NLS-1$
-		}
-		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.ThrowableClass.Properties.comment);
-		if (eefElementEditorReadOnlyState && comment.isEnabled()) {
-			comment.setEnabled(false);
-			comment.setToolTipText(RulesMessages.ThrowableClass_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !comment.isEnabled()) {
-			comment.setEnabled(true);
-		}	
-		
 	}
 
 	/**

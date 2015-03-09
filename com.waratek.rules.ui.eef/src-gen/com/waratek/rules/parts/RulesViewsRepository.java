@@ -4,7 +4,7 @@
 package com.waratek.rules.parts;
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class RulesViewsRepository {
@@ -22,10 +22,7 @@ public class RulesViewsRepository {
 		public static class Properties {
 	
 			
-			public static String name = "rules::RuleDocument::properties::name";
-			
-			
-			public static String scope = "rules::RuleDocument::properties::scope";
+			public static String version = "rules::RuleDocument::properties::version";
 			
 	
 		}
@@ -39,12 +36,6 @@ public class RulesViewsRepository {
 	public static class File {
 		public static class Properties {
 	
-			
-			public static String id = "rules::File::properties::id";
-			
-			
-			public static String comment = "rules::File::properties::comment";
-			
 			
 			public static String action = "rules::File::properties::action";
 			
@@ -69,12 +60,6 @@ public class RulesViewsRepository {
 	public static class Network {
 		public static class Properties {
 	
-			
-			public static String id = "rules::Network::properties::id";
-			
-			
-			public static String comment = "rules::Network::properties::comment";
-			
 			
 			public static String action = "rules::Network::properties::action";
 			
@@ -103,12 +88,6 @@ public class RulesViewsRepository {
 		public static class Properties {
 	
 			
-			public static String id = "rules::ReflectPackage::properties::id";
-			
-			
-			public static String comment = "rules::ReflectPackage::properties::comment";
-			
-			
 			public static String action = "rules::ReflectPackage::properties::action";
 			
 			
@@ -129,12 +108,6 @@ public class RulesViewsRepository {
 	public static class ReflectClass {
 		public static class Properties {
 	
-			
-			public static String id = "rules::ReflectClass::properties::id";
-			
-			
-			public static String comment = "rules::ReflectClass::properties::comment";
-			
 			
 			public static String action = "rules::ReflectClass::properties::action";
 			
@@ -159,12 +132,6 @@ public class RulesViewsRepository {
 	public static class ReflectConstructor {
 		public static class Properties {
 	
-			
-			public static String id = "rules::ReflectConstructor::properties::id";
-			
-			
-			public static String comment = "rules::ReflectConstructor::properties::comment";
-			
 			
 			public static String action = "rules::ReflectConstructor::properties::action";
 			
@@ -193,12 +160,6 @@ public class RulesViewsRepository {
 		public static class Properties {
 	
 			
-			public static String id = "rules::ReflectMethod::properties::id";
-			
-			
-			public static String comment = "rules::ReflectMethod::properties::comment";
-			
-			
 			public static String action = "rules::ReflectMethod::properties::action";
 			
 			
@@ -225,12 +186,6 @@ public class RulesViewsRepository {
 	public static class ReflectField {
 		public static class Properties {
 	
-			
-			public static String id = "rules::ReflectField::properties::id";
-			
-			
-			public static String comment = "rules::ReflectField::properties::comment";
-			
 			
 			public static String action = "rules::ReflectField::properties::action";
 			
@@ -259,12 +214,6 @@ public class RulesViewsRepository {
 		public static class Properties {
 	
 			
-			public static String id = "rules::ThrowableClass::properties::id";
-			
-			
-			public static String comment = "rules::ThrowableClass::properties::comment";
-			
-			
 			public static String action = "rules::ThrowableClass::properties::action";
 			
 			
@@ -286,12 +235,6 @@ public class RulesViewsRepository {
 		public static class Properties {
 	
 			
-			public static String id = "rules::ClassLink::properties::id";
-			
-			
-			public static String comment = "rules::ClassLink::properties::comment";
-			
-			
 			public static String action = "rules::ClassLink::properties::action";
 			
 			
@@ -312,12 +255,6 @@ public class RulesViewsRepository {
 	public static class Native_ {
 		public static class Properties {
 	
-			
-			public static String id = "rules::Native::properties::id";
-			
-			
-			public static String comment = "rules::Native::properties::comment";
-			
 			
 			public static String action = "rules::Native::properties::action";
 			
@@ -343,12 +280,6 @@ public class RulesViewsRepository {
 		public static class Properties {
 	
 			
-			public static String id = "rules::SQLInjection::properties::id";
-			
-			
-			public static String comment = "rules::SQLInjection::properties::comment";
-			
-			
 			public static String action = "rules::SQLInjection::properties::action";
 			
 			
@@ -356,6 +287,21 @@ public class RulesViewsRepository {
 			
 			
 			public static String database = "rules::SQLInjection::properties::database";
+			
+	
+		}
+	
+	}
+
+	/**
+	 * Comment view descriptor
+	 * 
+	 */
+	public static class Comment {
+		public static class Properties {
+	
+			
+			public static String comment_ = "rules::Comment::properties::comment_";
 			
 	
 		}

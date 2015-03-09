@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Security Rules Help
 Bundle-SymbolicName: com.waratek.rules.ui.help;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.1.0
 Bundle-Vendor: Waratek Ltd.
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.apache.jasper.glassfish;bundle-version="2.2.2",

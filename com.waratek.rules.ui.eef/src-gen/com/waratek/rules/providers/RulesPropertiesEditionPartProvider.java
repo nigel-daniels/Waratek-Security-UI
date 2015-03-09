@@ -6,6 +6,7 @@ package com.waratek.rules.providers;
 import com.waratek.rules.parts.RulesViewsRepository;
 
 import com.waratek.rules.parts.forms.ClassLinkPropertiesEditionPartForm;
+import com.waratek.rules.parts.forms.CommentPropertiesEditionPartForm;
 import com.waratek.rules.parts.forms.FilePropertiesEditionPartForm;
 import com.waratek.rules.parts.forms.Native_PropertiesEditionPartForm;
 import com.waratek.rules.parts.forms.NetworkPropertiesEditionPartForm;
@@ -19,6 +20,7 @@ import com.waratek.rules.parts.forms.SQLInjectionPropertiesEditionPartForm;
 import com.waratek.rules.parts.forms.ThrowableClassPropertiesEditionPartForm;
 
 import com.waratek.rules.parts.impl.ClassLinkPropertiesEditionPartImpl;
+import com.waratek.rules.parts.impl.CommentPropertiesEditionPartImpl;
 import com.waratek.rules.parts.impl.FilePropertiesEditionPartImpl;
 import com.waratek.rules.parts.impl.Native_PropertiesEditionPartImpl;
 import com.waratek.rules.parts.impl.NetworkPropertiesEditionPartImpl;
@@ -38,7 +40,7 @@ import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class RulesPropertiesEditionPartProvider implements IPropertiesEditionPartProvider {
@@ -129,6 +131,12 @@ public class RulesPropertiesEditionPartProvider implements IPropertiesEditionPar
 				return new SQLInjectionPropertiesEditionPartImpl(component);
 			if (kind == RulesViewsRepository.FORM_KIND)
 				return new SQLInjectionPropertiesEditionPartForm(component);
+		}
+		if (key == RulesViewsRepository.Comment.class) {
+			if (kind == RulesViewsRepository.SWT_KIND)
+				return new CommentPropertiesEditionPartImpl(component);
+			if (kind == RulesViewsRepository.FORM_KIND)
+				return new CommentPropertiesEditionPartForm(component);
 		}
 		return null;
 	}

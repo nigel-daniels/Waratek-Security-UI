@@ -6,7 +6,6 @@ package com.waratek.rules.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -18,7 +17,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import com.waratek.rules.Native;
 import com.waratek.rules.RulesPackage;
 
@@ -41,7 +39,7 @@ public class NativeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -136,8 +134,7 @@ public class NativeItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		Native nativeLib = (Native)object;
-		
-		label.append(nativeLib.getId() + " - ");
+
 		label.append(nativeLib.getPath());
 
 		if (nativeLib.getChecksum() != null)
@@ -145,10 +142,6 @@ public class NativeItemProvider
 				{label.append(";" + nativeLib.getChecksum());}
 		
 		label.append(":" + nativeLib.getAction().toString() + ":" + nativeLib.getLog().toString());
-		
-		if (nativeLib.getComment() != null)
-			if (!nativeLib.getComment().isEmpty())
-				{label.append(" - " + nativeLib.getComment());}
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_Native_type") :

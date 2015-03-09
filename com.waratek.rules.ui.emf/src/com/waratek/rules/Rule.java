@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.waratek.rules.Rule#getId <em>Id</em>}</li>
- *   <li>{@link com.waratek.rules.Rule#getComment <em>Comment</em>}</li>
  *   <li>{@link com.waratek.rules.Rule#getAction <em>Action</em>}</li>
  *   <li>{@link com.waratek.rules.Rule#getLog <em>Log</em>}</li>
  * </ul>
@@ -30,59 +28,7 @@ public interface Rule extends EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright 2014 Waratek Ltd.";
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see com.waratek.rules.RulesPackage#getRule_Id()
-	 * @model
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link com.waratek.rules.Rule#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Comment</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comment</em>' attribute.
-	 * @see #setComment(String)
-	 * @see com.waratek.rules.RulesPackage#getRule_Comment()
-	 * @model
-	 * @generated
-	 */
-	String getComment();
-
-	/**
-	 * Sets the value of the '{@link com.waratek.rules.Rule#getComment <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comment</em>' attribute.
-	 * @see #getComment()
-	 * @generated
-	 */
-	void setComment(String value);
+	String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * Returns the value of the '<em><b>Action</b></em>' attribute.

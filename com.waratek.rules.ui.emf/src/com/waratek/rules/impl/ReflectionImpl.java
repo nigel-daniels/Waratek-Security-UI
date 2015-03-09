@@ -31,7 +31,7 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.

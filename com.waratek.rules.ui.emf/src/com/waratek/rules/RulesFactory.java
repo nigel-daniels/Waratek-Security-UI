@@ -19,7 +19,7 @@ public interface RulesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright 2014 Waratek Ltd.";
+	String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The singleton instance of the factory.
@@ -136,6 +136,15 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	SQLInjection createSQLInjection();
+
+	/**
+	 * Returns a new object of class '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Comment</em>'.
+	 * @generated
+	 */
+	Comment createComment();
 
 	/**
 	 * Returns the package supported by this factory.

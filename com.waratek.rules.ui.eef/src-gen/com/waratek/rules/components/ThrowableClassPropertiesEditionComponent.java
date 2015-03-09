@@ -42,7 +42,7 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class ThrowableClassPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
@@ -78,12 +78,6 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 			final ThrowableClass throwableClass = (ThrowableClass)elt;
 			final ThrowableClassPropertiesEditionPart basePart = (ThrowableClassPropertiesEditionPart)editingPart;
 			// init values
-			if (isAccessible(RulesViewsRepository.ThrowableClass.Properties.id))
-				basePart.setId(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, throwableClass.getId()));
-			
-			if (isAccessible(RulesViewsRepository.ThrowableClass.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, throwableClass.getComment()));
-			
 			if (isAccessible(RulesViewsRepository.ThrowableClass.Properties.action)) {
 				basePart.initAction(EEFUtils.choiceOfValues(throwableClass, RulesPackage.eINSTANCE.getRule_Action()), throwableClass.getAction());
 			}
@@ -94,8 +88,6 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 				basePart.setClassName(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, throwableClass.getClassName()));
 			
 			// init filters
-			
-			
 			
 			
 			
@@ -112,19 +104,11 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 
 
 
-
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == RulesViewsRepository.ThrowableClass.Properties.id) {
-			return RulesPackage.eINSTANCE.getRule_Id();
-		}
-		if (editorKey == RulesViewsRepository.ThrowableClass.Properties.comment) {
-			return RulesPackage.eINSTANCE.getRule_Comment();
-		}
 		if (editorKey == RulesViewsRepository.ThrowableClass.Properties.action) {
 			return RulesPackage.eINSTANCE.getRule_Action();
 		}
@@ -144,12 +128,6 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ThrowableClass throwableClass = (ThrowableClass)semanticObject;
-		if (RulesViewsRepository.ThrowableClass.Properties.id == event.getAffectedEditor()) {
-			throwableClass.setId((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
-		if (RulesViewsRepository.ThrowableClass.Properties.comment == event.getAffectedEditor()) {
-			throwableClass.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
 		if (RulesViewsRepository.ThrowableClass.Properties.action == event.getAffectedEditor()) {
 			throwableClass.setAction((Action)event.getNewValue());
 		}
@@ -169,20 +147,6 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			ThrowableClassPropertiesEditionPart basePart = (ThrowableClassPropertiesEditionPart)editingPart;
-			if (RulesPackage.eINSTANCE.getRule_Id().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.ThrowableClass.Properties.id)) {
-				if (msg.getNewValue() != null) {
-					basePart.setId(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setId("");
-				}
-			}
-			if (RulesPackage.eINSTANCE.getRule_Comment().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.ThrowableClass.Properties.comment)) {
-				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setComment("");
-				}
-			}
 			if (RulesPackage.eINSTANCE.getRule_Action().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.ThrowableClass.Properties.action))
 				basePart.setAction((Action)msg.getNewValue());
 			
@@ -208,8 +172,6 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRule_Id(),
-			RulesPackage.eINSTANCE.getRule_Comment(),
 			RulesPackage.eINSTANCE.getRule_Action(),
 			RulesPackage.eINSTANCE.getRule_Log(),
 			RulesPackage.eINSTANCE.getThrowableClass_ClassName()		);
@@ -227,20 +189,6 @@ public class ThrowableClassPropertiesEditionComponent extends SinglePartProperti
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
 			try {
-				if (RulesViewsRepository.ThrowableClass.Properties.id == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), newValue);
-				}
-				if (RulesViewsRepository.ThrowableClass.Properties.comment == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), newValue);
-				}
 				if (RulesViewsRepository.ThrowableClass.Properties.action == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {

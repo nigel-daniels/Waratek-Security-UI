@@ -6,10 +6,8 @@ package com.waratek.rules.provider;
 
 import com.waratek.rules.File;
 import com.waratek.rules.RulesPackage;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -41,7 +39,7 @@ public class FileItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -136,14 +134,9 @@ public class FileItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		File file = (File)object;
-		
-		label.append(file.getId() + " - ");
+
 		label.append(file.getFileParameter().toString() + ":" + file.getPath() + ":" + file.getAction().toString() + ":" + file.getLog().toString());
-		
-		if (file.getComment() != null)
-			if (!file.getComment().isEmpty())
-				{label.append(" - " + file.getComment());}
-			
+
 		return label == null || label.length() == 0 ?
 			getString("_UI_File_type") :
 			getString("_UI_File_type") + " " + label;

@@ -20,6 +20,6 @@ public interface ReflectPackage extends Reflection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright 2014 Waratek Ltd.";
+	String copyright = "Copyright 2015 Waratek Ltd.";
 
 } // ReflectPackage

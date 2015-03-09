@@ -41,7 +41,7 @@ public class ClassLinkItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -113,13 +113,8 @@ public class ClassLinkItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		ClassLink classLink = (ClassLink)object;
-		
-		label.append(classLink.getId() + " - ");
+
 		label.append(classLink.getDescriptorName() + ":" + classLink.getAction().toString() + ":" + classLink.getLog().toString());
-		
-		if (classLink.getComment() != null)
-			if (!classLink.getComment().isEmpty())
-				{label.append(" - " + classLink.getComment());}
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_ClassLink_type") :

@@ -4,6 +4,7 @@
 package com.waratek.rules.provider;
 
 
+import com.waratek.rules.Action;
 import com.waratek.rules.Rule;
 import com.waratek.rules.RulesPackage;
 
@@ -45,7 +46,7 @@ public class RuleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -68,56 +69,10 @@ public class RuleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addCommentPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 			addLogPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Rule_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_id_feature", "_UI_Rule_type"),
-				 RulesPackage.Literals.RULE__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Rule_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_comment_feature", "_UI_Rule_type"),
-				 RulesPackage.Literals.RULE__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -172,7 +127,8 @@ public class RuleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Rule)object).getId();
+		Action labelValue = ((Rule)object).getAction();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Rule_type") :
 			getString("_UI_Rule_type") + " " + label;
@@ -190,8 +146,6 @@ public class RuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Rule.class)) {
-			case RulesPackage.RULE__ID:
-			case RulesPackage.RULE__COMMENT:
 			case RulesPackage.RULE__ACTION:
 			case RulesPackage.RULE__LOG:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

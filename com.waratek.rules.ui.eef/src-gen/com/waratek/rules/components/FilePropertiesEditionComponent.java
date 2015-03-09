@@ -43,7 +43,7 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
@@ -79,12 +79,6 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 			final File file = (File)elt;
 			final FilePropertiesEditionPart basePart = (FilePropertiesEditionPart)editingPart;
 			// init values
-			if (isAccessible(RulesViewsRepository.File.Properties.id))
-				basePart.setId(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, file.getId()));
-			
-			if (isAccessible(RulesViewsRepository.File.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, file.getComment()));
-			
 			if (isAccessible(RulesViewsRepository.File.Properties.action)) {
 				basePart.initAction(EEFUtils.choiceOfValues(file, RulesPackage.eINSTANCE.getRule_Action()), file.getAction());
 			}
@@ -98,8 +92,6 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 				basePart.initFileParameter(EEFUtils.choiceOfValues(file, RulesPackage.eINSTANCE.getFile_FileParameter()), file.getFileParameter());
 			}
 			// init filters
-			
-			
 			
 			
 			
@@ -118,19 +110,11 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 
 
 
-
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == RulesViewsRepository.File.Properties.id) {
-			return RulesPackage.eINSTANCE.getRule_Id();
-		}
-		if (editorKey == RulesViewsRepository.File.Properties.comment) {
-			return RulesPackage.eINSTANCE.getRule_Comment();
-		}
 		if (editorKey == RulesViewsRepository.File.Properties.action) {
 			return RulesPackage.eINSTANCE.getRule_Action();
 		}
@@ -153,12 +137,6 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		File file = (File)semanticObject;
-		if (RulesViewsRepository.File.Properties.id == event.getAffectedEditor()) {
-			file.setId((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
-		if (RulesViewsRepository.File.Properties.comment == event.getAffectedEditor()) {
-			file.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
 		if (RulesViewsRepository.File.Properties.action == event.getAffectedEditor()) {
 			file.setAction((Action)event.getNewValue());
 		}
@@ -181,20 +159,6 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			FilePropertiesEditionPart basePart = (FilePropertiesEditionPart)editingPart;
-			if (RulesPackage.eINSTANCE.getRule_Id().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.File.Properties.id)) {
-				if (msg.getNewValue() != null) {
-					basePart.setId(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setId("");
-				}
-			}
-			if (RulesPackage.eINSTANCE.getRule_Comment().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.File.Properties.comment)) {
-				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setComment("");
-				}
-			}
 			if (RulesPackage.eINSTANCE.getRule_Action().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.File.Properties.action))
 				basePart.setAction((Action)msg.getNewValue());
 			
@@ -223,8 +187,6 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRule_Id(),
-			RulesPackage.eINSTANCE.getRule_Comment(),
 			RulesPackage.eINSTANCE.getRule_Action(),
 			RulesPackage.eINSTANCE.getRule_Log(),
 			RulesPackage.eINSTANCE.getFile_Path(),
@@ -243,20 +205,6 @@ public class FilePropertiesEditionComponent extends SinglePartPropertiesEditingC
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
 			try {
-				if (RulesViewsRepository.File.Properties.id == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), newValue);
-				}
-				if (RulesViewsRepository.File.Properties.comment == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), newValue);
-				}
 				if (RulesViewsRepository.File.Properties.action == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {

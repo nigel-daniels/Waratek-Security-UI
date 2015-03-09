@@ -13,7 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
-import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +26,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
@@ -40,9 +48,17 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import java.io.File;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.ISetSelectionTarget;
+import org.eclipse.core.runtime.Path;
 import com.waratek.rules.RulesFactory;
 import com.waratek.rules.RulesPackage;
 import com.waratek.rules.provider.RulesEditPlugin;
@@ -60,7 +76,7 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The supported extensions for created files.
@@ -95,6 +111,14 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected RulesFactory rulesFactory = rulesPackage.getRulesFactory();
+
+	/**
+	 * This is the file creation page.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RulesModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -158,7 +182,7 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 					}
 				}
 			}
-			Collections.sort(initialObjectNames, java.text.Collator.getInstance());
+			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
 		}
 		return initialObjectNames;
 	}
@@ -184,27 +208,24 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 		try {
-			// Get the URI of the model file.
+			// Remember the file.
 			//
-			final URI fileURI = getModelURI();
-			if (new File(fileURI.toFileString()).exists()) {
-				if (!MessageDialog.openQuestion
-						(getShell(),
-						 RulesEditorPlugin.INSTANCE.getString("_UI_Question_title"),
-						 RulesEditorPlugin.INSTANCE.getString("_WARN_FileConflict", new String []{ fileURI.toFileString() }))) {
-					initialObjectCreationPage.selectFileField();
-					return false;
-				}
-			}
-			
+			final IFile modelFile = getModelFile();
+
 			// Do the work within an operation.
 			//
-			IRunnableWithProgress operation = new IRunnableWithProgress() {
-				public void run(IProgressMonitor progressMonitor) {
+			WorkspaceModifyOperation operation =
+				new WorkspaceModifyOperation() {
+					@Override
+					protected void execute(IProgressMonitor progressMonitor) {
 						try {
 							// Create a resource set
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
+
+							// Get the URI of the model file.
+							//
+							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
 							// Create a resource for this file.
 							//
@@ -234,11 +255,85 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 
 			getContainer().run(false, false, operation);
 
-			return RulesEditorAdvisor.openEditor(workbench, fileURI);			
+			// Select the new file resource in the current view.
+			//
+			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+			IWorkbenchPage page = workbenchWindow.getActivePage();
+			final IWorkbenchPart activePart = page.getActivePart();
+			if (activePart instanceof ISetSelectionTarget) {
+				final ISelection targetSelection = new StructuredSelection(modelFile);
+				getShell().getDisplay().asyncExec
+					(new Runnable() {
+						 public void run() {
+							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
+						 }
+					 });
+			}
+
+			// Open an editor on the new file.
+			//
+			try {
+				page.openEditor
+					(new FileEditorInput(modelFile),
+					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
+			}
+			catch (PartInitException exception) {
+				MessageDialog.openError(workbenchWindow.getShell(), RulesEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				return false;
+			}
+
+			return true;
 		}
 		catch (Exception exception) {
 			RulesEditorPlugin.INSTANCE.log(exception);
 			return false;
+		}
+	}
+
+	/**
+	 * This is the one page of the wizard.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public class RulesModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+		/**
+		 * Pass in the selection.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public RulesModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+			super(pageId, selection);
+		}
+
+		/**
+		 * The framework calls this to see if the file is correct.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		@Override
+		protected boolean validatePage() {
+			if (super.validatePage()) {
+				String extension = new Path(getFileName()).getFileExtension();
+				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+					setErrorMessage(RulesEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					return false;
+				}
+				return true;
+			}
+			return false;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public IFile getModelFile() {
+			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
 	}
 
@@ -252,21 +347,14 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
+		 * @generated NOT
 		 */
 		protected Text fileField;
 
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Combo initialObjectField;
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
+		 * @generated NOT
 		 */
 		//protected Combo initialObjectField;
 
@@ -276,13 +364,6 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 */
 		protected List<String> encodings;
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Combo encodingField;
 
 		/**
 		 * <!-- begin-user-doc -->
@@ -499,7 +580,7 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
+		 * @generated NOT
 		 */
 		public URI getFileURI() {
 			try {
@@ -510,7 +591,7 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 			}
 			return null;
 		}
-
+		
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -564,6 +645,47 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	 */
 		@Override
 	public void addPages() {
+		// Create a page, set the title, and the initial model file name.
+		//
+		newFileCreationPage = new RulesModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(RulesEditorPlugin.INSTANCE.getString("_UI_RulesModelWizard_label"));
+		newFileCreationPage.setDescription(RulesEditorPlugin.INSTANCE.getString("_UI_RulesModelWizard_description"));
+		newFileCreationPage.setFileName(RulesEditorPlugin.INSTANCE.getString("_UI_RulesEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		addPage(newFileCreationPage);
+
+		// Try and get the resource selection to determine a current directory for the file dialog.
+		//
+		if (selection != null && !selection.isEmpty()) {
+			// Get the resource...
+			//
+			Object selectedElement = selection.iterator().next();
+			if (selectedElement instanceof IResource) {
+				// Get the resource parent, if its a file.
+				//
+				IResource selectedResource = (IResource)selectedElement;
+				if (selectedResource.getType() == IResource.FILE) {
+					selectedResource = selectedResource.getParent();
+				}
+
+				// This gives us a directory...
+				//
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+					// Set this for the container.
+					//
+					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
+
+					// Make up a unique new name here.
+					//
+					String defaultModelBaseFilename = RulesEditorPlugin.INSTANCE.getString("_UI_RulesEditorFilenameDefaultBase");
+					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
+					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
+					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
+					}
+					newFileCreationPage.setFileName(modelFilename);
+				}
+			}
+		}
 		initialObjectCreationPage = new RulesModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(RulesEditorPlugin.INSTANCE.getString("_UI_RulesModelWizard_label"));
 		initialObjectCreationPage.setDescription(RulesEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
@@ -571,13 +693,13 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	}
 
 	/**
-	 * Get the URI from the page.
+	 * Get the file from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public URI getModelURI() {
-		return initialObjectCreationPage.getFileURI();
+	public IFile getModelFile() {
+		return newFileCreationPage.getModelFile();
 	}
 
 }

@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.waratek.rules.RuleDocument#getName <em>Name</em>}</li>
+ *   <li>{@link com.waratek.rules.RuleDocument#getVersion <em>Version</em>}</li>
  *   <li>{@link com.waratek.rules.RuleDocument#getRules <em>Rules</em>}</li>
- *   <li>{@link com.waratek.rules.RuleDocument#getScope <em>Scope</em>}</li>
+ *   <li>{@link com.waratek.rules.RuleDocument#getComments <em>Comments</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,33 +31,36 @@ public interface RuleDocument extends EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright 2014 Waratek Ltd.";
+	String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Version</b></em>' attribute.
+	 * The literals are from the enumeration {@link com.waratek.rules.Version}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Version</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Name()
+	 * @return the value of the '<em>Version</em>' attribute.
+	 * @see com.waratek.rules.Version
+	 * @see #setVersion(Version)
+	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Version()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	Version getVersion();
 
 	/**
-	 * Sets the value of the '{@link com.waratek.rules.RuleDocument#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link com.waratek.rules.RuleDocument#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Version</em>' attribute.
+	 * @see com.waratek.rules.Version
+	 * @see #getVersion()
 	 * @generated
 	 */
-	void setName(String value);
+	void setVersion(Version value);
 
 	/**
 	 * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
@@ -76,33 +79,19 @@ public interface RuleDocument extends EObject {
 	EList<Rule> getRules();
 
 	/**
-	 * Returns the value of the '<em><b>Scope</b></em>' attribute.
-	 * The default value is <code>"JVC"</code>.
-	 * The literals are from the enumeration {@link com.waratek.rules.Scope}.
+	 * Returns the value of the '<em><b>Comments</b></em>' containment reference list.
+	 * The list contents are of type {@link com.waratek.rules.Comment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Scope</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Comments</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scope</em>' attribute.
-	 * @see com.waratek.rules.Scope
-	 * @see #setScope(Scope)
-	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Scope()
-	 * @model default="JVC"
+	 * @return the value of the '<em>Comments</em>' containment reference list.
+	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Comments()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Scope getScope();
-
-	/**
-	 * Sets the value of the '{@link com.waratek.rules.RuleDocument#getScope <em>Scope</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scope</em>' attribute.
-	 * @see com.waratek.rules.Scope
-	 * @see #getScope()
-	 * @generated
-	 */
-	void setScope(Scope value);
+	EList<Comment> getComments();
 
 } // RuleDocument

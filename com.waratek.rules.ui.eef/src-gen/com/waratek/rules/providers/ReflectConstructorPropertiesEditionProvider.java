@@ -25,7 +25,7 @@ import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 import org.eclipse.jface.viewers.IFilter;
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class ReflectConstructorPropertiesEditionProvider extends PropertiesEditingProviderImpl {

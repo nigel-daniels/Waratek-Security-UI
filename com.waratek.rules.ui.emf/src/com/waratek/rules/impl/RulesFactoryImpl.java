@@ -26,7 +26,7 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * Creates the default factory implementation.
@@ -77,6 +77,7 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 			case RulesPackage.CLASS_LINK: return createClassLink();
 			case RulesPackage.NATIVE: return createNative();
 			case RulesPackage.SQL_INJECTION: return createSQLInjection();
+			case RulesPackage.COMMENT: return createComment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -98,10 +99,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return createActionFromString(eDataType, initialValue);
 			case RulesPackage.LOG:
 				return createLogFromString(eDataType, initialValue);
-			case RulesPackage.SCOPE:
-				return createScopeFromString(eDataType, initialValue);
 			case RulesPackage.DATABASE:
 				return createDatabaseFromString(eDataType, initialValue);
+			case RulesPackage.VERSION:
+				return createVersionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -123,10 +124,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return convertActionToString(eDataType, instanceValue);
 			case RulesPackage.LOG:
 				return convertLogToString(eDataType, instanceValue);
-			case RulesPackage.SCOPE:
-				return convertScopeToString(eDataType, instanceValue);
 			case RulesPackage.DATABASE:
 				return convertDatabaseToString(eDataType, instanceValue);
+			case RulesPackage.VERSION:
+				return convertVersionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -257,6 +258,16 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Comment createComment() {
+		CommentImpl comment = new CommentImpl();
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FileParameter createFileParameterFromString(EDataType eDataType, String initialValue) {
 		FileParameter result = FileParameter.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -337,26 +348,6 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scope createScopeFromString(EDataType eDataType, String initialValue) {
-		Scope result = Scope.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertScopeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Database createDatabaseFromString(EDataType eDataType, String initialValue) {
 		Database result = Database.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -369,6 +360,26 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	public String convertDatabaseToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Version createVersionFromString(EDataType eDataType, String initialValue) {
+		Version result = Version.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVersionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

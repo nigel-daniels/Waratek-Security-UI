@@ -54,7 +54,7 @@ public enum FileParameter implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The '<em><b>Read</b></em>' literal value.

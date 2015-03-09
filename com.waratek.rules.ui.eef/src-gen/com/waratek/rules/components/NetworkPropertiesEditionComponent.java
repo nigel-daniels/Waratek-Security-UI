@@ -43,7 +43,7 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
@@ -79,12 +79,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 			final Network network = (Network)elt;
 			final NetworkPropertiesEditionPart basePart = (NetworkPropertiesEditionPart)editingPart;
 			// init values
-			if (isAccessible(RulesViewsRepository.Network.Properties.id))
-				basePart.setId(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, network.getId()));
-			
-			if (isAccessible(RulesViewsRepository.Network.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, network.getComment()));
-			
 			if (isAccessible(RulesViewsRepository.Network.Properties.action)) {
 				basePart.initAction(EEFUtils.choiceOfValues(network, RulesPackage.eINSTANCE.getRule_Action()), network.getAction());
 			}
@@ -106,8 +100,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 			
 			
 			
-			
-			
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -123,19 +115,11 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 
 
 
-
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == RulesViewsRepository.Network.Properties.id) {
-			return RulesPackage.eINSTANCE.getRule_Id();
-		}
-		if (editorKey == RulesViewsRepository.Network.Properties.comment) {
-			return RulesPackage.eINSTANCE.getRule_Comment();
-		}
 		if (editorKey == RulesViewsRepository.Network.Properties.action) {
 			return RulesPackage.eINSTANCE.getRule_Action();
 		}
@@ -161,12 +145,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Network network = (Network)semanticObject;
-		if (RulesViewsRepository.Network.Properties.id == event.getAffectedEditor()) {
-			network.setId((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
-		if (RulesViewsRepository.Network.Properties.comment == event.getAffectedEditor()) {
-			network.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
 		if (RulesViewsRepository.Network.Properties.action == event.getAffectedEditor()) {
 			network.setAction((Action)event.getNewValue());
 		}
@@ -192,20 +170,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			NetworkPropertiesEditionPart basePart = (NetworkPropertiesEditionPart)editingPart;
-			if (RulesPackage.eINSTANCE.getRule_Id().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.Network.Properties.id)) {
-				if (msg.getNewValue() != null) {
-					basePart.setId(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setId("");
-				}
-			}
-			if (RulesPackage.eINSTANCE.getRule_Comment().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.Network.Properties.comment)) {
-				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setComment("");
-				}
-			}
 			if (RulesPackage.eINSTANCE.getRule_Action().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.Network.Properties.action))
 				basePart.setAction((Action)msg.getNewValue());
 			
@@ -241,8 +205,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRule_Id(),
-			RulesPackage.eINSTANCE.getRule_Comment(),
 			RulesPackage.eINSTANCE.getRule_Action(),
 			RulesPackage.eINSTANCE.getRule_Log(),
 			RulesPackage.eINSTANCE.getNetwork_Host(),
@@ -262,20 +224,6 @@ public class NetworkPropertiesEditionComponent extends SinglePartPropertiesEditi
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
 			try {
-				if (RulesViewsRepository.Network.Properties.id == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), newValue);
-				}
-				if (RulesViewsRepository.Network.Properties.comment == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), newValue);
-				}
 				if (RulesViewsRepository.Network.Properties.action == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {

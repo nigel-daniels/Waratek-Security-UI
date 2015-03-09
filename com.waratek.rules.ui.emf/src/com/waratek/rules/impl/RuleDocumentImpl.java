@@ -3,24 +3,19 @@
  */
 package com.waratek.rules.impl;
 
+import com.waratek.rules.Comment;
 import com.waratek.rules.Rule;
 import com.waratek.rules.RuleDocument;
 import com.waratek.rules.RulesPackage;
-import com.waratek.rules.Scope;
-
+import com.waratek.rules.Version;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,9 +26,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getRules <em>Rules</em>}</li>
- *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getScope <em>Scope</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getComments <em>Comments</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,27 +40,27 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getVersion()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final Version VERSION_EDEFAULT = Version.ONE;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getVersion()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected Version version = VERSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
@@ -78,24 +73,14 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	protected EList<Rule> rules;
 
 	/**
-	 * The default value of the '{@link #getScope() <em>Scope</em>}' attribute.
+	 * The cached value of the '{@link #getComments() <em>Comments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScope()
+	 * @see #getComments()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Scope SCOPE_EDEFAULT = Scope.JVC;
-
-	/**
-	 * The cached value of the '{@link #getScope() <em>Scope</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScope()
-	 * @generated
-	 * @ordered
-	 */
-	protected Scope scope = SCOPE_EDEFAULT;
+	protected EList<Comment> comments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,8 +106,8 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public Version getVersion() {
+		return version;
 	}
 
 	/**
@@ -130,11 +115,11 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setVersion(Version newVersion) {
+		Version oldVersion = version;
+		version = newVersion == null ? VERSION_EDEFAULT : newVersion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.RULE_DOCUMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.RULE_DOCUMENT__VERSION, oldVersion, version));
 	}
 
 	/**
@@ -154,20 +139,11 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scope getScope() {
-		return scope;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setScope(Scope newScope) {
-		Scope oldScope = scope;
-		scope = newScope == null ? SCOPE_EDEFAULT : newScope;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.RULE_DOCUMENT__SCOPE, oldScope, scope));
+	public EList<Comment> getComments() {
+		if (comments == null) {
+			comments = new EObjectContainmentEList<Comment>(Comment.class, this, RulesPackage.RULE_DOCUMENT__COMMENTS);
+		}
+		return comments;
 	}
 
 	/**
@@ -180,6 +156,8 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 		switch (featureID) {
 			case RulesPackage.RULE_DOCUMENT__RULES:
 				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+			case RulesPackage.RULE_DOCUMENT__COMMENTS:
+				return ((InternalEList<?>)getComments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,12 +170,12 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RulesPackage.RULE_DOCUMENT__NAME:
-				return getName();
+			case RulesPackage.RULE_DOCUMENT__VERSION:
+				return getVersion();
 			case RulesPackage.RULE_DOCUMENT__RULES:
 				return getRules();
-			case RulesPackage.RULE_DOCUMENT__SCOPE:
-				return getScope();
+			case RulesPackage.RULE_DOCUMENT__COMMENTS:
+				return getComments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,15 +189,16 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RulesPackage.RULE_DOCUMENT__NAME:
-				setName((String)newValue);
+			case RulesPackage.RULE_DOCUMENT__VERSION:
+				setVersion((Version)newValue);
 				return;
 			case RulesPackage.RULE_DOCUMENT__RULES:
 				getRules().clear();
 				getRules().addAll((Collection<? extends Rule>)newValue);
 				return;
-			case RulesPackage.RULE_DOCUMENT__SCOPE:
-				setScope((Scope)newValue);
+			case RulesPackage.RULE_DOCUMENT__COMMENTS:
+				getComments().clear();
+				getComments().addAll((Collection<? extends Comment>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,14 +212,14 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RulesPackage.RULE_DOCUMENT__NAME:
-				setName(NAME_EDEFAULT);
+			case RulesPackage.RULE_DOCUMENT__VERSION:
+				setVersion(VERSION_EDEFAULT);
 				return;
 			case RulesPackage.RULE_DOCUMENT__RULES:
 				getRules().clear();
 				return;
-			case RulesPackage.RULE_DOCUMENT__SCOPE:
-				setScope(SCOPE_EDEFAULT);
+			case RulesPackage.RULE_DOCUMENT__COMMENTS:
+				getComments().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -254,12 +233,12 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RulesPackage.RULE_DOCUMENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RulesPackage.RULE_DOCUMENT__VERSION:
+				return version != VERSION_EDEFAULT;
 			case RulesPackage.RULE_DOCUMENT__RULES:
 				return rules != null && !rules.isEmpty();
-			case RulesPackage.RULE_DOCUMENT__SCOPE:
-				return scope != SCOPE_EDEFAULT;
+			case RulesPackage.RULE_DOCUMENT__COMMENTS:
+				return comments != null && !comments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -274,10 +253,8 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", scope: ");
-		result.append(scope);
+		result.append(" (version: ");
+		result.append(version);
 		result.append(')');
 		return result.toString();
 	}

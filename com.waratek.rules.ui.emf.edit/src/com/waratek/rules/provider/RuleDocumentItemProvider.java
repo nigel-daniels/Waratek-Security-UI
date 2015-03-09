@@ -8,6 +8,7 @@ import com.waratek.rules.RuleDocument;
 import com.waratek.rules.RulesFactory;
 import com.waratek.rules.RulesPackage;
 
+import com.waratek.rules.Version;
 import java.util.Collection;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class RuleDocumentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -71,48 +72,25 @@ public class RuleDocumentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addScopePropertyDescriptor(object);
+			addVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Version feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addVersionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RuleDocument_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RuleDocument_name_feature", "_UI_RuleDocument_type"),
-				 RulesPackage.Literals.RULE_DOCUMENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Scope feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScopePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RuleDocument_scope_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RuleDocument_scope_feature", "_UI_RuleDocument_type"),
-				 RulesPackage.Literals.RULE_DOCUMENT__SCOPE,
+				 getString("_UI_RuleDocument_version_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RuleDocument_version_feature", "_UI_RuleDocument_type"),
+				 RulesPackage.Literals.RULE_DOCUMENT__VERSION,
 				 true,
 				 false,
 				 false,
@@ -134,6 +112,7 @@ public class RuleDocumentItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RulesPackage.Literals.RULE_DOCUMENT__RULES);
+			childrenFeatures.add(RulesPackage.Literals.RULE_DOCUMENT__COMMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -166,14 +145,11 @@ public class RuleDocumentItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RuleDocument)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_RuleDocument_type") :
-			getString("_UI_RuleDocument_type") + " " + label;
+		return getString("_UI_RuleDocument_type");
 	}
 
 	/**
@@ -188,11 +164,11 @@ public class RuleDocumentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RuleDocument.class)) {
-			case RulesPackage.RULE_DOCUMENT__NAME:
-			case RulesPackage.RULE_DOCUMENT__SCOPE:
+			case RulesPackage.RULE_DOCUMENT__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RulesPackage.RULE_DOCUMENT__RULES:
+			case RulesPackage.RULE_DOCUMENT__COMMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -264,6 +240,11 @@ public class RuleDocumentItemProvider
 			(createChildParameter
 				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
 				 RulesFactory.eINSTANCE.createSQLInjection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RulesPackage.Literals.RULE_DOCUMENT__COMMENTS,
+				 RulesFactory.eINSTANCE.createComment()));
 	}
 
 	/**

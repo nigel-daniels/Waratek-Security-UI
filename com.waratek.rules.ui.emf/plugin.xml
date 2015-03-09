@@ -10,7 +10,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated rules -->
       <package
-            uri="http://www.waratek.com/rules/1.0"
+            uri="http://www.waratek.com/rules/1.1"
             class="com.waratek.rules.RulesPackage"
             genModel="model/rules.genmodel"/>
    </extension>

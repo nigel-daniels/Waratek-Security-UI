@@ -42,7 +42,7 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 // End of user code
 
 /**
- * @author Copyright 2014 Waratek Ltd.
+ * 
  * 
  */
 public class ReflectFieldPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
@@ -78,12 +78,6 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 			final ReflectField reflectField = (ReflectField)elt;
 			final ReflectFieldPropertiesEditionPart basePart = (ReflectFieldPropertiesEditionPart)editingPart;
 			// init values
-			if (isAccessible(RulesViewsRepository.ReflectField.Properties.id))
-				basePart.setId(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, reflectField.getId()));
-			
-			if (isAccessible(RulesViewsRepository.ReflectField.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, reflectField.getComment()));
-			
 			if (isAccessible(RulesViewsRepository.ReflectField.Properties.action)) {
 				basePart.initAction(EEFUtils.choiceOfValues(reflectField, RulesPackage.eINSTANCE.getRule_Action()), reflectField.getAction());
 			}
@@ -105,8 +99,6 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 			
 			
 			
-			
-			
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -122,19 +114,11 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 
 
 
-
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == RulesViewsRepository.ReflectField.Properties.id) {
-			return RulesPackage.eINSTANCE.getRule_Id();
-		}
-		if (editorKey == RulesViewsRepository.ReflectField.Properties.comment) {
-			return RulesPackage.eINSTANCE.getRule_Comment();
-		}
 		if (editorKey == RulesViewsRepository.ReflectField.Properties.action) {
 			return RulesPackage.eINSTANCE.getRule_Action();
 		}
@@ -160,12 +144,6 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ReflectField reflectField = (ReflectField)semanticObject;
-		if (RulesViewsRepository.ReflectField.Properties.id == event.getAffectedEditor()) {
-			reflectField.setId((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
-		if (RulesViewsRepository.ReflectField.Properties.comment == event.getAffectedEditor()) {
-			reflectField.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
 		if (RulesViewsRepository.ReflectField.Properties.action == event.getAffectedEditor()) {
 			reflectField.setAction((Action)event.getNewValue());
 		}
@@ -191,20 +169,6 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			ReflectFieldPropertiesEditionPart basePart = (ReflectFieldPropertiesEditionPart)editingPart;
-			if (RulesPackage.eINSTANCE.getRule_Id().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.ReflectField.Properties.id)) {
-				if (msg.getNewValue() != null) {
-					basePart.setId(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setId("");
-				}
-			}
-			if (RulesPackage.eINSTANCE.getRule_Comment().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.ReflectField.Properties.comment)) {
-				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
-				} else {
-					basePart.setComment("");
-				}
-			}
 			if (RulesPackage.eINSTANCE.getRule_Action().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.ReflectField.Properties.action))
 				basePart.setAction((Action)msg.getNewValue());
 			
@@ -244,8 +208,6 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRule_Id(),
-			RulesPackage.eINSTANCE.getRule_Comment(),
 			RulesPackage.eINSTANCE.getRule_Action(),
 			RulesPackage.eINSTANCE.getRule_Log(),
 			RulesPackage.eINSTANCE.getReflection_PackageName(),
@@ -265,20 +227,6 @@ public class ReflectFieldPropertiesEditionComponent extends SinglePartProperties
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
 			try {
-				if (RulesViewsRepository.ReflectField.Properties.id == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Id().getEAttributeType(), newValue);
-				}
-				if (RulesViewsRepository.ReflectField.Properties.comment == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Comment().getEAttributeType(), newValue);
-				}
 				if (RulesViewsRepository.ReflectField.Properties.action == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {

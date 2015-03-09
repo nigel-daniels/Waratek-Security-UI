@@ -22,8 +22,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.waratek.rules.impl.RuleImpl#getId <em>Id</em>}</li>
- *   <li>{@link com.waratek.rules.impl.RuleImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link com.waratek.rules.impl.RuleImpl#getAction <em>Action</em>}</li>
  *   <li>{@link com.waratek.rules.impl.RuleImpl#getLog <em>Log</em>}</li>
  * </ul>
@@ -37,47 +35,7 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
@@ -143,48 +101,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.RULE__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.RULE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Action getAction() {
 		return action;
 	}
@@ -230,10 +146,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RulesPackage.RULE__ID:
-				return getId();
-			case RulesPackage.RULE__COMMENT:
-				return getComment();
 			case RulesPackage.RULE__ACTION:
 				return getAction();
 			case RulesPackage.RULE__LOG:
@@ -250,12 +162,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RulesPackage.RULE__ID:
-				setId((String)newValue);
-				return;
-			case RulesPackage.RULE__COMMENT:
-				setComment((String)newValue);
-				return;
 			case RulesPackage.RULE__ACTION:
 				setAction((Action)newValue);
 				return;
@@ -274,12 +180,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RulesPackage.RULE__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case RulesPackage.RULE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case RulesPackage.RULE__ACTION:
 				setAction(ACTION_EDEFAULT);
 				return;
@@ -298,10 +198,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RulesPackage.RULE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case RulesPackage.RULE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case RulesPackage.RULE__ACTION:
 				return action != ACTION_EDEFAULT;
 			case RulesPackage.RULE__LOG:
@@ -320,11 +216,7 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", comment: ");
-		result.append(comment);
-		result.append(", action: ");
+		result.append(" (action: ");
 		result.append(action);
 		result.append(", log: ");
 		result.append(log);

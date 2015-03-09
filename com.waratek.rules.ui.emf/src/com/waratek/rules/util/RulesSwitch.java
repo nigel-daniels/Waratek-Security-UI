@@ -29,7 +29,7 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * The cached model package
@@ -172,6 +172,12 @@ public class RulesSwitch<T> extends Switch<T> {
 				SQLInjection sqlInjection = (SQLInjection)theEObject;
 				T result = caseSQLInjection(sqlInjection);
 				if (result == null) result = caseRule(sqlInjection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RulesPackage.COMMENT: {
+				Comment comment = (Comment)theEObject;
+				T result = caseComment(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -386,6 +392,21 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSQLInjection(SQLInjection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComment(Comment object) {
 		return null;
 	}
 

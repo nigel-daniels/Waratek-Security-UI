@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rules" nsURI="http://www.waratek.com/rules/1.0" nsPrefix="rules">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rules" nsURI="http://www.waratek.com/rules/1.1" nsPrefix="rules">
   <eClassifiers xsi:type="ecore:EClass" name="RuleDocument">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="#//Version"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" lowerBound="1" upperBound="-1"
         eType="#//Rule" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//Scope"
-        defaultValueLiteral="JVC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
+        eType="#//Comment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//Action"
         defaultValueLiteral="Deny"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="log" eType="#//Log" defaultValueLiteral="Warning"/>
@@ -84,14 +82,16 @@
     <eLiterals name="debug" value="4" literal="Debug"/>
     <eLiterals name="trace" value="5" literal="Trace"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Scope">
-    <eLiterals name="jvc" literal="JVC"/>
-    <eLiterals name="global" value="1" literal="Global"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SQLInjection" eSuperTypes="#//Rule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="database" eType="#//Database"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Database">
     <eLiterals name="oracle" literal="Oracle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Version">
+    <eLiterals name="one"/>
   </eClassifiers>
 </ecore:EPackage>

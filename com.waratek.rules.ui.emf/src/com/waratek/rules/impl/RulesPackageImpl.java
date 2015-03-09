@@ -5,6 +5,7 @@ package com.waratek.rules.impl;
 
 import com.waratek.rules.Action;
 import com.waratek.rules.ClassLink;
+import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.File;
 import com.waratek.rules.FileParameter;
@@ -23,15 +24,13 @@ import com.waratek.rules.RuleDocument;
 import com.waratek.rules.RulesFactory;
 import com.waratek.rules.RulesPackage;
 import com.waratek.rules.SQLInjection;
-import com.waratek.rules.Scope;
 import com.waratek.rules.ThrowableClass;
-
+import com.waratek.rules.Version;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -46,7 +45,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,6 +150,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass commentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum fileParameterEEnum = null;
 
 	/**
@@ -179,14 +185,14 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum scopeEEnum = null;
+	private EEnum databaseEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum databaseEEnum = null;
+	private EEnum versionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -263,7 +269,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRuleDocument_Name() {
+	public EAttribute getRuleDocument_Version() {
 		return (EAttribute)ruleDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -281,8 +287,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRuleDocument_Scope() {
-		return (EAttribute)ruleDocumentEClass.getEStructuralFeatures().get(2);
+	public EReference getRuleDocument_Comments() {
+		return (EReference)ruleDocumentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -299,7 +305,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRule_Id() {
+	public EAttribute getRule_Action() {
 		return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -308,26 +314,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRule_Comment() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRule_Action() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRule_Log() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -605,6 +593,24 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getComment() {
+		return commentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComment_Comment() {
+		return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getFileParameter() {
 		return fileParameterEEnum;
 	}
@@ -641,8 +647,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getScope() {
-		return scopeEEnum;
+	public EEnum getDatabase() {
+		return databaseEEnum;
 	}
 
 	/**
@@ -650,8 +656,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getDatabase() {
-		return databaseEEnum;
+	public EEnum getVersion() {
+		return versionEEnum;
 	}
 
 	/**
@@ -683,13 +689,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 
 		// Create classes and their features
 		ruleDocumentEClass = createEClass(RULE_DOCUMENT);
-		createEAttribute(ruleDocumentEClass, RULE_DOCUMENT__NAME);
+		createEAttribute(ruleDocumentEClass, RULE_DOCUMENT__VERSION);
 		createEReference(ruleDocumentEClass, RULE_DOCUMENT__RULES);
-		createEAttribute(ruleDocumentEClass, RULE_DOCUMENT__SCOPE);
+		createEReference(ruleDocumentEClass, RULE_DOCUMENT__COMMENTS);
 
 		ruleEClass = createEClass(RULE);
-		createEAttribute(ruleEClass, RULE__ID);
-		createEAttribute(ruleEClass, RULE__COMMENT);
 		createEAttribute(ruleEClass, RULE__ACTION);
 		createEAttribute(ruleEClass, RULE__LOG);
 
@@ -735,13 +739,16 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		sqlInjectionEClass = createEClass(SQL_INJECTION);
 		createEAttribute(sqlInjectionEClass, SQL_INJECTION__DATABASE);
 
+		commentEClass = createEClass(COMMENT);
+		createEAttribute(commentEClass, COMMENT__COMMENT);
+
 		// Create enums
 		fileParameterEEnum = createEEnum(FILE_PARAMETER);
 		networkParameterEEnum = createEEnum(NETWORK_PARAMETER);
 		actionEEnum = createEEnum(ACTION);
 		logEEnum = createEEnum(LOG);
-		scopeEEnum = createEEnum(SCOPE);
 		databaseEEnum = createEEnum(DATABASE);
+		versionEEnum = createEEnum(VERSION);
 	}
 
 	/**
@@ -787,13 +794,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ruleDocumentEClass, RuleDocument.class, "RuleDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRuleDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuleDocument_Version(), this.getVersion(), "version", null, 0, 1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRuleDocument_Rules(), this.getRule(), null, "rules", null, 1, -1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRuleDocument_Scope(), this.getScope(), "scope", "JVC", 0, 1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleDocument_Comments(), this.getComment(), null, "comments", null, 0, -1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ruleEClass, Rule.class, "Rule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRule_Id(), ecorePackage.getEString(), "id", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Action(), this.getAction(), "action", "Deny", 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Log(), this.getLog(), "log", "Warning", 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -839,6 +844,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		initEClass(sqlInjectionEClass, SQLInjection.class, "SQLInjection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSQLInjection_Database(), this.getDatabase(), "database", null, 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(fileParameterEEnum, FileParameter.class, "FileParameter");
 		addEEnumLiteral(fileParameterEEnum, FileParameter.READ);
@@ -869,12 +877,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEEnumLiteral(logEEnum, Log.DEBUG);
 		addEEnumLiteral(logEEnum, Log.TRACE);
 
-		initEEnum(scopeEEnum, Scope.class, "Scope");
-		addEEnumLiteral(scopeEEnum, Scope.JVC);
-		addEEnumLiteral(scopeEEnum, Scope.GLOBAL);
-
 		initEEnum(databaseEEnum, Database.class, "Database");
 		addEEnumLiteral(databaseEEnum, Database.ORACLE);
+
+		initEEnum(versionEEnum, Version.class, "Version");
+		addEEnumLiteral(versionEEnum, Version.ONE);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -6,10 +6,8 @@ package com.waratek.rules.provider;
 
 import com.waratek.rules.Network;
 import com.waratek.rules.RulesPackage;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -41,7 +39,7 @@ public class NetworkItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -159,13 +157,8 @@ public class NetworkItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		Network network = (Network)object;
-		
-		label.append(network.getId() + " - ");
+
 		label.append(network.getNetworkParameter().toString() + ":" + network.getHost() + ":" + network.getPort() + ":" + network.getAction().toString() + ":" + network.getLog().toString());
-		
-		if (network.getComment() != null)
-			if (!network.getComment().isEmpty())
-				{label.append(" - " + network.getComment());}
 			
 		return label == null || label.length() == 0 ?
 			getString("_UI_Network_type") :

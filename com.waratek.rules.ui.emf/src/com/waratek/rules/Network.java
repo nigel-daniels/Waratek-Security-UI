@@ -28,7 +28,7 @@ public interface Network extends Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright 2014 Waratek Ltd.";
+	String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * Returns the value of the '<em><b>Host</b></em>' attribute.

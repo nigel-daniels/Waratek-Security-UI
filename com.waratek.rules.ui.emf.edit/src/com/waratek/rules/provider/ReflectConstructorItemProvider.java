@@ -41,7 +41,7 @@ public class ReflectConstructorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -136,14 +136,8 @@ public class ReflectConstructorItemProvider
 	public String getText(Object object) {
 		StringBuffer label = new StringBuffer();
 		ReflectConstructor reflectConstructor = (ReflectConstructor)object;
-		
-		label.append(reflectConstructor.getId() + " - ");
-		label.append(reflectConstructor.getPackageName() + ":" + reflectConstructor.getClassName() + ":" + reflectConstructor.getConstructorSignature() + ":" + reflectConstructor.getAction().toString() + ":" + reflectConstructor.getLog().toString());
-		
-		if (reflectConstructor.getComment() != null)
-			if (!reflectConstructor.getComment().isEmpty())
-				{label.append(" - " + reflectConstructor.getComment());}
 
+		label.append(reflectConstructor.getPackageName() + ":" + reflectConstructor.getClassName() + ":" + reflectConstructor.getConstructorSignature() + ":" + reflectConstructor.getAction().toString() + ":" + reflectConstructor.getLog().toString());
 		
 		return label == null || label.length() == 0 ?
 			getString("_UI_ReflectConstructor_type") :

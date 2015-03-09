@@ -39,7 +39,7 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2014 Waratek Ltd.";
+	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -356,6 +356,29 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.waratek.rules.Comment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommentItemProvider commentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.waratek.rules.Comment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommentAdapter() {
+		if (commentItemProvider == null) {
+			commentItemProvider = new CommentItemProvider(this);
+		}
+
+		return commentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -466,6 +489,7 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 		if (classLinkItemProvider != null) classLinkItemProvider.dispose();
 		if (nativeItemProvider != null) nativeItemProvider.dispose();
 		if (sqlInjectionItemProvider != null) sqlInjectionItemProvider.dispose();
+		if (commentItemProvider != null) commentItemProvider.dispose();
 	}
 
 }

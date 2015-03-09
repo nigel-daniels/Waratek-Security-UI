@@ -3,10 +3,10 @@
 
  <plugin>
 
-  <!-- EEF extensions -->
+   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.waratek.com/rules/1.0"
+            uri="http://www.waratek.com/rules/1.1"
             class="com.waratek.rules.providers.RulesEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
@@ -120,6 +120,12 @@
                class="com.waratek.rules.parts.forms.SQLInjectionPropertiesEditionPartForm"
                filter="com.waratek.rules.providers.SQLInjectionPropertiesEditionProvider$EditionFilter"
                id="com.waratek.rules.section.SQLInjection"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="com.waratek.rules.parts.forms.CommentPropertiesEditionPartForm"
+               filter="com.waratek.rules.providers.CommentPropertiesEditionProvider$EditionFilter"
+               id="com.waratek.rules.section.Comment"
                tab="Base">
          </propertySection>
       </propertySections>
