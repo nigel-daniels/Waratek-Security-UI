@@ -211,8 +211,8 @@ public class RulesActionBarContributor
 				    	// MOD updated to handle both plugin and RCP environments
 				    	if (input instanceof FileEditorInput)
 				    		{
-				    		URI fileURI = URI.createPlatformResourceURI(((FileEditorInput)input).getPath().toString(), true);
-				    		resource = resourceSet.createResource(fileURI);
+				    		URI fileURI = URI.createPlatformResourceURI(((FileEditorInput)input).getFile().getFullPath().toString(), true);
+				    		resource = resourceSet.getResource(fileURI, true);
 				    		}
 				    	else if (input instanceof URIEditorInput)
 				    		{
