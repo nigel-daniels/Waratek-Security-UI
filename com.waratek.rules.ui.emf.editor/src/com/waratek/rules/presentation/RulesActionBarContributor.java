@@ -136,96 +136,6 @@ public class RulesActionBarContributor
 			}
 		};
 
-
-		/**
-		 * @generated NOT
-		 */
-		protected IAction generateRulesAction =
-			new Action(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateRules_menu_item")) {
-			
-			private Shell shell = null;
-			
-			@Override
-			public void run() {
-				// TODO Add validation
-				shell = activeEditorPart.getSite().getShell();
-				
-				if (activeEditor.isDirty()) {
-					if (MessageDialog.openConfirm(shell, RulesEditorPlugin.INSTANCE.getString("_UI_SaveEditor_dialog_title"), RulesEditorPlugin.INSTANCE.getString("_UI_SaveEditor_dialog_message")))
-						{
-						activeEditor.doSave(null);
-						generateRules();
-						};
-				}
-				else {
-					generateRules();
-				}
-			}
-			
-			
-			private void generateRules() {
-				// Open a directory dialog to get the output path
-				DirectoryDialog dialog = new DirectoryDialog (shell);
-				dialog.setText(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateRules_dialog_title"));
-				dialog.setMessage(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateRules_dialog_message"));
-				String outputPath = dialog.open();
-				
-				if (outputPath != null)
-					{
-					// Now set the Xpand output path
-		 			Output output = new OutputImpl();
-		 			output.addOutlet(new Outlet(outputPath));
-		 			
-		 			// Get the output context and set the encoding
-		 			XpandExecutionContextImpl executionContext = new XpandExecutionContextImpl(output, null);
-		 			executionContext.getResourceManager().setFileEncoding("UTF-8");
-		 			
-				    // Add the EMF metamodel to the context
-				    EmfMetaModel EMFMetaModel = new EmfMetaModel();
-				    EMFMetaModel.setMetaModelPackage(RulesPackage.class.getName());
-				    executionContext.registerMetaModel(EMFMetaModel);
-				    
-				    try {
-				    	// Get the current file being worked on
-				    	IEditorInput input = activeEditorPart.getEditorInput();
-				    	ResourceSet resourceSet = new ResourceSetImpl();
-				    	Resource resource = null;
-				 
-				    	// MOD updated to handle both plugin and RCP environments
-				    	if (input instanceof FileEditorInput)
-				    		{
-				    		URI fileURI = URI.createPlatformResourceURI(((FileEditorInput)input).getFile().getFullPath().toString(), true);
-				    		resource = resourceSet.getResource(fileURI, true);
-				    		}
-				    	else if (input instanceof URIEditorInput)
-				    		{
-				    		resource = resourceSet.createResource(((URIEditorInput) input).getURI());
-				    		resource.load(null);
-				    		}
-				    	
-				    	// Now get the content from the resource
-				    	if (resource != null)
-					    	{
-					    	Object RulesContent = resource.getContents().get(0);
-					    	
-					    	// Now create the Xpand facade and perform the transform
-					    	Object[] params = null;
-					    	
-					    	XpandFacade xpandFacade = XpandFacade.create(executionContext);
-					    	xpandFacade.evaluate("template::RDFTemplate::main", RulesContent, params);
-					    	
-					    	MessageDialog.openInformation(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateOk_dialog_message"), (Object)null) + outputPath);
-					    	}
-				    	else
-				    		{MessageDialog.openError(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_message"), (Object)null) + " The resource could not be loaded.");}
-				    }
-				    catch (Exception e) {
-				    	MessageDialog.openError(shell, RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_title"), String.format(RulesEditorPlugin.INSTANCE.getString("_UI_GenerateFail_dialog_message"), (Object)null) + e.getLocalizedMessage());
-				    	System.err.println(e);
-				    }
-				}
-			}
-		};
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
 	 * generated for the current selection by the item provider.
@@ -538,7 +448,7 @@ public class RulesActionBarContributor
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated  NOT
+	 * @generated 
 	 */
 	@Override
 	protected void addGlobalActions(IMenuManager menuManager) {
@@ -547,8 +457,6 @@ public class RulesActionBarContributor
 
 		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
-		// MOD Added this line to include the rule generation
-		menuManager.insertAfter("ui-actions", generateRulesAction);
 		
 		super.addGlobalActions(menuManager);
 	}

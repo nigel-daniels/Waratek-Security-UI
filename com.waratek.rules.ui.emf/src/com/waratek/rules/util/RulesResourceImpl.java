@@ -4,8 +4,10 @@
 package com.waratek.rules.util;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
+
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -40,14 +42,11 @@ public class RulesResourceImpl extends ResourceImpl
 
 
 	/**
-	 * Called to save the resource. This implementation throws an exception;
-	 * clients must override it.
+	 * Called to save the resource. 
 	 * 
-	 * @param outputStream
-	 *            the stream
-	 * @param options
-	 *            the save options.
-	 * @exception UnsupportedOperationException
+	 * @param outputStream the stream
+	 * @param options the save options.
+	 * @exception IOException
 	 * @generated NOT
 	 */
 	@Override
@@ -59,9 +58,25 @@ public class RulesResourceImpl extends ResourceImpl
 			{
 			EObject object = iterator.next();
 			String line = rulesResourceSwitch.doSwitch(object);
+			
+			if (line != null)
+				{outputStream.write(line.getBytes(), 0, line.length());}
+			
 			System.out.print(line);
 			}
-		//throw new UnsupportedOperationException();
 		}
 	
+	 /**
+	   * Called to load the resource.
+	   * 
+	   * @param inputStream the stream
+	   * @param options the load options.
+	   * @exception IOException
+	   * @generated NOT
+	   */
+	  protected void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException
+	  {
+	    throw new UnsupportedOperationException();
+	  }
+
 	} // RulesResourceImpl
