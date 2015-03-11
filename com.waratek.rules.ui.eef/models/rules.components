@@ -148,7 +148,7 @@
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzxgsahEeSOcqbgPLQvZQ" name="Native" views="_TUzxy8ahEeSOcqbgPLQvZQ">
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxg8ahEeSOcqbgPLQvZQ" name="action" views="_TUzxzcahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Native/nativeAction"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxhMahEeSOcqbgPLQvZQ" name="log" views="_TUzxzsahEeSOcqbgPLQvZQ">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>

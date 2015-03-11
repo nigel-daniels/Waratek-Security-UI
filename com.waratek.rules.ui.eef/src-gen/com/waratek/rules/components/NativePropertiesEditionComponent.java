@@ -4,39 +4,30 @@
 package com.waratek.rules.components;
 
 // Start of user code for imports
-import com.waratek.rules.Action;
-import com.waratek.rules.Log;
-import com.waratek.rules.Native;
-import com.waratek.rules.RulesPackage;
-
-import com.waratek.rules.parts.Native_PropertiesEditionPart;
-import com.waratek.rules.parts.RulesViewsRepository;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
-
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
-
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
+
+import com.waratek.rules.Log;
+import com.waratek.rules.Native;
+import com.waratek.rules.NativeAction;
+import com.waratek.rules.RulesPackage;
+import com.waratek.rules.parts.Native_PropertiesEditionPart;
+import com.waratek.rules.parts.RulesViewsRepository;
 
 
 // End of user code
@@ -79,7 +70,7 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 			final Native_PropertiesEditionPart basePart = (Native_PropertiesEditionPart)editingPart;
 			// init values
 			if (isAccessible(RulesViewsRepository.Native_.Properties.action)) {
-				basePart.initAction(EEFUtils.choiceOfValues(native_, RulesPackage.eINSTANCE.getRule_Action()), native_.getAction());
+				basePart.initAction(EEFUtils.choiceOfValues(native_, RulesPackage.eINSTANCE.getNative_NativeAction()), native_.getNativeAction());
 			}
 			if (isAccessible(RulesViewsRepository.Native_.Properties.log)) {
 				basePart.initLog(EEFUtils.choiceOfValues(native_, RulesPackage.eINSTANCE.getRule_Log()), native_.getLog());
@@ -115,7 +106,7 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RulesViewsRepository.Native_.Properties.action) {
-			return RulesPackage.eINSTANCE.getRule_Action();
+			return RulesPackage.eINSTANCE.getNative_NativeAction();
 		}
 		if (editorKey == RulesViewsRepository.Native_.Properties.log) {
 			return RulesPackage.eINSTANCE.getRule_Log();
@@ -137,7 +128,7 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Native native_ = (Native)semanticObject;
 		if (RulesViewsRepository.Native_.Properties.action == event.getAffectedEditor()) {
-			native_.setAction((Action)event.getNewValue());
+			native_.setNativeAction((NativeAction)event.getNewValue());
 		}
 		if (RulesViewsRepository.Native_.Properties.log == event.getAffectedEditor()) {
 			native_.setLog((Log)event.getNewValue());
@@ -158,8 +149,8 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			Native_PropertiesEditionPart basePart = (Native_PropertiesEditionPart)editingPart;
-			if (RulesPackage.eINSTANCE.getRule_Action().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.Native_.Properties.action))
-				basePart.setAction((Action)msg.getNewValue());
+			if (RulesPackage.eINSTANCE.getNative_NativeAction().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.Native_.Properties.action))
+				basePart.setAction((NativeAction)msg.getNewValue());
 			
 			if (RulesPackage.eINSTANCE.getRule_Log().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.Native_.Properties.log))
 				basePart.setLog((Log)msg.getNewValue());
@@ -190,7 +181,7 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRule_Action(),
+			RulesPackage.eINSTANCE.getNative_NativeAction(),
 			RulesPackage.eINSTANCE.getRule_Log(),
 			RulesPackage.eINSTANCE.getNative_Path(),
 			RulesPackage.eINSTANCE.getNative_Checksum()		);
@@ -211,9 +202,9 @@ public class NativePropertiesEditionComponent extends SinglePartPropertiesEditin
 				if (RulesViewsRepository.Native_.Properties.action == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getRule_Action().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getNative_NativeAction().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getRule_Action().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getNative_NativeAction().getEAttributeType(), newValue);
 				}
 				if (RulesViewsRepository.Native_.Properties.log == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
