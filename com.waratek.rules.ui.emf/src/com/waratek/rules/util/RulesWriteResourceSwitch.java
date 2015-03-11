@@ -181,7 +181,11 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 			{
 			result.append(";" + checksum + ":");
 			}
-		result.append(tailRuleLine((Rule) object));
+		
+		result = new StringBuffer(object.getNativeAction().getName() + ":");
+		result.append(object.getLog().getName());
+		result.append(String.format("%n", (Object) null));
+		
 		return result.toString();
 		}
 
