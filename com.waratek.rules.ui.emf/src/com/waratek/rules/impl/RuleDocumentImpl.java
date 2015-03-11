@@ -3,8 +3,7 @@
  */
 package com.waratek.rules.impl;
 
-import com.waratek.rules.Comment;
-import com.waratek.rules.Rule;
+import com.waratek.rules.Lines;
 import com.waratek.rules.RuleDocument;
 import com.waratek.rules.RulesPackage;
 import com.waratek.rules.Version;
@@ -27,8 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getRules <em>Rules</em>}</li>
- *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.RuleDocumentImpl#getLines <em>Lines</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,24 +61,14 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	protected Version version = VERSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
+	 * The cached value of the '{@link #getLines() <em>Lines</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRules()
+	 * @see #getLines()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Rule> rules;
-
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Comment> comments;
+	protected EList<Lines> lines;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,23 +115,13 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Rule> getRules() {
-		if (rules == null) {
-			rules = new EObjectContainmentEList<Rule>(Rule.class, this, RulesPackage.RULE_DOCUMENT__RULES);
+	public EList<Lines> getLines()
+	{
+		if (lines == null)
+		{
+			lines = new EObjectContainmentEList<Lines>(Lines.class, this, RulesPackage.RULE_DOCUMENT__LINES);
 		}
-		return rules;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Comment> getComments() {
-		if (comments == null) {
-			comments = new EObjectContainmentEList<Comment>(Comment.class, this, RulesPackage.RULE_DOCUMENT__COMMENTS);
-		}
-		return comments;
+		return lines;
 	}
 
 	/**
@@ -153,11 +131,10 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RulesPackage.RULE_DOCUMENT__RULES:
-				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
-			case RulesPackage.RULE_DOCUMENT__COMMENTS:
-				return ((InternalEList<?>)getComments()).basicRemove(otherEnd, msgs);
+		switch (featureID)
+		{
+			case RulesPackage.RULE_DOCUMENT__LINES:
+				return ((InternalEList<?>)getLines()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,13 +146,12 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE_DOCUMENT__VERSION:
 				return getVersion();
-			case RulesPackage.RULE_DOCUMENT__RULES:
-				return getRules();
-			case RulesPackage.RULE_DOCUMENT__COMMENTS:
-				return getComments();
+			case RulesPackage.RULE_DOCUMENT__LINES:
+				return getLines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,17 +164,14 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE_DOCUMENT__VERSION:
 				setVersion((Version)newValue);
 				return;
-			case RulesPackage.RULE_DOCUMENT__RULES:
-				getRules().clear();
-				getRules().addAll((Collection<? extends Rule>)newValue);
-				return;
-			case RulesPackage.RULE_DOCUMENT__COMMENTS:
-				getComments().clear();
-				getComments().addAll((Collection<? extends Comment>)newValue);
+			case RulesPackage.RULE_DOCUMENT__LINES:
+				getLines().clear();
+				getLines().addAll((Collection<? extends Lines>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -211,15 +184,13 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE_DOCUMENT__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
-			case RulesPackage.RULE_DOCUMENT__RULES:
-				getRules().clear();
-				return;
-			case RulesPackage.RULE_DOCUMENT__COMMENTS:
-				getComments().clear();
+			case RulesPackage.RULE_DOCUMENT__LINES:
+				getLines().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -232,13 +203,12 @@ public class RuleDocumentImpl extends MinimalEObjectImpl.Container implements Ru
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE_DOCUMENT__VERSION:
 				return version != VERSION_EDEFAULT;
-			case RulesPackage.RULE_DOCUMENT__RULES:
-				return rules != null && !rules.isEmpty();
-			case RulesPackage.RULE_DOCUMENT__COMMENTS:
-				return comments != null && !comments.isEmpty();
+			case RulesPackage.RULE_DOCUMENT__LINES:
+				return lines != null && !lines.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

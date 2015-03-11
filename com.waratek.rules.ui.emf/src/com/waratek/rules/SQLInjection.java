@@ -30,6 +30,7 @@ public interface SQLInjection extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Database</b></em>' attribute.
+	 * The default value is <code>"Oracle"</code>.
 	 * The literals are from the enumeration {@link com.waratek.rules.Database}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -41,7 +42,7 @@ public interface SQLInjection extends Rule {
 	 * @see com.waratek.rules.Database
 	 * @see #setDatabase(Database)
 	 * @see com.waratek.rules.RulesPackage#getSQLInjection_Database()
-	 * @model
+	 * @model default="Oracle"
 	 * @generated
 	 */
 	Database getDatabase();

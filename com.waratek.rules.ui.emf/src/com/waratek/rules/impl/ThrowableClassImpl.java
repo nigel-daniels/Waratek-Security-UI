@@ -41,7 +41,7 @@ public class ThrowableClassImpl extends RuleImpl implements ThrowableClass {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLASS_NAME_EDEFAULT = null;
+	protected static final String CLASS_NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
@@ -100,7 +100,8 @@ public class ThrowableClassImpl extends RuleImpl implements ThrowableClass {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.THROWABLE_CLASS__CLASS_NAME:
 				return getClassName();
 		}
@@ -114,7 +115,8 @@ public class ThrowableClassImpl extends RuleImpl implements ThrowableClass {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.THROWABLE_CLASS__CLASS_NAME:
 				setClassName((String)newValue);
 				return;
@@ -129,7 +131,8 @@ public class ThrowableClassImpl extends RuleImpl implements ThrowableClass {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.THROWABLE_CLASS__CLASS_NAME:
 				setClassName(CLASS_NAME_EDEFAULT);
 				return;
@@ -144,7 +147,8 @@ public class ThrowableClassImpl extends RuleImpl implements ThrowableClass {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.THROWABLE_CLASS__CLASS_NAME:
 				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
 		}

@@ -7,13 +7,9 @@ import com.waratek.rules.Action;
 import com.waratek.rules.Log;
 import com.waratek.rules.Rule;
 import com.waratek.rules.RulesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
+public abstract class RuleImpl extends LinesImpl implements Rule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -145,7 +141,8 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE__ACTION:
 				return getAction();
 			case RulesPackage.RULE__LOG:
@@ -161,7 +158,8 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE__ACTION:
 				setAction((Action)newValue);
 				return;
@@ -179,7 +177,8 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE__ACTION:
 				setAction(ACTION_EDEFAULT);
 				return;
@@ -197,7 +196,8 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.RULE__ACTION:
 				return action != ACTION_EDEFAULT;
 			case RulesPackage.RULE__LOG:

@@ -58,7 +58,8 @@ public enum Database implements Enumerator {
 	 * @generated
 	 */
 	private static final Database[] VALUES_ARRAY =
-		new Database[] {
+		new Database[]
+		{
 			ORACLE,
 		};
 
@@ -77,9 +78,11 @@ public enum Database implements Enumerator {
 	 * @generated
 	 */
 	public static Database get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Database result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -93,9 +96,11 @@ public enum Database implements Enumerator {
 	 * @generated
 	 */
 	public static Database getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Database result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -109,7 +114,8 @@ public enum Database implements Enumerator {
 	 * @generated
 	 */
 	public static Database get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case ORACLE_VALUE: return ORACLE;
 		}
 		return null;

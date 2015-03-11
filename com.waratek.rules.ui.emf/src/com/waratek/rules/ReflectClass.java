@@ -30,6 +30,7 @@ public interface ReflectClass extends Reflection {
 
 	/**
 	 * Returns the value of the '<em><b>Class Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Class Name</em>' attribute isn't clear,
@@ -39,7 +40,7 @@ public interface ReflectClass extends Reflection {
 	 * @return the value of the '<em>Class Name</em>' attribute.
 	 * @see #setClassName(String)
 	 * @see com.waratek.rules.RulesPackage#getReflectClass_ClassName()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getClassName();

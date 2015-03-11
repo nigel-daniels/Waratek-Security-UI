@@ -108,7 +108,8 @@ public enum FileParameter implements Enumerator {
 	 * @generated
 	 */
 	private static final FileParameter[] VALUES_ARRAY =
-		new FileParameter[] {
+		new FileParameter[]
+		{
 			READ,
 			WRITE,
 			EXEC,
@@ -129,9 +130,11 @@ public enum FileParameter implements Enumerator {
 	 * @generated
 	 */
 	public static FileParameter get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			FileParameter result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -145,9 +148,11 @@ public enum FileParameter implements Enumerator {
 	 * @generated
 	 */
 	public static FileParameter getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			FileParameter result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -161,7 +166,8 @@ public enum FileParameter implements Enumerator {
 	 * @generated
 	 */
 	public static FileParameter get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case READ_VALUE: return READ;
 			case WRITE_VALUE: return WRITE;
 			case EXEC_VALUE: return EXEC;

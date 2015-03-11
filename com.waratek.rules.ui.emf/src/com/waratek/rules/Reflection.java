@@ -30,6 +30,7 @@ public interface Reflection extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Package Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Package Name</em>' attribute isn't clear,
@@ -39,7 +40,7 @@ public interface Reflection extends Rule {
 	 * @return the value of the '<em>Package Name</em>' attribute.
 	 * @see #setPackageName(String)
 	 * @see com.waratek.rules.RulesPackage#getReflection_PackageName()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getPackageName();

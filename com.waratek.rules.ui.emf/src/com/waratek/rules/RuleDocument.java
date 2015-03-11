@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.waratek.rules.RuleDocument#getVersion <em>Version</em>}</li>
- *   <li>{@link com.waratek.rules.RuleDocument#getRules <em>Rules</em>}</li>
- *   <li>{@link com.waratek.rules.RuleDocument#getComments <em>Comments</em>}</li>
+ *   <li>{@link com.waratek.rules.RuleDocument#getLines <em>Lines</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +34,7 @@ public interface RuleDocument extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.
+	 * The default value is <code>"One"</code>.
 	 * The literals are from the enumeration {@link com.waratek.rules.Version}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -46,7 +46,7 @@ public interface RuleDocument extends EObject {
 	 * @see com.waratek.rules.Version
 	 * @see #setVersion(Version)
 	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Version()
-	 * @model
+	 * @model default="One"
 	 * @generated
 	 */
 	Version getVersion();
@@ -63,35 +63,19 @@ public interface RuleDocument extends EObject {
 	void setVersion(Version value);
 
 	/**
-	 * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
-	 * The list contents are of type {@link com.waratek.rules.Rule}.
+	 * Returns the value of the '<em><b>Lines</b></em>' containment reference list.
+	 * The list contents are of type {@link com.waratek.rules.Lines}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rules</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Lines</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rules</em>' containment reference list.
-	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Rules()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Rule> getRules();
-
-	/**
-	 * Returns the value of the '<em><b>Comments</b></em>' containment reference list.
-	 * The list contents are of type {@link com.waratek.rules.Comment}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Comments</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comments</em>' containment reference list.
-	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Comments()
+	 * @return the value of the '<em>Lines</em>' containment reference list.
+	 * @see com.waratek.rules.RulesPackage#getRuleDocument_Lines()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Comment> getComments();
+	EList<Lines> getLines();
 
 } // RuleDocument

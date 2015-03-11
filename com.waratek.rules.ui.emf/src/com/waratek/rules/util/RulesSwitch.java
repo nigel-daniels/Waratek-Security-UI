@@ -46,7 +46,8 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public RulesSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = RulesPackage.eINSTANCE;
 		}
 	}
@@ -73,111 +74,148 @@ public class RulesSwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case RulesPackage.RULE_DOCUMENT: {
+		switch (classifierID)
+		{
+			case RulesPackage.RULE_DOCUMENT:
+			{
 				RuleDocument ruleDocument = (RuleDocument)theEObject;
 				T result = caseRuleDocument(ruleDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.RULE: {
+			case RulesPackage.RULE:
+			{
 				Rule rule = (Rule)theEObject;
 				T result = caseRule(rule);
+				if (result == null) result = caseLines(rule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.FILE: {
+			case RulesPackage.FILE:
+			{
 				File file = (File)theEObject;
 				T result = caseFile(file);
 				if (result == null) result = caseRule(file);
+				if (result == null) result = caseLines(file);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.NETWORK: {
+			case RulesPackage.NETWORK:
+			{
 				Network network = (Network)theEObject;
 				T result = caseNetwork(network);
 				if (result == null) result = caseRule(network);
+				if (result == null) result = caseLines(network);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECTION: {
+			case RulesPackage.REFLECTION:
+			{
 				Reflection reflection = (Reflection)theEObject;
 				T result = caseReflection(reflection);
 				if (result == null) result = caseRule(reflection);
+				if (result == null) result = caseLines(reflection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECT_PACKAGE: {
+			case RulesPackage.REFLECT_PACKAGE:
+			{
 				ReflectPackage reflectPackage = (ReflectPackage)theEObject;
 				T result = caseReflectPackage(reflectPackage);
 				if (result == null) result = caseReflection(reflectPackage);
 				if (result == null) result = caseRule(reflectPackage);
+				if (result == null) result = caseLines(reflectPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECT_CLASS: {
+			case RulesPackage.REFLECT_CLASS:
+			{
 				ReflectClass reflectClass = (ReflectClass)theEObject;
 				T result = caseReflectClass(reflectClass);
 				if (result == null) result = caseReflection(reflectClass);
 				if (result == null) result = caseRule(reflectClass);
+				if (result == null) result = caseLines(reflectClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECT_CONSTRUCTOR: {
+			case RulesPackage.REFLECT_CONSTRUCTOR:
+			{
 				ReflectConstructor reflectConstructor = (ReflectConstructor)theEObject;
 				T result = caseReflectConstructor(reflectConstructor);
 				if (result == null) result = caseReflection(reflectConstructor);
 				if (result == null) result = caseRule(reflectConstructor);
+				if (result == null) result = caseLines(reflectConstructor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECT_METHOD: {
+			case RulesPackage.REFLECT_METHOD:
+			{
 				ReflectMethod reflectMethod = (ReflectMethod)theEObject;
 				T result = caseReflectMethod(reflectMethod);
 				if (result == null) result = caseReflection(reflectMethod);
 				if (result == null) result = caseRule(reflectMethod);
+				if (result == null) result = caseLines(reflectMethod);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECT_FIELD: {
+			case RulesPackage.REFLECT_FIELD:
+			{
 				ReflectField reflectField = (ReflectField)theEObject;
 				T result = caseReflectField(reflectField);
 				if (result == null) result = caseReflection(reflectField);
 				if (result == null) result = caseRule(reflectField);
+				if (result == null) result = caseLines(reflectField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.THROWABLE_CLASS: {
+			case RulesPackage.THROWABLE_CLASS:
+			{
 				ThrowableClass throwableClass = (ThrowableClass)theEObject;
 				T result = caseThrowableClass(throwableClass);
 				if (result == null) result = caseRule(throwableClass);
+				if (result == null) result = caseLines(throwableClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.CLASS_LINK: {
+			case RulesPackage.CLASS_LINK:
+			{
 				ClassLink classLink = (ClassLink)theEObject;
 				T result = caseClassLink(classLink);
 				if (result == null) result = caseRule(classLink);
+				if (result == null) result = caseLines(classLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.NATIVE: {
+			case RulesPackage.NATIVE:
+			{
 				Native native_ = (Native)theEObject;
 				T result = caseNative(native_);
 				if (result == null) result = caseRule(native_);
+				if (result == null) result = caseLines(native_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.SQL_INJECTION: {
+			case RulesPackage.SQL_INJECTION:
+			{
 				SQLInjection sqlInjection = (SQLInjection)theEObject;
 				T result = caseSQLInjection(sqlInjection);
 				if (result == null) result = caseRule(sqlInjection);
+				if (result == null) result = caseLines(sqlInjection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.COMMENT: {
+			case RulesPackage.COMMENT:
+			{
 				Comment comment = (Comment)theEObject;
 				T result = caseComment(comment);
+				if (result == null) result = caseLines(comment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RulesPackage.LINES:
+			{
+				Lines lines = (Lines)theEObject;
+				T result = caseLines(lines);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -407,6 +445,22 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComment(Comment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Lines</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Lines</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLines(Lines object)
+	{
 		return null;
 	}
 

@@ -30,6 +30,7 @@ public interface ClassLink extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Descriptor Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Descriptor Name</em>' attribute isn't clear,
@@ -39,7 +40,7 @@ public interface ClassLink extends Rule {
 	 * @return the value of the '<em>Descriptor Name</em>' attribute.
 	 * @see #setDescriptorName(String)
 	 * @see com.waratek.rules.RulesPackage#getClassLink_DescriptorName()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getDescriptorName();

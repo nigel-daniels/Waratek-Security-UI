@@ -3,7 +3,6 @@
  */
 package com.waratek.rules;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Comment extends EObject {
+public interface Comment extends Lines {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,6 +30,7 @@ public interface Comment extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Comment</em>' attribute isn't clear,
@@ -40,7 +40,7 @@ public interface Comment extends EObject {
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
 	 * @see com.waratek.rules.RulesPackage#getComment_Comment()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getComment();

@@ -183,7 +183,8 @@ public enum Log implements Enumerator {
 	 * @generated
 	 */
 	private static final Log[] VALUES_ARRAY =
-		new Log[] {
+		new Log[]
+		{
 			OFF,
 			INFO,
 			WARN,
@@ -207,9 +208,11 @@ public enum Log implements Enumerator {
 	 * @generated
 	 */
 	public static Log get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Log result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -223,9 +226,11 @@ public enum Log implements Enumerator {
 	 * @generated
 	 */
 	public static Log getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Log result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -239,7 +244,8 @@ public enum Log implements Enumerator {
 	 * @generated
 	 */
 	public static Log get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case OFF_VALUE: return OFF;
 			case INFO_VALUE: return INFO;
 			case WARN_VALUE: return WARN;

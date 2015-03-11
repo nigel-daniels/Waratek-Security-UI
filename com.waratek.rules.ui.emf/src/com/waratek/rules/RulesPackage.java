@@ -85,22 +85,13 @@ public interface RulesPackage extends EPackage {
 	int RULE_DOCUMENT__VERSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Lines</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_DOCUMENT__RULES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_DOCUMENT__COMMENTS = 2;
+	int RULE_DOCUMENT__LINES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Rule Document</em>' class.
@@ -109,7 +100,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_DOCUMENT_FEATURE_COUNT = 3;
+	int RULE_DOCUMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Rule Document</em>' class.
@@ -119,6 +110,34 @@ public interface RulesPackage extends EPackage {
 	 * @ordered
 	 */
 	int RULE_DOCUMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.waratek.rules.impl.LinesImpl <em>Lines</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.impl.LinesImpl
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getLines()
+	 * @generated
+	 */
+	int LINES = 15;
+
+	/**
+	 * The number of structural features of the '<em>Lines</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINES_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Lines</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINES_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.impl.RuleImpl <em>Rule</em>}' class.
@@ -137,7 +156,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__ACTION = 0;
+	int RULE__ACTION = LINES_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Log</b></em>' attribute.
@@ -146,7 +165,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__LOG = 1;
+	int RULE__LOG = LINES_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -155,7 +174,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_FEATURE_COUNT = 2;
+	int RULE_FEATURE_COUNT = LINES_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Rule</em>' class.
@@ -164,7 +183,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_OPERATION_COUNT = 0;
+	int RULE_OPERATION_COUNT = LINES_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.impl.FileImpl <em>File</em>}' class.
@@ -942,7 +961,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT__COMMENT = 0;
+	int COMMENT__COMMENT = LINES_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Comment</em>' class.
@@ -951,7 +970,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_FEATURE_COUNT = 1;
+	int COMMENT_FEATURE_COUNT = LINES_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Comment</em>' class.
@@ -960,7 +979,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_OPERATION_COUNT = 0;
+	int COMMENT_OPERATION_COUNT = LINES_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.FileParameter <em>File Parameter</em>}' enum.
@@ -970,7 +989,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getFileParameter()
 	 * @generated
 	 */
-	int FILE_PARAMETER = 15;
+	int FILE_PARAMETER = 16;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.NetworkParameter <em>Network Parameter</em>}' enum.
@@ -980,7 +999,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getNetworkParameter()
 	 * @generated
 	 */
-	int NETWORK_PARAMETER = 16;
+	int NETWORK_PARAMETER = 17;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Action <em>Action</em>}' enum.
@@ -990,7 +1009,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 17;
+	int ACTION = 18;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Log <em>Log</em>}' enum.
@@ -1000,7 +1019,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getLog()
 	 * @generated
 	 */
-	int LOG = 18;
+	int LOG = 19;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Database <em>Database</em>}' enum.
@@ -1010,7 +1029,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabase()
 	 * @generated
 	 */
-	int DATABASE = 19;
+	int DATABASE = 20;
 
 
 	/**
@@ -1021,7 +1040,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getVersion()
 	 * @generated
 	 */
-	int VERSION = 20;
+	int VERSION = 21;
 
 
 	/**
@@ -1046,26 +1065,15 @@ public interface RulesPackage extends EPackage {
 	EAttribute getRuleDocument_Version();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.waratek.rules.RuleDocument#getRules <em>Rules</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.waratek.rules.RuleDocument#getLines <em>Lines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Rules</em>'.
-	 * @see com.waratek.rules.RuleDocument#getRules()
+	 * @return the meta object for the containment reference list '<em>Lines</em>'.
+	 * @see com.waratek.rules.RuleDocument#getLines()
 	 * @see #getRuleDocument()
 	 * @generated
 	 */
-	EReference getRuleDocument_Rules();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link com.waratek.rules.RuleDocument#getComments <em>Comments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Comments</em>'.
-	 * @see com.waratek.rules.RuleDocument#getComments()
-	 * @see #getRuleDocument()
-	 * @generated
-	 */
-	EReference getRuleDocument_Comments();
+	EReference getRuleDocument_Lines();
 
 	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.Rule <em>Rule</em>}'.
@@ -1439,6 +1447,16 @@ public interface RulesPackage extends EPackage {
 	EAttribute getComment_Comment();
 
 	/**
+	 * Returns the meta object for class '{@link com.waratek.rules.Lines <em>Lines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lines</em>'.
+	 * @see com.waratek.rules.Lines
+	 * @generated
+	 */
+	EClass getLines();
+
+	/**
 	 * Returns the meta object for enum '{@link com.waratek.rules.FileParameter <em>File Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1540,20 +1558,12 @@ public interface RulesPackage extends EPackage {
 		EAttribute RULE_DOCUMENT__VERSION = eINSTANCE.getRuleDocument_Version();
 
 		/**
-		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Lines</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RULE_DOCUMENT__RULES = eINSTANCE.getRuleDocument_Rules();
-
-		/**
-		 * The meta object literal for the '<em><b>Comments</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RULE_DOCUMENT__COMMENTS = eINSTANCE.getRuleDocument_Comments();
+		EReference RULE_DOCUMENT__LINES = eINSTANCE.getRuleDocument_Lines();
 
 		/**
 		 * The meta object literal for the '{@link com.waratek.rules.impl.RuleImpl <em>Rule</em>}' class.
@@ -1862,6 +1872,16 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMMENT__COMMENT = eINSTANCE.getComment_Comment();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.impl.LinesImpl <em>Lines</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.impl.LinesImpl
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getLines()
+		 * @generated
+		 */
+		EClass LINES = eINSTANCE.getLines();
 
 		/**
 		 * The meta object literal for the '{@link com.waratek.rules.FileParameter <em>File Parameter</em>}' enum.

@@ -133,7 +133,8 @@ public enum NetworkParameter implements Enumerator {
 	 * @generated
 	 */
 	private static final NetworkParameter[] VALUES_ARRAY =
-		new NetworkParameter[] {
+		new NetworkParameter[]
+		{
 			BIND,
 			CONNECT,
 			SERVERBIND,
@@ -155,9 +156,11 @@ public enum NetworkParameter implements Enumerator {
 	 * @generated
 	 */
 	public static NetworkParameter get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			NetworkParameter result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -171,9 +174,11 @@ public enum NetworkParameter implements Enumerator {
 	 * @generated
 	 */
 	public static NetworkParameter getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			NetworkParameter result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -187,7 +192,8 @@ public enum NetworkParameter implements Enumerator {
 	 * @generated
 	 */
 	public static NetworkParameter get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case BIND_VALUE: return BIND;
 			case CONNECT_VALUE: return CONNECT;
 			case SERVERBIND_VALUE: return SERVERBIND;

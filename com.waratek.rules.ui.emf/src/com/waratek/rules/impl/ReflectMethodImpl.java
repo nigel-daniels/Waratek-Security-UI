@@ -42,7 +42,7 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLASS_NAME_EDEFAULT = null;
+	protected static final String CLASS_NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
@@ -62,7 +62,7 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String METHOD_SIGNATURE_EDEFAULT = null;
+	protected static final String METHOD_SIGNATURE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getMethodSignature() <em>Method Signature</em>}' attribute.
@@ -142,7 +142,8 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECT_METHOD__CLASS_NAME:
 				return getClassName();
 			case RulesPackage.REFLECT_METHOD__METHOD_SIGNATURE:
@@ -158,7 +159,8 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECT_METHOD__CLASS_NAME:
 				setClassName((String)newValue);
 				return;
@@ -176,7 +178,8 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECT_METHOD__CLASS_NAME:
 				setClassName(CLASS_NAME_EDEFAULT);
 				return;
@@ -194,7 +197,8 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECT_METHOD__CLASS_NAME:
 				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
 			case RulesPackage.REFLECT_METHOD__METHOD_SIGNATURE:

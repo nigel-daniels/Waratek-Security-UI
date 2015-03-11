@@ -43,7 +43,8 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public RulesAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = RulesPackage.eINSTANCE;
 		}
 	}
@@ -58,10 +59,12 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -74,69 +77,91 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected RulesSwitch<Adapter> modelSwitch =
-		new RulesSwitch<Adapter>() {
+		new RulesSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseRuleDocument(RuleDocument object) {
+			public Adapter caseRuleDocument(RuleDocument object)
+			{
 				return createRuleDocumentAdapter();
 			}
 			@Override
-			public Adapter caseRule(Rule object) {
+			public Adapter caseRule(Rule object)
+			{
 				return createRuleAdapter();
 			}
 			@Override
-			public Adapter caseFile(File object) {
+			public Adapter caseFile(File object)
+			{
 				return createFileAdapter();
 			}
 			@Override
-			public Adapter caseNetwork(Network object) {
+			public Adapter caseNetwork(Network object)
+			{
 				return createNetworkAdapter();
 			}
 			@Override
-			public Adapter caseReflection(Reflection object) {
+			public Adapter caseReflection(Reflection object)
+			{
 				return createReflectionAdapter();
 			}
 			@Override
-			public Adapter caseReflectPackage(ReflectPackage object) {
+			public Adapter caseReflectPackage(ReflectPackage object)
+			{
 				return createReflectPackageAdapter();
 			}
 			@Override
-			public Adapter caseReflectClass(ReflectClass object) {
+			public Adapter caseReflectClass(ReflectClass object)
+			{
 				return createReflectClassAdapter();
 			}
 			@Override
-			public Adapter caseReflectConstructor(ReflectConstructor object) {
+			public Adapter caseReflectConstructor(ReflectConstructor object)
+			{
 				return createReflectConstructorAdapter();
 			}
 			@Override
-			public Adapter caseReflectMethod(ReflectMethod object) {
+			public Adapter caseReflectMethod(ReflectMethod object)
+			{
 				return createReflectMethodAdapter();
 			}
 			@Override
-			public Adapter caseReflectField(ReflectField object) {
+			public Adapter caseReflectField(ReflectField object)
+			{
 				return createReflectFieldAdapter();
 			}
 			@Override
-			public Adapter caseThrowableClass(ThrowableClass object) {
+			public Adapter caseThrowableClass(ThrowableClass object)
+			{
 				return createThrowableClassAdapter();
 			}
 			@Override
-			public Adapter caseClassLink(ClassLink object) {
+			public Adapter caseClassLink(ClassLink object)
+			{
 				return createClassLinkAdapter();
 			}
 			@Override
-			public Adapter caseNative(Native object) {
+			public Adapter caseNative(Native object)
+			{
 				return createNativeAdapter();
 			}
 			@Override
-			public Adapter caseSQLInjection(SQLInjection object) {
+			public Adapter caseSQLInjection(SQLInjection object)
+			{
 				return createSQLInjectionAdapter();
 			}
 			@Override
-			public Adapter caseComment(Comment object) {
+			public Adapter caseComment(Comment object)
+			{
 				return createCommentAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter caseLines(Lines object)
+			{
+				return createLinesAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};
@@ -362,6 +387,21 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.waratek.rules.Lines <em>Lines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.waratek.rules.Lines
+	 * @generated
+	 */
+	public Adapter createLinesAdapter()
+	{
 		return null;
 	}
 

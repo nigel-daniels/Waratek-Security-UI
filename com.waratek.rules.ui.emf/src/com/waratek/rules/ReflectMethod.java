@@ -31,6 +31,7 @@ public interface ReflectMethod extends Reflection {
 
 	/**
 	 * Returns the value of the '<em><b>Class Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Class Name</em>' attribute isn't clear,
@@ -40,7 +41,7 @@ public interface ReflectMethod extends Reflection {
 	 * @return the value of the '<em>Class Name</em>' attribute.
 	 * @see #setClassName(String)
 	 * @see com.waratek.rules.RulesPackage#getReflectMethod_ClassName()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getClassName();
@@ -57,6 +58,7 @@ public interface ReflectMethod extends Reflection {
 
 	/**
 	 * Returns the value of the '<em><b>Method Signature</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Method Signature</em>' attribute isn't clear,
@@ -66,7 +68,7 @@ public interface ReflectMethod extends Reflection {
 	 * @return the value of the '<em>Method Signature</em>' attribute.
 	 * @see #setMethodSignature(String)
 	 * @see com.waratek.rules.RulesPackage#getReflectMethod_MethodSignature()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getMethodSignature();

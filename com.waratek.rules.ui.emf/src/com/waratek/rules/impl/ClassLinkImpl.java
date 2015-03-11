@@ -41,7 +41,7 @@ public class ClassLinkImpl extends RuleImpl implements ClassLink {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DESCRIPTOR_NAME_EDEFAULT = null;
+	protected static final String DESCRIPTOR_NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getDescriptorName() <em>Descriptor Name</em>}' attribute.
@@ -100,7 +100,8 @@ public class ClassLinkImpl extends RuleImpl implements ClassLink {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.CLASS_LINK__DESCRIPTOR_NAME:
 				return getDescriptorName();
 		}
@@ -114,7 +115,8 @@ public class ClassLinkImpl extends RuleImpl implements ClassLink {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.CLASS_LINK__DESCRIPTOR_NAME:
 				setDescriptorName((String)newValue);
 				return;
@@ -129,7 +131,8 @@ public class ClassLinkImpl extends RuleImpl implements ClassLink {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.CLASS_LINK__DESCRIPTOR_NAME:
 				setDescriptorName(DESCRIPTOR_NAME_EDEFAULT);
 				return;
@@ -144,7 +147,8 @@ public class ClassLinkImpl extends RuleImpl implements ClassLink {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.CLASS_LINK__DESCRIPTOR_NAME:
 				return DESCRIPTOR_NAME_EDEFAULT == null ? descriptorName != null : !DESCRIPTOR_NAME_EDEFAULT.equals(descriptorName);
 		}

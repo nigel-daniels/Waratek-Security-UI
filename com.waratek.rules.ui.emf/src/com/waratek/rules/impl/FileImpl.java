@@ -43,7 +43,7 @@ public class FileImpl extends RuleImpl implements File {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATH_EDEFAULT = null;
+	protected static final String PATH_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -143,7 +143,8 @@ public class FileImpl extends RuleImpl implements File {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.FILE__PATH:
 				return getPath();
 			case RulesPackage.FILE__FILE_PARAMETER:
@@ -159,7 +160,8 @@ public class FileImpl extends RuleImpl implements File {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.FILE__PATH:
 				setPath((String)newValue);
 				return;
@@ -177,7 +179,8 @@ public class FileImpl extends RuleImpl implements File {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.FILE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
@@ -195,7 +198,8 @@ public class FileImpl extends RuleImpl implements File {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.FILE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case RulesPackage.FILE__FILE_PARAMETER:

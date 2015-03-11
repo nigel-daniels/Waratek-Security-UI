@@ -35,13 +35,16 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	public static RulesFactory init() {
-		try {
+		try
+		{
 			RulesFactory theRulesFactory = (RulesFactory)EPackage.Registry.INSTANCE.getEFactory(RulesPackage.eNS_URI);
-			if (theRulesFactory != null) {
+			if (theRulesFactory != null)
+			{
 				return theRulesFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RulesFactoryImpl();
@@ -64,7 +67,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case RulesPackage.RULE_DOCUMENT: return createRuleDocument();
 			case RulesPackage.FILE: return createFile();
 			case RulesPackage.NETWORK: return createNetwork();
@@ -90,7 +94,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case RulesPackage.FILE_PARAMETER:
 				return createFileParameterFromString(eDataType, initialValue);
 			case RulesPackage.NETWORK_PARAMETER:
@@ -115,7 +120,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case RulesPackage.FILE_PARAMETER:
 				return convertFileParameterToString(eDataType, instanceValue);
 			case RulesPackage.NETWORK_PARAMETER:

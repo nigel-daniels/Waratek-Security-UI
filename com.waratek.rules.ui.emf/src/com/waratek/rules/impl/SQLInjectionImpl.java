@@ -101,7 +101,8 @@ public class SQLInjectionImpl extends RuleImpl implements SQLInjection {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.SQL_INJECTION__DATABASE:
 				return getDatabase();
 		}
@@ -115,7 +116,8 @@ public class SQLInjectionImpl extends RuleImpl implements SQLInjection {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.SQL_INJECTION__DATABASE:
 				setDatabase((Database)newValue);
 				return;
@@ -130,7 +132,8 @@ public class SQLInjectionImpl extends RuleImpl implements SQLInjection {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.SQL_INJECTION__DATABASE:
 				setDatabase(DATABASE_EDEFAULT);
 				return;
@@ -145,7 +148,8 @@ public class SQLInjectionImpl extends RuleImpl implements SQLInjection {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.SQL_INJECTION__DATABASE:
 				return database != DATABASE_EDEFAULT;
 		}

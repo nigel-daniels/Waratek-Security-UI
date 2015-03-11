@@ -31,6 +31,7 @@ public interface File extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
@@ -40,7 +41,7 @@ public interface File extends Rule {
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
 	 * @see com.waratek.rules.RulesPackage#getFile_Path()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getPath();

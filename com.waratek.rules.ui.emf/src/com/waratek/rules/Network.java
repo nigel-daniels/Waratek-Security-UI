@@ -32,6 +32,7 @@ public interface Network extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Host</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Host</em>' attribute isn't clear,
@@ -41,7 +42,7 @@ public interface Network extends Rule {
 	 * @return the value of the '<em>Host</em>' attribute.
 	 * @see #setHost(String)
 	 * @see com.waratek.rules.RulesPackage#getNetwork_Host()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getHost();
@@ -58,6 +59,7 @@ public interface Network extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port</em>' attribute isn't clear,
@@ -67,7 +69,7 @@ public interface Network extends Rule {
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(String)
 	 * @see com.waratek.rules.RulesPackage#getNetwork_Port()
-	 * @model
+	 * @model default="0"
 	 * @generated
 	 */
 	String getPort();

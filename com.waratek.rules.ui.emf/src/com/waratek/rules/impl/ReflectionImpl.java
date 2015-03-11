@@ -41,7 +41,7 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PACKAGE_NAME_EDEFAULT = null;
+	protected static final String PACKAGE_NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
@@ -100,7 +100,8 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECTION__PACKAGE_NAME:
 				return getPackageName();
 		}
@@ -114,7 +115,8 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECTION__PACKAGE_NAME:
 				setPackageName((String)newValue);
 				return;
@@ -129,7 +131,8 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECTION__PACKAGE_NAME:
 				setPackageName(PACKAGE_NAME_EDEFAULT);
 				return;
@@ -144,7 +147,8 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.REFLECTION__PACKAGE_NAME:
 				return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
 		}

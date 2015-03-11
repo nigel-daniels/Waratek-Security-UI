@@ -5,13 +5,9 @@ package com.waratek.rules.impl;
 
 import com.waratek.rules.Comment;
 import com.waratek.rules.RulesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CommentImpl extends MinimalEObjectImpl.Container implements Comment {
+public class CommentImpl extends LinesImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,7 +38,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMENT_EDEFAULT = null;
+	protected static final String COMMENT_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
@@ -101,7 +97,8 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.COMMENT__COMMENT:
 				return getComment();
 		}
@@ -115,7 +112,8 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.COMMENT__COMMENT:
 				setComment((String)newValue);
 				return;
@@ -130,7 +128,8 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.COMMENT__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
@@ -145,7 +144,8 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.COMMENT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}

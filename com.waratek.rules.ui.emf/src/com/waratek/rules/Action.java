@@ -233,7 +233,8 @@ public enum Action implements Enumerator {
 	 * @generated
 	 */
 	private static final Action[] VALUES_ARRAY =
-		new Action[] {
+		new Action[]
+		{
 			ALLOW,
 			DENY,
 			SUSPEND,
@@ -259,9 +260,11 @@ public enum Action implements Enumerator {
 	 * @generated
 	 */
 	public static Action get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Action result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -275,9 +278,11 @@ public enum Action implements Enumerator {
 	 * @generated
 	 */
 	public static Action getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Action result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -291,7 +296,8 @@ public enum Action implements Enumerator {
 	 * @generated
 	 */
 	public static Action get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case ALLOW_VALUE: return ALLOW;
 			case DENY_VALUE: return DENY;
 			case SUSPEND_VALUE: return SUSPEND;

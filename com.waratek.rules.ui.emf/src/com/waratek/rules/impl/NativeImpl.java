@@ -42,7 +42,7 @@ public class NativeImpl extends RuleImpl implements Native {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATH_EDEFAULT = null;
+	protected static final String PATH_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -62,7 +62,7 @@ public class NativeImpl extends RuleImpl implements Native {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CHECKSUM_EDEFAULT = null;
+	protected static final String CHECKSUM_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getChecksum() <em>Checksum</em>}' attribute.
@@ -142,7 +142,8 @@ public class NativeImpl extends RuleImpl implements Native {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NATIVE__PATH:
 				return getPath();
 			case RulesPackage.NATIVE__CHECKSUM:
@@ -158,7 +159,8 @@ public class NativeImpl extends RuleImpl implements Native {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NATIVE__PATH:
 				setPath((String)newValue);
 				return;
@@ -176,7 +178,8 @@ public class NativeImpl extends RuleImpl implements Native {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NATIVE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
@@ -194,7 +197,8 @@ public class NativeImpl extends RuleImpl implements Native {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NATIVE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case RulesPackage.NATIVE__CHECKSUM:

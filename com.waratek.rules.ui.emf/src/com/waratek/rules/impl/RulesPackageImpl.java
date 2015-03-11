@@ -9,6 +9,7 @@ import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.File;
 import com.waratek.rules.FileParameter;
+import com.waratek.rules.Lines;
 import com.waratek.rules.Log;
 import com.waratek.rules.Native;
 import com.waratek.rules.Network;
@@ -157,6 +158,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass linesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum fileParameterEEnum = null;
 
 	/**
@@ -278,17 +286,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRuleDocument_Rules() {
+	public EReference getRuleDocument_Lines()
+	{
 		return (EReference)ruleDocumentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRuleDocument_Comments() {
-		return (EReference)ruleDocumentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -611,6 +611,16 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLines()
+	{
+		return linesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getFileParameter() {
 		return fileParameterEEnum;
 	}
@@ -690,8 +700,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		// Create classes and their features
 		ruleDocumentEClass = createEClass(RULE_DOCUMENT);
 		createEAttribute(ruleDocumentEClass, RULE_DOCUMENT__VERSION);
-		createEReference(ruleDocumentEClass, RULE_DOCUMENT__RULES);
-		createEReference(ruleDocumentEClass, RULE_DOCUMENT__COMMENTS);
+		createEReference(ruleDocumentEClass, RULE_DOCUMENT__LINES);
 
 		ruleEClass = createEClass(RULE);
 		createEAttribute(ruleEClass, RULE__ACTION);
@@ -742,6 +751,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		commentEClass = createEClass(COMMENT);
 		createEAttribute(commentEClass, COMMENT__COMMENT);
 
+		linesEClass = createEClass(LINES);
+
 		// Create enums
 		fileParameterEEnum = createEEnum(FILE_PARAMETER);
 		networkParameterEEnum = createEEnum(NETWORK_PARAMETER);
@@ -779,6 +790,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		ruleEClass.getESuperTypes().add(this.getLines());
 		fileEClass.getESuperTypes().add(this.getRule());
 		networkEClass.getESuperTypes().add(this.getRule());
 		reflectionEClass.getESuperTypes().add(this.getRule());
@@ -791,61 +803,63 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		classLinkEClass.getESuperTypes().add(this.getRule());
 		nativeEClass.getESuperTypes().add(this.getRule());
 		sqlInjectionEClass.getESuperTypes().add(this.getRule());
+		commentEClass.getESuperTypes().add(this.getLines());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ruleDocumentEClass, RuleDocument.class, "RuleDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRuleDocument_Version(), this.getVersion(), "version", null, 0, 1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleDocument_Rules(), this.getRule(), null, "rules", null, 1, -1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleDocument_Comments(), this.getComment(), null, "comments", null, 0, -1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuleDocument_Version(), this.getVersion(), "version", "One", 0, 1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleDocument_Lines(), this.getLines(), null, "lines", null, 0, -1, RuleDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ruleEClass, Rule.class, "Rule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRule_Action(), this.getAction(), "action", "Deny", 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Log(), this.getLog(), "log", "Warning", 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", "", 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFile_FileParameter(), this.getFileParameter(), "fileParameter", "Read", 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkEClass, Network.class, "Network", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNetwork_Host(), ecorePackage.getEString(), "host", null, 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNetwork_Port(), ecorePackage.getEString(), "port", null, 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNetwork_Host(), ecorePackage.getEString(), "host", "", 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNetwork_Port(), ecorePackage.getEString(), "port", "0", 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetwork_NetworkParameter(), this.getNetworkParameter(), "networkParameter", "Connect", 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reflectionEClass, Reflection.class, "Reflection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflection_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1, Reflection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflection_PackageName(), ecorePackage.getEString(), "packageName", "", 0, 1, Reflection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reflectPackageEClass, ReflectPackage.class, "ReflectPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reflectClassEClass, ReflectClass.class, "ReflectClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectClass_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ReflectClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectClass_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reflectConstructorEClass, ReflectConstructor.class, "ReflectConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectConstructor_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ReflectConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReflectConstructor_ConstructorSignature(), ecorePackage.getEString(), "constructorSignature", null, 0, 1, ReflectConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectConstructor_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectConstructor_ConstructorSignature(), ecorePackage.getEString(), "constructorSignature", "", 0, 1, ReflectConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reflectMethodEClass, ReflectMethod.class, "ReflectMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectMethod_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ReflectMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReflectMethod_MethodSignature(), ecorePackage.getEString(), "methodSignature", null, 0, 1, ReflectMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectMethod_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectMethod_MethodSignature(), ecorePackage.getEString(), "methodSignature", "", 0, 1, ReflectMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reflectFieldEClass, ReflectField.class, "ReflectField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectField_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ReflectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReflectField_FieldName(), ecorePackage.getEString(), "fieldName", null, 0, 1, ReflectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectField_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflectField_FieldName(), ecorePackage.getEString(), "fieldName", "", 0, 1, ReflectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(throwableClassEClass, ThrowableClass.class, "ThrowableClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getThrowableClass_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ThrowableClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThrowableClass_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ThrowableClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classLinkEClass, ClassLink.class, "ClassLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClassLink_DescriptorName(), ecorePackage.getEString(), "descriptorName", null, 0, 1, ClassLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassLink_DescriptorName(), ecorePackage.getEString(), "descriptorName", "", 0, 1, ClassLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nativeEClass, Native.class, "Native", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNative_Path(), ecorePackage.getEString(), "path", null, 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNative_Checksum(), ecorePackage.getEString(), "checksum", null, 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNative_Path(), ecorePackage.getEString(), "path", "", 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNative_Checksum(), ecorePackage.getEString(), "checksum", "", 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sqlInjectionEClass, SQLInjection.class, "SQLInjection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSQLInjection_Database(), this.getDatabase(), "database", null, 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSQLInjection_Database(), this.getDatabase(), "database", "Oracle", 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", "", 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linesEClass, Lines.class, "Lines", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(fileParameterEEnum, FileParameter.class, "FileParameter");

@@ -27,7 +27,7 @@ public enum Version implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ONE(0, "one", "one");
+	ONE(0, "one", "One");
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,7 +45,7 @@ public enum Version implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ONE
-	 * @model name="one"
+	 * @model name="one" literal="One"
 	 * @generated
 	 * @ordered
 	 */
@@ -58,7 +58,8 @@ public enum Version implements Enumerator {
 	 * @generated
 	 */
 	private static final Version[] VALUES_ARRAY =
-		new Version[] {
+		new Version[]
+		{
 			ONE,
 		};
 
@@ -77,9 +78,11 @@ public enum Version implements Enumerator {
 	 * @generated
 	 */
 	public static Version get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Version result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -93,9 +96,11 @@ public enum Version implements Enumerator {
 	 * @generated
 	 */
 	public static Version getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Version result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -109,7 +114,8 @@ public enum Version implements Enumerator {
 	 * @generated
 	 */
 	public static Version get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case ONE_VALUE: return ONE;
 		}
 		return null;

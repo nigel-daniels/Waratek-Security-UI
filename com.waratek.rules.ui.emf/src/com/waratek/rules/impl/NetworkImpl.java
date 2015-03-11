@@ -44,7 +44,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HOST_EDEFAULT = null;
+	protected static final String HOST_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' attribute.
@@ -64,7 +64,7 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PORT_EDEFAULT = null;
+	protected static final String PORT_EDEFAULT = "0";
 
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -185,7 +185,8 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NETWORK__HOST:
 				return getHost();
 			case RulesPackage.NETWORK__PORT:
@@ -203,7 +204,8 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NETWORK__HOST:
 				setHost((String)newValue);
 				return;
@@ -224,7 +226,8 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NETWORK__HOST:
 				setHost(HOST_EDEFAULT);
 				return;
@@ -245,7 +248,8 @@ public class NetworkImpl extends RuleImpl implements Network {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RulesPackage.NETWORK__HOST:
 				return HOST_EDEFAULT == null ? host != null : !HOST_EDEFAULT.equals(host);
 			case RulesPackage.NETWORK__PORT:

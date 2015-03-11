@@ -31,6 +31,7 @@ public interface Native extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
@@ -40,7 +41,7 @@ public interface Native extends Rule {
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
 	 * @see com.waratek.rules.RulesPackage#getNative_Path()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getPath();
@@ -57,6 +58,7 @@ public interface Native extends Rule {
 
 	/**
 	 * Returns the value of the '<em><b>Checksum</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Checksum</em>' attribute isn't clear,
@@ -66,7 +68,7 @@ public interface Native extends Rule {
 	 * @return the value of the '<em>Checksum</em>' attribute.
 	 * @see #setChecksum(String)
 	 * @see com.waratek.rules.RulesPackage#getNative_Checksum()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getChecksum();

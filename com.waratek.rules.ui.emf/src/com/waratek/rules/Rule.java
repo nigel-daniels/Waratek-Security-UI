@@ -3,7 +3,6 @@
  */
 package com.waratek.rules;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Rule extends EObject {
+public interface Rule extends Lines {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
