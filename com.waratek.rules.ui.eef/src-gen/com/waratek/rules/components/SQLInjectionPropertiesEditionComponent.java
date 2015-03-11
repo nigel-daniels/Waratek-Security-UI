@@ -87,7 +87,15 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 			if (isAccessible(RulesViewsRepository.SQLInjection.Properties.database)) {
 				basePart.initDatabase(EEFUtils.choiceOfValues(sQLInjection, RulesPackage.eINSTANCE.getSQLInjection_Database()), sQLInjection.getDatabase());
 			}
+			if (isAccessible(RulesViewsRepository.SQLInjection.Properties.ansiQuotes)) {
+				basePart.setAnsiQuotes(sQLInjection.isAnsiQuotes());
+			}
+			if (isAccessible(RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes)) {
+				basePart.setNoBackslashEscapes(sQLInjection.isNoBackSlashEscapes());
+			}
 			// init filters
+			
+			
 			
 			
 			
@@ -98,6 +106,8 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 		}
 		setInitializing(false);
 	}
+
+
 
 
 
@@ -118,6 +128,12 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 		if (editorKey == RulesViewsRepository.SQLInjection.Properties.database) {
 			return RulesPackage.eINSTANCE.getSQLInjection_Database();
 		}
+		if (editorKey == RulesViewsRepository.SQLInjection.Properties.ansiQuotes) {
+			return RulesPackage.eINSTANCE.getSQLInjection_AnsiQuotes();
+		}
+		if (editorKey == RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes) {
+			return RulesPackage.eINSTANCE.getSQLInjection_NoBackSlashEscapes();
+		}
 		return super.associatedFeature(editorKey);
 	}
 
@@ -136,6 +152,12 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 		}
 		if (RulesViewsRepository.SQLInjection.Properties.database == event.getAffectedEditor()) {
 			sQLInjection.setDatabase((Database)event.getNewValue());
+		}
+		if (RulesViewsRepository.SQLInjection.Properties.ansiQuotes == event.getAffectedEditor()) {
+			sQLInjection.setAnsiQuotes((Boolean)event.getNewValue());
+		}
+		if (RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes == event.getAffectedEditor()) {
+			sQLInjection.setNoBackSlashEscapes((Boolean)event.getNewValue());
 		}
 	}
 
@@ -156,6 +178,12 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 			if (RulesPackage.eINSTANCE.getSQLInjection_Database().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.SQLInjection.Properties.database))
 				basePart.setDatabase((Database)msg.getNewValue());
 			
+			if (RulesPackage.eINSTANCE.getSQLInjection_AnsiQuotes().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.SQLInjection.Properties.ansiQuotes))
+				basePart.setAnsiQuotes((Boolean)msg.getNewValue());
+			
+			if (RulesPackage.eINSTANCE.getSQLInjection_NoBackSlashEscapes().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes))
+				basePart.setNoBackslashEscapes((Boolean)msg.getNewValue());
+			
 			
 		}
 	}
@@ -170,7 +198,9 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
 			RulesPackage.eINSTANCE.getRule_Action(),
 			RulesPackage.eINSTANCE.getRule_Log(),
-			RulesPackage.eINSTANCE.getSQLInjection_Database()		);
+			RulesPackage.eINSTANCE.getSQLInjection_Database(),
+			RulesPackage.eINSTANCE.getSQLInjection_AnsiQuotes(),
+			RulesPackage.eINSTANCE.getSQLInjection_NoBackSlashEscapes()		);
 		return new NotificationFilter[] {filter,};
 	}
 
@@ -205,6 +235,20 @@ public class SQLInjectionPropertiesEditionComponent extends SinglePartProperties
 						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getSQLInjection_Database().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getSQLInjection_Database().getEAttributeType(), newValue);
+				}
+				if (RulesViewsRepository.SQLInjection.Properties.ansiQuotes == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getSQLInjection_AnsiQuotes().getEAttributeType(), (String)newValue);
+					}
+					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getSQLInjection_AnsiQuotes().getEAttributeType(), newValue);
+				}
+				if (RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EEFConverterUtil.createFromString(RulesPackage.eINSTANCE.getSQLInjection_NoBackSlashEscapes().getEAttributeType(), (String)newValue);
+					}
+					ret = Diagnostician.INSTANCE.validate(RulesPackage.eINSTANCE.getSQLInjection_NoBackSlashEscapes().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

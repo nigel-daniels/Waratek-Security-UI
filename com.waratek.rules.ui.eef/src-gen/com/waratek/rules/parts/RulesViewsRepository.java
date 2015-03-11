@@ -288,6 +288,12 @@ public class RulesViewsRepository {
 			
 			public static String database = "rules::SQLInjection::properties::database";
 			
+			
+			public static String ansiQuotes = "rules::SQLInjection::properties::ansiQuotes";
+			
+			
+			public static String noBackslashEscapes = "rules::SQLInjection::properties::noBackslashEscapes";
+			
 	
 		}
 	

@@ -78,6 +78,34 @@ public interface SQLInjectionPropertiesEditionPart {
 	public void setDatabase(Enumerator newValue);
 
 
+	/**
+	 * @return the ansiQuotes
+	 * 
+	 */
+	public Boolean getAnsiQuotes();
+
+	/**
+	 * Defines a new ansiQuotes
+	 * @param newValue the new ansiQuotes to set
+	 * 
+	 */
+	public void setAnsiQuotes(Boolean newValue);
+
+
+	/**
+	 * @return the noBackslashEscapes
+	 * 
+	 */
+	public Boolean getNoBackslashEscapes();
+
+	/**
+	 * Defines a new noBackslashEscapes
+	 * @param newValue the new noBackslashEscapes to set
+	 * 
+	 */
+	public void setNoBackslashEscapes(Boolean newValue);
+
+
 
 
 

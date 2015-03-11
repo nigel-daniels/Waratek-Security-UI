@@ -4,48 +4,37 @@
 package com.waratek.rules.parts.impl;
 
 // Start of user code for imports
-import com.waratek.rules.parts.RulesViewsRepository;
-import com.waratek.rules.parts.SQLInjectionPropertiesEditionPart;
-
-import com.waratek.rules.providers.RulesMessages;
-
 import org.eclipse.emf.common.util.Enumerator;
-
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-
 import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
-
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
-
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
-
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
-
 import org.eclipse.swt.SWT;
-
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
+
+import com.waratek.rules.parts.RulesViewsRepository;
+import com.waratek.rules.parts.SQLInjectionPropertiesEditionPart;
+import com.waratek.rules.providers.RulesMessages;
 
 // End of user code
 
@@ -58,6 +47,8 @@ public class SQLInjectionPropertiesEditionPartImpl extends CompositePropertiesEd
 	protected EMFComboViewer action;
 	protected EMFComboViewer log;
 	protected EMFComboViewer database;
+	protected Button ansiQuotes;
+	protected Button noBackslashEscapes;
 
 
 
@@ -99,6 +90,8 @@ public class SQLInjectionPropertiesEditionPartImpl extends CompositePropertiesEd
 		propertiesStep.addStep(RulesViewsRepository.SQLInjection.Properties.action);
 		propertiesStep.addStep(RulesViewsRepository.SQLInjection.Properties.log);
 		propertiesStep.addStep(RulesViewsRepository.SQLInjection.Properties.database);
+		propertiesStep.addStep(RulesViewsRepository.SQLInjection.Properties.ansiQuotes);
+		propertiesStep.addStep(RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes);
 		
 		
 		composer = new PartComposer(sQLInjectionStep) {
@@ -116,6 +109,12 @@ public class SQLInjectionPropertiesEditionPartImpl extends CompositePropertiesEd
 				}
 				if (key == RulesViewsRepository.SQLInjection.Properties.database) {
 					return createDatabaseEMFComboViewer(parent);
+				}
+				if (key == RulesViewsRepository.SQLInjection.Properties.ansiQuotes) {
+					return createAnsiQuotesCheckbox(parent);
+				}
+				if (key == RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes) {
+					return createNoBackslashEscapesCheckbox(parent);
 				}
 				return parent;
 			}
@@ -223,6 +222,66 @@ public class SQLInjectionPropertiesEditionPartImpl extends CompositePropertiesEd
 		database.setID(RulesViewsRepository.SQLInjection.Properties.database);
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.SQLInjection.Properties.database, RulesViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 		// Start of user code for createDatabaseEMFComboViewer
+
+		// End of user code
+		return parent;
+	}
+
+	
+	protected Composite createAnsiQuotesCheckbox(Composite parent) {
+		ansiQuotes = new Button(parent, SWT.CHECK);
+		ansiQuotes.setText(getDescription(RulesViewsRepository.SQLInjection.Properties.ansiQuotes, RulesMessages.SQLInjectionPropertiesEditionPart_AnsiQuotesLabel));
+		ansiQuotes.addSelectionListener(new SelectionAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 *
+			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
+			 * 	
+			 */
+			public void widgetSelected(SelectionEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SQLInjectionPropertiesEditionPartImpl.this, RulesViewsRepository.SQLInjection.Properties.ansiQuotes, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new Boolean(ansiQuotes.getSelection())));
+			}
+
+		});
+		GridData ansiQuotesData = new GridData(GridData.FILL_HORIZONTAL);
+		ansiQuotesData.horizontalSpan = 2;
+		ansiQuotes.setLayoutData(ansiQuotesData);
+		EditingUtils.setID(ansiQuotes, RulesViewsRepository.SQLInjection.Properties.ansiQuotes);
+		EditingUtils.setEEFtype(ansiQuotes, "eef::Checkbox"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.SQLInjection.Properties.ansiQuotes, RulesViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createAnsiQuotesCheckbox
+
+		// End of user code
+		return parent;
+	}
+
+	
+	protected Composite createNoBackslashEscapesCheckbox(Composite parent) {
+		noBackslashEscapes = new Button(parent, SWT.CHECK);
+		noBackslashEscapes.setText(getDescription(RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes, RulesMessages.SQLInjectionPropertiesEditionPart_NoBackslashEscapesLabel));
+		noBackslashEscapes.addSelectionListener(new SelectionAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 *
+			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
+			 * 	
+			 */
+			public void widgetSelected(SelectionEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SQLInjectionPropertiesEditionPartImpl.this, RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new Boolean(noBackslashEscapes.getSelection())));
+			}
+
+		});
+		GridData noBackslashEscapesData = new GridData(GridData.FILL_HORIZONTAL);
+		noBackslashEscapesData.horizontalSpan = 2;
+		noBackslashEscapes.setLayoutData(noBackslashEscapesData);
+		EditingUtils.setID(noBackslashEscapes, RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes);
+		EditingUtils.setEEFtype(noBackslashEscapes, "eef::Checkbox"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes, RulesViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNoBackslashEscapesCheckbox
 
 		// End of user code
 		return parent;
@@ -378,6 +437,70 @@ public class SQLInjectionPropertiesEditionPartImpl extends CompositePropertiesEd
 			database.setToolTipText(RulesMessages.SQLInjection_ReadOnly);
 		} else if (!eefElementEditorReadOnlyState && !database.isEnabled()) {
 			database.setEnabled(true);
+		}	
+		
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.waratek.rules.parts.SQLInjectionPropertiesEditionPart#getAnsiQuotes()
+	 * 
+	 */
+	public Boolean getAnsiQuotes() {
+		return Boolean.valueOf(ansiQuotes.getSelection());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.waratek.rules.parts.SQLInjectionPropertiesEditionPart#setAnsiQuotes(Boolean newValue)
+	 * 
+	 */
+	public void setAnsiQuotes(Boolean newValue) {
+		if (newValue != null) {
+			ansiQuotes.setSelection(newValue.booleanValue());
+		} else {
+			ansiQuotes.setSelection(false);
+		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.SQLInjection.Properties.ansiQuotes);
+		if (eefElementEditorReadOnlyState && ansiQuotes.isEnabled()) {
+			ansiQuotes.setEnabled(false);
+			ansiQuotes.setToolTipText(RulesMessages.SQLInjection_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !ansiQuotes.isEnabled()) {
+			ansiQuotes.setEnabled(true);
+		}	
+		
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.waratek.rules.parts.SQLInjectionPropertiesEditionPart#getNoBackslashEscapes()
+	 * 
+	 */
+	public Boolean getNoBackslashEscapes() {
+		return Boolean.valueOf(noBackslashEscapes.getSelection());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.waratek.rules.parts.SQLInjectionPropertiesEditionPart#setNoBackslashEscapes(Boolean newValue)
+	 * 
+	 */
+	public void setNoBackslashEscapes(Boolean newValue) {
+		if (newValue != null) {
+			noBackslashEscapes.setSelection(newValue.booleanValue());
+		} else {
+			noBackslashEscapes.setSelection(false);
+		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.SQLInjection.Properties.noBackslashEscapes);
+		if (eefElementEditorReadOnlyState && noBackslashEscapes.isEnabled()) {
+			noBackslashEscapes.setEnabled(false);
+			noBackslashEscapes.setToolTipText(RulesMessages.SQLInjection_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !noBackslashEscapes.isEnabled()) {
+			noBackslashEscapes.setEnabled(true);
 		}	
 		
 	}

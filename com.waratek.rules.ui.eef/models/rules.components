@@ -171,6 +171,12 @@
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxisahEeSOcqbgPLQvZQ" name="database" views="_TUzx1cahEeSOcqbgPLQvZQ">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection/database"/>
         </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Su9uEMeUEeSYY678K9o-aQ" name="ansiQuotes" views="_-66UwMeTEeSYY678K9o-aQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection/ansiQuotes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_gql7cMeUEeSYY678K9o-aQ" name="noBackslashEscapes" views="_GslhUMeUEeSYY678K9o-aQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection/noBackSlashEscapes"/>
+        </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzxi8ahEeSOcqbgPLQvZQ" name="Comment" views="_TUzx1sahEeSOcqbgPLQvZQ">
@@ -378,6 +384,12 @@
           </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzx1cahEeSOcqbgPLQvZQ" name="database">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-66UwMeTEeSYY678K9o-aQ" name="ansiQuotes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_GslhUMeUEeSYY678K9o-aQ" name="noBackslashEscapes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
           </elements>
         </elements>
       </views>

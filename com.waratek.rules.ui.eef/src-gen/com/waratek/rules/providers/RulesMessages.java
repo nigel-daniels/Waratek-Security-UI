@@ -268,6 +268,12 @@ public class RulesMessages extends NLS {
 	public static String SQLInjectionPropertiesEditionPart_DatabaseLabel;
 
 	
+	public static String SQLInjectionPropertiesEditionPart_AnsiQuotesLabel;
+
+	
+	public static String SQLInjectionPropertiesEditionPart_NoBackslashEscapesLabel;
+
+	
 	public static String CommentPropertiesEditionPart_CommentLabel;
 
 
