@@ -29,7 +29,7 @@
             id="com.waratek.rules.presentation.RulesEditorID"
             name="%_UI_RulesEditor_label"
             icon="icons/full/obj16/RulesModelFile.gif"
-            extensions="rdf"
+            extensions="rules"
             class="com.waratek.rules.presentation.RulesEditor"
             contributorClass="com.waratek.rules.presentation.RulesActionBarContributor">
       </editor>

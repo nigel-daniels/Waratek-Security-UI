@@ -47,7 +47,8 @@ public final class RulesEditorPlugin extends EMFPlugin {
 	 */
 	public RulesEditorPlugin() {
 		super
-			(new ResourceLocator [] {
+			(new ResourceLocator [] 
+			{
 			});
 	}
 
