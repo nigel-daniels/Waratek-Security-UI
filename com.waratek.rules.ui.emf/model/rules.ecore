@@ -3,12 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rules" nsURI="http://www.waratek.com/rules/1.1" nsPrefix="rules">
   <eClassifiers xsi:type="ecore:EClass" name="RuleDocument">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="#//Version"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" lowerBound="1" upperBound="-1"
-        eType="#//Rule" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
-        eType="#//Comment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
+        eType="#//Lines" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rule" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" abstract="true" eSuperTypes="#//Lines">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//Action"
         defaultValueLiteral="Deny"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="log" eType="#//Log" defaultValueLiteral="Warning"/>
@@ -88,10 +86,11 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Database">
     <eLiterals name="oracle" literal="Oracle"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment">
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Lines">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Version">
     <eLiterals name="one"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lines" abstract="true"/>
 </ecore:EPackage>

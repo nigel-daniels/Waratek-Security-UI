@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" language=""
     operationReflection="true" importOrganizing="true">
   <foreignModel>../../com.waratek.rules.ui.model/model/rules.ecore</foreignModel>
-  <genPackages prefix="Rules" basePackage="com.waratek" disposableProviderFactory="true"
+  <genPackages prefix="Rules" basePackage="com.waratek" resource="Basic" disposableProviderFactory="true"
       ecorePackage="rules.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//FileParameter">
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//FileParameter/read"/>
@@ -44,8 +44,7 @@
     </genEnums>
     <genClasses ecoreClass="rules.ecore#//RuleDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/version"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rules.ecore#//RuleDocument/rules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rules.ecore#//RuleDocument/comments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rules.ecore#//RuleDocument/lines"/>
     </genClasses>
     <genClasses image="false" ecoreClass="rules.ecore#//Rule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Rule/action"/>
@@ -95,5 +94,6 @@
     <genClasses ecoreClass="rules.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Comment/comment"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="rules.ecore#//Lines"/>
   </genPackages>
 </genmodel:GenModel>
