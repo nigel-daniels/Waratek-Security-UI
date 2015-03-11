@@ -64,6 +64,8 @@ public class SQLInjectionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDatabasePropertyDescriptor(object);
+			addAnsiQuotesPropertyDescriptor(object);
+			addNoBackSlashEscapesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +88,52 @@ public class SQLInjectionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ansi Quotes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnsiQuotesPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SQLInjection_ansiQuotes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SQLInjection_ansiQuotes_feature", "_UI_SQLInjection_type"),
+				 RulesPackage.Literals.SQL_INJECTION__ANSI_QUOTES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the No Back Slash Escapes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNoBackSlashEscapesPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SQLInjection_noBackSlashEscapes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SQLInjection_noBackSlashEscapes_feature", "_UI_SQLInjection_type"),
+				 RulesPackage.Literals.SQL_INJECTION__NO_BACK_SLASH_ESCAPES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -134,6 +182,8 @@ public class SQLInjectionItemProvider
 		switch (notification.getFeatureID(SQLInjection.class))
 		{
 			case RulesPackage.SQL_INJECTION__DATABASE:
+			case RulesPackage.SQL_INJECTION__ANSI_QUOTES:
+			case RulesPackage.SQL_INJECTION__NO_BACK_SLASH_ESCAPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

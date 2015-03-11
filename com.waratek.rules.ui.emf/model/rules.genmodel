@@ -38,6 +38,7 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Database">
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Database/oracle"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Database/mysql"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Version">
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Version/one"/>
@@ -90,6 +91,8 @@
     </genClasses>
     <genClasses ecoreClass="rules.ecore#//SQLInjection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//SQLInjection/database"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//SQLInjection/ansiQuotes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//SQLInjection/noBackSlashEscapes"/>
     </genClasses>
     <genClasses ecoreClass="rules.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Comment/comment"/>

@@ -99,9 +99,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="SQLInjection" eSuperTypes="#//Rule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="database" eType="#//Database"
         defaultValueLiteral="Oracle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ansiQuotes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noBackSlashEscapes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Database">
     <eLiterals name="oracle" literal="Oracle"/>
+    <eLiterals name="mysql" value="1" literal="MySQL"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Lines">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

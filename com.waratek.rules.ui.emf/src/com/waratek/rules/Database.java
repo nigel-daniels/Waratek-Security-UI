@@ -27,7 +27,15 @@ public enum Database implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ORACLE(0, "oracle", "Oracle");
+	ORACLE(0, "oracle", "Oracle"), /**
+	 * The '<em><b>Mysql</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MYSQL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MYSQL(1, "mysql", "MySQL");
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -52,6 +60,21 @@ public enum Database implements Enumerator {
 	public static final int ORACLE_VALUE = 0;
 
 	/**
+	 * The '<em><b>Mysql</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Mysql</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MYSQL
+	 * @model name="mysql" literal="MySQL"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MYSQL_VALUE = 1;
+
+	/**
 	 * An array of all the '<em><b>Database</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,6 +84,7 @@ public enum Database implements Enumerator {
 		new Database[]
 		{
 			ORACLE,
+			MYSQL,
 		};
 
 	/**
@@ -117,6 +141,7 @@ public enum Database implements Enumerator {
 		switch (value)
 		{
 			case ORACLE_VALUE: return ORACLE;
+			case MYSQL_VALUE: return MYSQL;
 		}
 		return null;
 	}

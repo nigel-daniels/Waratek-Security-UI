@@ -423,6 +423,14 @@
         <element xmi:type="ecore:EAttribute" href="rules.ecore#//SQLInjection/database"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_WpvssUQuEeSLEus3h-3GCw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_m8WxQMeQEeSYY678K9o-aQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="rules.ecore#//SQLInjection/ansiQuotes"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_m8WxQceQEeSYY678K9o-aQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_pwoPsMeQEeSYY678K9o-aQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="rules.ecore#//SQLInjection/noBackSlashEscapes"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pwoPsceQEeSYY678K9o-aQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_R89NcUQuEeSLEus3h-3GCw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_R89NckQuEeSLEus3h-3GCw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_R89Nc0QuEeSLEus3h-3GCw"/>
@@ -443,13 +451,17 @@
         <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Database/oracle"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ayBwsUQuEeSLEus3h-3GCw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_dGrsoMeQEeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Database/mysql"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_dGrsoceQEeSYY678K9o-aQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Z5tBkUQuEeSLEus3h-3GCw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Z5tBkkQuEeSLEus3h-3GCw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Z5tBk0QuEeSLEus3h-3GCw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Z5rzcUQuEeSLEus3h-3GCw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="rules.ecore#//Database"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z5rzckQuEeSLEus3h-3GCw" x="513" y="468"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z5rzckQuEeSLEus3h-3GCw" x="540" y="477"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_gNk98EQvEeSLEus3h-3GCw" type="Text" fontName="Lucida Grande" description="V 1.1 - Copyright 2015 Waratek Ltd.">
     <children xmi:type="notation:BasicDecorationNode" xmi:id="_gNooUEQvEeSLEus3h-3GCw" type="DiagramName">

@@ -927,13 +927,31 @@ public interface RulesPackage extends EPackage {
 	int SQL_INJECTION__DATABASE = RULE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Ansi Quotes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SQL_INJECTION__ANSI_QUOTES = RULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>No Back Slash Escapes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SQL_INJECTION__NO_BACK_SLASH_ESCAPES = RULE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>SQL Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_INJECTION_FEATURE_COUNT = RULE_FEATURE_COUNT + 1;
+	int SQL_INJECTION_FEATURE_COUNT = RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>SQL Injection</em>' class.
@@ -1426,6 +1444,28 @@ public interface RulesPackage extends EPackage {
 	EAttribute getSQLInjection_Database();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.SQLInjection#isAnsiQuotes <em>Ansi Quotes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ansi Quotes</em>'.
+	 * @see com.waratek.rules.SQLInjection#isAnsiQuotes()
+	 * @see #getSQLInjection()
+	 * @generated
+	 */
+	EAttribute getSQLInjection_AnsiQuotes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.SQLInjection#isNoBackSlashEscapes <em>No Back Slash Escapes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>No Back Slash Escapes</em>'.
+	 * @see com.waratek.rules.SQLInjection#isNoBackSlashEscapes()
+	 * @see #getSQLInjection()
+	 * @generated
+	 */
+	EAttribute getSQLInjection_NoBackSlashEscapes();
+
+	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.Comment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1854,6 +1894,22 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SQL_INJECTION__DATABASE = eINSTANCE.getSQLInjection_Database();
+
+		/**
+		 * The meta object literal for the '<em><b>Ansi Quotes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SQL_INJECTION__ANSI_QUOTES = eINSTANCE.getSQLInjection_AnsiQuotes();
+
+		/**
+		 * The meta object literal for the '<em><b>No Back Slash Escapes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SQL_INJECTION__NO_BACK_SLASH_ESCAPES = eINSTANCE.getSQLInjection_NoBackSlashEscapes();
 
 		/**
 		 * The meta object literal for the '{@link com.waratek.rules.impl.CommentImpl <em>Comment</em>}' class.

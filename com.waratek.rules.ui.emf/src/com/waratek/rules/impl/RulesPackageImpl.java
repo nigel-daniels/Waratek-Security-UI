@@ -593,6 +593,26 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSQLInjection_AnsiQuotes()
+	{
+		return (EAttribute)sqlInjectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSQLInjection_NoBackSlashEscapes()
+	{
+		return (EAttribute)sqlInjectionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComment() {
 		return commentEClass;
 	}
@@ -747,6 +767,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 
 		sqlInjectionEClass = createEClass(SQL_INJECTION);
 		createEAttribute(sqlInjectionEClass, SQL_INJECTION__DATABASE);
+		createEAttribute(sqlInjectionEClass, SQL_INJECTION__ANSI_QUOTES);
+		createEAttribute(sqlInjectionEClass, SQL_INJECTION__NO_BACK_SLASH_ESCAPES);
 
 		commentEClass = createEClass(COMMENT);
 		createEAttribute(commentEClass, COMMENT__COMMENT);
@@ -855,6 +877,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 
 		initEClass(sqlInjectionEClass, SQLInjection.class, "SQLInjection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSQLInjection_Database(), this.getDatabase(), "database", "Oracle", 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSQLInjection_AnsiQuotes(), ecorePackage.getEBoolean(), "ansiQuotes", "false", 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSQLInjection_NoBackSlashEscapes(), ecorePackage.getEBoolean(), "noBackSlashEscapes", "false", 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", "", 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -893,6 +917,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 
 		initEEnum(databaseEEnum, Database.class, "Database");
 		addEEnumLiteral(databaseEEnum, Database.ORACLE);
+		addEEnumLiteral(databaseEEnum, Database.MYSQL);
 
 		initEEnum(versionEEnum, Version.class, "Version");
 		addEEnumLiteral(versionEEnum, Version.ONE);
