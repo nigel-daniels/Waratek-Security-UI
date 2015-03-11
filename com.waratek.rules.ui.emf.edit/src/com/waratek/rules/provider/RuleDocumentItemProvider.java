@@ -7,18 +7,12 @@ package com.waratek.rules.provider;
 import com.waratek.rules.RuleDocument;
 import com.waratek.rules.RulesFactory;
 import com.waratek.rules.RulesPackage;
-
-import com.waratek.rules.Version;
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -69,7 +63,8 @@ public class RuleDocumentItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addVersionPropertyDescriptor(object);
@@ -109,10 +104,10 @@ public class RuleDocumentItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RulesPackage.Literals.RULE_DOCUMENT__RULES);
-			childrenFeatures.add(RulesPackage.Literals.RULE_DOCUMENT__COMMENTS);
+			childrenFeatures.add(RulesPackage.Literals.RULE_DOCUMENT__LINES);
 		}
 		return childrenFeatures;
 	}
@@ -163,12 +158,12 @@ public class RuleDocumentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RuleDocument.class)) {
+		switch (notification.getFeatureID(RuleDocument.class))
+		{
 			case RulesPackage.RULE_DOCUMENT__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RulesPackage.RULE_DOCUMENT__RULES:
-			case RulesPackage.RULE_DOCUMENT__COMMENTS:
+			case RulesPackage.RULE_DOCUMENT__LINES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -188,62 +183,62 @@ public class RuleDocumentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createFile()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createNetwork()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createReflectPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createReflectClass()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createReflectConstructor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createReflectMethod()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createReflectField()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createThrowableClass()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createClassLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createNative()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__RULES,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createSQLInjection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__COMMENTS,
+				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
 				 RulesFactory.eINSTANCE.createComment()));
 	}
 

@@ -62,7 +62,8 @@ public class ReflectionItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addPackageNamePropertyDescriptor(object);
@@ -117,7 +118,8 @@ public class ReflectionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Reflection.class)) {
+		switch (notification.getFeatureID(Reflection.class))
+		{
 			case RulesPackage.REFLECTION__PACKAGE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

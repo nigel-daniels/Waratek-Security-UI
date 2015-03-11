@@ -1,37 +1,40 @@
 /**
- * Copyright 2014 Waratek Ltd.
+ * Copyright 2015 Waratek Ltd.
  */
 package com.waratek.rules.provider;
 
-
-import com.waratek.rules.ReflectPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link com.waratek.rules.ReflectPackage} object.
+ * This is the item provider adapter for a {@link com.waratek.rules.Lines} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReflectPackageItemProvider
-	extends ReflectionItemProvider
+public class LinesItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
 		IItemLabelProvider,
-		IItemPropertySource {
+		IItemPropertySource
+{
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +48,8 @@ public class ReflectPackageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReflectPackageItemProvider(AdapterFactory adapterFactory) {
+	public LinesItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -56,7 +60,8 @@ public class ReflectPackageItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
 		if (itemPropertyDescriptors == null)
 		{
 			super.getPropertyDescriptors(object);
@@ -66,33 +71,15 @@ public class ReflectPackageItemProvider
 	}
 
 	/**
-	 * This returns ReflectPackage.gif.
+	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReflectPackage"));
-	}
-
-	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 * MOD Return the rule and comments
-	 */
-	@Override
-	public String getText(Object object) {
-		StringBuffer label = new StringBuffer();
-		ReflectPackage reflectPackage = (ReflectPackage)object;
-
-		label.append(reflectPackage.getPackageName() + ":" + reflectPackage.getAction().toString() + ":" + reflectPackage.getLog().toString());
-
-		return label == null || label.length() == 0 ?
-			getString("_UI_ReflectPackage_type") :
-			getString("_UI_ReflectPackage_type") + " " + label;
+	public String getText(Object object)
+	{
+		return getString("_UI_Lines_type");
 	}
 
 	/**
@@ -103,7 +90,8 @@ public class ReflectPackageItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -116,8 +104,21 @@ public class ReflectPackageItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator()
+	{
+		return RulesEditPlugin.INSTANCE;
 	}
 
 }

@@ -59,7 +59,8 @@ public class SQLInjectionItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDatabasePropertyDescriptor(object);
@@ -130,7 +131,8 @@ public class SQLInjectionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SQLInjection.class)) {
+		switch (notification.getFeatureID(SQLInjection.class))
+		{
 			case RulesPackage.SQL_INJECTION__DATABASE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

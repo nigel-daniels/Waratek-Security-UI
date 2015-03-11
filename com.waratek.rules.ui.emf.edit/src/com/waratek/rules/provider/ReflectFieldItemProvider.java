@@ -61,7 +61,8 @@ public class ReflectFieldItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addClassNamePropertyDescriptor(object);
@@ -155,7 +156,8 @@ public class ReflectFieldItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReflectField.class)) {
+		switch (notification.getFeatureID(ReflectField.class))
+		{
 			case RulesPackage.REFLECT_FIELD__CLASS_NAME:
 			case RulesPackage.REFLECT_FIELD__FIELD_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

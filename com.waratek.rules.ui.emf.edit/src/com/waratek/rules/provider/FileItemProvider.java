@@ -59,7 +59,8 @@ public class FileItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addPathPropertyDescriptor(object);
@@ -153,7 +154,8 @@ public class FileItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(File.class)) {
+		switch (notification.getFeatureID(File.class))
+		{
 			case RulesPackage.FILE__PATH:
 			case RulesPackage.FILE__FILE_PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

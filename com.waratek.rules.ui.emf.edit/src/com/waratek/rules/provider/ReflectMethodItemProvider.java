@@ -61,7 +61,8 @@ public class ReflectMethodItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addClassNamePropertyDescriptor(object);
@@ -155,7 +156,8 @@ public class ReflectMethodItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReflectMethod.class)) {
+		switch (notification.getFeatureID(ReflectMethod.class))
+		{
 			case RulesPackage.REFLECT_METHOD__CLASS_NAME:
 			case RulesPackage.REFLECT_METHOD__METHOD_SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

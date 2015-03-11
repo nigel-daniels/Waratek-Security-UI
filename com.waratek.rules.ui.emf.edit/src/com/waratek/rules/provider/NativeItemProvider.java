@@ -59,7 +59,8 @@ public class NativeItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addPathPropertyDescriptor(object);
@@ -160,7 +161,8 @@ public class NativeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Native.class)) {
+		switch (notification.getFeatureID(Native.class))
+		{
 			case RulesPackage.NATIVE__PATH:
 			case RulesPackage.NATIVE__CHECKSUM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -59,7 +59,8 @@ public class NetworkItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addHostPropertyDescriptor(object);
@@ -176,7 +177,8 @@ public class NetworkItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Network.class)) {
+		switch (notification.getFeatureID(Network.class))
+		{
 			case RulesPackage.NETWORK__HOST:
 			case RulesPackage.NETWORK__PORT:
 			case RulesPackage.NETWORK__NETWORK_PARAMETER:

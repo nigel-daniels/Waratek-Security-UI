@@ -61,7 +61,8 @@ public class ReflectConstructorItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addClassNamePropertyDescriptor(object);
@@ -155,7 +156,8 @@ public class ReflectConstructorItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReflectConstructor.class)) {
+		switch (notification.getFeatureID(ReflectConstructor.class))
+		{
 			case RulesPackage.REFLECT_CONSTRUCTOR__CLASS_NAME:
 			case RulesPackage.REFLECT_CONSTRUCTOR__CONSTRUCTOR_SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

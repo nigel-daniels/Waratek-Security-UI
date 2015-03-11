@@ -95,7 +95,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createRuleDocumentAdapter() {
-		if (ruleDocumentItemProvider == null) {
+		if (ruleDocumentItemProvider == null)
+		{
 			ruleDocumentItemProvider = new RuleDocumentItemProvider(this);
 		}
 
@@ -118,7 +119,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createFileAdapter() {
-		if (fileItemProvider == null) {
+		if (fileItemProvider == null)
+		{
 			fileItemProvider = new FileItemProvider(this);
 		}
 
@@ -141,7 +143,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createNetworkAdapter() {
-		if (networkItemProvider == null) {
+		if (networkItemProvider == null)
+		{
 			networkItemProvider = new NetworkItemProvider(this);
 		}
 
@@ -164,7 +167,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createReflectPackageAdapter() {
-		if (reflectPackageItemProvider == null) {
+		if (reflectPackageItemProvider == null)
+		{
 			reflectPackageItemProvider = new ReflectPackageItemProvider(this);
 		}
 
@@ -187,7 +191,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createReflectClassAdapter() {
-		if (reflectClassItemProvider == null) {
+		if (reflectClassItemProvider == null)
+		{
 			reflectClassItemProvider = new ReflectClassItemProvider(this);
 		}
 
@@ -210,7 +215,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createReflectConstructorAdapter() {
-		if (reflectConstructorItemProvider == null) {
+		if (reflectConstructorItemProvider == null)
+		{
 			reflectConstructorItemProvider = new ReflectConstructorItemProvider(this);
 		}
 
@@ -233,7 +239,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createReflectMethodAdapter() {
-		if (reflectMethodItemProvider == null) {
+		if (reflectMethodItemProvider == null)
+		{
 			reflectMethodItemProvider = new ReflectMethodItemProvider(this);
 		}
 
@@ -256,7 +263,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createReflectFieldAdapter() {
-		if (reflectFieldItemProvider == null) {
+		if (reflectFieldItemProvider == null)
+		{
 			reflectFieldItemProvider = new ReflectFieldItemProvider(this);
 		}
 
@@ -279,7 +287,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createThrowableClassAdapter() {
-		if (throwableClassItemProvider == null) {
+		if (throwableClassItemProvider == null)
+		{
 			throwableClassItemProvider = new ThrowableClassItemProvider(this);
 		}
 
@@ -302,7 +311,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createClassLinkAdapter() {
-		if (classLinkItemProvider == null) {
+		if (classLinkItemProvider == null)
+		{
 			classLinkItemProvider = new ClassLinkItemProvider(this);
 		}
 
@@ -325,7 +335,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createNativeAdapter() {
-		if (nativeItemProvider == null) {
+		if (nativeItemProvider == null)
+		{
 			nativeItemProvider = new NativeItemProvider(this);
 		}
 
@@ -348,7 +359,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createSQLInjectionAdapter() {
-		if (sqlInjectionItemProvider == null) {
+		if (sqlInjectionItemProvider == null)
+		{
 			sqlInjectionItemProvider = new SQLInjectionItemProvider(this);
 		}
 
@@ -371,7 +383,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createCommentAdapter() {
-		if (commentItemProvider == null) {
+		if (commentItemProvider == null)
+		{
 			commentItemProvider = new CommentItemProvider(this);
 		}
 
@@ -426,9 +439,11 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -465,7 +480,8 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

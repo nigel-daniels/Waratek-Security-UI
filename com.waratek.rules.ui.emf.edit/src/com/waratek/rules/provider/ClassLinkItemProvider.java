@@ -61,7 +61,8 @@ public class ClassLinkItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptorNamePropertyDescriptor(object);
@@ -132,7 +133,8 @@ public class ClassLinkItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ClassLink.class)) {
+		switch (notification.getFeatureID(ClassLink.class))
+		{
 			case RulesPackage.CLASS_LINK__DESCRIPTOR_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
