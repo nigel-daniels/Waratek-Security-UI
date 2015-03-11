@@ -275,6 +275,10 @@
         <element xmi:type="ecore:EAttribute" href="rules.ecore#//Native/checksum"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_INFO0UQuEeSLEus3h-3GCw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_HJkikMg0EeSYY678K9o-aQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="rules.ecore#//Native/nativeAction"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HJkikcg0EeSYY678K9o-aQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Z9_kkvfjEeOezLU_1LM7PQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Z9_kk_fjEeOezLU_1LM7PQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Z9_klPfjEeOezLU_1LM7PQ"/>
@@ -286,7 +290,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Z9-9gffjEeOezLU_1LM7PQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="rules.ecore#//Native"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9-9gvfjEeOezLU_1LM7PQ" x="324" y="378"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9-9gvfjEeOezLU_1LM7PQ" x="387" y="378"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_xUVjcPfkEeOezLU_1LM7PQ" type="1005">
     <children xmi:type="notation:Node" xmi:id="_xUWKgPfkEeOezLU_1LM7PQ" type="4010"/>
@@ -361,18 +365,6 @@
         <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Action/destroy"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_gmZnsff-EeOezLU_1LM7PQ"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_jrAq8EQrEeSLEus3h-3GCw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Action/blacklist"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_jrAq8UQrEeSLEus3h-3GCw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_kyWtgEQrEeSLEus3h-3GCw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Action/greylist"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_kyWtgUQrEeSLEus3h-3GCw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_lrf8AEQrEeSLEus3h-3GCw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Action/whitelist"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_lrf8AUQrEeSLEus3h-3GCw"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_T6adQvf-EeOezLU_1LM7PQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_T6adQ_f-EeOezLU_1LM7PQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_T6adRPf-EeOezLU_1LM7PQ"/>
@@ -442,7 +434,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_R87_UUQuEeSLEus3h-3GCw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="rules.ecore#//SQLInjection"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R87_UkQuEeSLEus3h-3GCw" x="504" y="378"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R87_UkQuEeSLEus3h-3GCw" x="603" y="378"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Z5rzcEQuEeSLEus3h-3GCw" type="1005">
     <children xmi:type="notation:Node" xmi:id="_Z5rzc0QuEeSLEus3h-3GCw" type="4010"/>
@@ -461,7 +453,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Z5rzcUQuEeSLEus3h-3GCw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="rules.ecore#//Database"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z5rzckQuEeSLEus3h-3GCw" x="540" y="477"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z5rzckQuEeSLEus3h-3GCw" x="639" y="477"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_gNk98EQvEeSLEus3h-3GCw" type="Text" fontName="Lucida Grande" description="V 1.1 - Copyright 2015 Waratek Ltd.">
     <children xmi:type="notation:BasicDecorationNode" xmi:id="_gNooUEQvEeSLEus3h-3GCw" type="DiagramName">
@@ -523,6 +515,29 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_7q-HscbHEeSOcqbgPLQvZQ" fontColor="4210752" fontName="San Francisco Display" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="rules.ecore#//Lines"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7q-HssbHEeSOcqbgPLQvZQ" x="-720" y="45"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Js73MMg0EeSYY678K9o-aQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_Js9sYMg0EeSYY678K9o-aQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_Js-6gMg0EeSYY678K9o-aQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_NXgEcMg0EeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//NativeAction/blacklist"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NXgEccg0EeSYY678K9o-aQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_OT7QcMg0EeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//NativeAction/greylist"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OT7Qccg0EeSYY678K9o-aQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_PIIUkMg0EeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//NativeAction/whitelist"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PIIUkcg0EeSYY678K9o-aQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Js-6gcg0EeSYY678K9o-aQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Js-6gsg0EeSYY678K9o-aQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Js-6g8g0EeSYY678K9o-aQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Js73Mcg0EeSYY678K9o-aQ" fontColor="4210752" fontName="San Francisco Display" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="rules.ecore#//NativeAction"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Js73Msg0EeSYY678K9o-aQ" x="415" y="497"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_yUeZgffeEeOezLU_1LM7PQ"/>
   <element xmi:type="ecore:EPackage" href="rules.ecore#/"/>

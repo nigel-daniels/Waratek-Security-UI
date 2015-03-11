@@ -65,6 +65,7 @@ public class NativeItemProvider
 
 			addPathPropertyDescriptor(object);
 			addChecksumPropertyDescriptor(object);
+			addNativeActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -105,6 +106,29 @@ public class NativeItemProvider
 				 getString("_UI_Native_checksum_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Native_checksum_feature", "_UI_Native_type"),
 				 RulesPackage.Literals.NATIVE__CHECKSUM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Native Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNativeActionPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Native_nativeAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Native_nativeAction_feature", "_UI_Native_type"),
+				 RulesPackage.Literals.NATIVE__NATIVE_ACTION,
 				 true,
 				 false,
 				 false,
@@ -165,6 +189,7 @@ public class NativeItemProvider
 		{
 			case RulesPackage.NATIVE__PATH:
 			case RulesPackage.NATIVE__CHECKSUM:
+			case RulesPackage.NATIVE__NATIVE_ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

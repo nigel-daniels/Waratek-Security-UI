@@ -4,6 +4,7 @@
 package com.waratek.rules.impl;
 
 import com.waratek.rules.Native;
+import com.waratek.rules.NativeAction;
 import com.waratek.rules.RulesPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link com.waratek.rules.impl.NativeImpl#getPath <em>Path</em>}</li>
  *   <li>{@link com.waratek.rules.impl.NativeImpl#getChecksum <em>Checksum</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.NativeImpl#getNativeAction <em>Native Action</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,6 +75,26 @@ public class NativeImpl extends RuleImpl implements Native {
 	 * @ordered
 	 */
 	protected String checksum = CHECKSUM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNativeAction() <em>Native Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNativeAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final NativeAction NATIVE_ACTION_EDEFAULT = NativeAction.BLACKLIST;
+
+	/**
+	 * The cached value of the '{@link #getNativeAction() <em>Native Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNativeAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected NativeAction nativeAction = NATIVE_ACTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,6 +162,29 @@ public class NativeImpl extends RuleImpl implements Native {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NativeAction getNativeAction()
+	{
+		return nativeAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNativeAction(NativeAction newNativeAction)
+	{
+		NativeAction oldNativeAction = nativeAction;
+		nativeAction = newNativeAction == null ? NATIVE_ACTION_EDEFAULT : newNativeAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.NATIVE__NATIVE_ACTION, oldNativeAction, nativeAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID)
@@ -148,6 +193,8 @@ public class NativeImpl extends RuleImpl implements Native {
 				return getPath();
 			case RulesPackage.NATIVE__CHECKSUM:
 				return getChecksum();
+			case RulesPackage.NATIVE__NATIVE_ACTION:
+				return getNativeAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,6 +213,9 @@ public class NativeImpl extends RuleImpl implements Native {
 				return;
 			case RulesPackage.NATIVE__CHECKSUM:
 				setChecksum((String)newValue);
+				return;
+			case RulesPackage.NATIVE__NATIVE_ACTION:
+				setNativeAction((NativeAction)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +236,9 @@ public class NativeImpl extends RuleImpl implements Native {
 			case RulesPackage.NATIVE__CHECKSUM:
 				setChecksum(CHECKSUM_EDEFAULT);
 				return;
+			case RulesPackage.NATIVE__NATIVE_ACTION:
+				setNativeAction(NATIVE_ACTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +256,8 @@ public class NativeImpl extends RuleImpl implements Native {
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case RulesPackage.NATIVE__CHECKSUM:
 				return CHECKSUM_EDEFAULT == null ? checksum != null : !CHECKSUM_EDEFAULT.equals(checksum);
+			case RulesPackage.NATIVE__NATIVE_ACTION:
+				return nativeAction != NATIVE_ACTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,6 +276,8 @@ public class NativeImpl extends RuleImpl implements Native {
 		result.append(path);
 		result.append(", checksum: ");
 		result.append(checksum);
+		result.append(", nativeAction: ");
+		result.append(nativeAction);
 		result.append(')');
 		return result.toString();
 	}

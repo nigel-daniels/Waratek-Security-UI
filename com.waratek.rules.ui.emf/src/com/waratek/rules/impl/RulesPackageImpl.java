@@ -12,6 +12,7 @@ import com.waratek.rules.FileParameter;
 import com.waratek.rules.Lines;
 import com.waratek.rules.Log;
 import com.waratek.rules.Native;
+import com.waratek.rules.NativeAction;
 import com.waratek.rules.Network;
 import com.waratek.rules.NetworkParameter;
 import com.waratek.rules.ReflectClass;
@@ -201,6 +202,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EEnum versionEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum nativeActionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -575,6 +583,16 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getNative_NativeAction()
+	{
+		return (EAttribute)nativeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSQLInjection() {
 		return sqlInjectionEClass;
 	}
@@ -695,6 +713,16 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getNativeAction()
+	{
+		return nativeActionEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RulesFactory getRulesFactory() {
 		return (RulesFactory)getEFactoryInstance();
 	}
@@ -764,6 +792,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		nativeEClass = createEClass(NATIVE);
 		createEAttribute(nativeEClass, NATIVE__PATH);
 		createEAttribute(nativeEClass, NATIVE__CHECKSUM);
+		createEAttribute(nativeEClass, NATIVE__NATIVE_ACTION);
 
 		sqlInjectionEClass = createEClass(SQL_INJECTION);
 		createEAttribute(sqlInjectionEClass, SQL_INJECTION__DATABASE);
@@ -782,6 +811,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		logEEnum = createEEnum(LOG);
 		databaseEEnum = createEEnum(DATABASE);
 		versionEEnum = createEEnum(VERSION);
+		nativeActionEEnum = createEEnum(NATIVE_ACTION);
 	}
 
 	/**
@@ -874,6 +904,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		initEClass(nativeEClass, Native.class, "Native", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNative_Path(), ecorePackage.getEString(), "path", "", 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNative_Checksum(), ecorePackage.getEString(), "checksum", "", 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNative_NativeAction(), this.getNativeAction(), "nativeAction", "Blacklist", 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sqlInjectionEClass, SQLInjection.class, "SQLInjection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSQLInjection_Database(), this.getDatabase(), "database", "Oracle", 0, 1, SQLInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -903,9 +934,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEEnumLiteral(actionEEnum, Action.SUSPEND);
 		addEEnumLiteral(actionEEnum, Action.SHUTDOWN);
 		addEEnumLiteral(actionEEnum, Action.DESTROY);
-		addEEnumLiteral(actionEEnum, Action.BLACKLIST);
-		addEEnumLiteral(actionEEnum, Action.GREYLIST);
-		addEEnumLiteral(actionEEnum, Action.WHITELIST);
 
 		initEEnum(logEEnum, Log.class, "Log");
 		addEEnumLiteral(logEEnum, Log.OFF);
@@ -921,6 +949,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 
 		initEEnum(versionEEnum, Version.class, "Version");
 		addEEnumLiteral(versionEEnum, Version.ONE);
+
+		initEEnum(nativeActionEEnum, NativeAction.class, "NativeAction");
+		addEEnumLiteral(nativeActionEEnum, NativeAction.BLACKLIST);
+		addEEnumLiteral(nativeActionEEnum, NativeAction.GREYLIST);
+		addEEnumLiteral(nativeActionEEnum, NativeAction.WHITELIST);
 
 		// Create resource
 		createResource(eNS_URI);

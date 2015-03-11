@@ -67,37 +67,7 @@ public enum Action implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DESTROY(4, "destroy", "Destroy"),
-
-	/**
-	 * The '<em><b>Blacklist</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BLACKLIST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BLACKLIST(5, "blacklist", "Blacklist"),
-
-	/**
-	 * The '<em><b>Greylist</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #GREYLIST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	GREYLIST(6, "greylist", "Greylist"),
-
-	/**
-	 * The '<em><b>Whitelist</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WHITELIST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	WHITELIST(7, "whitelist", "Whitelist");
+	DESTROY(4, "destroy", "Destroy");
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,51 +152,6 @@ public enum Action implements Enumerator {
 	public static final int DESTROY_VALUE = 4;
 
 	/**
-	 * The '<em><b>Blacklist</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Blacklist</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BLACKLIST
-	 * @model name="blacklist" literal="Blacklist"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BLACKLIST_VALUE = 5;
-
-	/**
-	 * The '<em><b>Greylist</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Greylist</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #GREYLIST
-	 * @model name="greylist" literal="Greylist"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GREYLIST_VALUE = 6;
-
-	/**
-	 * The '<em><b>Whitelist</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Whitelist</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #WHITELIST
-	 * @model name="whitelist" literal="Whitelist"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int WHITELIST_VALUE = 7;
-
-	/**
 	 * An array of all the '<em><b>Action</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,9 +165,6 @@ public enum Action implements Enumerator {
 			SUSPEND,
 			SHUTDOWN,
 			DESTROY,
-			BLACKLIST,
-			GREYLIST,
-			WHITELIST,
 		};
 
 	/**
@@ -303,9 +225,6 @@ public enum Action implements Enumerator {
 			case SUSPEND_VALUE: return SUSPEND;
 			case SHUTDOWN_VALUE: return SHUTDOWN;
 			case DESTROY_VALUE: return DESTROY;
-			case BLACKLIST_VALUE: return BLACKLIST;
-			case GREYLIST_VALUE: return GREYLIST;
-			case WHITELIST_VALUE: return WHITELIST;
 		}
 		return null;
 	}

@@ -14,6 +14,7 @@ package com.waratek.rules;
  * <ul>
  *   <li>{@link com.waratek.rules.Native#getPath <em>Path</em>}</li>
  *   <li>{@link com.waratek.rules.Native#getChecksum <em>Checksum</em>}</li>
+ *   <li>{@link com.waratek.rules.Native#getNativeAction <em>Native Action</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,5 +83,35 @@ public interface Native extends Rule {
 	 * @generated
 	 */
 	void setChecksum(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Native Action</b></em>' attribute.
+	 * The default value is <code>"Blacklist"</code>.
+	 * The literals are from the enumeration {@link com.waratek.rules.NativeAction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Native Action</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Native Action</em>' attribute.
+	 * @see com.waratek.rules.NativeAction
+	 * @see #setNativeAction(NativeAction)
+	 * @see com.waratek.rules.RulesPackage#getNative_NativeAction()
+	 * @model default="Blacklist"
+	 * @generated
+	 */
+	NativeAction getNativeAction();
+
+	/**
+	 * Sets the value of the '{@link com.waratek.rules.Native#getNativeAction <em>Native Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Native Action</em>' attribute.
+	 * @see com.waratek.rules.NativeAction
+	 * @see #getNativeAction()
+	 * @generated
+	 */
+	void setNativeAction(NativeAction value);
 
 } // Native

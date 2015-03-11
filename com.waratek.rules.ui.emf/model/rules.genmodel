@@ -24,9 +24,6 @@
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/suspend"/>
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/shutdown"/>
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/destroy"/>
-      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/blacklist"/>
-      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/greylist"/>
-      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Action/whitelist"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Log">
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Log/off"/>
@@ -42,6 +39,11 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Version">
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Version/one"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//NativeAction">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NativeAction/blacklist"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NativeAction/greylist"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NativeAction/whitelist"/>
     </genEnums>
     <genClasses ecoreClass="rules.ecore#//RuleDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/version"/>
@@ -88,6 +90,7 @@
     <genClasses ecoreClass="rules.ecore#//Native">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Native/path"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Native/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Native/nativeAction"/>
     </genClasses>
     <genClasses ecoreClass="rules.ecore#//SQLInjection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//SQLInjection/database"/>

@@ -872,13 +872,22 @@ public interface RulesPackage extends EPackage {
 	int NATIVE__CHECKSUM = RULE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Native Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATIVE__NATIVE_ACTION = RULE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Native</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NATIVE_FEATURE_COUNT = RULE_FEATURE_COUNT + 2;
+	int NATIVE_FEATURE_COUNT = RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Native</em>' class.
@@ -1059,6 +1068,17 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	int VERSION = 21;
+
+
+	/**
+	 * The meta object id for the '{@link com.waratek.rules.NativeAction <em>Native Action</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.NativeAction
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getNativeAction()
+	 * @generated
+	 */
+	int NATIVE_ACTION = 22;
 
 
 	/**
@@ -1423,6 +1443,17 @@ public interface RulesPackage extends EPackage {
 	EAttribute getNative_Checksum();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.Native#getNativeAction <em>Native Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Native Action</em>'.
+	 * @see com.waratek.rules.Native#getNativeAction()
+	 * @see #getNative()
+	 * @generated
+	 */
+	EAttribute getNative_NativeAction();
+
+	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.SQLInjection <em>SQL Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1555,6 +1586,16 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getVersion();
+
+	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.NativeAction <em>Native Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Native Action</em>'.
+	 * @see com.waratek.rules.NativeAction
+	 * @generated
+	 */
+	EEnum getNativeAction();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1878,6 +1919,14 @@ public interface RulesPackage extends EPackage {
 		EAttribute NATIVE__CHECKSUM = eINSTANCE.getNative_Checksum();
 
 		/**
+		 * The meta object literal for the '<em><b>Native Action</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NATIVE__NATIVE_ACTION = eINSTANCE.getNative_NativeAction();
+
+		/**
 		 * The meta object literal for the '{@link com.waratek.rules.impl.SQLInjectionImpl <em>SQL Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1998,6 +2047,16 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum VERSION = eINSTANCE.getVersion();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.NativeAction <em>Native Action</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.NativeAction
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getNativeAction()
+		 * @generated
+		 */
+		EEnum NATIVE_ACTION = eINSTANCE.getNativeAction();
 
 	}
 

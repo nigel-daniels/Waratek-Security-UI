@@ -108,6 +108,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return createDatabaseFromString(eDataType, initialValue);
 			case RulesPackage.VERSION:
 				return createVersionFromString(eDataType, initialValue);
+			case RulesPackage.NATIVE_ACTION:
+				return createNativeActionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -134,6 +136,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return convertDatabaseToString(eDataType, instanceValue);
 			case RulesPackage.VERSION:
 				return convertVersionToString(eDataType, instanceValue);
+			case RulesPackage.NATIVE_ACTION:
+				return convertNativeActionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -386,6 +390,28 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	public String convertVersionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NativeAction createNativeActionFromString(EDataType eDataType, String initialValue)
+	{
+		NativeAction result = NativeAction.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNativeActionToString(EDataType eDataType, Object instanceValue)
+	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

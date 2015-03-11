@@ -66,6 +66,8 @@
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checksum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nativeAction" eType="#//NativeAction"
+        defaultValueLiteral="Blacklist"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FileParameter">
     <eLiterals name="read" literal="Read"/>
@@ -84,9 +86,6 @@
     <eLiterals name="suspend" value="2" literal="Suspend"/>
     <eLiterals name="shutdown" value="3" literal="Shutdown"/>
     <eLiterals name="destroy" value="4" literal="Destroy"/>
-    <eLiterals name="blacklist" value="5" literal="Blacklist"/>
-    <eLiterals name="greylist" value="6" literal="Greylist"/>
-    <eLiterals name="whitelist" value="7" literal="Whitelist"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Log">
     <eLiterals name="off" literal="Off"/>
@@ -116,4 +115,9 @@
     <eLiterals name="one" literal="One"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lines" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="NativeAction">
+    <eLiterals name="blacklist" literal="Blacklist"/>
+    <eLiterals name="greylist" value="1" literal="Greylist"/>
+    <eLiterals name="whitelist" value="2" literal="Whitelist"/>
+  </eClassifiers>
 </ecore:EPackage>
