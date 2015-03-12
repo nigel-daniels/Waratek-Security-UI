@@ -5,12 +5,8 @@ package com.waratek.rules.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import org.eclipse.emf.common.ui.URIEditorInput;
+
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.ui.action.ControlAction;
@@ -30,26 +26,14 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.swt.widgets.DirectoryDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.xpand2.XpandExecutionContextImpl;
-import org.eclipse.xpand2.XpandFacade;
-import org.eclipse.xpand2.output.Outlet;
-import org.eclipse.xpand2.output.Output;
-import org.eclipse.xpand2.output.OutputImpl;
-import org.eclipse.xtend.typesystem.emf.EmfMetaModel;
-import com.waratek.rules.RulesPackage;
 
 /**
  * This is the action bar contributor for the Rules model editor.
