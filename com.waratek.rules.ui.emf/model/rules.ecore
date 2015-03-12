@@ -140,4 +140,12 @@
     <eLiterals name="method" value="1" literal="Method"/>
     <eLiterals name="field" value="2" literal="Field"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DatabaseMode">
+    <eLiterals name="ansiquotes"/>
+    <eLiterals name="nobackslashescapes" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DatabaseOption">
+    <eLiterals name="off" literal="Off"/>
+    <eLiterals name="on" value="1" literal="On"/>
+  </eClassifiers>
 </ecore:EPackage>

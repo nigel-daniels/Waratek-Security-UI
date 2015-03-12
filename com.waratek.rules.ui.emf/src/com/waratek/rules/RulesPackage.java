@@ -1113,6 +1113,27 @@ public interface RulesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link com.waratek.rules.DatabaseMode <em>Database Mode</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.DatabaseMode
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseMode()
+	 * @generated
+	 */
+	int DATABASE_MODE = 26;
+
+	/**
+	 * The meta object id for the '{@link com.waratek.rules.DatabaseOption <em>Database Option</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.DatabaseOption
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseOption()
+	 * @generated
+	 */
+	int DATABASE_OPTION = 27;
+
+
+	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.RuleDocument <em>Rule Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1659,6 +1680,26 @@ public interface RulesPackage extends EPackage {
 	EEnum getReflectionParameter();
 
 	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.DatabaseMode <em>Database Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Database Mode</em>'.
+	 * @see com.waratek.rules.DatabaseMode
+	 * @generated
+	 */
+	EEnum getDatabaseMode();
+
+	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.DatabaseOption <em>Database Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Database Option</em>'.
+	 * @see com.waratek.rules.DatabaseOption
+	 * @generated
+	 */
+	EEnum getDatabaseOption();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2148,6 +2189,26 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum REFLECTION_PARAMETER = eINSTANCE.getReflectionParameter();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.DatabaseMode <em>Database Mode</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.DatabaseMode
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseMode()
+		 * @generated
+		 */
+		EEnum DATABASE_MODE = eINSTANCE.getDatabaseMode();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.DatabaseOption <em>Database Option</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.DatabaseOption
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseOption()
+		 * @generated
+		 */
+		EEnum DATABASE_OPTION = eINSTANCE.getDatabaseOption();
 
 	}
 

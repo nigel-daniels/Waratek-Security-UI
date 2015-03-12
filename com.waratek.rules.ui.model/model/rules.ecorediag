@@ -652,6 +652,44 @@
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5WnxQ8hNEeSYY678K9o-aQ" x="90" y="612"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_TkTEcMhhEeSYY678K9o-aQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_TkTrgMhhEeSYY678K9o-aQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_TkTrgchhEeSYY678K9o-aQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_YQLkwMhhEeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//DatabaseMode/ansiquotes"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_YQLkwchhEeSYY678K9o-aQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_aJ8iwMhhEeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//DatabaseMode/nobackslashescapes"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aJ8iwchhEeSYY678K9o-aQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_TkTrgshhEeSYY678K9o-aQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_TkTrg8hhEeSYY678K9o-aQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_TkTrhMhhEeSYY678K9o-aQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_TkTEcchhEeSYY678K9o-aQ" fontColor="4210752" fontName="San Francisco Display" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="rules.ecore#//DatabaseMode"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TkTEcshhEeSYY678K9o-aQ" x="549" y="558"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_dlCJkMhhEeSYY678K9o-aQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_dlCwoMhhEeSYY678K9o-aQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_dlCwochhEeSYY678K9o-aQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_mCA88MhhEeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//DatabaseOption/off"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mCA88chhEeSYY678K9o-aQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_mwaUAMhhEeSYY678K9o-aQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//DatabaseOption/on"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mwaUAchhEeSYY678K9o-aQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_dlCwoshhEeSYY678K9o-aQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dlCwo8hhEeSYY678K9o-aQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dlCwpMhhEeSYY678K9o-aQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_dlCJkchhEeSYY678K9o-aQ" fontColor="4210752" fontName="San Francisco Display" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="rules.ecore#//DatabaseOption"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dlCJkshhEeSYY678K9o-aQ" x="702" y="558"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_yUeZgffeEeOezLU_1LM7PQ"/>
   <element xmi:type="ecore:EPackage" href="rules.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_HsPL0PfgEeOezLU_1LM7PQ" type="3003" source="_sU184PffEeOezLU_1LM7PQ" target="_UNW_gPffEeOezLU_1LM7PQ">

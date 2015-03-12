@@ -8,6 +8,8 @@ import com.waratek.rules.Category;
 import com.waratek.rules.ClassLink;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
+import com.waratek.rules.DatabaseMode;
+import com.waratek.rules.DatabaseOption;
 import com.waratek.rules.File;
 import com.waratek.rules.FileParameter;
 import com.waratek.rules.Lines;
@@ -233,6 +235,20 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EEnum reflectionParameterEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum databaseModeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum databaseOptionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -777,6 +793,26 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDatabaseMode()
+	{
+		return databaseModeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDatabaseOption()
+	{
+		return databaseOptionEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RulesFactory getRulesFactory() {
 		return (RulesFactory)getEFactoryInstance();
 	}
@@ -869,6 +905,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		categoryEEnum = createEEnum(CATEGORY);
 		subCategoryEEnum = createEEnum(SUB_CATEGORY);
 		reflectionParameterEEnum = createEEnum(REFLECTION_PARAMETER);
+		databaseModeEEnum = createEEnum(DATABASE_MODE);
+		databaseOptionEEnum = createEEnum(DATABASE_OPTION);
 	}
 
 	/**
@@ -1031,6 +1069,14 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEEnumLiteral(reflectionParameterEEnum, ReflectionParameter.CONSTRUCTOR);
 		addEEnumLiteral(reflectionParameterEEnum, ReflectionParameter.METHOD);
 		addEEnumLiteral(reflectionParameterEEnum, ReflectionParameter.FIELD);
+
+		initEEnum(databaseModeEEnum, DatabaseMode.class, "DatabaseMode");
+		addEEnumLiteral(databaseModeEEnum, DatabaseMode.ANSIQUOTES);
+		addEEnumLiteral(databaseModeEEnum, DatabaseMode.NOBACKSLASHESCAPES);
+
+		initEEnum(databaseOptionEEnum, DatabaseOption.class, "DatabaseOption");
+		addEEnumLiteral(databaseOptionEEnum, DatabaseOption.OFF);
+		addEEnumLiteral(databaseOptionEEnum, DatabaseOption.ON);
 
 		// Create resource
 		createResource(eNS_URI);

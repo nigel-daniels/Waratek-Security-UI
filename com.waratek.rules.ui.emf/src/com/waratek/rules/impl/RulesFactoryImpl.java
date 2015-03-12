@@ -116,6 +116,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return createSubCategoryFromString(eDataType, initialValue);
 			case RulesPackage.REFLECTION_PARAMETER:
 				return createReflectionParameterFromString(eDataType, initialValue);
+			case RulesPackage.DATABASE_MODE:
+				return createDatabaseModeFromString(eDataType, initialValue);
+			case RulesPackage.DATABASE_OPTION:
+				return createDatabaseOptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -150,6 +154,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return convertSubCategoryToString(eDataType, instanceValue);
 			case RulesPackage.REFLECTION_PARAMETER:
 				return convertReflectionParameterToString(eDataType, instanceValue);
+			case RulesPackage.DATABASE_MODE:
+				return convertDatabaseModeToString(eDataType, instanceValue);
+			case RulesPackage.DATABASE_OPTION:
+				return convertDatabaseOptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -489,6 +497,50 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	public String convertReflectionParameterToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DatabaseMode createDatabaseModeFromString(EDataType eDataType, String initialValue)
+	{
+		DatabaseMode result = DatabaseMode.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDatabaseModeToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DatabaseOption createDatabaseOptionFromString(EDataType eDataType, String initialValue)
+	{
+		DatabaseOption result = DatabaseOption.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDatabaseOptionToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
