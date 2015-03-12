@@ -21,6 +21,8 @@ import com.waratek.rules.Category;
 import com.waratek.rules.ClassLink;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
+import com.waratek.rules.DatabaseMode;
+import com.waratek.rules.DatabaseOption;
 import com.waratek.rules.File;
 import com.waratek.rules.FileParameter;
 import com.waratek.rules.Log;
@@ -181,6 +183,8 @@ public class RulesResourceImpl extends ResourceImpl
 	 * When version differences happen this will need to know in order to decide
 	 * what to do.
 	 * 
+	 * If we cannot match the first part of the string to a rule category this returns null.
+	 * 
 	 * @param line
 	 * @return
 	 */
@@ -214,6 +218,10 @@ public class RulesResourceImpl extends ResourceImpl
 			else if (category.equals(Category.NATIVE.getName()))
 				{
 				rule = createNativeRule(stringTokenizer);
+				}
+			else if (category.equals(Category.SQL.getName()))
+				{
+				rule = createSQLRule(stringTokenizer);
 				}
 			}
 		return rule;
@@ -481,7 +489,18 @@ public class RulesResourceImpl extends ResourceImpl
 					{
 					// We must have a MySQL db
 					rule.setDatabase(Database.MYSQL);
-					//rule.setChecksum(parameters.substring(parameters.indexOf(SEPERATOR_SECONDARY), parameters.length()));
+					
+					String modes = parameters.substring(parameters.indexOf(SEPERATOR_SECONDARY), parameters.length());
+					
+					if (modes.contains(SEPERATOR_TERTIARY)) 
+						{
+						rule = setMode(modes.substring(0, modes.indexOf(SEPERATOR_TERTIARY)-1), rule);
+						rule = setMode(modes.substring(modes.indexOf(SEPERATOR_TERTIARY),modes.length()), rule);
+						}
+					else
+						{
+						rule = setMode(modes, rule);
+						}
 					}
 				else
 					{
@@ -545,6 +564,41 @@ public class RulesResourceImpl extends ResourceImpl
 				rule.setLog(log);
 				}
 			}
+		return rule;
+		}
+	
+	/**
+	 * A utility class to help set database modes
+	 * @param mode
+	 * @param rule
+	 * @return
+	 */
+	private SQLInjection setMode(String mode, SQLInjection rule)
+		{
+		if (mode.contains(ASSIGN))
+			{
+			DatabaseMode dbMode = DatabaseMode.getByName(mode.substring(0, mode.indexOf(ASSIGN)-1));
+			DatabaseOption dbOption = DatabaseOption.getByName(mode.substring(mode.indexOf(ASSIGN),mode.length()));
+			
+			if (dbMode != null && dbOption != null)
+				{
+				switch (dbMode.getValue())
+					{
+					case DatabaseMode.ANSIQUOTES_VALUE:
+						{
+						rule.setAnsiQuotes((dbOption.getValue() != 0));
+						break;
+						}
+					case DatabaseMode.NOBACKSLASHESCAPES_VALUE:
+						{
+						rule.setNoBackSlashEscapes((dbOption.getValue() != 0));
+						break;
+						}
+					}
+				}
+			
+			}
+		
 		return rule;
 		}
 	} // RulesResourceImpl
