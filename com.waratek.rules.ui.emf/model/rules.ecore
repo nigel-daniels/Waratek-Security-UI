@@ -120,4 +120,24 @@
     <eLiterals name="greylist" value="1" literal="Greylist"/>
     <eLiterals name="whitelist" value="2" literal="Whitelist"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Category">
+    <eLiterals name="file" literal="File"/>
+    <eLiterals name="network" value="1" literal="Network"/>
+    <eLiterals name="classlink" value="2" literal="Classlink"/>
+    <eLiterals name="reflect" value="3" literal="Reflect"/>
+    <eLiterals name="throwable" value="4" literal="Throwable"/>
+    <eLiterals name="native" value="5" literal="Native"/>
+    <eLiterals name="sql" value="6" literal="SQL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SubCategory">
+    <eLiterals name="class" literal="Class"/>
+    <eLiterals name="throw" value="1" literal="Throw"/>
+    <eLiterals name="library" value="2" literal="Library"/>
+    <eLiterals name="database" value="3" literal="Database"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReflectionParameter">
+    <eLiterals name="constructor" literal="Constructor"/>
+    <eLiterals name="method" value="1" literal="Method"/>
+    <eLiterals name="field" value="2" literal="Field"/>
+  </eClassifiers>
 </ecore:EPackage>

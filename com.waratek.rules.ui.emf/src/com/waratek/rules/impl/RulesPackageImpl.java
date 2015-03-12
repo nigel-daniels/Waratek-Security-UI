@@ -4,6 +4,7 @@
 package com.waratek.rules.impl;
 
 import com.waratek.rules.Action;
+import com.waratek.rules.Category;
 import com.waratek.rules.ClassLink;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
@@ -21,11 +22,13 @@ import com.waratek.rules.ReflectField;
 import com.waratek.rules.ReflectMethod;
 import com.waratek.rules.ReflectPackage;
 import com.waratek.rules.Reflection;
+import com.waratek.rules.ReflectionParameter;
 import com.waratek.rules.Rule;
 import com.waratek.rules.RuleDocument;
 import com.waratek.rules.RulesFactory;
 import com.waratek.rules.RulesPackage;
 import com.waratek.rules.SQLInjection;
+import com.waratek.rules.SubCategory;
 import com.waratek.rules.ThrowableClass;
 import com.waratek.rules.Version;
 import org.eclipse.emf.ecore.EAttribute;
@@ -209,6 +212,27 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EEnum nativeActionEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum categoryEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum subCategoryEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum reflectionParameterEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -723,6 +747,36 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getCategory()
+	{
+		return categoryEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSubCategory()
+	{
+		return subCategoryEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getReflectionParameter()
+	{
+		return reflectionParameterEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RulesFactory getRulesFactory() {
 		return (RulesFactory)getEFactoryInstance();
 	}
@@ -812,6 +866,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		databaseEEnum = createEEnum(DATABASE);
 		versionEEnum = createEEnum(VERSION);
 		nativeActionEEnum = createEEnum(NATIVE_ACTION);
+		categoryEEnum = createEEnum(CATEGORY);
+		subCategoryEEnum = createEEnum(SUB_CATEGORY);
+		reflectionParameterEEnum = createEEnum(REFLECTION_PARAMETER);
 	}
 
 	/**
@@ -954,6 +1011,26 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEEnumLiteral(nativeActionEEnum, NativeAction.BLACKLIST);
 		addEEnumLiteral(nativeActionEEnum, NativeAction.GREYLIST);
 		addEEnumLiteral(nativeActionEEnum, NativeAction.WHITELIST);
+
+		initEEnum(categoryEEnum, Category.class, "Category");
+		addEEnumLiteral(categoryEEnum, Category.FILE);
+		addEEnumLiteral(categoryEEnum, Category.NETWORK);
+		addEEnumLiteral(categoryEEnum, Category.CLASSLINK);
+		addEEnumLiteral(categoryEEnum, Category.REFLECT);
+		addEEnumLiteral(categoryEEnum, Category.THROWABLE);
+		addEEnumLiteral(categoryEEnum, Category.NATIVE);
+		addEEnumLiteral(categoryEEnum, Category.SQL);
+
+		initEEnum(subCategoryEEnum, SubCategory.class, "SubCategory");
+		addEEnumLiteral(subCategoryEEnum, SubCategory.CLASS);
+		addEEnumLiteral(subCategoryEEnum, SubCategory.THROW);
+		addEEnumLiteral(subCategoryEEnum, SubCategory.LIBRARY);
+		addEEnumLiteral(subCategoryEEnum, SubCategory.DATABASE);
+
+		initEEnum(reflectionParameterEEnum, ReflectionParameter.class, "ReflectionParameter");
+		addEEnumLiteral(reflectionParameterEEnum, ReflectionParameter.CONSTRUCTOR);
+		addEEnumLiteral(reflectionParameterEEnum, ReflectionParameter.METHOD);
+		addEEnumLiteral(reflectionParameterEEnum, ReflectionParameter.FIELD);
 
 		// Create resource
 		createResource(eNS_URI);

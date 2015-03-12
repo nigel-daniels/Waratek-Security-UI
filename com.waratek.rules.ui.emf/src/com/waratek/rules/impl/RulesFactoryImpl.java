@@ -110,6 +110,12 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return createVersionFromString(eDataType, initialValue);
 			case RulesPackage.NATIVE_ACTION:
 				return createNativeActionFromString(eDataType, initialValue);
+			case RulesPackage.CATEGORY:
+				return createCategoryFromString(eDataType, initialValue);
+			case RulesPackage.SUB_CATEGORY:
+				return createSubCategoryFromString(eDataType, initialValue);
+			case RulesPackage.REFLECTION_PARAMETER:
+				return createReflectionParameterFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -138,6 +144,12 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return convertVersionToString(eDataType, instanceValue);
 			case RulesPackage.NATIVE_ACTION:
 				return convertNativeActionToString(eDataType, instanceValue);
+			case RulesPackage.CATEGORY:
+				return convertCategoryToString(eDataType, instanceValue);
+			case RulesPackage.SUB_CATEGORY:
+				return convertSubCategoryToString(eDataType, instanceValue);
+			case RulesPackage.REFLECTION_PARAMETER:
+				return convertReflectionParameterToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -411,6 +423,72 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	public String convertNativeActionToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Category createCategoryFromString(EDataType eDataType, String initialValue)
+	{
+		Category result = Category.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCategoryToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubCategory createSubCategoryFromString(EDataType eDataType, String initialValue)
+	{
+		SubCategory result = SubCategory.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSubCategoryToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReflectionParameter createReflectionParameterFromString(EDataType eDataType, String initialValue)
+	{
+		ReflectionParameter result = ReflectionParameter.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertReflectionParameterToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

@@ -45,6 +45,26 @@
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NativeAction/greylist"/>
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//NativeAction/whitelist"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Category">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/file"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/network"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/classlink"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/reflect"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/throwable"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/native"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Category/sql"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//SubCategory">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//SubCategory/class"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//SubCategory/throw"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//SubCategory/library"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//SubCategory/database"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//ReflectionParameter">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ReflectionParameter/constructor"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ReflectionParameter/method"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ReflectionParameter/field"/>
+    </genEnums>
     <genClasses ecoreClass="rules.ecore#//RuleDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/version"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rules.ecore#//RuleDocument/lines"/>

@@ -1082,6 +1082,37 @@ public interface RulesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link com.waratek.rules.Category <em>Category</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.Category
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getCategory()
+	 * @generated
+	 */
+	int CATEGORY = 23;
+
+	/**
+	 * The meta object id for the '{@link com.waratek.rules.SubCategory <em>Sub Category</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.SubCategory
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getSubCategory()
+	 * @generated
+	 */
+	int SUB_CATEGORY = 24;
+
+	/**
+	 * The meta object id for the '{@link com.waratek.rules.ReflectionParameter <em>Reflection Parameter</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.ReflectionParameter
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectionParameter()
+	 * @generated
+	 */
+	int REFLECTION_PARAMETER = 25;
+
+
+	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.RuleDocument <em>Rule Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1598,6 +1629,36 @@ public interface RulesPackage extends EPackage {
 	EEnum getNativeAction();
 
 	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.Category <em>Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Category</em>'.
+	 * @see com.waratek.rules.Category
+	 * @generated
+	 */
+	EEnum getCategory();
+
+	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.SubCategory <em>Sub Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Sub Category</em>'.
+	 * @see com.waratek.rules.SubCategory
+	 * @generated
+	 */
+	EEnum getSubCategory();
+
+	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.ReflectionParameter <em>Reflection Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Reflection Parameter</em>'.
+	 * @see com.waratek.rules.ReflectionParameter
+	 * @generated
+	 */
+	EEnum getReflectionParameter();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2057,6 +2118,36 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum NATIVE_ACTION = eINSTANCE.getNativeAction();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.Category <em>Category</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.Category
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getCategory()
+		 * @generated
+		 */
+		EEnum CATEGORY = eINSTANCE.getCategory();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.SubCategory <em>Sub Category</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.SubCategory
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getSubCategory()
+		 * @generated
+		 */
+		EEnum SUB_CATEGORY = eINSTANCE.getSubCategory();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.ReflectionParameter <em>Reflection Parameter</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.ReflectionParameter
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectionParameter()
+		 * @generated
+		 */
+		EEnum REFLECTION_PARAMETER = eINSTANCE.getReflectionParameter();
 
 	}
 

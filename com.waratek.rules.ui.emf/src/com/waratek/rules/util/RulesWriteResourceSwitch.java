@@ -41,13 +41,13 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 			{
 			case Version.ONE_VALUE:
 				{
-				result.append("VERSION 1.0");
+				result.append(RulesResourceImpl.VERSION_1);
 				ver = VERSION_1;
 				break;
 				}
 			default:
 				{
-				result.append("VERSION 1.0");
+				result.append(RulesResourceImpl.VERSION_1);
 				ver = VERSION_1;
 				break;
 				}
