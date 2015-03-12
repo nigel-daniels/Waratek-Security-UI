@@ -3,7 +3,7 @@
    <description name="Waratek tooling plugins" url="http://download.waratek.com/eclipse/">
       These plugins provide tools for the Waratek VM for Java for use in the Eclipse environment.
    </description>
-   <feature url="features/com.waratek.rules.ui_1.0.0.jar" id="com.waratek.rules.ui" version="1.0.0">
+   <feature url="features/com.waratek.rules.ui_1.1.0.jar" id="com.waratek.rules.ui" version="1.1.0">
       <category name="com.waratek.plugins"/>
    </feature>
    <category-def name="com.waratek.plugins" label="Waratek Plugins">
