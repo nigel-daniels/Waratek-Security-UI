@@ -73,7 +73,7 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 		{
 		StringBuffer result = new StringBuffer("network:");
 		// Set the basic netoerk parameter
-		result.append(object.getNetworkParameter().name() + ":");
+		result.append(object.getNetworkParameter().getName() + ":");
 		// Set the host and port
 		result.append(object.getHost() + ":");
 		result.append(object.getPort() + ":");
