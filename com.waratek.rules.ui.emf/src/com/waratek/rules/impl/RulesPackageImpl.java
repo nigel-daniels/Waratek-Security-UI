@@ -9,7 +9,6 @@ import com.waratek.rules.ClassLink;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.DatabaseMode;
-import com.waratek.rules.DatabaseOption;
 import com.waratek.rules.File;
 import com.waratek.rules.FileParameter;
 import com.waratek.rules.Lines;
@@ -18,6 +17,7 @@ import com.waratek.rules.Native;
 import com.waratek.rules.NativeAction;
 import com.waratek.rules.Network;
 import com.waratek.rules.NetworkParameter;
+import com.waratek.rules.Option;
 import com.waratek.rules.ReflectClass;
 import com.waratek.rules.ReflectConstructor;
 import com.waratek.rules.ReflectField;
@@ -248,7 +248,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum databaseOptionEEnum = null;
+	private EEnum optionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -803,9 +803,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getDatabaseOption()
+	public EEnum getOption()
 	{
-		return databaseOptionEEnum;
+		return optionEEnum;
 	}
 
 	/**
@@ -906,7 +906,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		subCategoryEEnum = createEEnum(SUB_CATEGORY);
 		reflectionParameterEEnum = createEEnum(REFLECTION_PARAMETER);
 		databaseModeEEnum = createEEnum(DATABASE_MODE);
-		databaseOptionEEnum = createEEnum(DATABASE_OPTION);
+		optionEEnum = createEEnum(OPTION);
 	}
 
 	/**
@@ -1074,9 +1074,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEEnumLiteral(databaseModeEEnum, DatabaseMode.ANSIQUOTES);
 		addEEnumLiteral(databaseModeEEnum, DatabaseMode.NOBACKSLASHESCAPES);
 
-		initEEnum(databaseOptionEEnum, DatabaseOption.class, "DatabaseOption");
-		addEEnumLiteral(databaseOptionEEnum, DatabaseOption.OFF);
-		addEEnumLiteral(databaseOptionEEnum, DatabaseOption.ON);
+		initEEnum(optionEEnum, Option.class, "Option");
+		addEEnumLiteral(optionEEnum, Option.OFF);
+		addEEnumLiteral(optionEEnum, Option.ON);
 
 		// Create resource
 		createResource(eNS_URI);

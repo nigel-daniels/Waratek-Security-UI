@@ -11,14 +11,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Database Option</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Option</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see com.waratek.rules.RulesPackage#getDatabaseOption()
+ * @see com.waratek.rules.RulesPackage#getOption()
  * @model
  * @generated
  */
-public enum DatabaseOption implements Enumerator
+public enum Option implements Enumerator
 {
 	/**
 	 * The '<em><b>Off</b></em>' literal object.
@@ -78,37 +78,37 @@ public enum DatabaseOption implements Enumerator
 	public static final int ON_VALUE = 1;
 
 	/**
-	 * An array of all the '<em><b>Database Option</b></em>' enumerators.
+	 * An array of all the '<em><b>Option</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DatabaseOption[] VALUES_ARRAY =
-		new DatabaseOption[]
+	private static final Option[] VALUES_ARRAY =
+		new Option[]
 		{
 			OFF,
 			ON,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Database Option</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Option</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<DatabaseOption> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Option> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Database Option</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Option</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DatabaseOption get(String literal)
+	public static Option get(String literal)
 	{
 		for (int i = 0; i < VALUES_ARRAY.length; ++i)
 		{
-			DatabaseOption result = VALUES_ARRAY[i];
+			Option result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal))
 			{
 				return result;
@@ -118,16 +118,16 @@ public enum DatabaseOption implements Enumerator
 	}
 
 	/**
-	 * Returns the '<em><b>Database Option</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Option</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DatabaseOption getByName(String name)
+	public static Option getByName(String name)
 	{
 		for (int i = 0; i < VALUES_ARRAY.length; ++i)
 		{
-			DatabaseOption result = VALUES_ARRAY[i];
+			Option result = VALUES_ARRAY[i];
 			if (result.getName().equals(name))
 			{
 				return result;
@@ -137,12 +137,12 @@ public enum DatabaseOption implements Enumerator
 	}
 
 	/**
-	 * Returns the '<em><b>Database Option</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Option</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DatabaseOption get(int value)
+	public static Option get(int value)
 	{
 		switch (value)
 		{
@@ -179,7 +179,7 @@ public enum DatabaseOption implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private DatabaseOption(int value, String name, String literal)
+	private Option(int value, String name, String literal)
 	{
 		this.value = value;
 		this.name = name;
@@ -228,4 +228,4 @@ public enum DatabaseOption implements Enumerator
 		return literal;
 	}
 	
-} //DatabaseOption
+} //Option

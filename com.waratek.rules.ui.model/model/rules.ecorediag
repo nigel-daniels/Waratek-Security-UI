@@ -638,7 +638,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_zXWWcchNEeSYY678K9o-aQ"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_zXWWcshNEeSYY678K9o-aQ"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zXWWc8hNEeSYY678K9o-aQ" x="432" y="81"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zXWWc8hNEeSYY678K9o-aQ" x="504" y="81"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_5WnxQMhNEeSYY678K9o-aQ" type="Note" fontName="San Francisco Display" description="Added to support file reading" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
     <children xmi:type="notation:BasicDecorationNode" xmi:id="_5WoYUMhNEeSYY678K9o-aQ" type="DiagramName">
@@ -650,7 +650,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_5WnxQchNEeSYY678K9o-aQ"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_5WnxQshNEeSYY678K9o-aQ"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5WnxQ8hNEeSYY678K9o-aQ" x="90" y="612"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5WnxQ8hNEeSYY678K9o-aQ" x="324" y="612"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_TkTEcMhhEeSYY678K9o-aQ" type="1005">
     <children xmi:type="notation:Node" xmi:id="_TkTrgMhhEeSYY678K9o-aQ" type="4010"/>
@@ -669,17 +669,17 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_TkTEcchhEeSYY678K9o-aQ" fontColor="4210752" fontName="San Francisco Display" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="rules.ecore#//DatabaseMode"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TkTEcshhEeSYY678K9o-aQ" x="549" y="558"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TkTEcshhEeSYY678K9o-aQ" x="622" y="558"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_dlCJkMhhEeSYY678K9o-aQ" type="1005">
     <children xmi:type="notation:Node" xmi:id="_dlCwoMhhEeSYY678K9o-aQ" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_dlCwochhEeSYY678K9o-aQ" type="5008">
       <children xmi:type="notation:Node" xmi:id="_mCA88MhhEeSYY678K9o-aQ" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//DatabaseOption/off"/>
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Option/off"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_mCA88chhEeSYY678K9o-aQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_mwaUAMhhEeSYY678K9o-aQ" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//DatabaseOption/on"/>
+        <element xmi:type="ecore:EEnumLiteral" href="rules.ecore#//Option/on"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_mwaUAchhEeSYY678K9o-aQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_dlCwoshhEeSYY678K9o-aQ"/>
@@ -687,8 +687,8 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_dlCwpMhhEeSYY678K9o-aQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_dlCJkchhEeSYY678K9o-aQ" fontColor="4210752" fontName="San Francisco Display" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="rules.ecore#//DatabaseOption"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dlCJkshhEeSYY678K9o-aQ" x="702" y="558"/>
+    <element xmi:type="ecore:EEnum" href="rules.ecore#//Option"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dlCJkshhEeSYY678K9o-aQ" x="576" y="-36"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_yUeZgffeEeOezLU_1LM7PQ"/>
   <element xmi:type="ecore:EPackage" href="rules.ecore#/"/>
@@ -829,5 +829,19 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7PA2Q8hNEeSYY678K9o-aQ" points="[-31, 1, 162, 1]$[-134, 1, 59, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7PDSgMhNEeSYY678K9o-aQ" id="(0.22794117647058823,0.5178571428571429)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_NrWhkMkFEeSTEd5UzwBsUQ" type="NoteAttachment" source="_zXWWcMhNEeSYY678K9o-aQ" target="_dlCJkMhhEeSYY678K9o-aQ" lineWidth="1">
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_NrWhkckFEeSTEd5UzwBsUQ"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_NrWhkskFEeSTEd5UzwBsUQ"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NrWhk8kFEeSTEd5UzwBsUQ" points="[33, -28, -93, 86]$[118, -82, -8, 32]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_QBQpAMkFEeSTEd5UzwBsUQ" type="NoteAttachment" source="_5WnxQMhNEeSYY678K9o-aQ" target="_TkTEcMhhEeSYY678K9o-aQ" lineWidth="1">
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_QBQpAckFEeSTEd5UzwBsUQ"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_QBQpAskFEeSTEd5UzwBsUQ"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QBQpA8kFEeSTEd5UzwBsUQ" points="[26, -3, -423, 36]$[450, -13, 1, 26]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QBTsUMkFEeSTEd5UzwBsUQ" id="(0.8014705882352942,0.39285714285714285)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QBTsUckFEeSTEd5UzwBsUQ" id="(0.20930232558139536,0.6)"/>
   </edges>
 </notation:Diagram>

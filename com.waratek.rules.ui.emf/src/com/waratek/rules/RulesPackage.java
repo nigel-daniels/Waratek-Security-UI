@@ -1123,15 +1123,14 @@ public interface RulesPackage extends EPackage {
 	int DATABASE_MODE = 26;
 
 	/**
-	 * The meta object id for the '{@link com.waratek.rules.DatabaseOption <em>Database Option</em>}' enum.
+	 * The meta object id for the '{@link com.waratek.rules.Option <em>Option</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.DatabaseOption
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseOption()
+	 * @see com.waratek.rules.Option
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getOption()
 	 * @generated
 	 */
-	int DATABASE_OPTION = 27;
-
+	int OPTION = 27;
 
 	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.RuleDocument <em>Rule Document</em>}'.
@@ -1690,14 +1689,14 @@ public interface RulesPackage extends EPackage {
 	EEnum getDatabaseMode();
 
 	/**
-	 * Returns the meta object for enum '{@link com.waratek.rules.DatabaseOption <em>Database Option</em>}'.
+	 * Returns the meta object for enum '{@link com.waratek.rules.Option <em>Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Database Option</em>'.
-	 * @see com.waratek.rules.DatabaseOption
+	 * @return the meta object for enum '<em>Option</em>'.
+	 * @see com.waratek.rules.Option
 	 * @generated
 	 */
-	EEnum getDatabaseOption();
+	EEnum getOption();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2201,14 +2200,14 @@ public interface RulesPackage extends EPackage {
 		EEnum DATABASE_MODE = eINSTANCE.getDatabaseMode();
 
 		/**
-		 * The meta object literal for the '{@link com.waratek.rules.DatabaseOption <em>Database Option</em>}' enum.
+		 * The meta object literal for the '{@link com.waratek.rules.Option <em>Option</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.DatabaseOption
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseOption()
+		 * @see com.waratek.rules.Option
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getOption()
 		 * @generated
 		 */
-		EEnum DATABASE_OPTION = eINSTANCE.getDatabaseOption();
+		EEnum OPTION = eINSTANCE.getOption();
 
 	}
 

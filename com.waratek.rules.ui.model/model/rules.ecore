@@ -144,7 +144,7 @@
     <eLiterals name="ansiquotes"/>
     <eLiterals name="nobackslashescapes" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DatabaseOption">
+  <eClassifiers xsi:type="ecore:EEnum" name="Option">
     <eLiterals name="off" literal="Off"/>
     <eLiterals name="on" value="1" literal="On"/>
   </eClassifiers>

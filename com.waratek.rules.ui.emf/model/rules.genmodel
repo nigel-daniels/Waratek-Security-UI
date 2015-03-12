@@ -69,9 +69,9 @@
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//DatabaseMode/ansiquotes"/>
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//DatabaseMode/nobackslashescapes"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//DatabaseOption">
-      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//DatabaseOption/off"/>
-      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//DatabaseOption/on"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//Option">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Option/off"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Option/on"/>
     </genEnums>
     <genClasses ecoreClass="rules.ecore#//RuleDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/version"/>

@@ -22,13 +22,13 @@ import com.waratek.rules.ClassLink;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.DatabaseMode;
-import com.waratek.rules.DatabaseOption;
 import com.waratek.rules.File;
 import com.waratek.rules.FileParameter;
 import com.waratek.rules.Log;
 import com.waratek.rules.Native;
 import com.waratek.rules.Network;
 import com.waratek.rules.NetworkParameter;
+import com.waratek.rules.Option;
 import com.waratek.rules.ReflectClass;
 import com.waratek.rules.ReflectConstructor;
 import com.waratek.rules.ReflectField;
@@ -578,7 +578,7 @@ public class RulesResourceImpl extends ResourceImpl
 		if (mode.contains(ASSIGN))
 			{
 			DatabaseMode dbMode = DatabaseMode.getByName(mode.substring(0, mode.indexOf(ASSIGN)-1));
-			DatabaseOption dbOption = DatabaseOption.getByName(mode.substring(mode.indexOf(ASSIGN),mode.length()));
+			Option dbOption = Option.getByName(mode.substring(mode.indexOf(ASSIGN),mode.length()));
 			
 			if (dbMode != null && dbOption != null)
 				{

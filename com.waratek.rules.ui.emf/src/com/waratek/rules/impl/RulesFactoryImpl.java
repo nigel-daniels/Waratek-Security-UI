@@ -118,8 +118,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return createReflectionParameterFromString(eDataType, initialValue);
 			case RulesPackage.DATABASE_MODE:
 				return createDatabaseModeFromString(eDataType, initialValue);
-			case RulesPackage.DATABASE_OPTION:
-				return createDatabaseOptionFromString(eDataType, initialValue);
+			case RulesPackage.OPTION:
+				return createOptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -156,8 +156,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return convertReflectionParameterToString(eDataType, instanceValue);
 			case RulesPackage.DATABASE_MODE:
 				return convertDatabaseModeToString(eDataType, instanceValue);
-			case RulesPackage.DATABASE_OPTION:
-				return convertDatabaseOptionToString(eDataType, instanceValue);
+			case RulesPackage.OPTION:
+				return convertOptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -528,9 +528,9 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatabaseOption createDatabaseOptionFromString(EDataType eDataType, String initialValue)
+	public Option createOptionFromString(EDataType eDataType, String initialValue)
 	{
-		DatabaseOption result = DatabaseOption.get(initialValue);
+		Option result = Option.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -540,7 +540,7 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDatabaseOptionToString(EDataType eDataType, Object instanceValue)
+	public String convertOptionToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
