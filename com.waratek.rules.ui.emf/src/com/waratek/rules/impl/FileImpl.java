@@ -106,10 +106,11 @@ public class FileImpl extends RuleImpl implements File {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setPath(String newPath) {
 		String oldPath = path;
+		if (newPath == null) {newPath = "";}
 		path = newPath;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.FILE__PATH, oldPath, path));

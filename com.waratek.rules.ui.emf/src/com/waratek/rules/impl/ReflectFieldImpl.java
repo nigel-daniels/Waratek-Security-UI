@@ -105,10 +105,11 @@ public class ReflectFieldImpl extends ReflectionImpl implements ReflectField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
+		if (newClassName == null) {newClassName = "";}
 		className = newClassName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECT_FIELD__CLASS_NAME, oldClassName, className));
@@ -126,10 +127,11 @@ public class ReflectFieldImpl extends ReflectionImpl implements ReflectField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setFieldName(String newFieldName) {
 		String oldFieldName = fieldName;
+		if (newFieldName == null) {newFieldName = "";}
 		fieldName = newFieldName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECT_FIELD__FIELD_NAME, oldFieldName, fieldName));

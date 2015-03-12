@@ -81,10 +81,11 @@ public class CommentImpl extends LinesImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setComment(String newComment) {
 		String oldComment = comment;
+		if (newComment == null) {newComment = "";}
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.COMMENT__COMMENT, oldComment, comment));

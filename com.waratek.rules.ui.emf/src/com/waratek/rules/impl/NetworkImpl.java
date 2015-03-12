@@ -127,10 +127,11 @@ public class NetworkImpl extends RuleImpl implements Network {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setHost(String newHost) {
 		String oldHost = host;
+		if (newHost == null) newHost = "";
 		host = newHost;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.NETWORK__HOST, oldHost, host));
@@ -148,10 +149,11 @@ public class NetworkImpl extends RuleImpl implements Network {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setPort(String newPort) {
 		String oldPort = port;
+		if (newPort == null) newPort = "";
 		port = newPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.NETWORK__PORT, oldPort, port));

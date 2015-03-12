@@ -84,10 +84,11 @@ public class ThrowableClassImpl extends RuleImpl implements ThrowableClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
+		if (newClassName == null) {newClassName = "";}
 		className = newClassName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.THROWABLE_CLASS__CLASS_NAME, oldClassName, className));

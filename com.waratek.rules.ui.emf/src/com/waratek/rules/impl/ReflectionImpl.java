@@ -84,10 +84,11 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setPackageName(String newPackageName) {
 		String oldPackageName = packageName;
+		if (newPackageName == null) {newPackageName = "";}
 		packageName = newPackageName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECTION__PACKAGE_NAME, oldPackageName, packageName));

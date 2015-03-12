@@ -105,10 +105,11 @@ public class ReflectConstructorImpl extends ReflectionImpl implements ReflectCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
+		if (newClassName == null) {newClassName = "";}
 		className = newClassName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECT_CONSTRUCTOR__CLASS_NAME, oldClassName, className));
@@ -126,10 +127,11 @@ public class ReflectConstructorImpl extends ReflectionImpl implements ReflectCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setConstructorSignature(String newConstructorSignature) {
 		String oldConstructorSignature = constructorSignature;
+		if (newConstructorSignature == null) {newConstructorSignature = "";}
 		constructorSignature = newConstructorSignature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECT_CONSTRUCTOR__CONSTRUCTOR_SIGNATURE, oldConstructorSignature, constructorSignature));

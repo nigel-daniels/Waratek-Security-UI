@@ -127,10 +127,11 @@ public class NativeImpl extends RuleImpl implements Native {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setPath(String newPath) {
 		String oldPath = path;
+		if (newPath == null) {newPath = "";}
 		path = newPath;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.NATIVE__PATH, oldPath, path));
@@ -148,10 +149,11 @@ public class NativeImpl extends RuleImpl implements Native {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setChecksum(String newChecksum) {
 		String oldChecksum = checksum;
+		if (newChecksum == null) {newChecksum = "";}
 		checksum = newChecksum;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.NATIVE__CHECKSUM, oldChecksum, checksum));

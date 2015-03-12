@@ -105,10 +105,11 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
+		if (newClassName == null) {newClassName = "";}
 		className = newClassName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECT_METHOD__CLASS_NAME, oldClassName, className));
@@ -126,10 +127,11 @@ public class ReflectMethodImpl extends ReflectionImpl implements ReflectMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setMethodSignature(String newMethodSignature) {
 		String oldMethodSignature = methodSignature;
+		if (newMethodSignature == null) {newMethodSignature = "";}
 		methodSignature = newMethodSignature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECT_METHOD__METHOD_SIGNATURE, oldMethodSignature, methodSignature));

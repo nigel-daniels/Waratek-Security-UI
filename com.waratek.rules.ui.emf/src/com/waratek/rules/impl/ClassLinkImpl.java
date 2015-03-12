@@ -84,10 +84,11 @@ public class ClassLinkImpl extends RuleImpl implements ClassLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setDescriptorName(String newDescriptorName) {
 		String oldDescriptorName = descriptorName;
+		if (newDescriptorName == null) {newDescriptorName = "";} 
 		descriptorName = newDescriptorName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.CLASS_LINK__DESCRIPTOR_NAME, oldDescriptorName, descriptorName));
