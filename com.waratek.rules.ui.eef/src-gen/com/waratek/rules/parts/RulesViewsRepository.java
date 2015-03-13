@@ -24,9 +24,6 @@ public class RulesViewsRepository {
 			
 			public static String version = "rules::RuleDocument::properties::version";
 			
-			
-			public static String lines = "rules::RuleDocument::properties::lines";
-			
 	
 		}
 	

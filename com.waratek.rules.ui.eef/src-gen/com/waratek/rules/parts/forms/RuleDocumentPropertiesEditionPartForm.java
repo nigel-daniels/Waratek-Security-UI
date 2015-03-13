@@ -75,9 +75,6 @@ import org.eclipse.ui.forms.widgets.Section;
 public class RuleDocumentPropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, RuleDocumentPropertiesEditionPart {
 
 	protected EMFComboViewer version;
-	protected ReferencesTable lines;
-	protected List<ViewerFilter> linesBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> linesFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -122,9 +119,9 @@ public class RuleDocumentPropertiesEditionPartForm extends SectionPropertiesEdit
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
 		CompositionSequence ruleDocumentStep = new BindingCompositionSequence(propertiesEditionComponent);
-		CompositionStep propertiesStep = ruleDocumentStep.addStep(RulesViewsRepository.RuleDocument.Properties.class);
-		propertiesStep.addStep(RulesViewsRepository.RuleDocument.Properties.version);
-		propertiesStep.addStep(RulesViewsRepository.RuleDocument.Properties.lines);
+		ruleDocumentStep
+			.addStep(RulesViewsRepository.RuleDocument.Properties.class)
+			.addStep(RulesViewsRepository.RuleDocument.Properties.version);
 		
 		
 		composer = new PartComposer(ruleDocumentStep) {
@@ -136,9 +133,6 @@ public class RuleDocumentPropertiesEditionPartForm extends SectionPropertiesEdit
 				}
 				if (key == RulesViewsRepository.RuleDocument.Properties.version) {
 					return createVersionEMFComboViewer(widgetFactory, parent);
-				}
-				if (key == RulesViewsRepository.RuleDocument.Properties.lines) {
-					return createLinesTableComposition(widgetFactory, parent);
 				}
 				return parent;
 			}
@@ -187,57 +181,6 @@ public class RuleDocumentPropertiesEditionPartForm extends SectionPropertiesEdit
 		version.setID(RulesViewsRepository.RuleDocument.Properties.version);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(RulesViewsRepository.RuleDocument.Properties.version, RulesViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 		// Start of user code for createVersionEMFComboViewer
-
-		// End of user code
-		return parent;
-	}
-
-	/**
-	 * @param container
-	 * 
-	 */
-	protected Composite createLinesTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.lines = new ReferencesTable(getDescription(RulesViewsRepository.RuleDocument.Properties.lines, RulesMessages.RuleDocumentPropertiesEditionPart_LinesLabel), new ReferencesTableListener() {
-			public void handleAdd() {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RuleDocumentPropertiesEditionPartForm.this, RulesViewsRepository.RuleDocument.Properties.lines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
-				lines.refresh();
-			}
-			public void handleEdit(EObject element) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RuleDocumentPropertiesEditionPartForm.this, RulesViewsRepository.RuleDocument.Properties.lines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
-				lines.refresh();
-			}
-			public void handleMove(EObject element, int oldIndex, int newIndex) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RuleDocumentPropertiesEditionPartForm.this, RulesViewsRepository.RuleDocument.Properties.lines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
-				lines.refresh();
-			}
-			public void handleRemove(EObject element) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RuleDocumentPropertiesEditionPartForm.this, RulesViewsRepository.RuleDocument.Properties.lines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
-				lines.refresh();
-			}
-			public void navigateTo(EObject element) { }
-		});
-		for (ViewerFilter filter : this.linesFilters) {
-			this.lines.addFilter(filter);
-		}
-		this.lines.setHelpText(propertiesEditionComponent.getHelpContent(RulesViewsRepository.RuleDocument.Properties.lines, RulesViewsRepository.FORM_KIND));
-		this.lines.createControls(parent, widgetFactory);
-		this.lines.addSelectionListener(new SelectionAdapter() {
-			
-			public void widgetSelected(SelectionEvent e) {
-				if (e.item != null && e.item.getData() instanceof EObject) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(RuleDocumentPropertiesEditionPartForm.this, RulesViewsRepository.RuleDocument.Properties.lines, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
-				}
-			}
-			
-		});
-		GridData linesData = new GridData(GridData.FILL_HORIZONTAL);
-		linesData.horizontalSpan = 3;
-		this.lines.setLayoutData(linesData);
-		this.lines.setLowerBound(0);
-		this.lines.setUpperBound(-1);
-		lines.setID(RulesViewsRepository.RuleDocument.Properties.lines);
-		lines.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-		// Start of user code for createLinesTableComposition
 
 		// End of user code
 		return parent;
@@ -301,72 +244,6 @@ public class RuleDocumentPropertiesEditionPartForm extends SectionPropertiesEdit
 			version.setEnabled(true);
 		}	
 		
-	}
-
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.RuleDocumentPropertiesEditionPart#initLines(EObject current, EReference containingFeature, EReference feature)
-	 */
-	public void initLines(ReferencesTableSettings settings) {
-		if (current.eResource() != null && current.eResource().getResourceSet() != null)
-			this.resourceSet = current.eResource().getResourceSet();
-		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
-		lines.setContentProvider(contentProvider);
-		lines.setInput(settings);
-		boolean eefElementEditorReadOnlyState = isReadOnly(RulesViewsRepository.RuleDocument.Properties.lines);
-		if (eefElementEditorReadOnlyState && lines.isEnabled()) {
-			lines.setEnabled(false);
-			lines.setToolTipText(RulesMessages.RuleDocument_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !lines.isEnabled()) {
-			lines.setEnabled(true);
-		}	
-		
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.RuleDocumentPropertiesEditionPart#updateLines()
-	 * 
-	 */
-	public void updateLines() {
-	lines.refresh();
-}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.RuleDocumentPropertiesEditionPart#addFilterLines(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToLines(ViewerFilter filter) {
-		linesFilters.add(filter);
-		if (this.lines != null) {
-			this.lines.addFilter(filter);
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.RuleDocumentPropertiesEditionPart#addBusinessFilterLines(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToLines(ViewerFilter filter) {
-		linesBusinessFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.waratek.rules.parts.RuleDocumentPropertiesEditionPart#isContainedInLinesTable(EObject element)
-	 * 
-	 */
-	public boolean isContainedInLinesTable(EObject element) {
-		return ((ReferencesTableSettings)lines.getInput()).contains(element);
 	}
 
 

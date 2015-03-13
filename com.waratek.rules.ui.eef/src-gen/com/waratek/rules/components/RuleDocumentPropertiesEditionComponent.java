@@ -66,11 +66,6 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	/**
-	 * Settings for lines ReferencesTable
-	 */
-	protected ReferencesTableSettings linesSettings;
-	
 	
 	/**
 	 * Default constructor
@@ -101,27 +96,8 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 			if (isAccessible(RulesViewsRepository.RuleDocument.Properties.version)) {
 				basePart.initVersion(EEFUtils.choiceOfValues(ruleDocument, RulesPackage.eINSTANCE.getRuleDocument_Version()), ruleDocument.getVersion());
 			}
-			if (isAccessible(RulesViewsRepository.RuleDocument.Properties.lines)) {
-				linesSettings = new ReferencesTableSettings(ruleDocument, RulesPackage.eINSTANCE.getRuleDocument_Lines());
-				basePart.initLines(linesSettings);
-			}
 			// init filters
 			
-			if (isAccessible(RulesViewsRepository.RuleDocument.Properties.lines)) {
-				basePart.addFilterToLines(new ViewerFilter() {
-					/**
-					 * {@inheritDoc}
-					 * 
-					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-					 */
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return (element instanceof String && element.equals("")) || (element instanceof Lines); //$NON-NLS-1$ 
-					}
-			
-				});
-				// Start of user code for additional businessfilters for lines
-				// End of user code
-			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -133,7 +109,6 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
@@ -141,9 +116,6 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == RulesViewsRepository.RuleDocument.Properties.version) {
 			return RulesPackage.eINSTANCE.getRuleDocument_Version();
-		}
-		if (editorKey == RulesViewsRepository.RuleDocument.Properties.lines) {
-			return RulesPackage.eINSTANCE.getRuleDocument_Lines();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -158,31 +130,6 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 		if (RulesViewsRepository.RuleDocument.Properties.version == event.getAffectedEditor()) {
 			ruleDocument.setVersion((Version)event.getNewValue());
 		}
-		if (RulesViewsRepository.RuleDocument.Properties.lines == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.ADD) {
-				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, linesSettings, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy instanceof CreateEditingPolicy) {
-						policy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
-					if (editionPolicy != null) {
-						editionPolicy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
-				linesSettings.removeFromReference((EObject) event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
-				linesSettings.move(event.getNewIndex(), (Lines) event.getNewValue());
-			}
-		}
 	}
 
 	/**
@@ -196,8 +143,6 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 			if (RulesPackage.eINSTANCE.getRuleDocument_Version().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(RulesViewsRepository.RuleDocument.Properties.version))
 				basePart.setVersion((Version)msg.getNewValue());
 			
-			if (RulesPackage.eINSTANCE.getRuleDocument_Lines().equals(msg.getFeature()) && isAccessible(RulesViewsRepository.RuleDocument.Properties.lines))
-				basePart.updateLines();
 			
 		}
 	}
@@ -210,8 +155,7 @@ public class RuleDocumentPropertiesEditionComponent extends SinglePartProperties
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			RulesPackage.eINSTANCE.getRuleDocument_Version(),
-			RulesPackage.eINSTANCE.getRuleDocument_Lines()		);
+			RulesPackage.eINSTANCE.getRuleDocument_Version()		);
 		return new NotificationFilter[] {filter,};
 	}
 

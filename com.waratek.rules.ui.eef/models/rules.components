@@ -6,9 +6,6 @@
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmwsm-EeSAnpebqeLZ9A" name="version" views="_Szwm8cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//RuleDocument/version"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmw8m-EeSAnpebqeLZ9A" name="lines" views="_Szwm8sm-EeSAnpebqeLZ9A">
-          <model xsi:type="ecore:EReference" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//RuleDocument/lines"/>
-        </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//RuleDocument"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_SzwmxMm-EeSAnpebqeLZ9A" name="File" views="_Szwm88m-EeSAnpebqeLZ9A">
@@ -143,9 +140,6 @@
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm8cm-EeSAnpebqeLZ9A" name="version">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm8sm-EeSAnpebqeLZ9A" name="lines">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
         </elements>
       </views>

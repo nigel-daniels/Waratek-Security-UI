@@ -100,9 +100,6 @@ public class RulesMessages extends NLS {
 	public static String RuleDocumentPropertiesEditionPart_VersionLabel;
 
 	
-	public static String RuleDocumentPropertiesEditionPart_LinesLabel;
-
-	
 	public static String FilePropertiesEditionPart_ActionLabel;
 
 	
