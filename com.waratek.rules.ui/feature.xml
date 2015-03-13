@@ -94,7 +94,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
    <requires>
       <import feature="org.eclipse.emf.sdk" version="2.9.2.v20140203-1126" match="compatible"/>
       <import feature="org.eclipse.emf.eef.runtime-feature" version="1.2.0.201301111054" match="compatible"/>
-      <import feature="org.eclipse.xpand.sdk" version="1.4.0.v201306110406"/>
    </requires>
 
    <plugin
@@ -120,13 +119,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <plugin
          id="com.waratek.rules.ui.eef"
-         download-size="0"
-         install-size="0"
-         version="1.1.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.waratek.rules.ui.xpand"
          download-size="0"
          install-size="0"
          version="1.1.0"
