@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import com.waratek.rules.Action;
 import com.waratek.rules.Category;
 import com.waratek.rules.ClassLink;
+import com.waratek.rules.ClassLinkParameter;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.DatabaseMode;
@@ -29,11 +30,7 @@ import com.waratek.rules.Native;
 import com.waratek.rules.Network;
 import com.waratek.rules.NetworkParameter;
 import com.waratek.rules.Option;
-import com.waratek.rules.ReflectClass;
-import com.waratek.rules.ReflectConstructor;
-import com.waratek.rules.ReflectField;
-import com.waratek.rules.ReflectMethod;
-import com.waratek.rules.ReflectPackage;
+import com.waratek.rules.Reflection;
 import com.waratek.rules.ReflectionParameter;
 import com.waratek.rules.Rule;
 import com.waratek.rules.RuleDocument;
@@ -266,12 +263,12 @@ public class RulesResourceImpl extends ResourceImpl
 			{
 			NetworkParameter networkParameter = NetworkParameter.getByName(stringTokenizer.nextToken());
 			if (networkParameter != null)
-				{
-				rule.setNetworkParameter(networkParameter);
-				}
+				{rule.setNetworkParameter(networkParameter);}
 			}
+		
 		// Let's get what could be the host or the port
 		String hostOrPort = stringTokenizer.nextToken();
+		
 		if (stringTokenizer.hasMoreTokens())
 			{
 			// Lets get what could be the port or the action
@@ -301,7 +298,8 @@ public class RulesResourceImpl extends ResourceImpl
 					}
 				}
 			}
-		return (Rule) rule;
+		
+		return null;
 		}
 
 
@@ -316,14 +314,32 @@ public class RulesResourceImpl extends ResourceImpl
 		ClassLink rule = RulesFactory.eINSTANCE.createClassLink();
 		if (stringTokenizer.hasMoreTokens())
 			{
-			// This is the class subcategory so we can skip it
-			stringTokenizer.nextToken();
-			if (stringTokenizer.hasMoreTokens())
+			// This is the  subcategory so we can skip it
+			ClassLinkParameter classLinkParameter = ClassLinkParameter.getByName(stringTokenizer.nextToken());
+			
+			if (classLinkParameter != null) {rule.setClassLinkParameter(classLinkParameter);}
+			}
+		if (stringTokenizer.hasMoreTokens())
+			{rule.setQualifiedName(stringTokenizer.nextToken());}
+		if (stringTokenizer.hasMoreTokens())
+			{
+			String signatureOrAction = stringTokenizer.nextToken();
+			
+			Action action = Action.getByName(signatureOrAction);
+			
+			if (action == null)
 				{
-				rule.setDescriptorName(stringTokenizer.nextToken());
+				rule.setSignature(signatureOrAction);
+				return finishRule(stringTokenizer, rule);
+				}
+			else
+				{
+				rule.setAction(action);
+				return setLog(stringTokenizer, rule);
 				}
 			}
-		return finishRule(stringTokenizer, rule);
+		
+		return null;
 		}
 
 	/**
@@ -333,91 +349,37 @@ public class RulesResourceImpl extends ResourceImpl
 	 */
 	private Rule createReflectionRule(StringTokenizer stringTokenizer)
 		{
+		Reflection rule = RulesFactory.eINSTANCE.createReflection();
+		
 		if (stringTokenizer.hasMoreTokens())
 			{
-			// This is the class subcategory so we can skip it
-			stringTokenizer.nextToken();
-			if (stringTokenizer.hasMoreTokens())
+			// This is the class subcategory
+			ReflectionParameter reflectionParameter = ReflectionParameter.getByName(stringTokenizer.nextToken());
+			
+			if (reflectionParameter != null) {rule.setReflectionParameter(reflectionParameter);}
+			}
+		
+		if (stringTokenizer.hasMoreTokens())
+			{rule.setQualifiedName(stringTokenizer.nextToken());}
+		
+		if (stringTokenizer.hasMoreTokens())
+			{
+			String signatureOrAction = stringTokenizer.nextToken();
+			
+			Action action = Action.getByName(signatureOrAction);
+			
+			if (action == null)
 				{
-				// This could be a package rule or one of the other reflect
-				// rules
-				String packageName = stringTokenizer.nextToken();
-				if (packageName.endsWith(PACKAGE))
-					{
-					// Ok it is a package rule, we're done here
-					ReflectPackage rule = RulesFactory.eINSTANCE.createReflectPackage();
-					rule.setPackageName(packageName);
-					return finishRule(stringTokenizer, rule);
-					}
-				else
-					{
-					// Lets separate the class and package names
-					String className = packageName.substring(packageName.lastIndexOf('.') + 1, packageName.length());
-					packageName = packageName.substring(0, packageName.lastIndexOf('.'));
-					// The next token should tell us what we are dealing with
-					if (stringTokenizer.hasMoreTokens())
-						{
-						String reflectParameterOrAction = stringTokenizer.nextToken();
-						ReflectionParameter reflectionParameter = ReflectionParameter.getByName(reflectParameterOrAction);
-						if (reflectionParameter == null)
-							{
-							// The token was not a reflect parameter so this
-							// must be a class rule
-							ReflectClass rule = RulesFactory.eINSTANCE.createReflectClass();
-							rule.setPackageName(packageName);
-							rule.setClassName(className);
-							Action action = Action.getByName(reflectParameterOrAction);
-							if (action != null)
-								{
-								rule.setAction(action);
-								}
-							return setLog(stringTokenizer, rule);
-							}
-						else
-							{
-							// We did get a reflect parmeter so now we know what
-							// to do!
-							switch (reflectionParameter.getValue())
-								{
-								case ReflectionParameter.CONSTRUCTOR_VALUE:
-									{
-									ReflectConstructor rule = RulesFactory.eINSTANCE.createReflectConstructor();
-									rule.setPackageName(packageName);
-									rule.setClassName(className);
-									if (stringTokenizer.hasMoreTokens())
-										{
-										rule.setConstructorSignature(stringTokenizer.nextToken());
-										}
-									return finishRule(stringTokenizer, rule);
-									}
-								case ReflectionParameter.METHOD_VALUE:
-									{
-									ReflectMethod rule = RulesFactory.eINSTANCE.createReflectMethod();
-									rule.setPackageName(packageName);
-									rule.setClassName(className);
-									if (stringTokenizer.hasMoreTokens())
-										{
-										rule.setMethodSignature(stringTokenizer.nextToken());
-										}
-									return finishRule(stringTokenizer, rule);
-									}
-								case ReflectionParameter.FIELD_VALUE:
-									{
-									ReflectField rule = RulesFactory.eINSTANCE.createReflectField();
-									rule.setPackageName(packageName);
-									rule.setClassName(className);
-									if (stringTokenizer.hasMoreTokens())
-										{
-										rule.setFieldName(stringTokenizer.nextToken());
-										}
-									return finishRule(stringTokenizer, rule);
-									}
-								}
-							}
-						}
-					}
+				rule.setSignature(signatureOrAction);
+				return finishRule(stringTokenizer, rule);
+				}
+			else
+				{
+				rule.setAction(action);
+				return setLog(stringTokenizer, rule);
 				}
 			}
+		
 		return null;
 		}
 
