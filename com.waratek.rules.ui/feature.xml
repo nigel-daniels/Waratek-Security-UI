@@ -11,7 +11,7 @@ with the Waratek JVM.
    </description>
 
    <copyright>
-      Copyright 2014 Waratek Ltd.
+      Copyright 2014-2015 Waratek Ltd.
    </copyright>
 
    <license url="https://www.eclipse.org/org/documents/epl-v10.html">
@@ -89,6 +89,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <url>
       <update label="Waratek Plugins" url="http://download.waratek.com/eclipse"/>
+      <discovery label="Waratek" url="http://www.waratek.com"/>
    </url>
 
    <requires>
