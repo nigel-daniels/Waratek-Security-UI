@@ -6,6 +6,7 @@ package com.waratek.rules.impl;
 import com.waratek.rules.Action;
 import com.waratek.rules.Category;
 import com.waratek.rules.ClassLink;
+import com.waratek.rules.ClassLinkParameter;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.DatabaseMode;
@@ -18,11 +19,6 @@ import com.waratek.rules.NativeAction;
 import com.waratek.rules.Network;
 import com.waratek.rules.NetworkParameter;
 import com.waratek.rules.Option;
-import com.waratek.rules.ReflectClass;
-import com.waratek.rules.ReflectConstructor;
-import com.waratek.rules.ReflectField;
-import com.waratek.rules.ReflectMethod;
-import com.waratek.rules.ReflectPackage;
 import com.waratek.rules.Reflection;
 import com.waratek.rules.ReflectionParameter;
 import com.waratek.rules.Rule;
@@ -88,41 +84,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EClass reflectionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass reflectPackageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass reflectClassEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass reflectConstructorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass reflectMethodEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass reflectFieldEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +210,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EEnum optionEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum classLinkParameterEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -443,7 +411,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getReflection_PackageName() {
+	public EAttribute getReflection_ReflectionParameter()
+	{
 		return (EAttribute)reflectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -452,8 +421,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getReflectPackage() {
-		return reflectPackageEClass;
+	public EAttribute getReflection_QualifiedName()
+	{
+		return (EAttribute)reflectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -461,98 +431,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getReflectClass() {
-		return reflectClassEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectClass_ClassName() {
-		return (EAttribute)reflectClassEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReflectConstructor() {
-		return reflectConstructorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectConstructor_ClassName() {
-		return (EAttribute)reflectConstructorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectConstructor_ConstructorSignature() {
-		return (EAttribute)reflectConstructorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReflectMethod() {
-		return reflectMethodEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectMethod_ClassName() {
-		return (EAttribute)reflectMethodEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectMethod_MethodSignature() {
-		return (EAttribute)reflectMethodEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReflectField() {
-		return reflectFieldEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectField_ClassName() {
-		return (EAttribute)reflectFieldEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReflectField_FieldName() {
-		return (EAttribute)reflectFieldEClass.getEStructuralFeatures().get(1);
+	public EAttribute getReflection_Signature()
+	{
+		return (EAttribute)reflectionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -587,8 +468,29 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassLink_DescriptorName() {
+	public EAttribute getClassLink_QualifiedName()
+	{
+		return (EAttribute)classLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassLink_ClassLinkParameter()
+	{
 		return (EAttribute)classLinkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassLink_Signature()
+	{
+		return (EAttribute)classLinkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -813,6 +715,16 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getClassLinkParameter()
+	{
+		return classLinkParameterEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RulesFactory getRulesFactory() {
 		return (RulesFactory)getEFactoryInstance();
 	}
@@ -854,30 +766,17 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEAttribute(networkEClass, NETWORK__NETWORK_PARAMETER);
 
 		reflectionEClass = createEClass(REFLECTION);
-		createEAttribute(reflectionEClass, REFLECTION__PACKAGE_NAME);
-
-		reflectPackageEClass = createEClass(REFLECT_PACKAGE);
-
-		reflectClassEClass = createEClass(REFLECT_CLASS);
-		createEAttribute(reflectClassEClass, REFLECT_CLASS__CLASS_NAME);
-
-		reflectConstructorEClass = createEClass(REFLECT_CONSTRUCTOR);
-		createEAttribute(reflectConstructorEClass, REFLECT_CONSTRUCTOR__CLASS_NAME);
-		createEAttribute(reflectConstructorEClass, REFLECT_CONSTRUCTOR__CONSTRUCTOR_SIGNATURE);
-
-		reflectMethodEClass = createEClass(REFLECT_METHOD);
-		createEAttribute(reflectMethodEClass, REFLECT_METHOD__CLASS_NAME);
-		createEAttribute(reflectMethodEClass, REFLECT_METHOD__METHOD_SIGNATURE);
-
-		reflectFieldEClass = createEClass(REFLECT_FIELD);
-		createEAttribute(reflectFieldEClass, REFLECT_FIELD__CLASS_NAME);
-		createEAttribute(reflectFieldEClass, REFLECT_FIELD__FIELD_NAME);
+		createEAttribute(reflectionEClass, REFLECTION__REFLECTION_PARAMETER);
+		createEAttribute(reflectionEClass, REFLECTION__QUALIFIED_NAME);
+		createEAttribute(reflectionEClass, REFLECTION__SIGNATURE);
 
 		throwableClassEClass = createEClass(THROWABLE_CLASS);
 		createEAttribute(throwableClassEClass, THROWABLE_CLASS__CLASS_NAME);
 
 		classLinkEClass = createEClass(CLASS_LINK);
-		createEAttribute(classLinkEClass, CLASS_LINK__DESCRIPTOR_NAME);
+		createEAttribute(classLinkEClass, CLASS_LINK__CLASS_LINK_PARAMETER);
+		createEAttribute(classLinkEClass, CLASS_LINK__QUALIFIED_NAME);
+		createEAttribute(classLinkEClass, CLASS_LINK__SIGNATURE);
 
 		nativeEClass = createEClass(NATIVE);
 		createEAttribute(nativeEClass, NATIVE__PATH);
@@ -907,6 +806,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		reflectionParameterEEnum = createEEnum(REFLECTION_PARAMETER);
 		databaseModeEEnum = createEEnum(DATABASE_MODE);
 		optionEEnum = createEEnum(OPTION);
+		classLinkParameterEEnum = createEEnum(CLASS_LINK_PARAMETER);
 	}
 
 	/**
@@ -941,11 +841,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		fileEClass.getESuperTypes().add(this.getRule());
 		networkEClass.getESuperTypes().add(this.getRule());
 		reflectionEClass.getESuperTypes().add(this.getRule());
-		reflectPackageEClass.getESuperTypes().add(this.getReflection());
-		reflectClassEClass.getESuperTypes().add(this.getReflection());
-		reflectConstructorEClass.getESuperTypes().add(this.getReflection());
-		reflectMethodEClass.getESuperTypes().add(this.getReflection());
-		reflectFieldEClass.getESuperTypes().add(this.getReflection());
 		throwableClassEClass.getESuperTypes().add(this.getRule());
 		classLinkEClass.getESuperTypes().add(this.getRule());
 		nativeEClass.getESuperTypes().add(this.getRule());
@@ -970,31 +865,18 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		initEAttribute(getNetwork_Port(), ecorePackage.getEString(), "port", "0", 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetwork_NetworkParameter(), this.getNetworkParameter(), "networkParameter", "Connect", 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(reflectionEClass, Reflection.class, "Reflection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflection_PackageName(), ecorePackage.getEString(), "packageName", "", 0, 1, Reflection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(reflectPackageEClass, ReflectPackage.class, "ReflectPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(reflectClassEClass, ReflectClass.class, "ReflectClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectClass_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(reflectConstructorEClass, ReflectConstructor.class, "ReflectConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectConstructor_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReflectConstructor_ConstructorSignature(), ecorePackage.getEString(), "constructorSignature", "", 0, 1, ReflectConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(reflectMethodEClass, ReflectMethod.class, "ReflectMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectMethod_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReflectMethod_MethodSignature(), ecorePackage.getEString(), "methodSignature", "", 0, 1, ReflectMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(reflectFieldEClass, ReflectField.class, "ReflectField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReflectField_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ReflectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReflectField_FieldName(), ecorePackage.getEString(), "fieldName", "", 0, 1, ReflectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(reflectionEClass, Reflection.class, "Reflection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReflection_ReflectionParameter(), this.getReflectionParameter(), "reflectionParameter", "Method", 0, 1, Reflection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflection_QualifiedName(), ecorePackage.getEString(), "qualifiedName", "", 0, 1, Reflection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReflection_Signature(), ecorePackage.getEString(), "signature", "", 0, 1, Reflection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(throwableClassEClass, ThrowableClass.class, "ThrowableClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getThrowableClass_ClassName(), ecorePackage.getEString(), "className", "", 0, 1, ThrowableClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classLinkEClass, ClassLink.class, "ClassLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClassLink_DescriptorName(), ecorePackage.getEString(), "descriptorName", "", 0, 1, ClassLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassLink_ClassLinkParameter(), this.getClassLinkParameter(), "classLinkParameter", "Class", 0, 1, ClassLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassLink_QualifiedName(), ecorePackage.getEString(), "qualifiedName", "", 0, 1, ClassLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassLink_Signature(), ecorePackage.getEString(), "signature", null, 0, 1, ClassLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nativeEClass, Native.class, "Native", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNative_Path(), ecorePackage.getEString(), "path", "", 0, 1, Native.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1077,6 +959,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		initEEnum(optionEEnum, Option.class, "Option");
 		addEEnumLiteral(optionEEnum, Option.OFF);
 		addEEnumLiteral(optionEEnum, Option.ON);
+
+		initEEnum(classLinkParameterEEnum, ClassLinkParameter.class, "ClassLinkParameter");
+		addEEnumLiteral(classLinkParameterEEnum, ClassLinkParameter.CLASS);
+		addEEnumLiteral(classLinkParameterEEnum, ClassLinkParameter.CONSTRUCTOR);
+		addEEnumLiteral(classLinkParameterEEnum, ClassLinkParameter.METHOD);
+		addEEnumLiteral(classLinkParameterEEnum, ClassLinkParameter.FIELD);
 
 		// Create resource
 		createResource(eNS_URI);

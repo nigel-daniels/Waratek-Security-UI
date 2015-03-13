@@ -194,27 +194,7 @@ public class RuleDocumentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
-				 RulesFactory.eINSTANCE.createReflectPackage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
-				 RulesFactory.eINSTANCE.createReflectClass()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
-				 RulesFactory.eINSTANCE.createReflectConstructor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
-				 RulesFactory.eINSTANCE.createReflectMethod()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RulesPackage.Literals.RULE_DOCUMENT__LINES,
-				 RulesFactory.eINSTANCE.createReflectField()));
+				 RulesFactory.eINSTANCE.createReflection()));
 
 		newChildDescriptors.add
 			(createChildParameter

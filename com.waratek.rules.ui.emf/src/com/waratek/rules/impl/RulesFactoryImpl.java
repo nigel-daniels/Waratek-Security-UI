@@ -72,11 +72,7 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 			case RulesPackage.RULE_DOCUMENT: return createRuleDocument();
 			case RulesPackage.FILE: return createFile();
 			case RulesPackage.NETWORK: return createNetwork();
-			case RulesPackage.REFLECT_PACKAGE: return createReflectPackage();
-			case RulesPackage.REFLECT_CLASS: return createReflectClass();
-			case RulesPackage.REFLECT_CONSTRUCTOR: return createReflectConstructor();
-			case RulesPackage.REFLECT_METHOD: return createReflectMethod();
-			case RulesPackage.REFLECT_FIELD: return createReflectField();
+			case RulesPackage.REFLECTION: return createReflection();
 			case RulesPackage.THROWABLE_CLASS: return createThrowableClass();
 			case RulesPackage.CLASS_LINK: return createClassLink();
 			case RulesPackage.NATIVE: return createNative();
@@ -120,6 +116,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return createDatabaseModeFromString(eDataType, initialValue);
 			case RulesPackage.OPTION:
 				return createOptionFromString(eDataType, initialValue);
+			case RulesPackage.CLASS_LINK_PARAMETER:
+				return createClassLinkParameterFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -158,6 +156,8 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 				return convertDatabaseModeToString(eDataType, instanceValue);
 			case RulesPackage.OPTION:
 				return convertOptionToString(eDataType, instanceValue);
+			case RulesPackage.CLASS_LINK_PARAMETER:
+				return convertClassLinkParameterToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -198,49 +198,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReflectPackage createReflectPackage() {
-		ReflectPackageImpl reflectPackage = new ReflectPackageImpl();
-		return reflectPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReflectClass createReflectClass() {
-		ReflectClassImpl reflectClass = new ReflectClassImpl();
-		return reflectClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReflectConstructor createReflectConstructor() {
-		ReflectConstructorImpl reflectConstructor = new ReflectConstructorImpl();
-		return reflectConstructor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReflectMethod createReflectMethod() {
-		ReflectMethodImpl reflectMethod = new ReflectMethodImpl();
-		return reflectMethod;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReflectField createReflectField() {
-		ReflectFieldImpl reflectField = new ReflectFieldImpl();
-		return reflectField;
+	public Reflection createReflection()
+	{
+		ReflectionImpl reflection = new ReflectionImpl();
+		return reflection;
 	}
 
 	/**
@@ -541,6 +502,28 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	public String convertOptionToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ClassLinkParameter createClassLinkParameterFromString(EDataType eDataType, String initialValue)
+	{
+		ClassLinkParameter result = ClassLinkParameter.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertClassLinkParameterToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

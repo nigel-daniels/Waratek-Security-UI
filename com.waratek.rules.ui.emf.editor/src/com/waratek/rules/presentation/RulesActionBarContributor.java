@@ -432,7 +432,7 @@ public class RulesActionBarContributor
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated 
+	 * @generated
 	 */
 	@Override
 	protected void addGlobalActions(IMenuManager menuManager) {
@@ -441,7 +441,7 @@ public class RulesActionBarContributor
 
 		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
-		
+
 		super.addGlobalActions(menuManager);
 	}
 

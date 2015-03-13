@@ -6,13 +6,10 @@ package com.waratek.rules.provider;
 
 import com.waratek.rules.Reflection;
 import com.waratek.rules.RulesPackage;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -66,25 +63,74 @@ public class ReflectionItemProvider
 		{
 			super.getPropertyDescriptors(object);
 
-			addPackageNamePropertyDescriptor(object);
+			addReflectionParameterPropertyDescriptor(object);
+			addQualifiedNamePropertyDescriptor(object);
+			addSignaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Package Name feature.
+	 * This adds a property descriptor for the Reflection Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPackageNamePropertyDescriptor(Object object) {
+	protected void addReflectionParameterPropertyDescriptor(Object object)
+	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Reflection_packageName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Reflection_packageName_feature", "_UI_Reflection_type"),
-				 RulesPackage.Literals.REFLECTION__PACKAGE_NAME,
+				 getString("_UI_Reflection_reflectionParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Reflection_reflectionParameter_feature", "_UI_Reflection_type"),
+				 RulesPackage.Literals.REFLECTION__REFLECTION_PARAMETER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Qualified Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addQualifiedNamePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Reflection_qualifiedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Reflection_qualifiedName_feature", "_UI_Reflection_type"),
+				 RulesPackage.Literals.REFLECTION__QUALIFIED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Signature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSignaturePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Reflection_signature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Reflection_signature_feature", "_UI_Reflection_type"),
+				 RulesPackage.Literals.REFLECTION__SIGNATURE,
 				 true,
 				 false,
 				 false,
@@ -97,11 +143,19 @@ public class ReflectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Reflection)object).getPackageName();
+	StringBuffer label = new StringBuffer();
+	Reflection reflection = (Reflection)object;
+
+	label.append(reflection.getReflectionParameter().toString() + ":" + reflection.getQualifiedName() + ":"); 
+	
+	if (!reflection.getSignature().equals("")) {label.append(reflection.getSignature() + ":");}
+	
+	label.append(reflection.getAction().toString() + ":" + reflection.getLog().toString());
+	
 		return label == null || label.length() == 0 ?
 			getString("_UI_Reflection_type") :
 			getString("_UI_Reflection_type") + " " + label;
@@ -120,7 +174,9 @@ public class ReflectionItemProvider
 
 		switch (notification.getFeatureID(Reflection.class))
 		{
-			case RulesPackage.REFLECTION__PACKAGE_NAME:
+			case RulesPackage.REFLECTION__REFLECTION_PARAMETER:
+			case RulesPackage.REFLECTION__QUALIFIED_NAME:
+			case RulesPackage.REFLECTION__SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

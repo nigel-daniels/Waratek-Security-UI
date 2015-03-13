@@ -26,31 +26,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="networkParameter" eType="#//NetworkParameter"
         defaultValueLiteral="Connect"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reflection" abstract="true" eSuperTypes="#//Rule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+  <eClassifiers xsi:type="ecore:EClass" name="Reflection" eSuperTypes="#//Rule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reflectionParameter" eType="#//ReflectionParameter"
+        defaultValueLiteral="Method"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReflectPackage" eSuperTypes="#//Reflection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ReflectClass" eSuperTypes="#//Reflection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReflectConstructor" eSuperTypes="#//Reflection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constructorSignature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReflectMethod" eSuperTypes="#//Reflection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodSignature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReflectField" eSuperTypes="#//Reflection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThrowableClass" eSuperTypes="#//Rule">
@@ -58,8 +39,11 @@
         defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassLink" eSuperTypes="#//Rule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descriptorName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classLinkParameter" eType="#//ClassLinkParameter"
+        defaultValueLiteral="Class"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Native" eSuperTypes="#//Rule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -147,5 +131,11 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Option">
     <eLiterals name="off" literal="Off"/>
     <eLiterals name="on" value="1" literal="On"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ClassLinkParameter">
+    <eLiterals name="class" literal="Class"/>
+    <eLiterals name="constructor" value="1" literal="Constructor"/>
+    <eLiterals name="method" value="2" literal="Method"/>
+    <eLiterals name="field" value="3" literal="Field"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -12,7 +12,9 @@ package com.waratek.rules;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.waratek.rules.ClassLink#getDescriptorName <em>Descriptor Name</em>}</li>
+ *   <li>{@link com.waratek.rules.ClassLink#getClassLinkParameter <em>Class Link Parameter</em>}</li>
+ *   <li>{@link com.waratek.rules.ClassLink#getQualifiedName <em>Qualified Name</em>}</li>
+ *   <li>{@link com.waratek.rules.ClassLink#getSignature <em>Signature</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,30 +31,86 @@ public interface ClassLink extends Rule {
 	String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
-	 * Returns the value of the '<em><b>Descriptor Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Qualified Name</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Descriptor Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Qualified Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Descriptor Name</em>' attribute.
-	 * @see #setDescriptorName(String)
-	 * @see com.waratek.rules.RulesPackage#getClassLink_DescriptorName()
+	 * @return the value of the '<em>Qualified Name</em>' attribute.
+	 * @see #setQualifiedName(String)
+	 * @see com.waratek.rules.RulesPackage#getClassLink_QualifiedName()
 	 * @model default=""
 	 * @generated
 	 */
-	String getDescriptorName();
+	String getQualifiedName();
 
 	/**
-	 * Sets the value of the '{@link com.waratek.rules.ClassLink#getDescriptorName <em>Descriptor Name</em>}' attribute.
+	 * Sets the value of the '{@link com.waratek.rules.ClassLink#getQualifiedName <em>Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Descriptor Name</em>' attribute.
-	 * @see #getDescriptorName()
+	 * @param value the new value of the '<em>Qualified Name</em>' attribute.
+	 * @see #getQualifiedName()
 	 * @generated
 	 */
-	void setDescriptorName(String value);
+	void setQualifiedName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Class Link Parameter</b></em>' attribute.
+	 * The default value is <code>"Class"</code>.
+	 * The literals are from the enumeration {@link com.waratek.rules.ClassLinkParameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Class Link Parameter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Class Link Parameter</em>' attribute.
+	 * @see com.waratek.rules.ClassLinkParameter
+	 * @see #setClassLinkParameter(ClassLinkParameter)
+	 * @see com.waratek.rules.RulesPackage#getClassLink_ClassLinkParameter()
+	 * @model default="Class"
+	 * @generated
+	 */
+	ClassLinkParameter getClassLinkParameter();
+
+	/**
+	 * Sets the value of the '{@link com.waratek.rules.ClassLink#getClassLinkParameter <em>Class Link Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Class Link Parameter</em>' attribute.
+	 * @see com.waratek.rules.ClassLinkParameter
+	 * @see #getClassLinkParameter()
+	 * @generated
+	 */
+	void setClassLinkParameter(ClassLinkParameter value);
+
+	/**
+	 * Returns the value of the '<em><b>Signature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Signature</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Signature</em>' attribute.
+	 * @see #setSignature(String)
+	 * @see com.waratek.rules.RulesPackage#getClassLink_Signature()
+	 * @model
+	 * @generated
+	 */
+	String getSignature();
+
+	/**
+	 * Sets the value of the '{@link com.waratek.rules.ClassLink#getSignature <em>Signature</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Signature</em>' attribute.
+	 * @see #getSignature()
+	 * @generated
+	 */
+	void setSignature(String value);
 
 } // ClassLink

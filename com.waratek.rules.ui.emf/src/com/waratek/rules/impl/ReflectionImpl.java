@@ -4,6 +4,7 @@
 package com.waratek.rules.impl;
 
 import com.waratek.rules.Reflection;
+import com.waratek.rules.ReflectionParameter;
 import com.waratek.rules.RulesPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,13 +20,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.waratek.rules.impl.ReflectionImpl#getPackageName <em>Package Name</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.ReflectionImpl#getReflectionParameter <em>Reflection Parameter</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.ReflectionImpl#getQualifiedName <em>Qualified Name</em>}</li>
+ *   <li>{@link com.waratek.rules.impl.ReflectionImpl#getSignature <em>Signature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ReflectionImpl extends RuleImpl implements Reflection {
+public class ReflectionImpl extends RuleImpl implements Reflection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,24 +37,64 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	public static final String copyright = "Copyright 2015 Waratek Ltd.";
 
 	/**
-	 * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+	 * The default value of the '{@link #getReflectionParameter() <em>Reflection Parameter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPackageName()
+	 * @see #getReflectionParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PACKAGE_NAME_EDEFAULT = "";
+	protected static final ReflectionParameter REFLECTION_PARAMETER_EDEFAULT = ReflectionParameter.METHOD;
 
 	/**
-	 * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+	 * The cached value of the '{@link #getReflectionParameter() <em>Reflection Parameter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPackageName()
+	 * @see #getReflectionParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected String packageName = PACKAGE_NAME_EDEFAULT;
+	protected ReflectionParameter reflectionParameter = REFLECTION_PARAMETER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getQualifiedName() <em>Qualified Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQualifiedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String QUALIFIED_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getQualifiedName() <em>Qualified Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQualifiedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String qualifiedName = QUALIFIED_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSignature() <em>Signature</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSignature()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SIGNATURE_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getSignature() <em>Signature</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSignature()
+	 * @generated
+	 * @ordered
+	 */
+	protected String signature = SIGNATURE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,8 +120,32 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPackageName() {
-		return packageName;
+	public ReflectionParameter getReflectionParameter()
+	{
+		return reflectionParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReflectionParameter(ReflectionParameter newReflectionParameter)
+	{
+		ReflectionParameter oldReflectionParameter = reflectionParameter;
+		reflectionParameter = newReflectionParameter == null ? REFLECTION_PARAMETER_EDEFAULT : newReflectionParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECTION__REFLECTION_PARAMETER, oldReflectionParameter, reflectionParameter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getQualifiedName()
+	{
+		return qualifiedName;
 	}
 
 	/**
@@ -86,14 +153,39 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setPackageName(String newPackageName) {
-		String oldPackageName = packageName;
-		if (newPackageName == null) {newPackageName = "";}
-		packageName = newPackageName;
+	public void setQualifiedName(String newQualifiedName)
+	{
+		String oldQualifiedName = qualifiedName;
+		if (newQualifiedName == null) {newQualifiedName = "";}
+		qualifiedName = newQualifiedName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECTION__PACKAGE_NAME, oldPackageName, packageName));
+			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECTION__QUALIFIED_NAME, oldQualifiedName, qualifiedName));
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSignature()
+	{
+		return signature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setSignature(String newSignature)
+	{
+		String oldSignature = signature;
+		if (newSignature == null) {newSignature = "";}
+		signature = newSignature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RulesPackage.REFLECTION__SIGNATURE, oldSignature, signature));
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,8 +195,12 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID)
 		{
-			case RulesPackage.REFLECTION__PACKAGE_NAME:
-				return getPackageName();
+			case RulesPackage.REFLECTION__REFLECTION_PARAMETER:
+				return getReflectionParameter();
+			case RulesPackage.REFLECTION__QUALIFIED_NAME:
+				return getQualifiedName();
+			case RulesPackage.REFLECTION__SIGNATURE:
+				return getSignature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,8 +214,14 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID)
 		{
-			case RulesPackage.REFLECTION__PACKAGE_NAME:
-				setPackageName((String)newValue);
+			case RulesPackage.REFLECTION__REFLECTION_PARAMETER:
+				setReflectionParameter((ReflectionParameter)newValue);
+				return;
+			case RulesPackage.REFLECTION__QUALIFIED_NAME:
+				setQualifiedName((String)newValue);
+				return;
+			case RulesPackage.REFLECTION__SIGNATURE:
+				setSignature((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +236,14 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	public void eUnset(int featureID) {
 		switch (featureID)
 		{
-			case RulesPackage.REFLECTION__PACKAGE_NAME:
-				setPackageName(PACKAGE_NAME_EDEFAULT);
+			case RulesPackage.REFLECTION__REFLECTION_PARAMETER:
+				setReflectionParameter(REFLECTION_PARAMETER_EDEFAULT);
+				return;
+			case RulesPackage.REFLECTION__QUALIFIED_NAME:
+				setQualifiedName(QUALIFIED_NAME_EDEFAULT);
+				return;
+			case RulesPackage.REFLECTION__SIGNATURE:
+				setSignature(SIGNATURE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,8 +258,12 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 	public boolean eIsSet(int featureID) {
 		switch (featureID)
 		{
-			case RulesPackage.REFLECTION__PACKAGE_NAME:
-				return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
+			case RulesPackage.REFLECTION__REFLECTION_PARAMETER:
+				return reflectionParameter != REFLECTION_PARAMETER_EDEFAULT;
+			case RulesPackage.REFLECTION__QUALIFIED_NAME:
+				return QUALIFIED_NAME_EDEFAULT == null ? qualifiedName != null : !QUALIFIED_NAME_EDEFAULT.equals(qualifiedName);
+			case RulesPackage.REFLECTION__SIGNATURE:
+				return SIGNATURE_EDEFAULT == null ? signature != null : !SIGNATURE_EDEFAULT.equals(signature);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -166,8 +278,12 @@ public abstract class ReflectionImpl extends RuleImpl implements Reflection {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (packageName: ");
-		result.append(packageName);
+		result.append(" (reflectionParameter: ");
+		result.append(reflectionParameter);
+		result.append(", qualifiedName: ");
+		result.append(qualifiedName);
+		result.append(", signature: ");
+		result.append(signature);
 		result.append(')');
 		return result.toString();
 	}

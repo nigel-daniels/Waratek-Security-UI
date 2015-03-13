@@ -65,25 +65,74 @@ public class ClassLinkItemProvider
 		{
 			super.getPropertyDescriptors(object);
 
-			addDescriptorNamePropertyDescriptor(object);
+			addClassLinkParameterPropertyDescriptor(object);
+			addQualifiedNamePropertyDescriptor(object);
+			addSignaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Descriptor Name feature.
+	 * This adds a property descriptor for the Qualified Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescriptorNamePropertyDescriptor(Object object) {
+	protected void addQualifiedNamePropertyDescriptor(Object object)
+	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ClassLink_descriptorName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ClassLink_descriptorName_feature", "_UI_ClassLink_type"),
-				 RulesPackage.Literals.CLASS_LINK__DESCRIPTOR_NAME,
+				 getString("_UI_ClassLink_qualifiedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ClassLink_qualifiedName_feature", "_UI_ClassLink_type"),
+				 RulesPackage.Literals.CLASS_LINK__QUALIFIED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Class Link Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassLinkParameterPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ClassLink_classLinkParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ClassLink_classLinkParameter_feature", "_UI_ClassLink_type"),
+				 RulesPackage.Literals.CLASS_LINK__CLASS_LINK_PARAMETER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Signature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSignaturePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ClassLink_signature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ClassLink_signature_feature", "_UI_ClassLink_type"),
+				 RulesPackage.Literals.CLASS_LINK__SIGNATURE,
 				 true,
 				 false,
 				 false,
@@ -115,8 +164,11 @@ public class ClassLinkItemProvider
 		StringBuffer label = new StringBuffer();
 		ClassLink classLink = (ClassLink)object;
 
-		label.append(classLink.getDescriptorName() + ":" + classLink.getAction().toString() + ":" + classLink.getLog().toString());
-
+		label.append(classLink.getClassLinkParameter().toString() + ":" + classLink.getQualifiedName() + ":"); 
+		
+		if (!classLink.getSignature().equals("")) {label.append(classLink.getSignature() + ":");}
+		
+		label.append(classLink.getAction().toString() + ":" + classLink.getLog().toString());
 		return label == null || label.length() == 0 ?
 			getString("_UI_ClassLink_type") :
 			getString("_UI_ClassLink_type") + " " + label;
@@ -135,7 +187,9 @@ public class ClassLinkItemProvider
 
 		switch (notification.getFeatureID(ClassLink.class))
 		{
-			case RulesPackage.CLASS_LINK__DESCRIPTOR_NAME:
+			case RulesPackage.CLASS_LINK__CLASS_LINK_PARAMETER:
+			case RulesPackage.CLASS_LINK__QUALIFIED_NAME:
+			case RulesPackage.CLASS_LINK__SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

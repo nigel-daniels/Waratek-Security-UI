@@ -119,7 +119,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getLines()
 	 * @generated
 	 */
-	int LINES = 15;
+	int LINES = 10;
 
 	/**
 	 * The number of structural features of the '<em>Lines</em>' class.
@@ -351,13 +351,31 @@ public interface RulesPackage extends EPackage {
 	int REFLECTION__LOG = RULE__LOG;
 
 	/**
-	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Reflection Parameter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFLECTION__PACKAGE_NAME = RULE_FEATURE_COUNT + 0;
+	int REFLECTION__REFLECTION_PARAMETER = RULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFLECTION__QUALIFIED_NAME = RULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Signature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFLECTION__SIGNATURE = RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Reflection</em>' class.
@@ -366,7 +384,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFLECTION_FEATURE_COUNT = RULE_FEATURE_COUNT + 1;
+	int REFLECTION_FEATURE_COUNT = RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Reflection</em>' class.
@@ -378,344 +396,6 @@ public interface RulesPackage extends EPackage {
 	int REFLECTION_OPERATION_COUNT = RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.waratek.rules.impl.ReflectPackageImpl <em>Reflect Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.impl.ReflectPackageImpl
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectPackage()
-	 * @generated
-	 */
-	int REFLECT_PACKAGE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE__ACTION = REFLECTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Log</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE__LOG = REFLECTION__LOG;
-
-	/**
-	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE__PACKAGE_NAME = REFLECTION__PACKAGE_NAME;
-
-	/**
-	 * The number of structural features of the '<em>Reflect Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE_FEATURE_COUNT = REFLECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Reflect Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_PACKAGE_OPERATION_COUNT = REFLECTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link com.waratek.rules.impl.ReflectClassImpl <em>Reflect Class</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.impl.ReflectClassImpl
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectClass()
-	 * @generated
-	 */
-	int REFLECT_CLASS = 6;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS__ACTION = REFLECTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Log</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS__LOG = REFLECTION__LOG;
-
-	/**
-	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS__PACKAGE_NAME = REFLECTION__PACKAGE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS__CLASS_NAME = REFLECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Reflect Class</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS_FEATURE_COUNT = REFLECTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Reflect Class</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CLASS_OPERATION_COUNT = REFLECTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link com.waratek.rules.impl.ReflectConstructorImpl <em>Reflect Constructor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.impl.ReflectConstructorImpl
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectConstructor()
-	 * @generated
-	 */
-	int REFLECT_CONSTRUCTOR = 7;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__ACTION = REFLECTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Log</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__LOG = REFLECTION__LOG;
-
-	/**
-	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__PACKAGE_NAME = REFLECTION__PACKAGE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__CLASS_NAME = REFLECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Constructor Signature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR__CONSTRUCTOR_SIGNATURE = REFLECTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Reflect Constructor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR_FEATURE_COUNT = REFLECTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Reflect Constructor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_CONSTRUCTOR_OPERATION_COUNT = REFLECTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link com.waratek.rules.impl.ReflectMethodImpl <em>Reflect Method</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.impl.ReflectMethodImpl
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectMethod()
-	 * @generated
-	 */
-	int REFLECT_METHOD = 8;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__ACTION = REFLECTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Log</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__LOG = REFLECTION__LOG;
-
-	/**
-	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__PACKAGE_NAME = REFLECTION__PACKAGE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__CLASS_NAME = REFLECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Method Signature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD__METHOD_SIGNATURE = REFLECTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Reflect Method</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD_FEATURE_COUNT = REFLECTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Reflect Method</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_METHOD_OPERATION_COUNT = REFLECTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link com.waratek.rules.impl.ReflectFieldImpl <em>Reflect Field</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.waratek.rules.impl.ReflectFieldImpl
-	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectField()
-	 * @generated
-	 */
-	int REFLECT_FIELD = 9;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__ACTION = REFLECTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Log</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__LOG = REFLECTION__LOG;
-
-	/**
-	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__PACKAGE_NAME = REFLECTION__PACKAGE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__CLASS_NAME = REFLECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Field Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD__FIELD_NAME = REFLECTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Reflect Field</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD_FEATURE_COUNT = REFLECTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Reflect Field</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFLECT_FIELD_OPERATION_COUNT = REFLECTION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link com.waratek.rules.impl.ThrowableClassImpl <em>Throwable Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -723,7 +403,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getThrowableClass()
 	 * @generated
 	 */
-	int THROWABLE_CLASS = 10;
+	int THROWABLE_CLASS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -778,7 +458,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getClassLink()
 	 * @generated
 	 */
-	int CLASS_LINK = 11;
+	int CLASS_LINK = 6;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -799,13 +479,31 @@ public interface RulesPackage extends EPackage {
 	int CLASS_LINK__LOG = RULE__LOG;
 
 	/**
-	 * The feature id for the '<em><b>Descriptor Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Class Link Parameter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_LINK__DESCRIPTOR_NAME = RULE_FEATURE_COUNT + 0;
+	int CLASS_LINK__CLASS_LINK_PARAMETER = RULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_LINK__QUALIFIED_NAME = RULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Signature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_LINK__SIGNATURE = RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Class Link</em>' class.
@@ -814,7 +512,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_LINK_FEATURE_COUNT = RULE_FEATURE_COUNT + 1;
+	int CLASS_LINK_FEATURE_COUNT = RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Class Link</em>' class.
@@ -833,7 +531,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getNative()
 	 * @generated
 	 */
-	int NATIVE = 12;
+	int NATIVE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -906,7 +604,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getSQLInjection()
 	 * @generated
 	 */
-	int SQL_INJECTION = 13;
+	int SQL_INJECTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -979,7 +677,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getComment()
 	 * @generated
 	 */
-	int COMMENT = 14;
+	int COMMENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1016,7 +714,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getFileParameter()
 	 * @generated
 	 */
-	int FILE_PARAMETER = 16;
+	int FILE_PARAMETER = 11;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.NetworkParameter <em>Network Parameter</em>}' enum.
@@ -1026,7 +724,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getNetworkParameter()
 	 * @generated
 	 */
-	int NETWORK_PARAMETER = 17;
+	int NETWORK_PARAMETER = 12;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Action <em>Action</em>}' enum.
@@ -1036,7 +734,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 18;
+	int ACTION = 13;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Log <em>Log</em>}' enum.
@@ -1046,7 +744,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getLog()
 	 * @generated
 	 */
-	int LOG = 19;
+	int LOG = 14;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Database <em>Database</em>}' enum.
@@ -1056,7 +754,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabase()
 	 * @generated
 	 */
-	int DATABASE = 20;
+	int DATABASE = 15;
 
 
 	/**
@@ -1067,7 +765,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getVersion()
 	 * @generated
 	 */
-	int VERSION = 21;
+	int VERSION = 16;
 
 
 	/**
@@ -1078,7 +776,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getNativeAction()
 	 * @generated
 	 */
-	int NATIVE_ACTION = 22;
+	int NATIVE_ACTION = 17;
 
 
 	/**
@@ -1089,7 +787,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getCategory()
 	 * @generated
 	 */
-	int CATEGORY = 23;
+	int CATEGORY = 18;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.SubCategory <em>Sub Category</em>}' enum.
@@ -1099,7 +797,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getSubCategory()
 	 * @generated
 	 */
-	int SUB_CATEGORY = 24;
+	int SUB_CATEGORY = 19;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.ReflectionParameter <em>Reflection Parameter</em>}' enum.
@@ -1109,7 +807,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectionParameter()
 	 * @generated
 	 */
-	int REFLECTION_PARAMETER = 25;
+	int REFLECTION_PARAMETER = 20;
 
 
 	/**
@@ -1120,7 +818,7 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getDatabaseMode()
 	 * @generated
 	 */
-	int DATABASE_MODE = 26;
+	int DATABASE_MODE = 21;
 
 	/**
 	 * The meta object id for the '{@link com.waratek.rules.Option <em>Option</em>}' enum.
@@ -1130,7 +828,17 @@ public interface RulesPackage extends EPackage {
 	 * @see com.waratek.rules.impl.RulesPackageImpl#getOption()
 	 * @generated
 	 */
-	int OPTION = 27;
+	int OPTION = 22;
+
+	/**
+	 * The meta object id for the '{@link com.waratek.rules.ClassLinkParameter <em>Class Link Parameter</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.waratek.rules.ClassLinkParameter
+	 * @see com.waratek.rules.impl.RulesPackageImpl#getClassLinkParameter()
+	 * @generated
+	 */
+	int CLASS_LINK_PARAMETER = 23;
 
 	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.RuleDocument <em>Rule Document</em>}'.
@@ -1282,142 +990,37 @@ public interface RulesPackage extends EPackage {
 	EClass getReflection();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.Reflection#getPackageName <em>Package Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.Reflection#getReflectionParameter <em>Reflection Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Package Name</em>'.
-	 * @see com.waratek.rules.Reflection#getPackageName()
+	 * @return the meta object for the attribute '<em>Reflection Parameter</em>'.
+	 * @see com.waratek.rules.Reflection#getReflectionParameter()
 	 * @see #getReflection()
 	 * @generated
 	 */
-	EAttribute getReflection_PackageName();
+	EAttribute getReflection_ReflectionParameter();
 
 	/**
-	 * Returns the meta object for class '{@link com.waratek.rules.ReflectPackage <em>Reflect Package</em>}'.
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.Reflection#getQualifiedName <em>Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reflect Package</em>'.
-	 * @see com.waratek.rules.ReflectPackage
+	 * @return the meta object for the attribute '<em>Qualified Name</em>'.
+	 * @see com.waratek.rules.Reflection#getQualifiedName()
+	 * @see #getReflection()
 	 * @generated
 	 */
-	EClass getReflectPackage();
+	EAttribute getReflection_QualifiedName();
 
 	/**
-	 * Returns the meta object for class '{@link com.waratek.rules.ReflectClass <em>Reflect Class</em>}'.
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.Reflection#getSignature <em>Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reflect Class</em>'.
-	 * @see com.waratek.rules.ReflectClass
+	 * @return the meta object for the attribute '<em>Signature</em>'.
+	 * @see com.waratek.rules.Reflection#getSignature()
+	 * @see #getReflection()
 	 * @generated
 	 */
-	EClass getReflectClass();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectClass#getClassName <em>Class Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class Name</em>'.
-	 * @see com.waratek.rules.ReflectClass#getClassName()
-	 * @see #getReflectClass()
-	 * @generated
-	 */
-	EAttribute getReflectClass_ClassName();
-
-	/**
-	 * Returns the meta object for class '{@link com.waratek.rules.ReflectConstructor <em>Reflect Constructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reflect Constructor</em>'.
-	 * @see com.waratek.rules.ReflectConstructor
-	 * @generated
-	 */
-	EClass getReflectConstructor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectConstructor#getClassName <em>Class Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class Name</em>'.
-	 * @see com.waratek.rules.ReflectConstructor#getClassName()
-	 * @see #getReflectConstructor()
-	 * @generated
-	 */
-	EAttribute getReflectConstructor_ClassName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectConstructor#getConstructorSignature <em>Constructor Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Constructor Signature</em>'.
-	 * @see com.waratek.rules.ReflectConstructor#getConstructorSignature()
-	 * @see #getReflectConstructor()
-	 * @generated
-	 */
-	EAttribute getReflectConstructor_ConstructorSignature();
-
-	/**
-	 * Returns the meta object for class '{@link com.waratek.rules.ReflectMethod <em>Reflect Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reflect Method</em>'.
-	 * @see com.waratek.rules.ReflectMethod
-	 * @generated
-	 */
-	EClass getReflectMethod();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectMethod#getClassName <em>Class Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class Name</em>'.
-	 * @see com.waratek.rules.ReflectMethod#getClassName()
-	 * @see #getReflectMethod()
-	 * @generated
-	 */
-	EAttribute getReflectMethod_ClassName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectMethod#getMethodSignature <em>Method Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Method Signature</em>'.
-	 * @see com.waratek.rules.ReflectMethod#getMethodSignature()
-	 * @see #getReflectMethod()
-	 * @generated
-	 */
-	EAttribute getReflectMethod_MethodSignature();
-
-	/**
-	 * Returns the meta object for class '{@link com.waratek.rules.ReflectField <em>Reflect Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reflect Field</em>'.
-	 * @see com.waratek.rules.ReflectField
-	 * @generated
-	 */
-	EClass getReflectField();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectField#getClassName <em>Class Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class Name</em>'.
-	 * @see com.waratek.rules.ReflectField#getClassName()
-	 * @see #getReflectField()
-	 * @generated
-	 */
-	EAttribute getReflectField_ClassName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ReflectField#getFieldName <em>Field Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Field Name</em>'.
-	 * @see com.waratek.rules.ReflectField#getFieldName()
-	 * @see #getReflectField()
-	 * @generated
-	 */
-	EAttribute getReflectField_FieldName();
+	EAttribute getReflection_Signature();
 
 	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.ThrowableClass <em>Throwable Class</em>}'.
@@ -1451,15 +1054,37 @@ public interface RulesPackage extends EPackage {
 	EClass getClassLink();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.waratek.rules.ClassLink#getDescriptorName <em>Descriptor Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.ClassLink#getQualifiedName <em>Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Descriptor Name</em>'.
-	 * @see com.waratek.rules.ClassLink#getDescriptorName()
+	 * @return the meta object for the attribute '<em>Qualified Name</em>'.
+	 * @see com.waratek.rules.ClassLink#getQualifiedName()
 	 * @see #getClassLink()
 	 * @generated
 	 */
-	EAttribute getClassLink_DescriptorName();
+	EAttribute getClassLink_QualifiedName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.ClassLink#getClassLinkParameter <em>Class Link Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class Link Parameter</em>'.
+	 * @see com.waratek.rules.ClassLink#getClassLinkParameter()
+	 * @see #getClassLink()
+	 * @generated
+	 */
+	EAttribute getClassLink_ClassLinkParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.waratek.rules.ClassLink#getSignature <em>Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Signature</em>'.
+	 * @see com.waratek.rules.ClassLink#getSignature()
+	 * @see #getClassLink()
+	 * @generated
+	 */
+	EAttribute getClassLink_Signature();
 
 	/**
 	 * Returns the meta object for class '{@link com.waratek.rules.Native <em>Native</em>}'.
@@ -1699,6 +1324,16 @@ public interface RulesPackage extends EPackage {
 	EEnum getOption();
 
 	/**
+	 * Returns the meta object for enum '{@link com.waratek.rules.ClassLinkParameter <em>Class Link Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Class Link Parameter</em>'.
+	 * @see com.waratek.rules.ClassLinkParameter
+	 * @generated
+	 */
+	EEnum getClassLinkParameter();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1844,118 +1479,28 @@ public interface RulesPackage extends EPackage {
 		EClass REFLECTION = eINSTANCE.getReflection();
 
 		/**
-		 * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Reflection Parameter</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFLECTION__PACKAGE_NAME = eINSTANCE.getReflection_PackageName();
+		EAttribute REFLECTION__REFLECTION_PARAMETER = eINSTANCE.getReflection_ReflectionParameter();
 
 		/**
-		 * The meta object literal for the '{@link com.waratek.rules.impl.ReflectPackageImpl <em>Reflect Package</em>}' class.
+		 * The meta object literal for the '<em><b>Qualified Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.impl.ReflectPackageImpl
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectPackage()
 		 * @generated
 		 */
-		EClass REFLECT_PACKAGE = eINSTANCE.getReflectPackage();
+		EAttribute REFLECTION__QUALIFIED_NAME = eINSTANCE.getReflection_QualifiedName();
 
 		/**
-		 * The meta object literal for the '{@link com.waratek.rules.impl.ReflectClassImpl <em>Reflect Class</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.impl.ReflectClassImpl
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectClass()
-		 * @generated
-		 */
-		EClass REFLECT_CLASS = eINSTANCE.getReflectClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Signature</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFLECT_CLASS__CLASS_NAME = eINSTANCE.getReflectClass_ClassName();
-
-		/**
-		 * The meta object literal for the '{@link com.waratek.rules.impl.ReflectConstructorImpl <em>Reflect Constructor</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.impl.ReflectConstructorImpl
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectConstructor()
-		 * @generated
-		 */
-		EClass REFLECT_CONSTRUCTOR = eINSTANCE.getReflectConstructor();
-
-		/**
-		 * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFLECT_CONSTRUCTOR__CLASS_NAME = eINSTANCE.getReflectConstructor_ClassName();
-
-		/**
-		 * The meta object literal for the '<em><b>Constructor Signature</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFLECT_CONSTRUCTOR__CONSTRUCTOR_SIGNATURE = eINSTANCE.getReflectConstructor_ConstructorSignature();
-
-		/**
-		 * The meta object literal for the '{@link com.waratek.rules.impl.ReflectMethodImpl <em>Reflect Method</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.impl.ReflectMethodImpl
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectMethod()
-		 * @generated
-		 */
-		EClass REFLECT_METHOD = eINSTANCE.getReflectMethod();
-
-		/**
-		 * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFLECT_METHOD__CLASS_NAME = eINSTANCE.getReflectMethod_ClassName();
-
-		/**
-		 * The meta object literal for the '<em><b>Method Signature</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFLECT_METHOD__METHOD_SIGNATURE = eINSTANCE.getReflectMethod_MethodSignature();
-
-		/**
-		 * The meta object literal for the '{@link com.waratek.rules.impl.ReflectFieldImpl <em>Reflect Field</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.waratek.rules.impl.ReflectFieldImpl
-		 * @see com.waratek.rules.impl.RulesPackageImpl#getReflectField()
-		 * @generated
-		 */
-		EClass REFLECT_FIELD = eINSTANCE.getReflectField();
-
-		/**
-		 * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFLECT_FIELD__CLASS_NAME = eINSTANCE.getReflectField_ClassName();
-
-		/**
-		 * The meta object literal for the '<em><b>Field Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFLECT_FIELD__FIELD_NAME = eINSTANCE.getReflectField_FieldName();
+		EAttribute REFLECTION__SIGNATURE = eINSTANCE.getReflection_Signature();
 
 		/**
 		 * The meta object literal for the '{@link com.waratek.rules.impl.ThrowableClassImpl <em>Throwable Class</em>}' class.
@@ -1986,12 +1531,28 @@ public interface RulesPackage extends EPackage {
 		EClass CLASS_LINK = eINSTANCE.getClassLink();
 
 		/**
-		 * The meta object literal for the '<em><b>Descriptor Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Qualified Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CLASS_LINK__DESCRIPTOR_NAME = eINSTANCE.getClassLink_DescriptorName();
+		EAttribute CLASS_LINK__QUALIFIED_NAME = eINSTANCE.getClassLink_QualifiedName();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Link Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASS_LINK__CLASS_LINK_PARAMETER = eINSTANCE.getClassLink_ClassLinkParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Signature</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASS_LINK__SIGNATURE = eINSTANCE.getClassLink_Signature();
 
 		/**
 		 * The meta object literal for the '{@link com.waratek.rules.impl.NativeImpl <em>Native</em>}' class.
@@ -2208,6 +1769,16 @@ public interface RulesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum OPTION = eINSTANCE.getOption();
+
+		/**
+		 * The meta object literal for the '{@link com.waratek.rules.ClassLinkParameter <em>Class Link Parameter</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.waratek.rules.ClassLinkParameter
+		 * @see com.waratek.rules.impl.RulesPackageImpl#getClassLinkParameter()
+		 * @generated
+		 */
+		EEnum CLASS_LINK_PARAMETER = eINSTANCE.getClassLinkParameter();
 
 	}
 

@@ -105,31 +105,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 				return createReflectionAdapter();
 			}
 			@Override
-			public Adapter caseReflectPackage(ReflectPackage object)
-			{
-				return createReflectPackageAdapter();
-			}
-			@Override
-			public Adapter caseReflectClass(ReflectClass object)
-			{
-				return createReflectClassAdapter();
-			}
-			@Override
-			public Adapter caseReflectConstructor(ReflectConstructor object)
-			{
-				return createReflectConstructorAdapter();
-			}
-			@Override
-			public Adapter caseReflectMethod(ReflectMethod object)
-			{
-				return createReflectMethodAdapter();
-			}
-			@Override
-			public Adapter caseReflectField(ReflectField object)
-			{
-				return createReflectFieldAdapter();
-			}
-			@Override
 			public Adapter caseThrowableClass(ThrowableClass object)
 			{
 				return createThrowableClassAdapter();
@@ -247,76 +222,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReflectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.waratek.rules.ReflectPackage <em>Reflect Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.waratek.rules.ReflectPackage
-	 * @generated
-	 */
-	public Adapter createReflectPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.waratek.rules.ReflectClass <em>Reflect Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.waratek.rules.ReflectClass
-	 * @generated
-	 */
-	public Adapter createReflectClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.waratek.rules.ReflectConstructor <em>Reflect Constructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.waratek.rules.ReflectConstructor
-	 * @generated
-	 */
-	public Adapter createReflectConstructorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.waratek.rules.ReflectMethod <em>Reflect Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.waratek.rules.ReflectMethod
-	 * @generated
-	 */
-	public Adapter createReflectMethodAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.waratek.rules.ReflectField <em>Reflect Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.waratek.rules.ReflectField
-	 * @generated
-	 */
-	public Adapter createReflectFieldAdapter() {
 		return null;
 	}
 

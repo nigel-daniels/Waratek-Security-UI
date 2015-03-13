@@ -118,56 +118,6 @@ public class RulesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RulesPackage.REFLECT_PACKAGE:
-			{
-				ReflectPackage reflectPackage = (ReflectPackage)theEObject;
-				T result = caseReflectPackage(reflectPackage);
-				if (result == null) result = caseReflection(reflectPackage);
-				if (result == null) result = caseRule(reflectPackage);
-				if (result == null) result = caseLines(reflectPackage);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RulesPackage.REFLECT_CLASS:
-			{
-				ReflectClass reflectClass = (ReflectClass)theEObject;
-				T result = caseReflectClass(reflectClass);
-				if (result == null) result = caseReflection(reflectClass);
-				if (result == null) result = caseRule(reflectClass);
-				if (result == null) result = caseLines(reflectClass);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RulesPackage.REFLECT_CONSTRUCTOR:
-			{
-				ReflectConstructor reflectConstructor = (ReflectConstructor)theEObject;
-				T result = caseReflectConstructor(reflectConstructor);
-				if (result == null) result = caseReflection(reflectConstructor);
-				if (result == null) result = caseRule(reflectConstructor);
-				if (result == null) result = caseLines(reflectConstructor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RulesPackage.REFLECT_METHOD:
-			{
-				ReflectMethod reflectMethod = (ReflectMethod)theEObject;
-				T result = caseReflectMethod(reflectMethod);
-				if (result == null) result = caseReflection(reflectMethod);
-				if (result == null) result = caseRule(reflectMethod);
-				if (result == null) result = caseLines(reflectMethod);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RulesPackage.REFLECT_FIELD:
-			{
-				ReflectField reflectField = (ReflectField)theEObject;
-				T result = caseReflectField(reflectField);
-				if (result == null) result = caseReflection(reflectField);
-				if (result == null) result = caseRule(reflectField);
-				if (result == null) result = caseLines(reflectField);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RulesPackage.THROWABLE_CLASS:
 			{
 				ThrowableClass throwableClass = (ThrowableClass)theEObject;
@@ -295,81 +245,6 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReflection(Reflection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reflect Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reflect Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReflectPackage(ReflectPackage object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reflect Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reflect Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReflectClass(ReflectClass object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reflect Constructor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reflect Constructor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReflectConstructor(ReflectConstructor object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reflect Method</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reflect Method</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReflectMethod(ReflectMethod object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reflect Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reflect Field</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReflectField(ReflectField object) {
 		return null;
 	}
 

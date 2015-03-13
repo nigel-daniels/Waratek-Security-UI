@@ -152,123 +152,28 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.waratek.rules.ReflectPackage} instances.
+	 * This keeps track of the one adapter used for all {@link com.waratek.rules.Reflection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReflectPackageItemProvider reflectPackageItemProvider;
+	protected ReflectionItemProvider reflectionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.waratek.rules.ReflectPackage}.
+	 * This creates an adapter for a {@link com.waratek.rules.Reflection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createReflectPackageAdapter() {
-		if (reflectPackageItemProvider == null)
+	public Adapter createReflectionAdapter()
+	{
+		if (reflectionItemProvider == null)
 		{
-			reflectPackageItemProvider = new ReflectPackageItemProvider(this);
+			reflectionItemProvider = new ReflectionItemProvider(this);
 		}
 
-		return reflectPackageItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link com.waratek.rules.ReflectClass} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ReflectClassItemProvider reflectClassItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.waratek.rules.ReflectClass}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createReflectClassAdapter() {
-		if (reflectClassItemProvider == null)
-		{
-			reflectClassItemProvider = new ReflectClassItemProvider(this);
-		}
-
-		return reflectClassItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link com.waratek.rules.ReflectConstructor} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ReflectConstructorItemProvider reflectConstructorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.waratek.rules.ReflectConstructor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createReflectConstructorAdapter() {
-		if (reflectConstructorItemProvider == null)
-		{
-			reflectConstructorItemProvider = new ReflectConstructorItemProvider(this);
-		}
-
-		return reflectConstructorItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link com.waratek.rules.ReflectMethod} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ReflectMethodItemProvider reflectMethodItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.waratek.rules.ReflectMethod}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createReflectMethodAdapter() {
-		if (reflectMethodItemProvider == null)
-		{
-			reflectMethodItemProvider = new ReflectMethodItemProvider(this);
-		}
-
-		return reflectMethodItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link com.waratek.rules.ReflectField} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ReflectFieldItemProvider reflectFieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.waratek.rules.ReflectField}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createReflectFieldAdapter() {
-		if (reflectFieldItemProvider == null)
-		{
-			reflectFieldItemProvider = new ReflectFieldItemProvider(this);
-		}
-
-		return reflectFieldItemProvider;
+		return reflectionItemProvider;
 	}
 
 	/**
@@ -496,11 +401,7 @@ public class RulesItemProviderAdapterFactory extends RulesAdapterFactory impleme
 		if (ruleDocumentItemProvider != null) ruleDocumentItemProvider.dispose();
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (networkItemProvider != null) networkItemProvider.dispose();
-		if (reflectPackageItemProvider != null) reflectPackageItemProvider.dispose();
-		if (reflectClassItemProvider != null) reflectClassItemProvider.dispose();
-		if (reflectConstructorItemProvider != null) reflectConstructorItemProvider.dispose();
-		if (reflectMethodItemProvider != null) reflectMethodItemProvider.dispose();
-		if (reflectFieldItemProvider != null) reflectFieldItemProvider.dispose();
+		if (reflectionItemProvider != null) reflectionItemProvider.dispose();
 		if (throwableClassItemProvider != null) throwableClassItemProvider.dispose();
 		if (classLinkItemProvider != null) classLinkItemProvider.dispose();
 		if (nativeItemProvider != null) nativeItemProvider.dispose();

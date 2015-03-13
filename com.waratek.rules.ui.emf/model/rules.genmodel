@@ -73,6 +73,12 @@
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Option/off"/>
       <genEnumLiterals ecoreEnumLiteral="rules.ecore#//Option/on"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rules.ecore#//ClassLinkParameter">
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ClassLinkParameter/class"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ClassLinkParameter/constructor"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ClassLinkParameter/method"/>
+      <genEnumLiterals ecoreEnumLiteral="rules.ecore#//ClassLinkParameter/field"/>
+    </genEnums>
     <genClasses ecoreClass="rules.ecore#//RuleDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//RuleDocument/version"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rules.ecore#//RuleDocument/lines"/>
@@ -91,29 +97,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Network/networkParameter"/>
     </genClasses>
     <genClasses image="false" ecoreClass="rules.ecore#//Reflection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/packageName"/>
-    </genClasses>
-    <genClasses ecoreClass="rules.ecore#//ReflectPackage"/>
-    <genClasses ecoreClass="rules.ecore#//ReflectClass">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectClass/className"/>
-    </genClasses>
-    <genClasses ecoreClass="rules.ecore#//ReflectConstructor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectConstructor/className"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectConstructor/constructorSignature"/>
-    </genClasses>
-    <genClasses ecoreClass="rules.ecore#//ReflectMethod">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectMethod/className"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectMethod/methodSignature"/>
-    </genClasses>
-    <genClasses ecoreClass="rules.ecore#//ReflectField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectField/className"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ReflectField/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/reflectionParameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/qualifiedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/signature"/>
     </genClasses>
     <genClasses ecoreClass="rules.ecore#//ThrowableClass">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ThrowableClass/className"/>
     </genClasses>
     <genClasses ecoreClass="rules.ecore#//ClassLink">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ClassLink/descriptorName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ClassLink/classLinkParameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ClassLink/qualifiedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//ClassLink/signature"/>
     </genClasses>
     <genClasses ecoreClass="rules.ecore#//Native">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Native/path"/>

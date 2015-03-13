@@ -57,49 +57,13 @@ public interface RulesFactory extends EFactory {
 	Network createNetwork();
 
 	/**
-	 * Returns a new object of class '<em>Reflect Package</em>'.
+	 * Returns a new object of class '<em>Reflection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reflect Package</em>'.
+	 * @return a new object of class '<em>Reflection</em>'.
 	 * @generated
 	 */
-	ReflectPackage createReflectPackage();
-
-	/**
-	 * Returns a new object of class '<em>Reflect Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reflect Class</em>'.
-	 * @generated
-	 */
-	ReflectClass createReflectClass();
-
-	/**
-	 * Returns a new object of class '<em>Reflect Constructor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reflect Constructor</em>'.
-	 * @generated
-	 */
-	ReflectConstructor createReflectConstructor();
-
-	/**
-	 * Returns a new object of class '<em>Reflect Method</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reflect Method</em>'.
-	 * @generated
-	 */
-	ReflectMethod createReflectMethod();
-
-	/**
-	 * Returns a new object of class '<em>Reflect Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reflect Field</em>'.
-	 * @generated
-	 */
-	ReflectField createReflectField();
+	Reflection createReflection();
 
 	/**
 	 * Returns a new object of class '<em>Throwable Class</em>'.

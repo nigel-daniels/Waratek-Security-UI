@@ -10,6 +10,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.waratek.rules.provider
 Require-Bundle: org.eclipse.core.runtime,
- com.waratek.rules.ui.emf;bundle-version="1.1.0";visibility:=reexport,
+ com.waratek.rules.ui.emf;visibility:=reexport;bundle-version="1.1.0",
  org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
