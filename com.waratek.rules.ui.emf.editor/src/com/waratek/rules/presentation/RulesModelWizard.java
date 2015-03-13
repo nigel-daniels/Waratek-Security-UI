@@ -195,10 +195,11 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)rulesPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		// MOD Fixed this to be the RuleDocument
+		EClass eClass = (EClass)rulesPackage.getEClassifier("RuleDocument");
 		EObject rootObject = rulesFactory.create(eClass);
 		return rootObject;
 	}
@@ -679,7 +680,7 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 		@Override
 	public void addPages() {
@@ -729,10 +730,12 @@ public class RulesModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
+		/*
 		initialObjectCreationPage = new RulesModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(RulesEditorPlugin.INSTANCE.getString("_UI_RulesModelWizard_label"));
 		initialObjectCreationPage.setDescription(RulesEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
+		*/
 	}
 
 	/**
