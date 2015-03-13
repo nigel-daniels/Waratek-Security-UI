@@ -1,186 +1,132 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
-  <eef-components:PropertiesEditionContext xmi:id="_TUzKcMahEeSOcqbgPLQvZQ" documentation="Edition Context for rules GenPackage">
-    <categories xmi:id="_TUzKccahEeSOcqbgPLQvZQ" name="rules">
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKcsahEeSOcqbgPLQvZQ" name="RuleDocument" views="_TUzxj8ahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKc8ahEeSOcqbgPLQvZQ" name="version" views="_TUzxkcahEeSOcqbgPLQvZQ">
+  <eef-components:PropertiesEditionContext xmi:id="_Szv_sMm-EeSAnpebqeLZ9A" documentation="Edition Context for rules GenPackage">
+    <categories xmi:id="_SzwmwMm-EeSAnpebqeLZ9A" name="rules">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwmwcm-EeSAnpebqeLZ9A" name="RuleDocument" views="_Szwm78m-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmwsm-EeSAnpebqeLZ9A" name="version" views="_Szwm8cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//RuleDocument/version"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmw8m-EeSAnpebqeLZ9A" name="lines" views="_Szwm8sm-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//RuleDocument/lines"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//RuleDocument"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKdsahEeSOcqbgPLQvZQ" name="File" views="_TUzxlMahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKd8ahEeSOcqbgPLQvZQ" name="action" views="_TUzxlsahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_SzwmxMm-EeSAnpebqeLZ9A" name="File" views="_Szwm88m-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmxcm-EeSAnpebqeLZ9A" name="action" views="_Szwm9cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKeMahEeSOcqbgPLQvZQ" name="log" views="_TUzxl8ahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmxsm-EeSAnpebqeLZ9A" name="log" views="_Szwm9sm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKecahEeSOcqbgPLQvZQ" name="path" views="_TUzxmMahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmx8m-EeSAnpebqeLZ9A" name="path" views="_Szwm98m-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//File/path"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKesahEeSOcqbgPLQvZQ" name="fileParameter" views="_TUzxmcahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_SzwmyMm-EeSAnpebqeLZ9A" name="fileParameter" views="_Szwm-Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//File/fileParameter"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//File"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKe8ahEeSOcqbgPLQvZQ" name="Network" views="_TUzxmsahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKfMahEeSOcqbgPLQvZQ" name="action" views="_TUzxnMahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwmycm-EeSAnpebqeLZ9A" name="Network" views="_Szwm-cm-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmysm-EeSAnpebqeLZ9A" name="action" views="_SzxN0cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKfcahEeSOcqbgPLQvZQ" name="log" views="_TUzxncahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmy8m-EeSAnpebqeLZ9A" name="log" views="_SzxN0sm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKfsahEeSOcqbgPLQvZQ" name="host" views="_TUzxnsahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_SzwmzMm-EeSAnpebqeLZ9A" name="host" views="_SzxN08m-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Network/host"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKf8ahEeSOcqbgPLQvZQ" name="port" views="_TUzxn8ahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmzcm-EeSAnpebqeLZ9A" name="port" views="_SzxN1Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Network/port"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKgMahEeSOcqbgPLQvZQ" name="networkParameter" views="_TUzxoMahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwmzsm-EeSAnpebqeLZ9A" name="networkParameter" views="_SzxN1cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Network/networkParameter"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Network"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKgcahEeSOcqbgPLQvZQ" name="ReflectPackage" views="_TUzxocahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKgsahEeSOcqbgPLQvZQ" name="action" views="_TUzxo8ahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwmz8m-EeSAnpebqeLZ9A" name="Reflection" views="_SzxN1sm-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm0Mm-EeSAnpebqeLZ9A" name="action" views="_SzxN2Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKg8ahEeSOcqbgPLQvZQ" name="log" views="_TUzxpMahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm0cm-EeSAnpebqeLZ9A" name="log" views="_SzxN2cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKhMahEeSOcqbgPLQvZQ" name="packageName" views="_TUzxpcahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/packageName"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm0sm-EeSAnpebqeLZ9A" name="reflectionParameter" views="_SzxN2sm-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/reflectionParameter"/>
         </properties>
-        <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectPackage"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm08m-EeSAnpebqeLZ9A" name="qualifiedName" views="_SzxN28m-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/qualifiedName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm1Mm-EeSAnpebqeLZ9A" name="signature" views="_SzxN3Mm-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/signature"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKhcahEeSOcqbgPLQvZQ" name="ReflectClass" views="_TUzxpsahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKhsahEeSOcqbgPLQvZQ" name="action" views="_TUzxqMahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwm1cm-EeSAnpebqeLZ9A" name="ThrowableClass" views="_SzxN3cm-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm1sm-EeSAnpebqeLZ9A" name="action" views="_SzxN38m-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKh8ahEeSOcqbgPLQvZQ" name="log" views="_TUzxqcahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm18m-EeSAnpebqeLZ9A" name="log" views="_SzxN4Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKiMahEeSOcqbgPLQvZQ" name="packageName" views="_TUzxqsahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/packageName"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKicahEeSOcqbgPLQvZQ" name="className" views="_TUzxq8ahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectClass/className"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectClass"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKisahEeSOcqbgPLQvZQ" name="ReflectConstructor" views="_TUzxrMahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKi8ahEeSOcqbgPLQvZQ" name="action" views="_TUzxrsahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKjMahEeSOcqbgPLQvZQ" name="log" views="_TUzxr8ahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKjcahEeSOcqbgPLQvZQ" name="packageName" views="_TUzxsMahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/packageName"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKjsahEeSOcqbgPLQvZQ" name="className" views="_TUzxscahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectConstructor/className"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKj8ahEeSOcqbgPLQvZQ" name="constructorSignature" views="_TUzxssahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectConstructor/constructorSignature"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectConstructor"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKkMahEeSOcqbgPLQvZQ" name="ReflectMethod" views="_TUzxs8ahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKkcahEeSOcqbgPLQvZQ" name="action" views="_TUzxtcahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKksahEeSOcqbgPLQvZQ" name="log" views="_TUzxtsahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKk8ahEeSOcqbgPLQvZQ" name="packageName" views="_TUzxt8ahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/packageName"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKlMahEeSOcqbgPLQvZQ" name="className" views="_TUzxuMahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectMethod/className"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKlcahEeSOcqbgPLQvZQ" name="methodSignature" views="_TUzxucahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectMethod/methodSignature"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectMethod"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKlsahEeSOcqbgPLQvZQ" name="ReflectField" views="_TUzxusahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKl8ahEeSOcqbgPLQvZQ" name="action" views="_TUzxvMahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKmMahEeSOcqbgPLQvZQ" name="log" views="_TUzxvcahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKmcahEeSOcqbgPLQvZQ" name="packageName" views="_TUzxvsahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Reflection/packageName"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKmsahEeSOcqbgPLQvZQ" name="className" views="_TUzxv8ahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectField/className"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKm8ahEeSOcqbgPLQvZQ" name="fieldName" views="_TUzxwMahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectField/fieldName"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ReflectField"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKnMahEeSOcqbgPLQvZQ" name="ThrowableClass" views="_TUzxwcahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKncahEeSOcqbgPLQvZQ" name="action" views="_TUzxw8ahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKnsahEeSOcqbgPLQvZQ" name="log" views="_TUzxxMahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKn8ahEeSOcqbgPLQvZQ" name="className" views="_TUzxxcahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm2Mm-EeSAnpebqeLZ9A" name="className" views="_SzxN4cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ThrowableClass/className"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ThrowableClass"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzKoMahEeSOcqbgPLQvZQ" name="ClassLink" views="_TUzxxsahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzKocahEeSOcqbgPLQvZQ" name="action" views="_TUzxyMahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwm2cm-EeSAnpebqeLZ9A" name="ClassLink" views="_SzxN4sm-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm2sm-EeSAnpebqeLZ9A" name="action" views="_SzxN5Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxgMahEeSOcqbgPLQvZQ" name="log" views="_TUzxycahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm28m-EeSAnpebqeLZ9A" name="log" views="_SzxN5cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxgcahEeSOcqbgPLQvZQ" name="descriptorName" views="_TUzxysahEeSOcqbgPLQvZQ">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ClassLink/descriptorName"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm3Mm-EeSAnpebqeLZ9A" name="classLinkParameter" views="_SzxN5sm-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ClassLink/classLinkParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm3cm-EeSAnpebqeLZ9A" name="qualifiedName" views="_SzxN58m-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ClassLink/qualifiedName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm3sm-EeSAnpebqeLZ9A" name="signature" views="_SzxN6Mm-EeSAnpebqeLZ9A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ClassLink/signature"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//ClassLink"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzxgsahEeSOcqbgPLQvZQ" name="Native" views="_TUzxy8ahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxg8ahEeSOcqbgPLQvZQ" name="action" views="_TUzxzcahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwm38m-EeSAnpebqeLZ9A" name="Native" views="_SzxN6cm-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm4Mm-EeSAnpebqeLZ9A" name="action" views="_SzxN68m-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Native/nativeAction"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxhMahEeSOcqbgPLQvZQ" name="log" views="_TUzxzsahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm4cm-EeSAnpebqeLZ9A" name="log" views="_SzxN7Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxhcahEeSOcqbgPLQvZQ" name="path" views="_TUzxz8ahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm4sm-EeSAnpebqeLZ9A" name="path" views="_SzxN7cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Native/path"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxhsahEeSOcqbgPLQvZQ" name="checksum" views="_TUzx0MahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm48m-EeSAnpebqeLZ9A" name="checksum" views="_SzxN7sm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Native/checksum"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Native"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzxh8ahEeSOcqbgPLQvZQ" name="SQLInjection" views="_TUzx0cahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxiMahEeSOcqbgPLQvZQ" name="action" views="_TUzx08ahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwm5cm-EeSAnpebqeLZ9A" name="SQLInjection" views="_SzxN8Mm-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm5sm-EeSAnpebqeLZ9A" name="action" views="_SzxN8sm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/action"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxicahEeSOcqbgPLQvZQ" name="log" views="_TUzx1MahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm58m-EeSAnpebqeLZ9A" name="log" views="_SzxN88m-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Rule/log"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxisahEeSOcqbgPLQvZQ" name="database" views="_TUzx1cahEeSOcqbgPLQvZQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm6Mm-EeSAnpebqeLZ9A" name="database" views="_SzxN9Mm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection/database"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Su9uEMeUEeSYY678K9o-aQ" name="ansiQuotes" views="_-66UwMeTEeSYY678K9o-aQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm6cm-EeSAnpebqeLZ9A" name="ansiQuotes" views="_SzxN9cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection/ansiQuotes"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_gql7cMeUEeSYY678K9o-aQ" name="noBackslashEscapes" views="_GslhUMeUEeSYY678K9o-aQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm6sm-EeSAnpebqeLZ9A" name="noBackSlashEscapes" views="_SzxN9sm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection/noBackSlashEscapes"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//SQLInjection"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_TUzxi8ahEeSOcqbgPLQvZQ" name="Comment" views="_TUzx1sahEeSOcqbgPLQvZQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_TUzxjMahEeSOcqbgPLQvZQ" name="comment" views="_TUzx2MahEeSOcqbgPLQvZQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Szwm68m-EeSAnpebqeLZ9A" name="Comment" views="_SzxN98m-EeSAnpebqeLZ9A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Szwm7Mm-EeSAnpebqeLZ9A" name="comment" views="_SzxN-cm-EeSAnpebqeLZ9A">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Comment/comment"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/com.waratek.rules.ui.emf/model/rules.ecore#//Comment"/>
@@ -188,215 +134,153 @@
     </categories>
     <model href="platform:/resource/com.waratek.rules.ui.emf/model/rules.genmodel#//rules"/>
   </eef-components:PropertiesEditionContext>
-  <eef-views:ViewsRepository xmi:id="_TUzxjcahEeSOcqbgPLQvZQ" documentation="Views repository for rules GenPackage" name="rules">
+  <eef-views:ViewsRepository xmi:id="_Szwm7cm-EeSAnpebqeLZ9A" documentation="Views repository for rules GenPackage" name="rules">
     <RepositoryKind>SWT</RepositoryKind>
     <RepositoryKind>Form</RepositoryKind>
-    <categories xmi:id="_TUzxjsahEeSOcqbgPLQvZQ" name="rules">
-      <views xmi:id="_TUzxj8ahEeSOcqbgPLQvZQ" name="RuleDocument">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxkMahEeSOcqbgPLQvZQ" name="properties">
+    <categories xmi:id="_Szwm7sm-EeSAnpebqeLZ9A" name="rules">
+      <views xmi:id="_Szwm78m-EeSAnpebqeLZ9A" name="RuleDocument">
+        <elements xsi:type="eef-views:Container" xmi:id="_Szwm8Mm-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxkcahEeSOcqbgPLQvZQ" name="version">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm8cm-EeSAnpebqeLZ9A" name="version">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm8sm-EeSAnpebqeLZ9A" name="lines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_Szwm88m-EeSAnpebqeLZ9A" name="File">
+        <elements xsi:type="eef-views:Container" xmi:id="_Szwm9Mm-EeSAnpebqeLZ9A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm9cm-EeSAnpebqeLZ9A" name="action">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm9sm-EeSAnpebqeLZ9A" name="log">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm98m-EeSAnpebqeLZ9A" name="path">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Szwm-Mm-EeSAnpebqeLZ9A" name="fileParameter">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzxlMahEeSOcqbgPLQvZQ" name="File">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxlcahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_Szwm-cm-EeSAnpebqeLZ9A" name="Network">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN0Mm-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxlsahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN0cm-EeSAnpebqeLZ9A" name="action">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxl8ahEeSOcqbgPLQvZQ" name="log">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN0sm-EeSAnpebqeLZ9A" name="log">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxmMahEeSOcqbgPLQvZQ" name="path">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN08m-EeSAnpebqeLZ9A" name="host">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxmcahEeSOcqbgPLQvZQ" name="fileParameter">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN1Mm-EeSAnpebqeLZ9A" name="port">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN1cm-EeSAnpebqeLZ9A" name="networkParameter">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzxmsahEeSOcqbgPLQvZQ" name="Network">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxm8ahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_SzxN1sm-EeSAnpebqeLZ9A" name="Reflection">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN18m-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxnMahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN2Mm-EeSAnpebqeLZ9A" name="action">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxncahEeSOcqbgPLQvZQ" name="log">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN2cm-EeSAnpebqeLZ9A" name="log">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxnsahEeSOcqbgPLQvZQ" name="host">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN2sm-EeSAnpebqeLZ9A" name="reflectionParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN28m-EeSAnpebqeLZ9A" name="qualifiedName">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxn8ahEeSOcqbgPLQvZQ" name="port">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxoMahEeSOcqbgPLQvZQ" name="networkParameter">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_TUzxocahEeSOcqbgPLQvZQ" name="ReflectPackage">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxosahEeSOcqbgPLQvZQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxo8ahEeSOcqbgPLQvZQ" name="action">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxpMahEeSOcqbgPLQvZQ" name="log">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxpcahEeSOcqbgPLQvZQ" name="packageName">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN3Mm-EeSAnpebqeLZ9A" name="signature">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzxpsahEeSOcqbgPLQvZQ" name="ReflectClass">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxp8ahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_SzxN3cm-EeSAnpebqeLZ9A" name="ThrowableClass">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN3sm-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxqMahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN38m-EeSAnpebqeLZ9A" name="action">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxqcahEeSOcqbgPLQvZQ" name="log">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN4Mm-EeSAnpebqeLZ9A" name="log">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxqsahEeSOcqbgPLQvZQ" name="packageName">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxq8ahEeSOcqbgPLQvZQ" name="className">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN4cm-EeSAnpebqeLZ9A" name="className">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzxrMahEeSOcqbgPLQvZQ" name="ReflectConstructor">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxrcahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_SzxN4sm-EeSAnpebqeLZ9A" name="ClassLink">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN48m-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxrsahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN5Mm-EeSAnpebqeLZ9A" name="action">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxr8ahEeSOcqbgPLQvZQ" name="log">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN5cm-EeSAnpebqeLZ9A" name="log">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxsMahEeSOcqbgPLQvZQ" name="packageName">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN5sm-EeSAnpebqeLZ9A" name="classLinkParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN58m-EeSAnpebqeLZ9A" name="qualifiedName">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxscahEeSOcqbgPLQvZQ" name="className">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxssahEeSOcqbgPLQvZQ" name="constructorSignature">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN6Mm-EeSAnpebqeLZ9A" name="signature">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzxs8ahEeSOcqbgPLQvZQ" name="ReflectMethod">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxtMahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_SzxN6cm-EeSAnpebqeLZ9A" name="Native">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN6sm-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxtcahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN68m-EeSAnpebqeLZ9A" name="action">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxtsahEeSOcqbgPLQvZQ" name="log">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN7Mm-EeSAnpebqeLZ9A" name="log">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxt8ahEeSOcqbgPLQvZQ" name="packageName">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN7cm-EeSAnpebqeLZ9A" name="path">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxuMahEeSOcqbgPLQvZQ" name="className">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxucahEeSOcqbgPLQvZQ" name="methodSignature">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN7sm-EeSAnpebqeLZ9A" name="checksum">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzxusahEeSOcqbgPLQvZQ" name="ReflectField">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxu8ahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_SzxN8Mm-EeSAnpebqeLZ9A" name="SQLInjection">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN8cm-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxvMahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN8sm-EeSAnpebqeLZ9A" name="action">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxvcahEeSOcqbgPLQvZQ" name="log">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN88m-EeSAnpebqeLZ9A" name="log">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxvsahEeSOcqbgPLQvZQ" name="packageName">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxv8ahEeSOcqbgPLQvZQ" name="className">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxwMahEeSOcqbgPLQvZQ" name="fieldName">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_TUzxwcahEeSOcqbgPLQvZQ" name="ThrowableClass">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxwsahEeSOcqbgPLQvZQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxw8ahEeSOcqbgPLQvZQ" name="action">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN9Mm-EeSAnpebqeLZ9A" name="database">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxxMahEeSOcqbgPLQvZQ" name="log">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxxcahEeSOcqbgPLQvZQ" name="className">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_TUzxxsahEeSOcqbgPLQvZQ" name="ClassLink">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxx8ahEeSOcqbgPLQvZQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxyMahEeSOcqbgPLQvZQ" name="action">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxycahEeSOcqbgPLQvZQ" name="log">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxysahEeSOcqbgPLQvZQ" name="descriptorName">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_TUzxy8ahEeSOcqbgPLQvZQ" name="Native">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzxzMahEeSOcqbgPLQvZQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxzcahEeSOcqbgPLQvZQ" name="action">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxzsahEeSOcqbgPLQvZQ" name="log">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzxz8ahEeSOcqbgPLQvZQ" name="path">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzx0MahEeSOcqbgPLQvZQ" name="checksum">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_TUzx0cahEeSOcqbgPLQvZQ" name="SQLInjection">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzx0sahEeSOcqbgPLQvZQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzx08ahEeSOcqbgPLQvZQ" name="action">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzx1MahEeSOcqbgPLQvZQ" name="log">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzx1cahEeSOcqbgPLQvZQ" name="database">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-66UwMeTEeSYY678K9o-aQ" name="ansiQuotes">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN9cm-EeSAnpebqeLZ9A" name="ansiQuotes">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_GslhUMeUEeSYY678K9o-aQ" name="noBackslashEscapes">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN9sm-EeSAnpebqeLZ9A" name="noBackSlashEscapes">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_TUzx1sahEeSOcqbgPLQvZQ" name="Comment">
-        <elements xsi:type="eef-views:Container" xmi:id="_TUzx18ahEeSOcqbgPLQvZQ" name="properties">
+      <views xmi:id="_SzxN98m-EeSAnpebqeLZ9A" name="Comment">
+        <elements xsi:type="eef-views:Container" xmi:id="_SzxN-Mm-EeSAnpebqeLZ9A" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_TUzx2MahEeSOcqbgPLQvZQ" name="comment">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_SzxN-cm-EeSAnpebqeLZ9A" name="comment">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>

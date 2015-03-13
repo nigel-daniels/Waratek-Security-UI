@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/com.waratek.rules.ui.eef/src-gen">
   <editionContexts basePackage="com.waratek" descriptorsGenericPropertiesViews="true">
-    <PropertiesEditionContext href="rules.components#_TUzKcMahEeSOcqbgPLQvZQ"/>
+    <PropertiesEditionContext href="rules.components#_Szv_sMm-EeSAnpebqeLZ9A"/>
   </editionContexts>
   <viewsRepositories basePackage="com.waratek.rules" swtViews="true" formViews="true">
-    <viewsRepository href="rules.components#_TUzxjcahEeSOcqbgPLQvZQ"/>
+    <viewsRepository href="rules.components#_Szwm7cm-EeSAnpebqeLZ9A"/>
   </viewsRepositories>
 </eef-gen:EEFGenModel>
