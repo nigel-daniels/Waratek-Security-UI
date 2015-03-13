@@ -352,8 +352,8 @@ public class RulesResourceImpl extends ResourceImpl
 				else
 					{
 					// Lets separate the class and package names
-					String className = packageName.substring(packageName.lastIndexOf('.'), packageName.length());
-					packageName = packageName.substring(0, packageName.lastIndexOf('.') - 1);
+					String className = packageName.substring(packageName.lastIndexOf('.') + 1, packageName.length());
+					packageName = packageName.substring(0, packageName.lastIndexOf('.'));
 					// The next token should tell us what we are dealing with
 					if (stringTokenizer.hasMoreTokens())
 						{
@@ -459,8 +459,8 @@ public class RulesResourceImpl extends ResourceImpl
 				String parameters = stringTokenizer.nextToken();
 				if (parameters.contains(SEPERATOR_SECONDARY))
 					{
-					rule.setPath(parameters.substring(0, parameters.indexOf(SEPERATOR_SECONDARY)-1));
-					rule.setChecksum(parameters.substring(parameters.indexOf(SEPERATOR_SECONDARY), parameters.length()));
+					rule.setPath(parameters.substring(0, parameters.indexOf(SEPERATOR_SECONDARY)));
+					rule.setChecksum(parameters.substring(parameters.indexOf(SEPERATOR_SECONDARY)+1, parameters.length()));
 					}
 				else
 					{rule.setPath(parameters);}
@@ -490,12 +490,12 @@ public class RulesResourceImpl extends ResourceImpl
 					// We must have a MySQL db
 					rule.setDatabase(Database.MYSQL);
 					
-					String modes = parameters.substring(parameters.indexOf(SEPERATOR_SECONDARY), parameters.length());
+					String modes = parameters.substring(parameters.indexOf(SEPERATOR_SECONDARY)+1, parameters.length());
 					
 					if (modes.contains(SEPERATOR_TERTIARY)) 
 						{
-						rule = setMode(modes.substring(0, modes.indexOf(SEPERATOR_TERTIARY)-1), rule);
-						rule = setMode(modes.substring(modes.indexOf(SEPERATOR_TERTIARY),modes.length()), rule);
+						rule = setMode(modes.substring(0, modes.indexOf(SEPERATOR_TERTIARY)), rule);
+						rule = setMode(modes.substring(modes.indexOf(SEPERATOR_TERTIARY)+1,modes.length()), rule);
 						}
 					else
 						{
@@ -577,8 +577,8 @@ public class RulesResourceImpl extends ResourceImpl
 		{
 		if (mode.contains(ASSIGN))
 			{
-			DatabaseMode dbMode = DatabaseMode.getByName(mode.substring(0, mode.indexOf(ASSIGN)-1));
-			Option dbOption = Option.getByName(mode.substring(mode.indexOf(ASSIGN),mode.length()));
+			DatabaseMode dbMode = DatabaseMode.getByName(mode.substring(0, mode.indexOf(ASSIGN)));
+			Option dbOption = Option.getByName(mode.substring(mode.indexOf(ASSIGN)+1,mode.length()));
 			
 			if (dbMode != null && dbOption != null)
 				{
