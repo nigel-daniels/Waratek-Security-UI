@@ -166,7 +166,7 @@ public class ClassLinkItemProvider
 
 		label.append(classLink.getClassLinkParameter().toString() + ":" + classLink.getQualifiedName() + ":"); 
 		
-		if (!classLink.getSignature().equals("")) {label.append(classLink.getSignature() + ":");}
+		if (classLink.getSignature() != null && !classLink.getSignature().equals("")) {label.append(classLink.getSignature() + ":");}
 		
 		label.append(classLink.getAction().toString() + ":" + classLink.getLog().toString());
 		return label == null || label.length() == 0 ?

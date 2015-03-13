@@ -6,8 +6,10 @@ package com.waratek.rules.provider;
 
 import com.waratek.rules.Reflection;
 import com.waratek.rules.RulesPackage;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -140,6 +142,18 @@ public class ReflectionItemProvider
 	}
 
 	/**
+	 * This returns Native.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	// MOD Not generated for some reason?
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Reflection"));
+	}
+	
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,7 +166,7 @@ public class ReflectionItemProvider
 
 	label.append(reflection.getReflectionParameter().toString() + ":" + reflection.getQualifiedName() + ":"); 
 	
-	if (!reflection.getSignature().equals("")) {label.append(reflection.getSignature() + ":");}
+	if (reflection.getSignature() != null && !reflection.getSignature().equals("")) {label.append(reflection.getSignature() + ":");}
 	
 	label.append(reflection.getAction().toString() + ":" + reflection.getLog().toString());
 	
