@@ -4,8 +4,6 @@
 <toc label="Getting Started" link_to="toc.xml#gettingstarted"> 
 	<topic href="html/gettingstarted/gettingstarted.html" label="Introduction">
  </topic>
- <topic href="html/gettingstarted/gettingstarted.html#desktop" label="Installing the destop application">
- </topic>
 	<topic label="Installing the Eclipse feature" href="html/gettingstarted/gettingstarted.html#install"/>
 	<topic label="Adding the feature repository" href="html/gettingstarted/gettingstarted.html#repository"/>
 	<topic label="Uninstalling the Eclipse feature" href="html/gettingstarted/gettingstarted.html#uninstall"/>

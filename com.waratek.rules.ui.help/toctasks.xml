@@ -3,7 +3,6 @@
 
 <toc label="Tasks" link_to="toc.xml#tasks" topic="html/tasks/tasks.html">
    <topic href="html/tasks/tasks.html#introduction" label="Introduction"/>
-   <topic href="html/tasks/tasks.html#create" label="Creating an RDF file"/>
+   <topic href="html/tasks/tasks.html#create" label="Creating a *.rules file"/>
    <topic href="html/tasks/tasks.html#rules" label="Security rules"/>
-   <topic href="html/tasks/tasks.html#generate" label="Generating rule files"/>
 </toc>
