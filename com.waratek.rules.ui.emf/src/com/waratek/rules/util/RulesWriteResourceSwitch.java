@@ -4,16 +4,14 @@
 package com.waratek.rules.util;
 
 import com.waratek.rules.ClassLink;
+import com.waratek.rules.ClassLinkParameter;
 import com.waratek.rules.Comment;
 import com.waratek.rules.Database;
 import com.waratek.rules.File;
 import com.waratek.rules.Native;
 import com.waratek.rules.Network;
-import com.waratek.rules.ReflectClass;
-import com.waratek.rules.ReflectConstructor;
-import com.waratek.rules.ReflectField;
-import com.waratek.rules.ReflectMethod;
-import com.waratek.rules.ReflectPackage;
+import com.waratek.rules.Reflection;
+import com.waratek.rules.ReflectionParameter;
 import com.waratek.rules.Rule;
 import com.waratek.rules.RuleDocument;
 import com.waratek.rules.SQLInjection;
@@ -82,73 +80,41 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 		}
 
 
-	public String caseReflectPackage(ReflectPackage object)
+	public String caseReflection(Reflection object)
 		{
-		StringBuffer result = new StringBuffer("reflect:class:");
-		// Add the package name ensuring it ends in .* or is *
-		String packageName = object.getPackageName();
-		if (packageName.endsWith("*"))
+		StringBuffer result = new StringBuffer("reflect:");
+		
+		switch (object.getReflectionParameter().getValue())
 			{
-			result.append(packageName + ":");
-			}
-		else
-			{
-			if (packageName.endsWith("."))
+			case ReflectionParameter.CONSTRUCTOR_VALUE:
 				{
-				result.append(packageName + "*:");
+				result.append("constructor:");
+				break;
 				}
-			else
+			case ReflectionParameter.METHOD_VALUE:
 				{
-				result.append(packageName + ".*:");
+				result.append("method:");
+				break;
+				}
+			case ReflectionParameter.FIELD_VALUE:
+				{
+				result.append("field:");
+				break;
+				}
+			default:
+				{
+				result.append("method:");
+				break;
 				}
 			}
+		
+		result.append(object.getQualifiedName() + ":");
+		
+		if (!object.getSignature().equals("")) {result.append(object.getSignature() + ":");}
+		
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
 		}
-
-
-	public String caseReflectClass(ReflectClass object)
-		{
-		StringBuffer result = new StringBuffer("reflect:class:");
-		result.append(object.getPackageName() + ".");
-		result.append(object.getClassName() + ":");
-		result.append(tailRuleLine((Rule) object));
-		return result.toString();
-		}
-
-
-	public String caseReflectConstructor(ReflectConstructor object)
-		{
-		StringBuffer result = new StringBuffer("reflect:class:");
-		result.append(object.getPackageName() + ".");
-		result.append(object.getClassName() + ":constructor:");
-		result.append(object.getConstructorSignature() + ":");
-		result.append(tailRuleLine((Rule) object));
-		return result.toString();
-		}
-
-
-	public String caseReflectMethod(ReflectMethod object)
-		{
-		StringBuffer result = new StringBuffer("reflect:class:");
-		result.append(object.getPackageName() + ".");
-		result.append(object.getClassName() + ":method:");
-		result.append(object.getMethodSignature() + ":");
-		result.append(tailRuleLine((Rule) object));
-		return result.toString();
-		}
-
-
-	public String caseReflectField(ReflectField object)
-		{
-		StringBuffer result = new StringBuffer("reflect:class:");
-		result.append(object.getPackageName() + ".");
-		result.append(object.getClassName() + ":field:");
-		result.append(object.getFieldName() + ":");
-		result.append(tailRuleLine((Rule) object));
-		return result.toString();
-		}
-
 
 	public String caseThrowableClass(ThrowableClass object)
 		{
@@ -162,7 +128,40 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 	public String caseClassLink(ClassLink object)
 		{
 		StringBuffer result = new StringBuffer("classlink:class:");
-		result.append(object.getDescriptorName() + ":");
+		
+		switch (object.getClassLinkParameter().getValue())
+			{
+			case ClassLinkParameter.CLASS_VALUE:
+				{
+				result.append("class:");
+				break;
+				}
+			case ClassLinkParameter.CONSTRUCTOR_VALUE:
+				{
+				result.append("constructor:");
+				break;
+				}
+			case ClassLinkParameter.METHOD_VALUE:
+				{
+				result.append("method:");
+				break;
+				}
+			case ClassLinkParameter.FIELD_VALUE:
+				{
+				result.append("field:");
+				break;
+				}
+			default:
+				{
+				result.append("class:");
+				break;
+				}
+			}
+	
+	result.append(object.getQualifiedName() + ":");
+	
+	if (!object.getSignature().equals("")) {result.append(object.getSignature() + ":");}
+	
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
 		}
