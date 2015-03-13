@@ -3,7 +3,7 @@
 
  <plugin>
 
-     <!-- EEF extensions -->
+  <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://www.waratek.com/rules/1.1"
