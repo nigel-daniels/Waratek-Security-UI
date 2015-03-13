@@ -142,13 +142,12 @@ public class ReflectionItemProvider
 	}
 
 	/**
-	 * This returns Native.gif.
+	 * This returns Reflection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
-	// MOD Not generated for some reason?
 	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Reflection"));
 	}

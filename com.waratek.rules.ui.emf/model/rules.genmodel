@@ -96,7 +96,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Network/port"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Network/networkParameter"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="rules.ecore#//Reflection">
+    <genClasses ecoreClass="rules.ecore#//Reflection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/reflectionParameter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/qualifiedName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rules.ecore#//Reflection/signature"/>
