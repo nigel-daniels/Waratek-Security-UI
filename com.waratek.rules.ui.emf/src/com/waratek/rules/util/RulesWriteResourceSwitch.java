@@ -27,8 +27,8 @@ import com.waratek.rules.Version;
  */
 public class RulesWriteResourceSwitch extends RulesSwitch<String>
 	{
-	private static final int	VERSION_1	= 1;
-	private int					ver			= VERSION_1;
+	private static final int	V_1	= 1;
+	private int					ver			= V_1;
 
 
 	public String caseRuleDocument(RuleDocument object)
@@ -40,28 +40,28 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 			case Version.ONE_VALUE:
 				{
 				result.append(RulesResourceImpl.VERSION_1);
-				ver = VERSION_1;
+				ver = V_1;
 				break;
 				}
 			default:
 				{
 				result.append(RulesResourceImpl.VERSION_1);
-				ver = VERSION_1;
+				ver = V_1;
 				break;
 				}
 			}
-		result.append(String.format("%n", (Object) null));
+		result.append(RulesResourceImpl.RETURN);
 		return result.toString();
 		}
 
 
 	public String caseFile(File object)
 		{
-		StringBuffer result = new StringBuffer("file:");
+		StringBuffer result = new StringBuffer("file" + RulesResourceImpl.SEPERATOR_PRIMARY);
 		// Set the basic file parameter
-		result.append(object.getFileParameter().getName() + ":");
+		result.append(object.getFileParameter().getName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		// Set the path
-		result.append(object.getPath() + ":");
+		result.append(object.getPath() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
 		}
@@ -69,12 +69,12 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseNetwork(Network object)
 		{
-		StringBuffer result = new StringBuffer("network:");
+		StringBuffer result = new StringBuffer("network" + RulesResourceImpl.SEPERATOR_PRIMARY);
 		// Set the basic netoerk parameter
-		result.append(object.getNetworkParameter().getName() + ":");
+		result.append(object.getNetworkParameter().getName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		// Set the host and port
-		result.append(object.getHost() + ":");
-		result.append(object.getPort() + ":");
+		result.append(object.getHost() + RulesResourceImpl.SEPERATOR_PRIMARY);
+		result.append(object.getPort() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
 		}
@@ -82,35 +82,35 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseReflection(Reflection object)
 		{
-		StringBuffer result = new StringBuffer("reflect:");
+		StringBuffer result = new StringBuffer("reflect" + RulesResourceImpl.SEPERATOR_PRIMARY);
 		
 		switch (object.getReflectionParameter().getValue())
 			{
 			case ReflectionParameter.CONSTRUCTOR_VALUE:
 				{
-				result.append("constructor:");
+				result.append("constructor" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			case ReflectionParameter.METHOD_VALUE:
 				{
-				result.append("method:");
+				result.append("method" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			case ReflectionParameter.FIELD_VALUE:
 				{
-				result.append("field:");
+				result.append("field" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			default:
 				{
-				result.append("method:");
+				result.append("method" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			}
 		
-		result.append(object.getQualifiedName() + ":");
+		result.append(object.getQualifiedName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		
-		if (!object.getSignature().equals("")) {result.append(object.getSignature() + ":");}
+		if (!object.getSignature().equals("")) {result.append(object.getSignature() + RulesResourceImpl.SEPERATOR_PRIMARY);}
 		
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
@@ -118,8 +118,8 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseThrowableClass(ThrowableClass object)
 		{
-		StringBuffer result = new StringBuffer("throwable:throw:");
-		result.append(object.getClassName() + ":");
+		StringBuffer result = new StringBuffer("throwable" + RulesResourceImpl.SEPERATOR_PRIMARY + "throw" + RulesResourceImpl.SEPERATOR_PRIMARY);
+		result.append(object.getClassName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
 		}
@@ -127,40 +127,40 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseClassLink(ClassLink object)
 		{
-		StringBuffer result = new StringBuffer("classlink:class:");
+		StringBuffer result = new StringBuffer("classlink" + RulesResourceImpl.SEPERATOR_PRIMARY);
 		
 		switch (object.getClassLinkParameter().getValue())
 			{
 			case ClassLinkParameter.CLASS_VALUE:
 				{
-				result.append("class:");
+				result.append("class" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			case ClassLinkParameter.CONSTRUCTOR_VALUE:
 				{
-				result.append("constructor:");
+				result.append("constructor" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			case ClassLinkParameter.METHOD_VALUE:
 				{
-				result.append("method:");
+				result.append("method" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			case ClassLinkParameter.FIELD_VALUE:
 				{
-				result.append("field:");
+				result.append("field" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			default:
 				{
-				result.append("class:");
+				result.append("class" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			}
 	
-	result.append(object.getQualifiedName() + ":");
+	result.append(object.getQualifiedName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 	
-	if (!object.getSignature().equals("")) {result.append(object.getSignature() + ":");}
+	if (object.getSignature() != null && !object.getSignature().equals("")) {result.append(object.getSignature() + RulesResourceImpl.SEPERATOR_PRIMARY);}
 	
 		result.append(tailRuleLine((Rule) object));
 		return result.toString();
@@ -169,21 +169,24 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseNative(Native object)
 		{
-		StringBuffer result = new StringBuffer("native:library:");
+		StringBuffer result = new StringBuffer("native" + RulesResourceImpl.SEPERATOR_PRIMARY + "library" + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(object.getPath());
 		String checksum = object.getChecksum();
 		if (checksum.isEmpty())
 			{
-			result.append(":");
+			result.append(RulesResourceImpl.SEPERATOR_PRIMARY);
 			}
 		else
 			{
-			result.append(";" + checksum + ":");
+			if (checksum.equals(RulesResourceImpl.WILDCARD))
+				{result.append(RulesResourceImpl.SEPERATOR_PRIMARY + checksum + RulesResourceImpl.SEPERATOR_PRIMARY);}
+			else
+				{result.append(RulesResourceImpl.SEPERATOR_SECONDARY + checksum + RulesResourceImpl.SEPERATOR_PRIMARY);}
 			}
 		
-		result = new StringBuffer(object.getNativeAction().getName() + ":");
+		result.append(object.getNativeAction().getName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(object.getLog().getName());
-		result.append(String.format("%n", (Object) null));
+		result.append(RulesResourceImpl.RETURN);
 		
 		return result.toString();
 		}
@@ -191,24 +194,24 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseSQLInjection(SQLInjection object)
 		{
-		StringBuffer result = new StringBuffer("sql:database:");
+		StringBuffer result = new StringBuffer("sql" + RulesResourceImpl.SEPERATOR_PRIMARY + "database" + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(object.getDatabase().getName());
 		switch (object.getDatabase().getValue())
 			{
 			case Database.ORACLE_VALUE:
 				{
-				result.append(":");
+				result.append(RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			case Database.MYSQL_VALUE:
 				{
-				result.append(object.isAnsiQuotes() ? ";ansiquotes=on" : ";ansiquotes=off");
-				result.append(object.isNoBackSlashEscapes() ? ",nobackslashescapes=on:" : ",nobackslashescapes=off:");
+				result.append(object.isAnsiQuotes() ? RulesResourceImpl.SEPERATOR_SECONDARY + "ansiquotes=on" : RulesResourceImpl.SEPERATOR_SECONDARY + "ansiquotes=off");
+				result.append(object.isNoBackSlashEscapes() ? RulesResourceImpl.SEPERATOR_TERTIARY + "nobackslashescapes=on" + RulesResourceImpl.SEPERATOR_PRIMARY : RulesResourceImpl.SEPERATOR_TERTIARY + "nobackslashescapes=off" + RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			default:
 				{
-				result.append(":");
+				result.append(RulesResourceImpl.SEPERATOR_PRIMARY);
 				break;
 				}
 			}
@@ -219,18 +222,19 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 
 	public String caseComment(Comment object)
 		{
-		StringBuffer result = new StringBuffer("# ");
+		StringBuffer result = new StringBuffer(RulesResourceImpl.RETURN);
+		result.append(RulesResourceImpl.COMMENT + " ");
 		result.append(object.getComment());
-		result.append(String.format("%n", (Object) null));
+		result.append(RulesResourceImpl.RETURN);
 		return result.toString();
 		}
 
 
 	private String tailRuleLine(Rule object)
 		{
-		StringBuffer result = new StringBuffer(object.getAction().getName() + ":");
+		StringBuffer result = new StringBuffer(object.getAction().getName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(object.getLog().getName());
-		result.append(String.format("%n", (Object) null));
+		result.append(RulesResourceImpl.RETURN);
 		return result.toString();
 		}
 	}

@@ -57,12 +57,13 @@ public class RulesResourceImpl extends ResourceImpl
 	public static final String	COMMENT				= "#";
 	public static final String	PACKAGE				= ".*";
 	public static final String 	ASSIGN				= "=";
+	public static final String  WILDCARD			= "*";
 	// Rule separators
 	public static final String	SEPERATOR_PRIMARY	= ":";
 	public static final String	SEPERATOR_SECONDARY	= ";";
 	public static final String	SEPERATOR_TERTIARY	= ",";
 	
-
+	public static final String RETURN 				= String.format("%n", (Object) null);
 
 	/**
 	 * Creates an instance of the resource.
