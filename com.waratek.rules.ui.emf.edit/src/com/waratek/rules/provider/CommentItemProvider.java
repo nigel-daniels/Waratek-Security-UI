@@ -6,8 +6,11 @@ package com.waratek.rules.provider;
 
 import com.waratek.rules.Comment;
 import com.waratek.rules.RulesPackage;
+import com.waratek.rules.util.RulesResourceImpl;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -112,7 +115,7 @@ public class CommentItemProvider
 		StringBuffer label = new StringBuffer();
 		Comment comment = (Comment)object;
 		
-		label.append("# " + comment.getComment());
+		label.append(RulesResourceImpl.COMMENT + " " + comment.getComment());
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_Comment_type") :

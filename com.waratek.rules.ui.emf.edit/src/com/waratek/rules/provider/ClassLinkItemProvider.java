@@ -4,9 +4,6 @@
 package com.waratek.rules.provider;
 
 
-import com.waratek.rules.ClassLink;
-import com.waratek.rules.RulesPackage;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.waratek.rules.ClassLink;
+import com.waratek.rules.RulesPackage;
+import com.waratek.rules.util.RulesResourceImpl;
 
 /**
  * This is the item provider adapter for a {@link com.waratek.rules.ClassLink} object.
@@ -164,11 +165,11 @@ public class ClassLinkItemProvider
 		StringBuffer label = new StringBuffer();
 		ClassLink classLink = (ClassLink)object;
 
-		label.append(classLink.getClassLinkParameter().toString() + ":" + classLink.getQualifiedName() + ":"); 
+		label.append(classLink.getClassLinkParameter().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + classLink.getQualifiedName() + RulesResourceImpl.SEPERATOR_PRIMARY); 
 		
-		if (classLink.getSignature() != null && !classLink.getSignature().equals("")) {label.append(classLink.getSignature() + ":");}
+		if (classLink.getSignature() != null && !classLink.getSignature().equals("")) {label.append(classLink.getSignature() + RulesResourceImpl.SEPERATOR_PRIMARY);}
 		
-		label.append(classLink.getAction().toString() + ":" + classLink.getLog().toString());
+		label.append(classLink.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + classLink.getLog().toString());
 		return label == null || label.length() == 0 ?
 			getString("_UI_ClassLink_type") :
 			getString("_UI_ClassLink_type") + " " + label;

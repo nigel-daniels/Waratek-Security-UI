@@ -6,6 +6,7 @@ package com.waratek.rules.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -17,8 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import com.waratek.rules.Native;
 import com.waratek.rules.RulesPackage;
+import com.waratek.rules.util.RulesResourceImpl;
 
 /**
  * This is the item provider adapter for a {@link com.waratek.rules.Native} object.
@@ -164,9 +167,12 @@ public class NativeItemProvider
 
 		if (nativeLib.getChecksum() != null)
 			if (!nativeLib.getChecksum().isEmpty())
-				{label.append(";" + nativeLib.getChecksum());}
+				if (nativeLib.getChecksum().equals(RulesResourceImpl.WILDCARD))
+					{label.append(RulesResourceImpl.SEPERATOR_PRIMARY + nativeLib.getChecksum());}
+				else
+					{label.append(RulesResourceImpl.SEPERATOR_SECONDARY + nativeLib.getChecksum());}
 		
-		label.append(":" + nativeLib.getAction().toString() + ":" + nativeLib.getLog().toString());
+		label.append(RulesResourceImpl.SEPERATOR_PRIMARY + nativeLib.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + nativeLib.getLog().toString());
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_Native_type") :

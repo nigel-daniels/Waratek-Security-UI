@@ -6,6 +6,7 @@ package com.waratek.rules.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -17,8 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import com.waratek.rules.RulesPackage;
 import com.waratek.rules.SQLInjection;
+import com.waratek.rules.util.RulesResourceImpl;
 
 /**
  * This is the item provider adapter for a {@link com.waratek.rules.SQLInjection} object.
@@ -161,7 +164,7 @@ public class SQLInjectionItemProvider
 		StringBuffer label = new StringBuffer();
 		SQLInjection sqlInjection = (SQLInjection)object;
 
-		label.append(sqlInjection.getDatabase().toString() + ":" + sqlInjection.getAction().toString() + ":" + sqlInjection.getLog().toString());
+		label.append(sqlInjection.getDatabase().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + sqlInjection.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + sqlInjection.getLog().toString());
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_SQLInjection_type") :

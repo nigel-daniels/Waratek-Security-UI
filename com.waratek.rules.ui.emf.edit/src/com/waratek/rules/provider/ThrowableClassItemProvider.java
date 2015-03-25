@@ -4,9 +4,6 @@
 package com.waratek.rules.provider;
 
 
-import com.waratek.rules.RulesPackage;
-import com.waratek.rules.ThrowableClass;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.waratek.rules.RulesPackage;
+import com.waratek.rules.ThrowableClass;
+import com.waratek.rules.util.RulesResourceImpl;
 
 /**
  * This is the item provider adapter for a {@link com.waratek.rules.ThrowableClass} object.
@@ -115,7 +116,7 @@ public class ThrowableClassItemProvider
 		StringBuffer label = new StringBuffer();
 		ThrowableClass throwableClass = (ThrowableClass)object;
 
-		label.append(throwableClass.getClassName() + ":" + throwableClass.getAction().toString() + ":" + throwableClass.getLog().toString());
+		label.append(throwableClass.getClassName() + RulesResourceImpl.SEPERATOR_PRIMARY + throwableClass.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + throwableClass.getLog().toString());
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_ThrowableClass_type") :

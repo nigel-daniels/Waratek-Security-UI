@@ -6,8 +6,11 @@ package com.waratek.rules.provider;
 
 import com.waratek.rules.File;
 import com.waratek.rules.RulesPackage;
+import com.waratek.rules.util.RulesResourceImpl;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -136,7 +139,7 @@ public class FileItemProvider
 		StringBuffer label = new StringBuffer();
 		File file = (File)object;
 
-		label.append(file.getFileParameter().toString() + ":" + file.getPath() + ":" + file.getAction().toString() + ":" + file.getLog().toString());
+		label.append(file.getFileParameter().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + file.getPath() + RulesResourceImpl.SEPERATOR_PRIMARY + file.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + file.getLog().toString());
 
 		return label == null || label.length() == 0 ?
 			getString("_UI_File_type") :

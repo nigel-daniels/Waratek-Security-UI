@@ -4,10 +4,9 @@
 package com.waratek.rules.provider;
 
 
-import com.waratek.rules.Network;
-import com.waratek.rules.RulesPackage;
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -19,6 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.waratek.rules.Network;
+import com.waratek.rules.RulesPackage;
+import com.waratek.rules.util.RulesResourceImpl;
 
 /**
  * This is the item provider adapter for a {@link com.waratek.rules.Network} object.
@@ -159,7 +162,7 @@ public class NetworkItemProvider
 		StringBuffer label = new StringBuffer();
 		Network network = (Network)object;
 
-		label.append(network.getNetworkParameter().toString() + ":" + network.getHost() + ":" + network.getPort() + ":" + network.getAction().toString() + ":" + network.getLog().toString());
+		label.append(network.getNetworkParameter().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + network.getHost() + RulesResourceImpl.SEPERATOR_PRIMARY + network.getPort() + RulesResourceImpl.SEPERATOR_PRIMARY + network.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + network.getLog().toString());
 			
 		return label == null || label.length() == 0 ?
 			getString("_UI_Network_type") :

@@ -4,9 +4,6 @@
 package com.waratek.rules.provider;
 
 
-import com.waratek.rules.Reflection;
-import com.waratek.rules.RulesPackage;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.waratek.rules.Reflection;
+import com.waratek.rules.RulesPackage;
+import com.waratek.rules.util.RulesResourceImpl;
 
 /**
  * This is the item provider adapter for a {@link com.waratek.rules.Reflection} object.
@@ -163,11 +164,11 @@ public class ReflectionItemProvider
 	StringBuffer label = new StringBuffer();
 	Reflection reflection = (Reflection)object;
 
-	label.append(reflection.getReflectionParameter().toString() + ":" + reflection.getQualifiedName() + ":"); 
+	label.append(reflection.getReflectionParameter().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + reflection.getQualifiedName() + RulesResourceImpl.SEPERATOR_PRIMARY); 
 	
-	if (reflection.getSignature() != null && !reflection.getSignature().equals("")) {label.append(reflection.getSignature() + ":");}
+	if (reflection.getSignature() != null && !reflection.getSignature().equals("")) {label.append(reflection.getSignature() + RulesResourceImpl.SEPERATOR_PRIMARY);}
 	
-	label.append(reflection.getAction().toString() + ":" + reflection.getLog().toString());
+	label.append(reflection.getAction().toString() + RulesResourceImpl.SEPERATOR_PRIMARY + reflection.getLog().toString());
 	
 		return label == null || label.length() == 0 ?
 			getString("_UI_Reflection_type") :
