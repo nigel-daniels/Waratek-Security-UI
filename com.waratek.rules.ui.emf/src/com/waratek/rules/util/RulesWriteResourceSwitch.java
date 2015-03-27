@@ -173,16 +173,9 @@ public class RulesWriteResourceSwitch extends RulesSwitch<String>
 		result.append(object.getPath());
 		String checksum = object.getChecksum();
 		if (checksum.isEmpty())
-			{
-			result.append(RulesResourceImpl.SEPERATOR_PRIMARY);
-			}
+			{result.append(RulesResourceImpl.SEPERATOR_PRIMARY);}
 		else
-			{
-			if (checksum.equals(RulesResourceImpl.WILDCARD))
-				{result.append(RulesResourceImpl.SEPERATOR_PRIMARY + checksum + RulesResourceImpl.SEPERATOR_PRIMARY);}
-			else
-				{result.append(RulesResourceImpl.SEPERATOR_SECONDARY + checksum + RulesResourceImpl.SEPERATOR_PRIMARY);}
-			}
+			{result.append(RulesResourceImpl.SEPERATOR_SECONDARY + checksum + RulesResourceImpl.SEPERATOR_PRIMARY);}
 		
 		result.append(object.getNativeAction().getName() + RulesResourceImpl.SEPERATOR_PRIMARY);
 		result.append(object.getLog().getName());
